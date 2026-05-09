@@ -700,7 +700,7 @@ article a:hover,
     display: block;
     overflow-x: auto;
     overflow-y: hidden;
-    box-sizing: border-box;S
+    box-sizing: border-box;
 }
 
 .post-content .table-wrapper > table {

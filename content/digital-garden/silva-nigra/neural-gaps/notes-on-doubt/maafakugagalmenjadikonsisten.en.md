@@ -4,6 +4,9 @@ date: 2026-05-01
 draft: false
 math: true
 summary: "If I am a mirror, and the mirror is you, then we are one. It sounds romantic. But logically… it is horrific."
+type: "garden-node"
+categories: ["Identitas", "Notes on doubt", "Certainty"]
+tags: ["identity","silva nigra","math","logic"]
 ---
 
 I’ve taken the MBTI test several times, and the results always fluctuate. I’ve been an INFP, an INFJ, an INTJ, and most recently, an INTP.

@@ -1,6 +1,6 @@
 ---
 title: "Biology Knowledge Map"
-description: "Structured academic knowledge."
+description: "Structured biology knowledge."
 weight: 1
 type: "garden-node"
 layout: "list"
@@ -8,18 +8,21 @@ layout: "list"
 
 ## Overview
 
-This region frames biology as a structured landscape of study, where domains of life can be approached through layered observation, method, and conceptual order.
+This domain envisions biology as a structured landscape of study, where the domains of life can be approached through layered observations, methods, and conceptual order.
 
 ## Purpose
 
-This node functions as a classificatory and exploratory hub. It gathers biological knowledge into a navigable system that can support study, synthesis, and long-term intellectual continuity.
+This space functions as a hub for classification and exploration. It organizes biological knowledge into a navigable system designed to support long-term study, synthesis, and intellectual continuity.
 
 ## Connections
 
 ### Structural
 
-- **Parent:** [Digital Garden](/digital-garden/)
+- **Parent:** [Digital Garden]({{< relref "digital-garden/_index.md" >}})
 - **Children:**
+  - [The Micro World]({{< relref "digital-garden/biology-map/micro-world/_index.md" >}})
+  - [The Body World]({{< relref "digital-garden/biology-map/body-world/_index.md" >}})
+  - [The Network World]({{< relref "digital-garden/biology-map/network-world/_index.md" >}})
 
 ### Conceptual
 

@@ -1,6 +1,6 @@
 ---
 title: "Neural Gaps"
-description: "A branch for fractures, absences, and unfinished lines of thought."
+description: "The spaces between neurons where thoughts spark and linger."
 weight: 1
 type: "garden-node"
 layout: "list"
@@ -8,19 +8,19 @@ layout: "list"
 
 ## Overview
 
-This region is shaped by interruption, incompleteness, and cognitive fracture, where thought appears in fragments rather than finished systems.
+This section is dedicated to the "voids" in thought—the pauses, the missing links, and the half-formed ideas that exist in the synaptic gaps of consciousness. 
 
 ## Purpose
 
-This node functions as a site of unfinished exploration. It preserves uncertainty as an epistemic condition, allowing partial ideas, breaks, and unresolved tensions to remain productive.
+It serves as a collection of incomplete observations and "brain dumps." It is a place to document the process of thinking itself, acknowledging that the gaps are just as important as the connections.
 
 ## Connections
 
 ### Structural
 
-- **Parent:** [Silva Nigra](/digital-garden/silva-nigra/)
-- **Children:**
+- **Parent:** [Silva Nigra]({{< relref "digital-garden/silva-nigra/_index.md" >}})
 
 ### Conceptual
 
 - **Thematic Links:**
+  - [Cognition & Neurobiology]({{< relref "digital-garden/biology-map/micro-world/cell-biology/_index.md" >}})

@@ -29,11 +29,11 @@ layout: "list"
 
 ### Structural Connections
 
-- **Parent:** [Home](/)
+- **Parent:** [Home]({{< relref "/" >}})
 
 - **Branches**
-  - [Biology Knowledge Map](/digital-garden/biology-map/)
+  - [Biology Knowledge Map]({{< relref "digital-garden/biology-map/_index.md" >}})
+  - [Foundations of Mathematics]({{< relref "digital-garden/mathematical-foundations/_index.md" >}})
     > Structured academic terrain.
-
-  - [Silva Nigra](/digital-garden/silva-nigra/)
+  - [Silva Nigra]({{< relref "digital-garden/silva-nigra/_index.md" >}})
     > The associative forest of thought.

@@ -100,7 +100,7 @@ Penggunaan Latin bukan sekadar formalitas, tetapi sebuah sistem enkripsi informa
 
 #### Structural
 
-- **Parent:** [Systematics](/digital-garden/biology-map/systematics/)
+- **Parent:** [Systematics]({{< relref "digital-garden/biology-map/network-world/systematics/_index.md" >}})
 - **Siblings:** (none yet)
 
 #### Conceptual

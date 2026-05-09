@@ -24,7 +24,7 @@ cleanDestinationDir = true
     ShowReadingTime = true
     ShowShareButtons = false
     ShowPostNavLinks = true
-    ShowBreadCrumbs = false
+    ShowBreadCrumbs = true
     ShowToc = false
     ShowWordCount = false
     ShowFullTextinRSS = true
@@ -37,8 +37,10 @@ cleanDestinationDir = true
         url = "https://github.com/Musae18"
 
     [[params.socialIcons]]
-        name = "kofi"
-        url = "https://trakteer.id/musae18_mus"
+        name = "codepen"
+        title = "Digital Tools & Lab" # Ini yang bakal muncul saat ikon di-hover
+        url = "https://musnotes.gumroad.com/?section=a7r1zAUgatCZskqezjjFQQ==#a7r1zAUgatCZskqezjjFQQ=="
+
 
     [params.assets]
         favicon = "favicon.ico"
@@ -60,16 +62,13 @@ cleanDestinationDir = true
             [languages.id.params.profileMode]
                 enabled = true
                 title = "MuS"
-                subtitle = "Refleksi yang mungkin terlalu percaya diri. Lebih sering bingung daripada tahu."
+                subtitle = "Lebih sering bingung daripada tahu."
                 imageUrl = "https://github.com/Musae18.png"
                 imageTitle = "MuS"
                 imageWidth = 120
                 imageHeight = 120
                 imageBorder = false
 
-                [[languages.id.params.profileMode.buttons]]
-                    name = "Catatan Keraguan"
-                    url = "/posts/"
 
                 [[languages.id.params.profileMode.buttons]]
                     name = "Prosa"
@@ -78,11 +77,6 @@ cleanDestinationDir = true
                 [[languages.id.params.profileMode.buttons]]
                     name = "Digital Garden"
                     url = "/digital-garden/"
-
-        [[languages.id.menu.main]]
-            name = "Digital Garden"
-            url = "/digital-garden/"
-            weight = 9
 
         [[languages.id.menu.main]]
             name = "Quiet Hours"
@@ -101,17 +95,14 @@ cleanDestinationDir = true
             [languages.en.params.profileMode]
                 enabled = true
                 title = "MuS"
-                subtitle = "Perhaps an overconfident reflection—more often confused than knowing."
+                subtitle = "More often confused than knowing."
                 imageUrl = "https://github.com/Musae18.png"
                 imageTitle = "MuS"
                 imageWidth = 120
                 imageHeight = 120
                 imageBorder = false
 
-                [[languages.en.params.profileMode.buttons]]
-                    name = "Notes on Doubt"
-                    url = "/en/posts/"
-
+            
                 [[languages.en.params.profileMode.buttons]]
                     name = "Prose"
                     url = "/en/prosa/"
@@ -120,10 +111,7 @@ cleanDestinationDir = true
                     name = "Digital Garden"
                     url = "/en/digital-garden/"
 
-        [[languages.en.menu.main]]
-            name = "Digital Garden"
-            url = "/en/digital-garden/"
-            weight = 9
+    
 
         [[languages.en.menu.main]]
             name = "Quiet Hours"

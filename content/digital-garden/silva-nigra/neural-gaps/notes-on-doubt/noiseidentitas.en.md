@@ -2,10 +2,12 @@
 title: "Identity and the Noise of Others' Perception"
 date: 2026-04-22T01:00:00+07:00
 draft: false
-categories: ["Identitas","Interpretasi Seni"]
+type: "garden-node"
+categories: ["Identitas", "Notes on doubt", "Certainty"]
+tags: ["silva nigra", "Biology", "math"]
 ---
 
-In my previous post, I stated that [identity](/posts/identitas/) is a constantly moving process—one that evolves our assumptions about ourselves. However, that question remains unfinished: what if identity is actually a label attached to us by outsiders?
+In my previous post, I stated that [identity]({{< relref "digital-garden/silva-nigra/neural-gaps/notes-on-doubt/identitas.en.md" >}}) is a constantly moving process—one that evolves our assumptions about ourselves. However, that question remains unfinished: what if identity is actually a label attached to us by outsiders?
 
 To understand this, we can look at how identity is typically verified. In daily life, identity is often reduced to data: name, place of birth, status, or occupation. As if with just that data, a person can be fully "understood."
 
