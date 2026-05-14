@@ -1,3 +1,67 @@
+{{- with site.Params.homepage }}
+{{- if .enabled }}
+<section class="home-hero" aria-labelledby="home-hero-title">
+    <div class="home-hero__inner">
+        <div class="home-hero__content">
+            {{- with .eyebrow }}
+            <p class="home-hero__eyebrow">{{ . }}</p>
+            {{- end }}
+
+            {{- $heroTitle := .title | default site.Title -}}
+            <h1 id="home-hero-title" class="home-hero__title">
+                {{- if eq $heroTitle "More often confused than knowing." -}}
+                <span class="home-hero__title-line">More often confused</span>
+                <span class="home-hero__title-line">than knowing.</span>
+                {{- else -}}
+                {{ $heroTitle | markdownify }}
+                {{- end -}}
+            </h1>
+
+            {{- with .subheadline }}
+            <p class="home-hero__subheadline">{{ . | markdownify }}</p>
+            {{- end }}
+
+            {{- with .intro }}
+            <p class="home-hero__intro">{{ . | markdownify }}</p>
+            {{- end }}
+
+            <div class="home-hero__actions">
+                {{- with .primaryButton }}
+                <a class="home-hero__button" href="{{ trim .url " " }}" title="{{ .name }}">{{ .name }}</a>
+                {{- end }}
+                {{- with .secondaryButton }}
+                <a class="home-hero__button home-hero__button--secondary" href="{{ trim .url " " }}" title="{{ .name }}">{{ .name }}</a>
+                {{- end }}
+            </div>
+
+            <div class="home-hero__social">
+                {{- partial "social_icons.html" -}}
+            </div>
+        </div>
+
+        <div class="home-hero__visual">
+            <div class="home-hero-card">
+                <div class="home-hero-card__frame" aria-hidden="true"></div>
+                <div class="home-hero-card__symbol" role="img" aria-label="{{ .visual.symbolAlt | default "Homepage visual symbol" }}">
+                    {{- with .visual.symbol }}
+                        {{- readFile (printf "assets/%s" .) | safeHTML -}}
+                    {{- else }}
+                        {{- partial "mus-symbol.html" . -}}
+                    {{- end }}
+                </div>
+                <div class="home-hero-card__meta">
+                    {{- with .visual.caption }}
+                    <span class="home-hero-card__caption">{{ . }}</span>
+                    {{- end }}
+                    {{- with .visual.meta }}
+                    <span class="home-hero-card__note">{{ . }}</span>
+                    {{- end }}
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{{- else }}
 <div class="profile">
     {{- with site.Params.profileMode }}
     <div class="profile_inner">
@@ -68,3 +132,76 @@
     </div>
     {{- end}}
 </div>
+{{- end }}
+{{- else }}
+<div class="profile">
+    {{- with site.Params.profileMode }}
+    <div class="profile_inner">
+        {{- if .imageUrl -}}
+        {{- $img := "" }}
+        {{- if not (urls.Parse .imageUrl).IsAbs }}
+            {{- $img = resources.Get .imageUrl }}
+        {{- end }}
+        {{- if $img }}
+            {{- $processableFormats := (slice "jpg" "jpeg" "png" "tif" "bmp" "gif") -}}
+            {{- if hugo.IsExtended -}}
+                {{- $processableFormats = $processableFormats | append "webp" -}}
+            {{- end -}}
+            {{- $prod := (hugo.IsProduction | or (eq site.Params.env "production")) }}
+            {{- if and (in $processableFormats $img.MediaType.SubType) (eq $prod true)}}
+                {{- if (not (and (not .imageHeight) (not .imageWidth))) }}
+                    {{- $img = $img.Resize (printf "%dx%d" .imageWidth .imageHeight) }}
+                {{- else if .imageHeight }}
+                    {{- $img = $img.Resize (printf "x%d" .imageHeight) }}
+                {{ else if .imageWidth }}
+                    {{- $img = $img.Resize (printf "%dx" .imageWidth) }}
+                {{ else }}
+                    {{- $img = $img.Resize "150x150" }}
+                {{- end }}
+            {{- end }}
+            <img draggable="false" src="{{ $img.Permalink }}" alt="{{ .imageTitle | default "profile image" }}" title="{{ .imageTitle }}"
+                height="{{ .imageHeight | default 150 }}" width="{{ .imageWidth | default 150 }}" />
+        {{- else }}
+        <img draggable="false" src="{{ .imageUrl | absURL }}" alt="{{ .imageTitle | default "profile image" }}" title="{{ .imageTitle }}"
+            height="{{ .imageHeight | default 150 }}" width="{{ .imageWidth | default 150 }}" />
+        {{- end }}
+        {{- end }}
+        <h1>{{ .title | default site.Title | markdownify }}</h1>
+        <span>{{ .subtitle | markdownify }}</span>
+
+        <div class="about-card">
+            <div class="about-card-label">{{ cond (eq site.Language.Lang "en") "About Me" "About Me" }}</div>
+            <p>
+                {{- if eq site.Language.Lang "en" -}}
+                    I could be reduced to a biology student; this blog might be a way to explain the rest.
+                {{- else -}}
+                    Aku bisa direduksi sebagai mahasiswa biologi; blog ini barangkali cara untuk menjelaskan sisanya.
+                {{- end -}}
+            </p>
+        </div>
+
+        {{- partial "social_icons.html" -}}
+
+        {{- with .buttons }}
+        <div class="buttons">
+            {{- range . }}
+            <a class="button" href="{{ trim .url " " }}" rel="noopener" title="{{ .name }}">
+                <span class="button-inner">
+                    {{ .name }}
+                    {{- if (findRE "://" .url) }}&nbsp;
+                    <svg fill="none" shape-rendering="geometricPrecision" stroke="currentColor" stroke-linecap="round"
+                        stroke-linejoin="round" stroke-width="2.5" viewBox="0 0 24 24" height="14" width="14">
+                        <path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"></path>
+                        <path d="M15 3h6v6"></path>
+                        <path d="M10 14L21 3"></path>
+                    </svg>
+                    {{- end }}
+                </span>
+            </a>
+            {{- end }}
+        </div>
+        {{- end }}
+    </div>
+    {{- end}}
+</div>
+{{- end }}

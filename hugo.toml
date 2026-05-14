@@ -59,6 +59,27 @@ cleanDestinationDir = true
         [languages.id.params]
             description = "Catatan reflektif."
 
+            [languages.id.params.homepage]
+                enabled = true
+                eyebrow = "PERSONAL BLOG · DIGITAL GARDEN · PROJECT STUDIO"
+                title = "More often confused than knowing."
+                subheadline = "Mahasiswa biologi, digital gardener, dan pembuat hal-hal web yang tenang."
+                intro = "Sebuah arsip pelan untuk catatan biologi, esai reflektif, pikiran yang belum selesai, dan eksperimen digital kecil."
+
+                [languages.id.params.homepage.primaryButton]
+                    name = "Enter the Garden"
+                    url = "/digital-garden/"
+
+                [languages.id.params.homepage.secondaryButton]
+                    name = "View Projects"
+                    url = "/projects/"
+
+                [languages.id.params.homepage.visual]
+                    caption = "MusNotes"
+                    meta = "est. 2026"
+                    symbol = "svg/mus-symbol.svg"
+                    symbolAlt = "MusNotes botanical symbol"
+
             [languages.id.params.profileMode]
                 enabled = true
                 title = "MuS"
@@ -86,6 +107,27 @@ cleanDestinationDir = true
 
         [languages.en.params]
             description = "Working Notes"
+
+            [languages.en.params.homepage]
+                enabled = true
+                eyebrow = "PERSONAL BLOG · DIGITAL GARDEN · PROJECT STUDIO"
+                title = "More often confused than knowing."
+                subheadline = "Biology student, digital gardener, and maker of quiet web things."
+                intro = "A quiet archive for biology notes, reflective essays, unfinished thoughts, and small digital experiments."
+
+                [languages.en.params.homepage.primaryButton]
+                    name = "Enter the Garden"
+                    url = "/en/digital-garden/"
+
+                [languages.en.params.homepage.secondaryButton]
+                    name = "View Projects"
+                    url = "/en/projects/"
+
+                [languages.en.params.homepage.visual]
+                    caption = "MusNotes"
+                    meta = "est. 2026"
+                    symbol = "svg/mus-symbol.svg"
+                    symbolAlt = "MusNotes botanical symbol"
 
             [languages.en.params.profileMode]
                 enabled = true
