@@ -1,12 +1,15 @@
 <header class="header">
-    <nav class="header-nav">
+    <nav class="header-nav" aria-label="Primary">
         <div class="nav-start">
             <div class="logo">
                 {{- $label_text := (site.Params.label.text | default site.Title) }}
+                {{- $configured_icon := site.Params.label.icon }}
+                {{- $default_icon := "mus-logo.png" }}
+                {{- $logo_icon := $configured_icon | default $default_icon }}
                 {{- if site.Title }}
-                <a href="{{ "" | relLangURL }}" accesskey="h" title="{{ $label_text }} (Alt + H)">
-                    {{- if site.Params.label.icon }}
-                    {{- $img := resources.Get site.Params.label.icon }}
+                <a class="brand-link" href="{{ "" | relLangURL }}" accesskey="h" title="{{ $label_text }} (Alt + H)">
+                    {{- if $logo_icon }}
+                    {{- $img := resources.Get $logo_icon }}
                     {{- if $img }}
                         {{- $processableFormats := (slice "jpg" "jpeg" "png" "tif" "bmp" "gif") -}}
                         {{- if hugo.IsExtended -}}
@@ -20,36 +23,42 @@
                                 {{- $img = $img.Resize "x30" }}
                             {{- end }}
                         {{- end }}
-                        <img src="{{ $img.Permalink }}" alt="" aria-label="logo"
-                            height="{{- site.Params.label.iconHeight | default "30" -}}">
+                        <img class="brand-mark" src="{{ $img.Permalink }}" alt="" aria-hidden="true"
+                            height="{{- site.Params.label.iconHeight | default "30" -}}" loading="eager" decoding="async">
                     {{- else }}
-                    <img src="{{- site.Params.label.icon | absURL -}}" alt="" aria-label="logo"
-                        height="{{- site.Params.label.iconHeight | default "30" -}}">
+                    {{- $fallback_icon := cond (eq $logo_icon $configured_icon) $default_icon $logo_icon -}}
+                    <img class="brand-mark" src="{{- $fallback_icon | relURL -}}" alt="" aria-hidden="true"
+                        height="{{- site.Params.label.iconHeight | default "30" -}}" loading="eager" decoding="async">
                     {{- end -}}
                     {{- else if hasPrefix site.Params.label.iconSVG "<svg" }}
                         {{ site.Params.label.iconSVG | safeHTML }}
                     {{- end -}}
-                    {{- $label_text -}}
+                    <span class="brand-text">{{- $label_text -}}</span>
                 </a>
                 {{- end }}
             </div>
         </div>
 
         <div class="nav-center">
+            {{- $currentPage := . -}}
+            {{- $pageURL := $currentPage.RelPermalink -}}
             <ul id="menu" class="menu">
                 {{- range site.Menus.main }}
                 {{- $menu_item_url := (cond (strings.HasSuffix .URL "/") .URL (printf "%s/" .URL) ) | relLangURL }}
                 {{- $is_search := eq (site.GetPage .KeyName).Layout `search` }}
+                {{- $is_active := and (not (findRE "://" .URL)) (eq $menu_item_url $pageURL) }}
                 <li>
                     {{- $href := .URL }}
                     {{- if not (findRE "://" .URL) }}
                         {{- $href = .URL | relLangURL }}
                     {{- end }}
                     <a href="{{ $href }}"
-                    {{- cond $is_search (" accesskey=/" | safeHTMLAttr) ("" | safeHTMLAttr ) }} class="nav-link">
-                        {{- .Name -}}
+                    {{- cond $is_search (" accesskey=/" | safeHTMLAttr) ("" | safeHTMLAttr ) }}
+                    class="nav-link{{ if $is_active }} is-active{{ end }}{{ if $is_search }} nav-link--search{{ end }}"
+                    {{- if $is_active }} aria-current="page"{{ end }}>
+                        <span class="nav-link__label">{{- .Name -}}</span>
                         {{- if (findRE "://" .URL) }}&nbsp;
-                        <svg fill="none" shape-rendering="geometricPrecision" stroke="currentColor" stroke-linecap="round"
+                        <svg class="nav-link__external" fill="none" shape-rendering="geometricPrecision" stroke="currentColor" stroke-linecap="round"
                             stroke-linejoin="round" stroke-width="2.5" viewBox="0 0 24 24" height="12" width="12">
                             <path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"></path>
                             <path d="M15 3h6v6"></path>
