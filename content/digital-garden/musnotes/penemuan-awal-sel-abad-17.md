@@ -1,6 +1,6 @@
 ---
 title: "Penemuan Awal Sel (Abad ke-17)"
-date: 2026-03-15T00:00:00+07:00
+date: 2026-03-05
 draft: false
 math: false
 type: "garden-note"

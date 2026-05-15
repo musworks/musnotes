@@ -1,0 +1,5 @@
+- id: prev_page
+  translation: "Artikel lebih baru"
+
+- id: next_page
+  translation: "Artikel lebih lama"

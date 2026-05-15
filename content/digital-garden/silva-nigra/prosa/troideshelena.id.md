@@ -3,6 +3,7 @@ title: "Troides Helena"
 date: 2026-04-27
 draft: false
 type: garden-fragment
+tags: ["species","ecology"]
 ---
 
 Di suatu sudut pikiranku, ada sebuah wilayah bernama _Silva Nigra_; hutan dengan daun-daun hitam

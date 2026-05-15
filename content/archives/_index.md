@@ -1,7 +1,7 @@
 ---
 title: "Archives"
 layout: "archives"
-description: "Browse the collected notes, essays, fragments, and field records."
+description: "A quiet register of notes, essays, fragments, and field records."
 ---
 
-*Filed by season and year; like specimens arranged in a patient cabinet.*
+*Filed by season and year, like a patient cabinet of living notes.*

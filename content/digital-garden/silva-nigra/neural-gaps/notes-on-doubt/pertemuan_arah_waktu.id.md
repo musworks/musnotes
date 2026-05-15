@@ -55,13 +55,13 @@ Aku coba pecah: Jika waktu linear, dua orang dengan arah temporal berlawanan mun
 Bayangkan arah waktu:
 
 <div class="flow-container">
-    <div class="flow-wrapper" style="margin-bottom: 25px; display: flex; align-items: center; justify-content: flex-start;">
+    <div class="flow-wrapper flow-wrapper--start flow-wrapper--spaced">
         <div class="flow-node node-sage"><span class="node-label">A: Masa Lalu</span></div>
         <div class="flow-arrow arrow-sage"></div>
         <div class="flow-arrow arrow-sage"></div>
         <div class="flow-node node-sage"><span class="node-label">Masa Depan</span></div>
     </div> <!-- Observer B: Juga Bergerak ke Kanan (tapi diposisikan di sisi seberang) -->
-    <div class="flow-wrapper" style="display: flex; align-items: center; justify-content: flex-end;">
+    <div class="flow-wrapper flow-wrapper--end">
         <div class="flow-node node-orchid"><span class="node-label">B: Masa depan</span></div>
         <div class="flow-arrow arrow-orchid"></div>
         <div class="flow-arrow arrow-orchid"></div>
@@ -79,9 +79,9 @@ Jika mereka bertemu,sulit membayangkan seperti apa pengalaman subjektif di titik
 ketika aku mencoba membayangkan dalam model linear ini,  interaksinya menghasilkan **Anomali Biologis**. 
 
 <div class="flow-container" id="flowchart-linear-failure">
-    <div style="display: flex; flex-direction: column; align-items: center; gap: 15px; position: relative;">
+    <div class="flow-stack">
         <!-- Jalur Observer A -->
-        <div class="flow-wrapper" style="justify-content: flex-start; width: 100%;">
+        <div class="flow-wrapper flow-wrapper--start">
             <div class="flow-node node-sage">
                 <span class="node-icon">🌱</span>
                 <span class="node-label">A: Sel Membelah (Tumbuh)</span>
@@ -90,13 +90,13 @@ ketika aku mencoba membayangkan dalam model linear ini,  interaksinya menghasilk
             <div class="flow-arrow arrow-sage"></div>
         </div>
         <!-- Titik Anomali (Collision Zone) -->
-        <div style="z-index: 2; margin: -10px 0;">
-            <div class="flow-node" style="border: 2px dashed #f96; background: #fff5f0; color: #e67e22; transform: scale(1.1);">
+        <div class="flow-stack__focus">
+            <div class="flow-node flow-node--alert">
                 <span class="node-icon">⚠️</span>
                 <span class="node-label"><b>ANOMALI BIOLOGIS</b></span>
             </div>
         </div> <!-- Jalur Observer B -->
-        <div class="flow-wrapper" style="justify-content: flex-end; width: 100%;">
+        <div class="flow-wrapper flow-wrapper--end">
             <div class="flow-arrow arrow-orchid"></div>
             <div class="flow-arrow arrow-orchid"></div>
             <div class="flow-node node-orchid">
@@ -104,7 +104,7 @@ ketika aku mencoba membayangkan dalam model linear ini,  interaksinya menghasilk
                 <span class="node-label">B: Sel Menyatu (Mundur)</span>
             </div>
         </div><!-- Garis Penghubung Imajiner -->
-        <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 2px; height: 100%; background: linear-gradient(to bottom, #e6ebe5, #f96, #eae4f9); z-index: 1; opacity: 0.5;"></div>
+        <div class="flow-stack__axis"></div>
     </div>
 </div>
 

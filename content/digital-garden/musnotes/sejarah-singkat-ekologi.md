@@ -1,6 +1,6 @@
 ---
 title: "Sejarah Singkat Ekologi"
-date: 2026-03-15T00:00:00+07:00
+date: 2026-02-14T00:00:00+07:00
 draft: false
 math: false
 type: "garden-note"

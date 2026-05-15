@@ -13,7 +13,7 @@
   <div class="garden-landing__inner">
     <header class="garden-landing__header">
       {{- partial "breadcrumbs.html" . }}
-      <p class="garden-landing__eyebrow">{{ cond (eq site.Language.Lang "id") "Peta yang terus tumbuh" "An ever-growing field guide" }}</p>
+      <p class="garden-landing__eyebrow">{{ cond (eq site.Language.Lang "id") "Arsip hidup yang terus tumbuh" "A living archive, still growing" }}</p>
       <div class="garden-landing__heading-wrap">
         <h1 id="garden-landing-title" class="garden-landing__title">{{ .Title }}</h1>
         {{- with .Description }}
@@ -37,7 +37,7 @@
           <img src="/images/musnotes-cover.svg" alt="{{ .Title }}">
         </div>
         <div class="garden-landing__card-copy">
-          <p class="garden-landing__card-kicker">{{ cond (eq site.Language.Lang "id") "Catatanku" "Living notes" }}</p>
+          <p class="garden-landing__card-kicker">{{ cond (eq site.Language.Lang "id") "Catatan" "Field notes" }}</p>
           <h2 class="garden-landing__card-title">{{ .Title }}</h2>
           <p class="garden-landing__card-description">{{ .Description | default .Summary }}</p>
         </div>

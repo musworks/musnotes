@@ -1,7 +1,7 @@
 ---
 title: "Silva Nigra"
-description: "An imagined forest of associative thought."
-summary: "The dark, associative terrain of the mind bridging neural gaps and artistic resonance."
+description: "An imagined forest of fragments and associative thought."
+summary: "A darker terrain of thought, where neural gaps meet artistic resonance."
 weight: 1
 type: "garden-node"
 layout: "list"

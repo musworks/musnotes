@@ -1,6 +1,6 @@
 ---
 title: "Pengertian & Asal Kata Ekologi"
-date: 2026-03-15T00:00:00+07:00
+date: 2026-01-01T00:00:00+07:00
 draft: false
 type: "garden-note"
 summary: "Definisi utama ekologi dan asal mula istilahnya dari bahasa Yunani kuno: Oikos dan Logos."

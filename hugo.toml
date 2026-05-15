@@ -46,7 +46,7 @@ cleanDestinationDir = true
 
     [[params.socialIcons]]
         name = "codepen"
-        title = "Digital Tools & Lab" # Ini yang bakal muncul saat ikon di-hover
+        title = "Digital Tools & Lab" 
         url = "https://musnotes.gumroad.com/?section=a7r1zAUgatCZskqezjjFQQ==#a7r1zAUgatCZskqezjjFQQ=="
 
 
@@ -69,7 +69,7 @@ cleanDestinationDir = true
 
             [languages.id.params.homepage]
                 enabled = true
-                eyebrow = "PERSONAL BLOG · DIGITAL GARDEN · PROJECT STUDIO"
+                eyebrow = "PERSONAL BLOG · DIGITAL GARDEN · DIGITAL WORKS STUDIO"
                 title = "More often confused than knowing."
                 subheadline = "Biology student, digital gardener, and maker of quiet web things."
                 intro = "Sebuah arsip untuk catatan non-linear, esai reflektif, pikiran yang belum selesai, dan eksperimen digital kecil."
@@ -79,7 +79,7 @@ cleanDestinationDir = true
                     url = "/digital-garden/"
 
                 [languages.id.params.homepage.secondaryButton]
-                    name = "View Projects"
+                    name = "View Digital Works"
                     url = "/projects/"
 
                 [languages.id.params.homepage.visual]
@@ -108,24 +108,24 @@ cleanDestinationDir = true
             weight = 10
 
         [[languages.id.menu.main]]
-            name = "Projects"
+            name = "Digital works"
             url = "/projects/"
             weight = 20
 
         [[languages.id.menu.main]]
-            name = "Archives"
-            url = "/archives/"
-            weight = 25
-
-        [[languages.id.menu.main]]
             name = "Quiet Hours"
             url = "https://musae18.github.io/quiet-hours/"
+            weight = 40
+
+        [[languages.id.menu.main]]
+            name = "Archives"
+            url = "/archives/"
             weight = 30
 
         [[languages.id.menu.main]]
             name = "Cari"
             pageRef = "/search"
-            weight = 40
+            weight = 50
 
     [languages.en]
         languageName = "English"
@@ -148,7 +148,7 @@ cleanDestinationDir = true
                     url = "/en/digital-garden/"
 
                 [languages.en.params.homepage.secondaryButton]
-                    name = "View Projects"
+                    name = "View Digital Works"
                     url = "/en/projects/"
 
                 [languages.en.params.homepage.visual]
@@ -179,21 +179,21 @@ cleanDestinationDir = true
             weight = 10
 
         [[languages.en.menu.main]]
-            name = "Projects"
+            name = "Digital works"
             url = "/en/projects/"
             weight = 20
 
         [[languages.en.menu.main]]
-            name = "Archives"
-            url = "/en/archives/"
-            weight = 25
-
-        [[languages.en.menu.main]]
             name = "Quiet Hours"
             url = "https://musae18.github.io/quiet-hours/"
+            weight = 40
+
+        [[languages.en.menu.main]]
+            name = "Archives"
+            url = "/archives/"
             weight = 30
 
         [[languages.en.menu.main]]
             name = "Search"
             pageRef = "/search"
-            weight = 40
+            weight = 50

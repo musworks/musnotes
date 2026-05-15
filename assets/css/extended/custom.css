@@ -3377,15 +3377,23 @@ article a:hover,
     border-bottom-color: rgba(214, 168, 188, 0.24);
 }
 
-/* Styling tambahan buat baris penulis (biar lebih kecil) */
-.post-content blockquote em, 
+/* Samakan speaker italic/lurus: beda hanya di font-style, bukan ukuran/kontras */
+.post-content blockquote em,
 .post-content blockquote strong {
+    font-size: inherit;
+    color: inherit;
+    opacity: 1;
+    line-height: inherit;
+}
+
+.post-content blockquote em {
     font-style: normal;
-    font-weight: normal;
-    font-size: 0.9em;
-    opacity: 0.7;
-    display: block;
-    margin-top: 10px;
+    font-weight: inherit;
+}
+
+.post-content blockquote strong {
+    font-style: italic;
+    font-weight: inherit;
 }
 
 /* Botanical table styling */
@@ -3444,6 +3452,17 @@ article a:hover,
     word-break: normal;
 }
 
+.post-content .table-wrapper > table code {
+    display: inline-block;
+    padding: 0.18rem 0.42rem;
+    border-radius: 6px;
+    background: rgba(107, 79, 91, 0.07);
+    color: color-mix(in srgb, var(--orchid-accent) 82%, var(--main-text) 18%);
+    font-size: 0.93em;
+    line-height: 1.35;
+    white-space: nowrap;
+}
+
 .post-content .table-wrapper > table tbody tr:nth-child(even) {
     background-color: #f4ede7;
 }
@@ -3455,21 +3474,23 @@ article a:hover,
 .post-content .table-wrapper > table td:first-child {
     font-weight: 700;
     color: #7D6B60;
+    text-align: center;
+    font-variant-numeric: lining-nums;
 }
 
 .post-content .table-wrapper > table th:nth-child(1),
 .post-content .table-wrapper > table td:nth-child(1) {
-    width: 22%;
+    width: 20%;
 }
 
 .post-content .table-wrapper > table th:nth-child(2),
 .post-content .table-wrapper > table td:nth-child(2) {
-    width: 23%;
+    width: 38%;
 }
 
 .post-content .table-wrapper > table th:nth-child(3),
 .post-content .table-wrapper > table td:nth-child(3) {
-    width: 30%;
+    width: 42%;
 }
 
 .post-content .table-wrapper > table th:nth-child(4),
@@ -3507,6 +3528,11 @@ article a:hover,
     border-bottom-color: rgba(214, 168, 188, 0.12);
 }
 
+:root[data-theme="dark"] .post-content .table-wrapper > table code {
+    background: rgba(214, 168, 188, 0.1);
+    color: #f0dce6;
+}
+
 :root[data-theme="dark"] .post-content .table-wrapper > table tbody tr:nth-child(even) {
     background-color: rgba(255, 255, 255, 0.03);
 }
@@ -3519,7 +3545,267 @@ article a:hover,
     color: #E6CBD8;
 }
 
+/* Post navigation tuned to the current botanical-editorial look */
+.post-footer {
+    display: grid;
+    gap: 1rem;
+    margin-top: clamp(2.1rem, 4vw, 2.8rem);
+}
+
+.post-footer > * {
+    margin-bottom: 0;
+}
+
+.post-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.6rem;
+    padding-bottom: 0.15rem;
+}
+
+.post-tags li {
+    display: inline-flex;
+}
+
+.post-tags a {
+    display: inline-flex;
+    align-items: center;
+    min-height: 2.2rem;
+    padding: 0.4rem 0.85rem 0.42rem;
+    border: 1px solid rgba(107, 79, 91, 0.14);
+    border-radius: 999px;
+    background:
+        linear-gradient(180deg, rgba(255, 255, 255, 0.78), rgba(247, 240, 235, 0.72)),
+        radial-gradient(circle at top right, rgba(137, 168, 138, 0.08), transparent 36%);
+    box-shadow: 0 8px 18px rgba(87, 70, 74, 0.04);
+    color: color-mix(in srgb, var(--primary) 76%, var(--secondary) 24%);
+    font-family: "Alice", Georgia, "Times New Roman", serif;
+    font-size: 0.83rem;
+    letter-spacing: 0.03em;
+    line-height: 1.2;
+    transition:
+        transform 0.2s ease,
+        border-color 0.2s ease,
+        box-shadow 0.2s ease,
+        background-color 0.2s ease,
+        color 0.2s ease;
+}
+
+.post-tags a::before {
+    content: "#";
+    margin-right: 0.35rem;
+    color: color-mix(in srgb, #89a88a 42%, var(--orchid-accent) 58%);
+    opacity: 0.88;
+}
+
+.post-tags a:hover,
+.post-tags a:focus-visible {
+    transform: translateY(-1px);
+    border-color: rgba(107, 79, 91, 0.18);
+    background:
+        linear-gradient(180deg, rgba(255, 255, 255, 0.92), rgba(250, 245, 240, 0.88)),
+        radial-gradient(circle at top right, rgba(137, 168, 138, 0.12), transparent 38%);
+    box-shadow: 0 12px 22px rgba(87, 70, 74, 0.06);
+    color: var(--orchid-accent);
+}
+
+:root[data-theme="dark"] .post-tags a {
+    border-color: rgba(214, 168, 188, 0.14);
+    background:
+        linear-gradient(180deg, rgba(255, 255, 255, 0.04), rgba(255, 255, 255, 0.02)),
+        radial-gradient(circle at top right, rgba(127, 154, 123, 0.12), transparent 38%);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.16);
+    color: color-mix(in srgb, var(--main-text) 84%, var(--sage-fade) 16%);
+}
+
+:root[data-theme="dark"] .post-tags a::before {
+    color: color-mix(in srgb, #b8cfb3 38%, var(--orchid-accent) 62%);
+}
+
+:root[data-theme="dark"] .post-tags a:hover,
+:root[data-theme="dark"] .post-tags a:focus-visible {
+    border-color: rgba(214, 168, 188, 0.2);
+    background:
+        linear-gradient(180deg, rgba(255, 255, 255, 0.07), rgba(255, 255, 255, 0.03)),
+        radial-gradient(circle at top right, rgba(127, 154, 123, 0.16), transparent 40%);
+    box-shadow: 0 14px 24px rgba(0, 0, 0, 0.2);
+    color: var(--orchid-accent);
+}
+
+.paginav {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0.85rem;
+    padding: 0;
+    border: 0;
+    border-radius: 18px;
+    background: transparent;
+    box-shadow: none;
+}
+
+.paginav a {
+    position: relative;
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    gap: 0.42rem;
+    width: auto;
+    min-height: 10.6rem;
+    padding: 1rem 1.05rem 1.05rem;
+    border: 1px solid rgba(107, 79, 91, 0.14);
+    border-radius: 16px;
+    background:
+        linear-gradient(180deg, rgba(255, 255, 255, 0.82), rgba(248, 241, 236, 0.76)),
+        radial-gradient(circle at top right, rgba(137, 168, 138, 0.08), transparent 34%);
+    box-shadow: 0 14px 28px rgba(87, 70, 74, 0.05);
+    color: color-mix(in srgb, var(--primary) 88%, var(--secondary) 12%);
+    transition:
+        transform 0.22s ease,
+        border-color 0.22s ease,
+        box-shadow 0.22s ease,
+        background-color 0.22s ease;
+}
+
+.paginav a:hover,
+.paginav a:focus-visible {
+    transform: translateY(-2px);
+    background:
+        linear-gradient(180deg, rgba(255, 255, 255, 0.94), rgba(249, 244, 239, 0.9)),
+        radial-gradient(circle at top right, rgba(137, 168, 138, 0.12), transparent 36%);
+    border-color: rgba(107, 79, 91, 0.2);
+    box-shadow: 0 18px 34px rgba(87, 70, 74, 0.08);
+}
+
+.paginav a:hover span:not(.title),
+.paginav a:focus-visible span:not(.title) {
+    text-decoration: none;
+}
+
+.paginav .title {
+    font-family: "Alice", Georgia, "Times New Roman", serif;
+    font-size: 0.72rem;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    line-height: 1.35;
+    color: color-mix(in srgb, #89a88a 50%, var(--orchid-accent) 50%);
+    opacity: 0.86;
+}
+
+.paginav a span:last-child {
+    font-family: "Gabriela", Georgia, "Times New Roman", serif;
+    font-size: clamp(0.98rem, 1.8vw, 1.12rem);
+    line-height: 1.38;
+    color: inherit;
+}
+
+.paginav .prev {
+    text-align: left;
+}
+
+.paginav .prev::before,
+.paginav .next::after {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 1.75rem;
+    height: 1.75rem;
+    border-radius: 999px;
+    border: 1px solid rgba(107, 79, 91, 0.14);
+    background: rgba(255, 255, 255, 0.52);
+    color: var(--orchid-accent);
+    font-size: 0.88rem;
+    line-height: 1;
+}
+
+.paginav .prev::before {
+    content: "←";
+    margin-bottom: 0.08rem;
+}
+
+.paginav .next {
+    margin-inline-start: 0;
+    text-align: right;
+}
+
+.paginav .next::after {
+    content: "→";
+    justify-self: end;
+    margin-bottom: 0.08rem;
+}
+
+:root[data-theme="dark"] .paginav a {
+    border-color: rgba(214, 168, 188, 0.14);
+    background:
+        linear-gradient(180deg, rgba(255, 255, 255, 0.045), rgba(255, 255, 255, 0.02)),
+        radial-gradient(circle at top right, rgba(127, 154, 123, 0.12), transparent 36%);
+    box-shadow: 0 16px 32px rgba(0, 0, 0, 0.18);
+    color: var(--main-text);
+}
+
+:root[data-theme="dark"] .paginav a:hover,
+:root[data-theme="dark"] .paginav a:focus-visible {
+    border-color: rgba(214, 168, 188, 0.22);
+    background:
+        linear-gradient(180deg, rgba(255, 255, 255, 0.07), rgba(255, 255, 255, 0.03)),
+        radial-gradient(circle at top right, rgba(127, 154, 123, 0.16), transparent 40%);
+    box-shadow: 0 18px 36px rgba(0, 0, 0, 0.22);
+}
+
+:root[data-theme="dark"] .paginav .title {
+    color: color-mix(in srgb, #b8cfb3 38%, var(--orchid-accent) 62%);
+}
+
+:root[data-theme="dark"] .paginav .prev::before,
+:root[data-theme="dark"] .paginav .next::after {
+    border-color: rgba(214, 168, 188, 0.16);
+    background: rgba(255, 255, 255, 0.035);
+    color: var(--orchid-accent);
+}
+
+.paginav .prev::before {
+    content: "\2190";
+}
+
+.paginav .next::after {
+    content: "\2192";
+}
+
 @media (max-width: 640px) {
+    .post-footer {
+        gap: 0.85rem;
+        margin-top: 1.9rem;
+    }
+
+    .post-tags {
+        gap: 0.5rem;
+    }
+
+    .post-tags a {
+        min-height: 2.05rem;
+        padding: 0.36rem 0.78rem 0.4rem;
+        font-size: 0.8rem;
+    }
+
+    .paginav {
+        grid-template-columns: 1fr;
+    }
+
+    .paginav a {
+        min-height: auto;
+        padding: 0.92rem 0.92rem 0.96rem;
+    }
+
+    .paginav a span:last-child {
+        font-size: 1rem;
+    }
+
+    .paginav .next::after {
+        justify-self: start;
+    }
+
+    .paginav .next {
+        text-align: left;
+    }
+
     .post-content blockquote {
         margin: 2.4rem auto;
         padding: 1.8rem 1rem 1.7rem;
@@ -3597,89 +3883,303 @@ article a:hover,
 
 /* --- Generic Flow Diagram System --- */
 :root {
-    --flow-bg: #fdfaf6; /* Background blog kamu */
-    --font-serif: 'Alice', serif;
+    --flow-bg: rgba(255, 255, 255, 0.42);
+    --flow-panel-border: rgba(107, 79, 91, 0.1);
+    --flow-panel-shadow: 0 14px 28px rgba(87, 70, 74, 0.05);
+    --flow-node-bg: linear-gradient(180deg, rgba(255, 255, 255, 0.9), rgba(248, 243, 238, 0.82));
+    --flow-node-border: rgba(107, 79, 91, 0.12);
+    --flow-node-shadow: 0 10px 22px rgba(87, 70, 74, 0.06);
+    --flow-arrow-neutral: rgba(154, 140, 152, 0.52);
+    --flow-sage: #7f9a7b;
+    --flow-sage-soft: #edf3ea;
+    --flow-orchid: #8a6779;
+    --flow-orchid-soft: #f2eaf0;
+    --flow-blue: #728a97;
+    --flow-blue-soft: #edf2f4;
+    --font-serif: "Alice", Georgia, "Times New Roman", serif;
 }
 
-/* Container utama agar bisa scroll horizontal di HP */
 .flow-container {
-    width: 100%;
+    width: min(100%, 100%);
+    margin: 1.8rem 0;
+    padding: 1rem 1rem 1.15rem;
     overflow-x: auto;
-    padding: 20px 0;
+    overflow-y: hidden;
+    background:
+        linear-gradient(180deg, var(--flow-bg), rgba(255, 255, 255, 0.22)),
+        radial-gradient(circle at top right, rgba(107, 79, 91, 0.05), transparent 34%);
+    border: 1px solid var(--flow-panel-border);
+    border-radius: 20px;
+    box-shadow: var(--flow-panel-shadow);
     cursor: grab;
-    /* Sembunyikan scrollbar untuk Chrome/Safari/Opera */
-    -ms-overflow-style: none;  /* IE and Edge */
-    scrollbar-width: none;  /* Firefox */
+    -ms-overflow-style: none;
+    scrollbar-width: none;
 }
+
 .flow-container::-webkit-scrollbar {
-    display: none; /* Chrome/Safari */
+    display: none;
 }
 
 .flow-wrapper {
     display: inline-flex;
     align-items: center;
-    gap: 0; /* Jarak diatur manual di arrow */
-    padding-left: 10px;
+    gap: 0;
+    min-width: max-content;
+    padding-inline: 0.15rem;
 }
 
-/* Desain Node (Kotak) */
+.flow-wrapper--start,
+.flow-wrapper--end {
+    display: flex;
+    width: 100%;
+    min-width: 0;
+}
+
+.flow-wrapper--start {
+    justify-content: flex-start;
+}
+
+.flow-wrapper--end {
+    justify-content: flex-end;
+}
+
+.flow-wrapper--spaced {
+    margin-bottom: 1.15rem;
+}
+
 .flow-node {
     font-family: var(--font-serif);
-    display: flex;
+    position: relative;
+    display: inline-flex;
     align-items: center;
-    gap: 12px;
-    padding: 14px 24px;
-    background: #ffffff;
-    border-radius: 12px;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.04);
+    gap: 0.72rem;
+    min-height: 3.35rem;
+    padding: 0.88rem 1.15rem 0.88rem 1rem;
+    background: var(--flow-node-bg);
+    border: 1px solid var(--flow-node-border);
+    border-left: 4px solid var(--flow-arrow-neutral);
+    border-radius: 16px;
+    box-shadow: var(--flow-node-shadow);
+    color: color-mix(in srgb, var(--primary) 86%, var(--secondary) 14%);
     white-space: nowrap;
-    border-left: 5px solid #ccc; /* Default border */
-    transition: transform 0.2s ease;
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease,
+        border-color 0.2s ease,
+        background-color 0.2s ease;
 }
 
 .flow-node:hover {
-    transform: translateY(-3px);
+    transform: translateY(-2px);
+    box-shadow: 0 14px 24px rgba(87, 70, 74, 0.08);
 }
 
 .node-icon {
-    font-size: 1.2em;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 1.5rem;
+    min-width: 1.5rem;
+    font-size: 1.1rem;
+    line-height: 1;
+    opacity: 0.88;
 }
 
 .node-label {
+    font-size: 0.95rem;
     font-weight: 600;
-    color: #444;
-    letter-spacing: 0.3px;
+    letter-spacing: 0.01em;
+    line-height: 1.45;
+    color: inherit;
 }
 
-/* Desain Arrow (Panah) */
 .flow-arrow {
-    display: flex;
+    position: relative;
+    display: inline-flex;
     align-items: center;
     justify-content: center;
-    width: 50px;
-    color: #cbd5e0;
-    position: relative;
+    width: 3.25rem;
+    min-width: 3.25rem;
+    color: var(--flow-arrow-neutral);
+    flex: 0 0 auto;
 }
 
 .flow-arrow::before {
-    content: '';
-    width: 30px;
-    height: 2px;
+    content: "";
+    width: 1.8rem;
+    height: 1px;
     background: currentColor;
-    display: block;
+    opacity: 0.92;
 }
 
 .flow-arrow::after {
-    content: '▶';
-    font-size: 8px;
+    content: "";
     position: absolute;
-    right: 5px;
+    right: 0.72rem;
+    width: 0.45rem;
+    height: 0.45rem;
+    border-top: 1px solid currentColor;
+    border-right: 1px solid currentColor;
+    transform: rotate(45deg);
 }
 
-/* Variasi Warna (Reusable) */
-.node-sage { border-left-color: #dfd2ef; background: #e6ebe5; }
-.node-orchid { border-left-color: #d8cceb; background: #eae4f9; }
-.node-blue { border-left-color: #8fa9bb; background: #f0f3f4; }
+.node-sage {
+    border-left-color: var(--flow-sage);
+    background:
+        linear-gradient(180deg, rgba(255, 255, 255, 0.9), rgba(237, 243, 234, 0.94));
+}
 
-.arrow-sage { color: #e5b7fa; }
-.arrow-orchid { color: #b5abcc; }
+.node-orchid {
+    border-left-color: var(--flow-orchid);
+    background:
+        linear-gradient(180deg, rgba(255, 255, 255, 0.9), rgba(242, 234, 240, 0.96));
+}
+
+.node-blue {
+    border-left-color: var(--flow-blue);
+    background:
+        linear-gradient(180deg, rgba(255, 255, 255, 0.9), rgba(237, 242, 244, 0.96));
+}
+
+.flow-node--alert {
+    border: 2px dashed #d98a57;
+    border-left-width: 2px;
+    background:
+        linear-gradient(180deg, rgba(255, 248, 243, 0.98), rgba(255, 241, 231, 0.92));
+    color: #a85c2d;
+    transform: scale(1.06);
+    box-shadow: 0 16px 26px rgba(176, 106, 53, 0.12);
+}
+
+.flow-node--alert:hover {
+    transform: scale(1.06) translateY(-2px);
+}
+
+.flow-stack {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.95rem;
+}
+
+.flow-stack__focus {
+    position: relative;
+    z-index: 2;
+    margin: -0.2rem 0;
+}
+
+.flow-stack__axis {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 2px;
+    height: 100%;
+    transform: translate(-50%, -50%);
+    background: linear-gradient(
+        to bottom,
+        rgba(127, 154, 123, 0.45),
+        rgba(217, 138, 87, 0.7),
+        rgba(138, 103, 121, 0.45)
+    );
+    opacity: 0.58;
+    z-index: 1;
+    pointer-events: none;
+}
+
+.arrow-sage {
+    color: color-mix(in srgb, var(--flow-sage) 72%, white 28%);
+}
+
+.arrow-orchid {
+    color: color-mix(in srgb, var(--flow-orchid) 76%, white 24%);
+}
+
+.arrow-blue {
+    color: color-mix(in srgb, var(--flow-blue) 76%, white 24%);
+}
+
+:root[data-theme="dark"] {
+    --flow-bg: rgba(255, 255, 255, 0.025);
+    --flow-panel-border: rgba(214, 168, 188, 0.12);
+    --flow-panel-shadow: 0 18px 34px rgba(0, 0, 0, 0.22);
+    --flow-node-bg: linear-gradient(180deg, rgba(255, 255, 255, 0.045), rgba(255, 255, 255, 0.02));
+    --flow-node-border: rgba(214, 168, 188, 0.14);
+    --flow-node-shadow: 0 12px 24px rgba(0, 0, 0, 0.18);
+    --flow-arrow-neutral: rgba(214, 168, 188, 0.42);
+    --flow-sage-soft: rgba(127, 154, 123, 0.18);
+    --flow-orchid-soft: rgba(138, 103, 121, 0.22);
+    --flow-blue-soft: rgba(114, 138, 151, 0.2);
+}
+
+:root[data-theme="dark"] .flow-container {
+    background:
+        linear-gradient(180deg, rgba(255, 255, 255, 0.02), rgba(255, 255, 255, 0.01)),
+        radial-gradient(circle at top right, rgba(214, 168, 188, 0.08), transparent 38%);
+}
+
+:root[data-theme="dark"] .flow-node {
+    color: var(--main-text);
+}
+
+:root[data-theme="dark"] .node-sage {
+    background:
+        linear-gradient(180deg, rgba(127, 154, 123, 0.16), rgba(127, 154, 123, 0.08));
+}
+
+:root[data-theme="dark"] .node-orchid {
+    background:
+        linear-gradient(180deg, rgba(138, 103, 121, 0.18), rgba(138, 103, 121, 0.08));
+}
+
+:root[data-theme="dark"] .node-blue {
+    background:
+        linear-gradient(180deg, rgba(114, 138, 151, 0.18), rgba(114, 138, 151, 0.08));
+}
+
+:root[data-theme="dark"] .flow-node--alert {
+    border-color: rgba(222, 156, 108, 0.72);
+    background:
+        linear-gradient(180deg, rgba(176, 106, 53, 0.2), rgba(176, 106, 53, 0.08));
+    color: #ffd8bf;
+}
+
+:root[data-theme="dark"] .flow-stack__axis {
+    background: linear-gradient(
+        to bottom,
+        rgba(127, 154, 123, 0.34),
+        rgba(222, 156, 108, 0.72),
+        rgba(138, 103, 121, 0.38)
+    );
+}
+
+@media (max-width: 640px) {
+    .flow-container {
+        margin: 1.45rem 0;
+        padding: 0.85rem 0.85rem 0.95rem;
+        border-radius: 18px;
+    }
+
+    .flow-node {
+        min-height: 3.1rem;
+        padding: 0.82rem 1rem 0.82rem 0.9rem;
+        border-radius: 14px;
+    }
+
+    .node-label {
+        font-size: 0.9rem;
+    }
+
+    .flow-arrow {
+        width: 2.8rem;
+        min-width: 2.8rem;
+    }
+
+    .flow-arrow::before {
+        width: 1.45rem;
+    }
+
+    .flow-arrow::after {
+        right: 0.62rem;
+    }
+}

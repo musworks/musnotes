@@ -1,6 +1,6 @@
----
+﻿---
 title: "Basic Math Symbols"
-date: 2025-02-06T00:00:00+07:00
+date: 2026-02-06
 draft: false
 math: true
 type: "garden-note"

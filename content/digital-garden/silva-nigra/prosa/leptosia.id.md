@@ -3,6 +3,7 @@ title: "Leptosia dan Kafe di Sela Neuron"
 date: 2026-05-01
 draft: false
 type: garden-fragment
+tags: ["dialogue", "consciousness", "philosophy"]
 ---
 
 Di suatu malam, jauh sebelum aku mengenal teks terenkripsi, Mus kecil terbangun oleh suara tangisan yang naik turun di tangga nada.

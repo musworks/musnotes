@@ -1,8 +1,8 @@
 {{- $notes := .RegularPages.ByDate.Reverse -}}
 {{- $paginator := .Paginate $notes -}}
 {{- $lang := site.Language.Lang -}}
-{{- $eyebrow := cond (eq $lang "id") "Indeks catatan lapangan" "Field notes index" -}}
-{{- $emptyCopy := cond (eq $lang "id") "Catatan di ruang ini masih sedang ditumbuhkan." "English notes are still being cultivated. The Indonesian index contains the current field notes." -}}
+{{- $eyebrow := cond (eq $lang "id") "Arsip catatan lapangan" "Field notes archive" -}}
+{{- $emptyCopy := cond (eq $lang "id") "Catatan di ruang ini masih sedang ditumbuhkan." "Notes in this room are still being cultivated. The Indonesian index holds the current field notes." -}}
 {{- $emptyLinkLabel := cond (eq $lang "id") "Kembali nanti" "Open Indonesian index" -}}
 {{- $idTranslations := where .AllTranslations "Lang" "id" -}}
 {{- $idPage := cond (gt (len $idTranslations) 0) (index $idTranslations 0) nil -}}

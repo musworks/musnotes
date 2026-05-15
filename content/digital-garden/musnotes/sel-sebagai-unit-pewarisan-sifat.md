@@ -1,6 +1,6 @@
 ---
 title: "Era Genetika: Sel Sebagai Unit Pewarisan Sifat"
-date: 2026-03-15T00:00:00+07:00
+date: 2026-05-11T00:00:00+07:00
 draft: false
 math: false
 type: "garden-note"
@@ -14,7 +14,7 @@ Seiring berkembangnya ilmu pengetahuan dan teknologi mikroskop, para ilmuwan men
 
 <div style="max-width: 400px; margin: 0 auto; text-align: center;">
 
-  ![dna chromosome](/images/genetics/ilustrasi_dna_kromosom.jpg)
+  ![dna chromosome](/images/genetics/Figure_10_01_03.jpg)
 
   <p style="font-style: italic; font-size: 0.9em; color: #888; margin-top: 10px;">ilustrasi</p>
 

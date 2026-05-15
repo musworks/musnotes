@@ -1,5 +1,5 @@
 ---
 title: "Digital Garden"
-description: "An evolving map of knowledge and thought."
+description: "A living map of notes, fragments, and thought."
 weight: 1
 ---

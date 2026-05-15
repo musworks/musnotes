@@ -1,13 +1,18 @@
-{{- $pages := where site.RegularPages "Params.hiddenInHomeList" "!=" "true" -}}
+{{- $silvaNigra := site.GetPage "section" "digital-garden/silva-nigra" -}}
+{{- $pages := slice -}}
+{{- with $silvaNigra -}}
+    {{- $pages = .RegularPagesRecursive -}}
+{{- end -}}
+{{- $pages = where $pages "Params.hiddenInHomeList" "!=" "true" -}}
 {{- $pages = $pages.ByDate.Reverse -}}
 {{- $feedPages := first 7 $pages -}}
 {{- if gt (len $feedPages) 0 }}
 <section class="home-feed" aria-labelledby="home-feed-title">
     <div class="home-feed__header">
-        <p class="home-feed__eyebrow">{{ cond (eq site.Language.Lang "id") "Pilihan terbaru" "Latest writing" }}</p>
+        <p class="home-feed__eyebrow">{{ cond (eq site.Language.Lang "id") "Tulisan terbaru" "Latest writing" }}</p>
         <div class="home-feed__heading-wrap">
-            <h2 id="home-feed-title" class="home-feed__title">{{ cond (eq site.Language.Lang "id") "Dari Kebun" "From the Garden" }}</h2>
-            <p class="home-feed__intro">{{ cond (eq site.Language.Lang "id") "Catatan reflektif, eksperimen kecil, dan hal-hal yang masih tumbuh perlahan." "Reflective notes, small experiments, and thoughts still taking shape." }}</p>
+            <h2 id="home-feed-title" class="home-feed__title">{{ cond (eq site.Language.Lang "id") "From the Garden" "From the Garden" }}</h2>
+            <p class="home-feed__intro">{{ cond (eq site.Language.Lang "id") "Catatan reflektif, eksperimen kecil, dan hal-hal yang masih tumbuh" "Reflective notes, small experiments, and thoughts still taking shape." }}</p>
         </div>
     </div>
 

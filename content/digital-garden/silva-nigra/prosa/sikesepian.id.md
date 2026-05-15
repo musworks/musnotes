@@ -3,6 +3,7 @@ title: "Sebelum Kesepian Didefinisikan"
 date: 2026-05-04
 draft: false
 type: garden-fragment
+tags: ["consciousness", "philosophy", "loneliness"]
 ---
 
 Si kesepian.

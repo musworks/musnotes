@@ -21,7 +21,7 @@
 {{- else }}
 <body id="top">
 {{- end }}
-    <a class="skip-link" href="#main">{{ cond (eq site.Language.Lang "en") "Skip to content" "Lompat ke konten" }}</a>
+    <a class="skip-link" href="#main">{{ cond (eq site.Language.Lang "en") "Skip to content" "skip ke konten" }}</a>
     {{ partialCached "header.html" . .Page -}}
     <main id="main" class="main" tabindex="-1">
         {{- block "main" . }}{{ end }}

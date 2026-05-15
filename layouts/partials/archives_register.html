@@ -1,9 +1,9 @@
 {{- $lang := .Site.Language.Lang -}}
 {{- $isIndonesian := eq $lang "id" -}}
-{{- $kicker := cond $isIndonesian "SPECIMEN REGISTER" "SPECIMEN REGISTER" -}}
+{{- $kicker := cond $isIndonesian "QUIET REGISTER" "QUIET REGISTER" -}}
 {{- $emptyTitle := cond $isIndonesian "Belum ada arsip terbuka" "No public entries yet" -}}
 {{- $emptyCopy := cond $isIndonesian "Catatan publik untuk ruang ini belum tersedia. Arsip akan tumbuh perlahan, seiring musim." "No public notes have been filed in this register yet. The cabinet will fill in time." -}}
-{{- $specimenLabel := cond $isIndonesian "spesimen terbuka" "open specimens" -}}
+{{- $specimenLabel := cond $isIndonesian "entri terbuka" "open entries" -}}
 {{- $entryLabel := cond $isIndonesian "entri" "entries" -}}
 {{- $archivePages := slice -}}
 {{- range .Site.RegularPages -}}
