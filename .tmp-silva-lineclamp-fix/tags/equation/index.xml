@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Equation on MuS</title>
+    <link>https://www.musnotes.my.id/tags/equation/</link>
+    <description>Recent content in Equation on MuS</description>
+    <generator>Hugo</generator>
+    <language>id-ID</language>
+    <lastBuildDate>Thu, 23 Apr 2026 01:00:00 +0700</lastBuildDate>
+    <atom:link href="https://www.musnotes.my.id/tags/equation/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Entropi Identitas</title>
+      <link>https://www.musnotes.my.id/digital-garden/silva-nigra/neural-gaps/notes-on-doubt/entropi-identitas/</link>
+      <pubDate>Thu, 23 Apr 2026 01:00:00 +0700</pubDate>
+      <guid>https://www.musnotes.my.id/digital-garden/silva-nigra/neural-gaps/notes-on-doubt/entropi-identitas/</guid>
+      <description>Di sebuah pemakaman di Wina, terukir sebuah persamaan tentang entropi pada nisan Ludwig Boltzmann. Jika identitas kita adalah sebuah sistem, persamaan ini menjelaskan mengapa kita butuh ruang untuk menjadi &amp;lsquo;berantakan&amp;rsquo; agar bisa terus berkembang.</description>
+    </item>
+  </channel>
+</rss>

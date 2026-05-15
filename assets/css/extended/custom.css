@@ -2140,6 +2140,7 @@ body:has(.silva-archive) .main {
     line-height: 1.78;
     color: #7b7078;
     display: -webkit-box;
+    line-clamp: 4;
     -webkit-box-orient: vertical;
     -webkit-line-clamp: 4;
     overflow: hidden;
@@ -2266,6 +2267,7 @@ body:has(.silva-archive) .main {
     line-height: 1.8;
     color: #7b7078;
     display: -webkit-box;
+    line-clamp: 3;
     -webkit-box-orient: vertical;
     -webkit-line-clamp: 3;
     overflow: hidden;

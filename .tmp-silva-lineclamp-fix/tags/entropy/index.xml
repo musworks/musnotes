@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Entropy on MuS</title>
+    <link>https://www.musnotes.my.id/tags/entropy/</link>
+    <description>Recent content in Entropy on MuS</description>
+    <generator>Hugo</generator>
+    <language>id-ID</language>
+    <lastBuildDate>Tue, 12 May 2026 01:00:00 +0700</lastBuildDate>
+    <atom:link href="https://www.musnotes.my.id/tags/entropy/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Simpul Waktu Bagian I: Dilempar Penghapus oleh Profesor Tua</title>
+      <link>https://www.musnotes.my.id/digital-garden/silva-nigra/neural-gaps/notes-on-doubt/pertemuan_arah_waktu/</link>
+      <pubDate>Tue, 12 May 2026 01:00:00 +0700</pubDate>
+      <guid>https://www.musnotes.my.id/digital-garden/silva-nigra/neural-gaps/notes-on-doubt/pertemuan_arah_waktu/</guid>
+      <description>Catatan tentang batas model linear dalam memahami pertemuan dua arah waktu yang berlawanan.</description>
+    </item>
+    <item>
+      <title>Entropi Identitas</title>
+      <link>https://www.musnotes.my.id/digital-garden/silva-nigra/neural-gaps/notes-on-doubt/entropi-identitas/</link>
+      <pubDate>Thu, 23 Apr 2026 01:00:00 +0700</pubDate>
+      <guid>https://www.musnotes.my.id/digital-garden/silva-nigra/neural-gaps/notes-on-doubt/entropi-identitas/</guid>
+      <description>Di sebuah pemakaman di Wina, terukir sebuah persamaan tentang entropi pada nisan Ludwig Boltzmann. Jika identitas kita adalah sebuah sistem, persamaan ini menjelaskan mengapa kita butuh ruang untuk menjadi &amp;lsquo;berantakan&amp;rsquo; agar bisa terus berkembang.</description>
+    </item>
+  </channel>
+</rss>

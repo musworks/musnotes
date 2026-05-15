@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Categories on MuS</title>
+    <link>https://www.musnotes.my.id/categories/</link>
+    <description>Recent content in Categories on MuS</description>
+    <generator>Hugo</generator>
+    <language>id-ID</language>
+    <lastBuildDate>Tue, 12 May 2026 01:00:00 +0700</lastBuildDate>
+    <atom:link href="https://www.musnotes.my.id/categories/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Philosophy</title>
+      <link>https://www.musnotes.my.id/categories/philosophy/</link>
+      <pubDate>Tue, 12 May 2026 01:00:00 +0700</pubDate>
+      <guid>https://www.musnotes.my.id/categories/philosophy/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Physics</title>
+      <link>https://www.musnotes.my.id/categories/physics/</link>
+      <pubDate>Tue, 12 May 2026 01:00:00 +0700</pubDate>
+      <guid>https://www.musnotes.my.id/categories/physics/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Certainty</title>
+      <link>https://www.musnotes.my.id/categories/certainty/</link>
+      <pubDate>Fri, 01 May 2026 00:00:00 +0000</pubDate>
+      <guid>https://www.musnotes.my.id/categories/certainty/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Identity</title>
+      <link>https://www.musnotes.my.id/categories/identity/</link>
+      <pubDate>Fri, 01 May 2026 00:00:00 +0000</pubDate>
+      <guid>https://www.musnotes.my.id/categories/identity/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Social Narratives</title>
+      <link>https://www.musnotes.my.id/categories/social-narratives/</link>
+      <pubDate>Wed, 22 Apr 2026 01:00:00 +0700</pubDate>
+      <guid>https://www.musnotes.my.id/categories/social-narratives/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Confused</title>
+      <link>https://www.musnotes.my.id/categories/confused/</link>
+      <pubDate>Sun, 19 Apr 2026 00:00:00 +0000</pubDate>
+      <guid>https://www.musnotes.my.id/categories/confused/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Biology</title>
+      <link>https://www.musnotes.my.id/categories/biology/</link>
+      <pubDate>Sun, 15 Mar 2026 00:00:00 +0700</pubDate>
+      <guid>https://www.musnotes.my.id/categories/biology/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Cell Biology</title>
+      <link>https://www.musnotes.my.id/categories/cell-biology/</link>
+      <pubDate>Sun, 15 Mar 2026 00:00:00 +0700</pubDate>
+      <guid>https://www.musnotes.my.id/categories/cell-biology/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Ecology</title>
+      <link>https://www.musnotes.my.id/categories/ecology/</link>
+      <pubDate>Sun, 15 Mar 2026 00:00:00 +0700</pubDate>
+      <guid>https://www.musnotes.my.id/categories/ecology/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Genetics</title>
+      <link>https://www.musnotes.my.id/categories/genetics/</link>
+      <pubDate>Sun, 15 Mar 2026 00:00:00 +0700</pubDate>
+      <guid>https://www.musnotes.my.id/categories/genetics/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Mathematics</title>
+      <link>https://www.musnotes.my.id/categories/mathematics/</link>
+      <pubDate>Thu, 06 Feb 2025 00:00:00 +0700</pubDate>
+      <guid>https://www.musnotes.my.id/categories/mathematics/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Reference</title>
+      <link>https://www.musnotes.my.id/categories/reference/</link>
+      <pubDate>Thu, 06 Feb 2025 00:00:00 +0700</pubDate>
+      <guid>https://www.musnotes.my.id/categories/reference/</guid>
+      <description></description>
+    </item>
+  </channel>
+</rss>

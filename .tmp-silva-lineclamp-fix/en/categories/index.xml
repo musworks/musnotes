@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Categories on MuS</title>
+    <link>https://www.musnotes.my.id/en/categories/</link>
+    <description>Recent content in Categories on MuS</description>
+    <generator>Hugo</generator>
+    <language>en-US</language>
+    <lastBuildDate>Tue, 12 May 2026 01:00:00 +0700</lastBuildDate>
+    <atom:link href="https://www.musnotes.my.id/en/categories/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Philosophy</title>
+      <link>https://www.musnotes.my.id/en/categories/philosophy/</link>
+      <pubDate>Tue, 12 May 2026 01:00:00 +0700</pubDate>
+      <guid>https://www.musnotes.my.id/en/categories/philosophy/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Physics</title>
+      <link>https://www.musnotes.my.id/en/categories/physics/</link>
+      <pubDate>Tue, 12 May 2026 01:00:00 +0700</pubDate>
+      <guid>https://www.musnotes.my.id/en/categories/physics/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Certainty</title>
+      <link>https://www.musnotes.my.id/en/categories/certainty/</link>
+      <pubDate>Fri, 01 May 2026 00:00:00 +0000</pubDate>
+      <guid>https://www.musnotes.my.id/en/categories/certainty/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Identity</title>
+      <link>https://www.musnotes.my.id/en/categories/identity/</link>
+      <pubDate>Fri, 01 May 2026 00:00:00 +0000</pubDate>
+      <guid>https://www.musnotes.my.id/en/categories/identity/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Social Narratives</title>
+      <link>https://www.musnotes.my.id/en/categories/social-narratives/</link>
+      <pubDate>Wed, 22 Apr 2026 01:00:00 +0700</pubDate>
+      <guid>https://www.musnotes.my.id/en/categories/social-narratives/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Confused</title>
+      <link>https://www.musnotes.my.id/en/categories/confused/</link>
+      <pubDate>Sun, 19 Apr 2026 00:00:00 +0000</pubDate>
+      <guid>https://www.musnotes.my.id/en/categories/confused/</guid>
+      <description></description>
+    </item>
+  </channel>
+</rss>
