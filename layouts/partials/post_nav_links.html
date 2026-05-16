@@ -14,14 +14,18 @@
 <nav class="paginav">
   {{- with $pages.Prev . }}
   <a class="prev" href="{{ .Permalink }}">
-    <span class="title">{{ cond (eq site.Language.Lang "id") "Artikel lebih baru" "Newer article" }}</span>
+    <span class="title">
+      <span class="paginav__arrow" aria-hidden="true">&larr;</span>
+    </span>
     <span>{{- .Name -}}</span>
   </a>
   {{- end }}
 
   {{- with $pages.Next . }}
   <a class="next" href="{{ .Permalink }}">
-    <span class="title">{{ cond (eq site.Language.Lang "id") "Artikel lebih lama" "Older article" }}</span>
+    <span class="title">
+      <span class="paginav__arrow" aria-hidden="true">&rarr;</span>
+    </span>
     <span>{{- .Name -}}</span>
   </a>
   {{- end }}

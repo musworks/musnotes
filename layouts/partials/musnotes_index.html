@@ -1,8 +1,8 @@
 {{- $notes := .RegularPages.ByDate.Reverse -}}
 {{- $paginator := .Paginate $notes -}}
 {{- $lang := site.Language.Lang -}}
-{{- $eyebrow := cond (eq $lang "id") "Arsip catatan lapangan" "Field notes archive" -}}
-{{- $emptyCopy := cond (eq $lang "id") "Catatan di ruang ini masih sedang ditumbuhkan." "Notes in this room are still being cultivated. The Indonesian index holds the current field notes." -}}
+{{- $eyebrow := cond (eq $lang "id") "Indeks catatan" "Field notes index" -}}
+{{- $emptyCopy := cond (eq $lang "id") "Catatan di ruang belum ada dalam bahasa inggris." "English notes are still being cultivated. The Indonesian index contains the current field notes." -}}
 {{- $emptyLinkLabel := cond (eq $lang "id") "Kembali nanti" "Open Indonesian index" -}}
 {{- $idTranslations := where .AllTranslations "Lang" "id" -}}
 {{- $idPage := cond (gt (len $idTranslations) 0) (index $idTranslations 0) nil -}}
@@ -74,7 +74,7 @@
       <nav class="pagination">
         {{- if $paginator.HasPrev }}
         <a class="prev" href="{{ $paginator.Prev.URL | absURL }}">
-          Ã‚Â«&nbsp;{{ i18n "prev_page" }}&nbsp;
+          &laquo;&nbsp;{{ i18n "prev_page" }}&nbsp;
           {{- if (.Param "ShowPageNums") }}
           {{- sub $paginator.PageNumber 1 }}/{{ $paginator.TotalPages }}
           {{- end }}
@@ -85,7 +85,7 @@
           {{- i18n "next_page" }}&nbsp;
           {{- if (.Param "ShowPageNums") }}
           {{- add 1 $paginator.PageNumber }}/{{ $paginator.TotalPages }}
-          {{- end }}&nbsp;Ã‚Â»
+          {{- end }}&nbsp;&raquo;
         </a>
         {{- end }}
       </nav>

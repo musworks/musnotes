@@ -1,6 +1,6 @@
 ---
 title: "Before Loneliness is Defined"
-date: 2026-05-04
+date: 2026-05-05T00:00:00+07:00
 draft: false
 type: garden-fragment
 tags: ["consciousness", "philosophy", "loneliness"]

@@ -1,6 +1,6 @@
 ---
 title: "Sebelum Kesepian Didefinisikan"
-date: 2026-05-04
+date: 2026-05-05
 draft: false
 type: garden-fragment
 tags: ["consciousness", "philosophy", "loneliness"]

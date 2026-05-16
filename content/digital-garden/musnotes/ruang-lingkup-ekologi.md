@@ -14,40 +14,30 @@ Ekologi mempelajari kehidupan dalam banyak lapisan. Para ahli ekologi meneliti i
 {{< rawhtml >}}
 <div class="flow-container">
     <div class="flow-wrapper">
-        
-         <div class="flow-node node-sage">
+        <div class="flow-node node-sage">
             <span class="node-icon">🧬</span>
             <span class="node-label">Gen & Genom</span>
         </div>
-        
         <div class="flow-arrow arrow-sage"></div>
-
         <div class="flow-node node-sage">
             <span class="node-icon">👤</span>
             <span class="node-label">Individu</span>
         </div>
-
         <div class="flow-arrow arrow-sage"></div>
-
         <div class="flow-node node-sage">
             <span class="node-icon">👥</span>
             <span class="node-label">Populasi</span>
         </div>
-
         <div class="flow-arrow arrow-orchid"></div>
-
         <div class="flow-node node-orchid">
             <span class="node-icon">🏠</span>
             <span class="node-label">Komunitas</span>
         </div>
-
         <div class="flow-arrow arrow-orchid"></div>
-
         <div class="flow-node node-orchid">
             <span class="node-icon">🌅</span>
             <span class="node-label">Ekosistem</span>
         </div>
-
     </div>
 </div>
 {{< /rawhtml >}}

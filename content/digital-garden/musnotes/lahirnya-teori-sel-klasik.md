@@ -16,13 +16,13 @@ Melalui pengamatan pada jaringan tumbuhan dan hewan, dua ilmuwan Jerman ini meru
 2. Sel merupakan unit struktural terkecil yang mendasar bagi semua makhluk hidup.
 
 <style>
-/* CSS Diagram Cabang (Converge) */
+
 .converge-diagram { display: flex; align-items: center; justify-content: center; gap: 15px; margin: 30px auto; flex-wrap: nowrap; }
 .converge-left { display: flex; flex-direction: column; gap: 20px; }
 .converge-arrows { display: flex; align-items: center; justify-content: center; margin-top: 5px; }
 .converge-right { display: flex; align-items: center; }
 
-/* Responsive untuk HP: Berubah jadi vertikal kalau layarnya kecil banget */
+
 @media (max-width: 600px) {
 .converge-diagram { flex-direction: column; }
 .converge-left { flex-direction: row; flex-wrap: wrap; justify-content: center;}
