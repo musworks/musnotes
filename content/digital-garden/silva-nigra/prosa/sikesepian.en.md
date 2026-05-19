@@ -4,6 +4,10 @@ date: 2026-05-05T00:00:00+07:00
 draft: false
 type: garden-fragment
 tags: ["consciousness", "philosophy", "loneliness"]
+cover:
+  image: "/images/sebelum-kesepian-didefinisikan.png"
+  hiddenInList: true
+
 ---
 
 The lonely one.

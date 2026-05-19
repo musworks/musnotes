@@ -4,6 +4,9 @@ date: 2026-05-05
 draft: false
 type: garden-fragment
 tags: ["consciousness", "philosophy", "loneliness"]
+cover:
+  image: "/images/sebelum-kesepian-didefinisikan.png"
+  hiddenInList: true
 ---
 
 Si kesepian.
