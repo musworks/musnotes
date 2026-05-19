@@ -1,11 +1,14 @@
 ---
 title: "{{ replace .File.ContentBaseName `-` ` ` | title }}"
 description: A fragment, intuition, or unfinished trace inside the digital garden.
-date:
-    "{ .Date }": null
+date: {{ .Date }}
 draft: true
 type: garden-fragment
 layout: single
+cover:
+  image: "/images/sebelum-kesepian-didefinisikan.png"
+  hiddenInList: true
+  hiddenInSingle: true
 categories: []
 tags: []
 ---

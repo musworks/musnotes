@@ -3,6 +3,9 @@ title: "A House That Appears Empty from the Outside"
 date: 2026-05-11T22:06:00+07:00
 type: garden-fragment
 tags: ["music", "consciousness", "imagination"]
+cover:
+  image: "/images/sebuah-rumah-yang-dari-luar-keliatannya-kosong.png"
+  hiddenInSingle: true
 ---
 
 *Listening to: Clara Schumann — Nocturne Op. 6 No. 2 (1827 Stein piano)*

@@ -74,7 +74,7 @@ kondisi 2:
 ██████
 ```
 
-😮 Yang terjadi:
+ Yang terjadi:
 
 * hanya bagian atas yang membelah
 * bagian bawah yang kaya *yolk* tetap utuh
@@ -217,9 +217,9 @@ Hanya bagian “ringan” yang membelah dan *Yolk* tetap utuh sebagai cadangan m
 
 Secara sederhana:
 
-> 💡 Cleavage mengikuti ruang bebas dari yolk.
+>  Cleavage mengikuti ruang bebas dari yolk.
 
-Jadi, ketika kita melihat tipe segmentasi embrio, kita sebenarnya sedang melihat bagaimana sel awal “bernegosiasi” dengan isi telurnya sendiri. Sedikit dramatik, tapi biologi memang kadang seperti arsitektur kecil yang sedang mencari jalan keluar dari dapur kuning bernama *yolk* 🥚
+Jadi, ketika kita melihat tipe segmentasi embrio, kita sebenarnya sedang melihat bagaimana sel awal “bernegosiasi” dengan isi telurnya sendiri. Sedikit dramatik, tapi biologi memang kadang seperti arsitektur kecil yang sedang mencari jalan keluar dari dapur kuning bernama *yolk* 
 
 {{< mus-divider >}}
 

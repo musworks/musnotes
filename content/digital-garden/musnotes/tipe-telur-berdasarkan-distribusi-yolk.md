@@ -59,7 +59,7 @@ Pada gambar, pola umumnya menunjukkan pembelahan yang terjadi pada seluruh bagia
 - D = 4 sel
 - E = 8 sel
 
-👉 Semua sel terlihat membelah secara relatif simetris.
+ Semua sel terlihat membelah secara relatif simetris.
 
 🔹 Baris tengah menunjukkan tahap selanjutnya:
 
@@ -217,7 +217,7 @@ Contoh umum:
 
 {{< mus-divider >}}
 
-## Ringkasan 😃
+## Ringkasan 
 
 {{< rawhtml >}}
 <div class="flow-container">
@@ -243,7 +243,7 @@ Contoh umum:
 
 {{< mus-divider >}}
 
-## 🧩 Ringkasan Versi Cepat
+##  Ringkasan Versi Cepat
 
 ```text
 ISOLECITHAL     → yolk merata         → cleavage total
@@ -256,14 +256,14 @@ CENTROLECITHAL  → yolk di tengah      → hanya bagian pinggir
 
 ## Insight Konseptual
 
-> ✨ Bukan cuma jumlah yolk yang penting, tapi di mana dia berada.
+>  Bukan cuma jumlah yolk yang penting, tapi di mana dia berada.
 
 - Merata → semua bagian telur relatif bebas membelah
 - Menumpuk di kutub vegetal → pembelahan jadi lebih lambat di bawah
 - Sangat banyak di satu sisi → pembelahan hanya terjadi di blastodisk
 - Di tengah → pembelahan bergeser ke bagian perifer
 
-Dengan kata lain, distribusi *yolk* mengatur “rute” pembelahan embrio. Cleavage seperti mencari jalan paling mungkin di antara ruang sitoplasma dan hambatan *yolk*. Biologi kecil, tapi dramanya rapi sekali 🥚
+Dengan kata lain, distribusi *yolk* mengatur “rute” pembelahan embrio. Cleavage seperti mencari jalan paling mungkin di antara ruang sitoplasma dan hambatan *yolk*. Biologi kecil, tapi dramanya rapi sekali 
 
 {{< mus-divider >}}
 

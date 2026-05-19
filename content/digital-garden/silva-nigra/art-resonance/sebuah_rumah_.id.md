@@ -4,6 +4,9 @@ date: 2026-05-11T22:06:00+07:00
 type: garden-fragment
 summary: "karena informasi sejarah di dalam otakku terbatas, maka masa lalu yang bisa kujangkau hanya masa lalu yang sudah aku ketahui?"
 tags: ["music", "consciousness", "imagination"]
+cover:
+  image: "/images/sebuah-rumah-yang-dari-luar-keliatannya-kosong.png"
+  hiddenInSingle: true
 ---
 
 *Mendengarkan: Clara Schumann — Nocturne Op. 6 No. 2 (1827 Stein piano)*

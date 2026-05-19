@@ -7,6 +7,9 @@ summary: "If I am a mirror, and the mirror is you, then we are one. It sounds ro
 type: "garden-note"
 categories: ["Identity","Certainty"]
 tags: ["identity","logic","perception"]
+cover:
+  image: "/images/maaf-aku-gagal-konsisten.png"
+  hiddenInSingle: true
 ---
 
 I’ve taken the MBTI test several times, and the results always fluctuate. I’ve been an INFP, an INFJ, an INTJ, and most recently, an INTP.

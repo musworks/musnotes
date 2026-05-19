@@ -6,7 +6,10 @@ math: false
 type: garden-fragment
 summary: "A cafe dialogue about loneliness, the dualism of the mind, and a network of mischievous neurons."
 categories: ["Prosa", "Silva Nigra"]
-tags: ["dialogue", "consciousness", "philosophy", "loneliness", "english"]
+tags: ["dialogue", "consciousness", "philosophy", "loneliness"]
+cover:
+  image: "/images/dialog-di-sela-neuron.png"
+  hiddenInSingle: true
 ---
 
 >_"Sorry I took so long in the restroom. It's become somewhat of a ritual."_

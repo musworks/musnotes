@@ -6,8 +6,7 @@ type: garden-fragment
 tags: ["consciousness", "philosophy", "loneliness"]
 cover:
   image: "/images/sebelum-kesepian-didefinisikan.png"
-  hiddenInList: true
-
+  hiddenInSingle: true
 ---
 
 The lonely one.

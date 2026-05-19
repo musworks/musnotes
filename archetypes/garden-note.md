@@ -5,6 +5,10 @@ date: {{ .Date }}
 draft: true
 type: "garden-note"
 layout: "single"
+cover:
+  image: "/images/sebelum-kesepian-didefinisikan.png"
+  hiddenInList: true
+  hiddenInSingle: true
 categories: []
 tags: []
 ---

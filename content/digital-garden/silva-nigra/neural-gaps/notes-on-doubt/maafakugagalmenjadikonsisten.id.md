@@ -7,6 +7,9 @@ type: "garden-note"
 summary: "Kalau aku adalah cermin, dan cermin adalah kamu, maka kita adalah satu. Kedengarannya romantis. Tapi secara logika… ini terasa horor"
 categories: ["Identity","Certainty"]
 tags: ["identity","logic","perception"]
+cover:
+  image: "/images/maaf-aku-gagal-konsisten.png"
+  hiddenInSingle: true
 ---
 
 Aku pernah beberapa kali mencoba tes MBTI, dan hasilnya berubah-ubah. Pernah INFP, INFJ, INTJ, dan terakhir INTP.

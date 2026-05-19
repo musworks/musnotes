@@ -4,6 +4,9 @@ date: 2026-04-27
 draft: false
 type: garden-fragment
 tags: ["species","ecology"]
+cover:
+  image: "/images/troides-helena.png"
+  hiddenInSingle: true
 ---
 
 Di suatu sudut pikiranku, ada sebuah wilayah bernama _Silva Nigra_; hutan dengan daun-daun hitam

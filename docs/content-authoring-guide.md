@@ -54,6 +54,7 @@ Use YAML front matter (`---`) for normal content files.
 - `tags`
 - `math`
 - `layout`
+- `cover`
 
 ### Date format
 
@@ -89,6 +90,26 @@ Current repo usage:
 - `type: garden-fragment` for fragmentary Silva Nigra entries
 - `type: "garden-node"` for section index pages
 
+### `cover`
+
+Recommended default for article content in this repo:
+
+```yaml
+cover:
+  image: "/images/sebelum-kesepian-didefinisikan.png"
+  hiddenInList: true
+  hiddenInSingle: true
+```
+
+Use this when you want a stable default cover asset for new posts without showing the image in list cards or on the single article page.
+
+Notes:
+
+- `cover.image` is the field used by the current `PaperMod` setup
+- `hiddenInList: true` hides the cover from list/archive views
+- `hiddenInSingle: true` hides the cover from the article page itself
+- the cover value can still be replaced per article when needed
+
 ### Regular musnotes article
 
 ```yaml
@@ -98,6 +119,10 @@ date: 2026-05-15T22:00:00+07:00
 draft: false
 math: false
 type: "garden-note"
+cover:
+  image: "/images/sebelum-kesepian-didefinisikan.png"
+  hiddenInList: true
+  hiddenInSingle: true
 summary: "Ringkasan singkat 1-2 kalimat."
 categories: ["Biology", "Ecology"]
 tags: ["field notes", "ekologi", "konsep dasar"]
@@ -115,6 +140,10 @@ date: 2026-05-15T22:00:00+07:00
 draft: false
 math: false
 type: "garden-note"
+cover:
+  image: "/images/sebelum-kesepian-didefinisikan.png"
+  hiddenInList: true
+  hiddenInSingle: true
 summary: "Ringkasan singkat untuk daftar dan preview."
 categories: ["Identity", "Philosophy"]
 tags: ["identity", "memory", "perception"]
@@ -131,6 +160,10 @@ title: "Judul Fragmen"
 date: 2026-05-15T22:00:00+07:00
 draft: false
 type: garden-fragment
+cover:
+  image: "/images/sebelum-kesepian-didefinisikan.png"
+  hiddenInList: true
+  hiddenInSingle: true
 summary: "Jejak ide, intuisi, atau fragmen reflektif."
 tags: ["music", "consciousness", "imagination"]
 ---
@@ -579,6 +612,10 @@ date: 2026-05-15T22:00:00+07:00
 draft: true
 math: false
 type: "garden-note"
+cover:
+  image: "/images/sebelum-kesepian-didefinisikan.png"
+  hiddenInList: true
+  hiddenInSingle: true
 summary: "Ringkasan singkat catatan."
 categories: ["Biology"]
 tags: ["tag-1", "tag-2"]
@@ -602,6 +639,10 @@ date: 2026-05-15T22:00:00+07:00
 draft: true
 math: false
 type: "garden-note"
+cover:
+  image: "/images/sebelum-kesepian-didefinisikan.png"
+  hiddenInList: true
+  hiddenInSingle: true
 summary: "Ringkasan singkat."
 categories: ["Philosophy"]
 tags: ["identity", "memory"]
@@ -624,6 +665,10 @@ title: "Judul Fragmen"
 date: 2026-05-15T22:00:00+07:00
 draft: true
 type: garden-fragment
+cover:
+  image: "/images/sebelum-kesepian-didefinisikan.png"
+  hiddenInList: true
+  hiddenInSingle: true
 summary: "Jejak pemikiran singkat."
 tags: ["music", "consciousness"]
 ---
