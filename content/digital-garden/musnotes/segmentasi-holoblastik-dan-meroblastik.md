@@ -6,7 +6,7 @@ math: false
 type: "garden-note"
 summary: "Segmentasi holoblastik dan meroblastik dibedakan berdasarkan seberapa jauh alur pembelahan mampu menembus sel telur, yang sangat dipengaruhi oleh jumlah dan distribusi yolk."
 categories: ["Biologi", "Embriologi"]
-tags: ["embriologi", "segmentasi", "holoblastik", "meroblastik", "cleavage"]
+tags: ["embriologi", "segmentasi", "holoblastic", "meroblastic", "cleavage"]
 ---
 
 Secara mendasar, perbedaan segmentasi holoblastik dan meroblastik terletak pada **seberapa menyeluruh** alur pembelahan atau *cleavage furrow* memotong sel telur.
@@ -106,25 +106,13 @@ Dalam kondisi ini, *yolk* bertindak seperti semen padat. Pembelahan hanya “men
   <div class="mus-flow-branches">
     <div class="mus-flow-branch">
       <span class="mus-flow-label">Yolk sedikit atau sedang</span>
-      <span class="mus-flow-node">
-        Holoblastik
-      </span>
-      <span class="mus-flow-note">
-        total
-      </span>
-      <span class="mus-flow-note">
-      </span>
+      <span class="mus-flow-node">Holoblastik</span>
+      <span class="mus-flow-note">Cleavage furrow menembus seluruh telur.</span>
     </div>
     <div class="mus-flow-branch">
       <span class="mus-flow-label">Yolk sangat padat</span>
-      <span class="mus-flow-node">
-        Meroblastik
-      </span>
-      <span class="mus-flow-note">
-        parsial
-      </span>
-      <span class="mus-flow-note">
-      </span>
+      <span class="mus-flow-node">Meroblastik</span>
+      <span class="mus-flow-note">Cleavage hanya terjadi di area bebas yolk.</span>
     </div>
   </div>
 </div>
