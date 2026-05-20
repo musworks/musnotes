@@ -333,6 +333,78 @@ Mobile notes:
 - prefer 2-6 nodes per row
 - if the diagram becomes too wide, split it into two smaller diagrams instead of adding custom CSS
 
+#### Branching or tree flow diagrams
+
+Use the tree flow chart variant when:
+
+- the logic branches
+- you are comparing two or more paths
+- one root concept splits into multiple outcomes
+
+Do not use the tree variant for simple linear processes. For step-by-step sequences, keep using the existing linear flow chart syntax and classes above.
+
+Recommended classes:
+
+- `mus-flow-tree`
+- `mus-flow-root`
+- `mus-flow-branches`
+- `mus-flow-branch`
+- `mus-flow-node`
+- `mus-flow-label`
+- `mus-flow-note`
+
+Recommended Hugo Markdown pattern using raw HTML:
+
+```go-html-template
+{{< rawhtml >}}
+<div class="mus-flow-tree">
+  <div class="mus-flow-root">
+    <span class="mus-flow-node">Zigot</span>
+  </div>
+
+  <div class="mus-flow-branches">
+    <div class="mus-flow-branch">
+      <span class="mus-flow-label">Yolk sedikit/sedang</span>
+      <span class="mus-flow-node">Holoblastik</span>
+      <span class="mus-flow-note">Membelah total</span>
+    </div>
+
+    <div class="mus-flow-branch">
+      <span class="mus-flow-label">Yolk sangat padat</span>
+      <span class="mus-flow-node">Meroblastik</span>
+      <span class="mus-flow-note">Membelah parsial</span>
+    </div>
+  </div>
+</div>
+{{< /rawhtml >}}
+```
+
+Encoding safety:
+
+- avoid ASCII-art trees
+- avoid box-drawing characters
+- avoid special arrows in article source
+- let CSS handle connectors instead
+- prefer normal text inside HTML elements
+
+Responsive notes:
+
+- on desktop, branches may display wider or horizontally
+- on mobile, branches stack vertically
+- keep labels short where possible
+
+Do:
+
+- use the tree flow chart for branching biological concepts
+- keep each branch concise
+- use `mus-flow-note` for short explanations
+
+Don't:
+
+- use it for long paragraphs
+- paste text-based diagram art
+- create one-off inline styles in articles
+
 ### 5.2 Biology or ecology diagrams
 
 Preferred approach:
@@ -471,12 +543,15 @@ Preferred rules:
 - use `flow-arrow` between nodes
 - use `flow-wrapper--start` and `flow-wrapper--end` for two-lane alignment
 - use `flow-stack` only for vertically staged diagrams
+- use the tree variant only when one concept branches into multiple outcomes
+- for branching structures, use `mus-flow-tree`, `mus-flow-root`, `mus-flow-branches`, `mus-flow-branch`, `mus-flow-node`, `mus-flow-label`, and `mus-flow-note`
 
 Avoid:
 
 - inline styles for alignment or spacing when `flow-wrapper--start`, `flow-wrapper--end`, or `flow-wrapper--spaced` already works
 - custom one-off wrappers like older `converge-diagram` unless that pattern is first promoted into global CSS
 - long labels that force nodes to become unreadable on mobile
+- ASCII-art trees, box-drawing characters, or pasted text diagrams for branching layouts
 
 Legacy note:
 
@@ -777,6 +852,13 @@ Article-safe reusable classes currently documented here:
 - `flow-stack`
 - `flow-stack__focus`
 - `flow-stack__axis`
+- `mus-flow-tree`
+- `mus-flow-root`
+- `mus-flow-branches`
+- `mus-flow-branch`
+- `mus-flow-node`
+- `mus-flow-label`
+- `mus-flow-note`
 - `table-wrapper`
 
 Reserved layout-level classes that should not be used inside article bodies:

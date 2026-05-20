@@ -13,7 +13,7 @@ Distribusi *yolk* menentukan **di mana pembelahan bisa terjadi**.
 
 Jadi, bukan cuma jumlah *yolk* yang penting, tetapi juga **lokasinya di dalam telur**.
 
-> ✨ Bukan cuma “berapa banyak yolk”, tapi “di mana yolk itu berada”.
+> Bukan cuma “berapa banyak yolk”, tapi “di mana yolk itu berada”.
 
 {{< mus-divider >}}
 
@@ -33,9 +33,9 @@ Tidak ada massa yolk besar
 
 Ini ciri khas:
 
-> **Isolecithal + Holoblastic cleavage**
+ **Isolecithal + Holoblastic cleavage**
 
-Dengan kata lain, tipe telur ini biasanya mengalami **segmentasi holoblastik**, yaitu pembelahan total.
+Dengan kata lain, tipe telur ini biasanya mengalami **segmentasi holoblastik** atau pembelahan total.
 
 {{< mus-divider >}}
 
@@ -82,7 +82,7 @@ Pola umumnya:
 
 {{< mus-divider >}}
 
-## ❗ Detail Menarik
+## Detail Menarik
 
 Walaupun pada tahap lanjut bisa muncul **micromeres** dan **macromeres**, perbedaan ini bukan karena ada *yolk* besar yang menghalangi pembelahan.
 
@@ -211,13 +211,7 @@ Sel terbentuk di permukaan:
 🔵🔵🔵🔵
 ```
 
-Contoh umum:
-
-- serangga
-
 {{< mus-divider >}}
-
-## Ringkasan 
 
 {{< rawhtml >}}
 <div class="flow-container">
@@ -240,17 +234,6 @@ Contoh umum:
   </div>
 </div>
 {{< /rawhtml >}}
-
-{{< mus-divider >}}
-
-##  Ringkasan Versi Cepat
-
-```text
-ISOLECITHAL     → yolk merata         → cleavage total
-MESOLECITHAL    → yolk lebih bawah    → total, tapi tidak seimbang
-TELOLECITHAL    → yolk menumpuk bawah → cuma bagian atas
-CENTROLECITHAL  → yolk di tengah      → hanya bagian pinggir
-```
 
 {{< mus-divider >}}
 

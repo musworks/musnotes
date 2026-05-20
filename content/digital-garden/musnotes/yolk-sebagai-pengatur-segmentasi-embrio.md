@@ -1,6 +1,6 @@
 ---
 title: "Yolk Sebagai Pengatur Ritme dan Pola Pembelahan"
-date: 2026-05-19T22:10:00+07:00
+date: 2026-05-19T00:10:00+07:00
 draft: false
 math: false
 type: "garden-note"
@@ -124,7 +124,7 @@ ada kue, tetapi bagian bawahnya dipenuhi batu besar. Pisau hanya bisa memotong b
 
 Ini mirip **segmentasi meroblastik**, karena pembelahan hanya terjadi pada bagian tertentu.
 
-Analogi ini tentu sederhana, tapi membantu memperlihatkan ide utamanya:
+Analogi ini sederhana, tapi membantu memperlihatkan ide utamanya:
 *yolk* bukan hanya makanan, tetapi juga “massa” yang membatasi pembelahan.
 
 {{< mus-divider >}}
