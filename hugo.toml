@@ -20,6 +20,8 @@ cleanDestinationDir = true
 
 [params]
     env = "production"
+    author = "mus"
+    siteURL = "https://www.musnotes.my.id/"
     mainSections = ["digital-garden"]
     defaultTheme = "auto"
     disableThemeToggle = false
