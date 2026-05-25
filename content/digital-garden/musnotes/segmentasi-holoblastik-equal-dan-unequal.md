@@ -6,7 +6,7 @@ math: false
 type: "garden-note"
 summary: "Holoblastic cleavage membelah seluruh zigot, tetapi ukuran blastomere yang dihasilkan dapat seragam atau tidak seragam tergantung distribusi yolk."
 categories: ["Biologi", "Embriologi"]
-tags: ["embriologi", "holoblastic", "equal cleavage", "unequal cleavage", "blastomere", "yolk"]
+tags: ["embryology", "holoblastic", "equal cleavage", "unequal cleavage", "blastomere", "yolk"]
 ---
 
 Secara umum, **holoblastic cleavage** berarti pembelahan berlangsung secara lengkap pada seluruh zigot. Namun, pembelahan total ini tidak selalu menghasilkan blastomere dengan ukuran yang sama.

@@ -6,7 +6,7 @@ math: false
 type: "garden-note"
 summary: "Bagaimana ekologi bermula dari Ernst Haeckel hingga bertransformasi menjadi ilmu yang kuantitatif dan interdisipliner."
 categories: ["Biology", "Ecology"]
-tags: ["history", "Ernst Haeckel", "ekologi"]
+tags: ["history", "Ernst Haeckel", "ecology"]
 ---
 
 Istilah ekologi mulai digunakan pada tahun 1866 oleh seseorang bernama `Ernst Haeckel`, dia di kenal sebagai pakar biologi.

@@ -6,7 +6,7 @@ math: false
 type: "garden-note"
 summary: "Esai tentang ilusi bahwa ekonomi bisa dipisahkan dari ekosistem, padahal seluruh aktivitas ekonomi berdiri di atas fondasi biologis dan ekologis."
 categories: ["Neural Gaps","ecology", "economy"]
-tags: ["ecology", "economy", "biosfer", "natural capital", "planetary boundaries"]
+tags: ["ecology", "economy", "biosphere", "natural capital", "planetary boundaries"]
 ---
 
 ### The Great Illusion

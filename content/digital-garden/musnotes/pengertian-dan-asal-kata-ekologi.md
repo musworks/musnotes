@@ -5,7 +5,7 @@ draft: false
 type: "garden-note"
 summary: "Definisi utama ekologi dan asal mula istilahnya dari bahasa Yunani kuno: Oikos dan Logos."
 categories: ["Biology", "Ecology"]
-tags: ["definition", "etymology", "ekologi"]
+tags: ["definition", "etymology", "ecology"]
 ---
 
 ### Definisi Utama

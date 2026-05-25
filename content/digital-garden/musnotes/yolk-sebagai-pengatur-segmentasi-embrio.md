@@ -6,7 +6,7 @@ math: false
 type: "garden-note"
 summary: "Yolk bukan hanya cadangan makanan embrio, tetapi juga faktor fisik yang menentukan ritme, lokasi, dan pola segmentasi."
 categories: ["Biologi", "Embriologi"]
-tags: ["embriologi", "yolk", "segmentasi", "cleavage", "perkembangan embrio"]
+tags: ["embryology", "yolk", "cleavage", "embryonic-development"]
 ---
 
 Jumlah dan distribusi *yolk* menentukan apakah embrio membelah sepenuhnya atau hanya sebagian, serta memengaruhi kecepatan dan pola pembelahannya.

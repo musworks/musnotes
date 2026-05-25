@@ -6,7 +6,7 @@ math: false
 type: "garden-note"
 summary: "Segmentasi holoblastik dan meroblastik dibedakan berdasarkan seberapa jauh alur pembelahan mampu menembus sel telur, yang sangat dipengaruhi oleh jumlah dan distribusi yolk."
 categories: ["Biologi", "Embriologi"]
-tags: ["embriologi", "segmentasi", "holoblastic", "meroblastic", "cleavage"]
+tags: ["embryology", "holoblastic", "meroblastic", "cleavage"]
 ---
 
 Secara mendasar, perbedaan segmentasi holoblastik dan meroblastik terletak pada **seberapa menyeluruh** alur pembelahan atau *cleavage furrow* memotong sel telur.

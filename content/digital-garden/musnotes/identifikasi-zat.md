@@ -6,7 +6,7 @@ math: false
 type: "garden-note"
 summary: "Identifikasi zat bisa dilakukan dengan mengamati sifat dasar, perubahan saat dipanaskan, titik leleh dan titik didih, reaksi kimia, serta analisis komposisi."
 categories: ["Chemistry"]
-tags: ["substance", "element", "compound", "mixture", "chemistry-basics"]
+tags: ["substance", "element", "compound", "mixtures", "chemistry-basics"]
 ---
 
 Dalam kimia dasar, suatu zat diklasifikasikan sebagai unsur, senyawa, atau campuran.

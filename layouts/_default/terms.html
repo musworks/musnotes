@@ -1,0 +1,80 @@
+{{- define "main" -}}
+
+{{- if eq .Type "tags" -}}
+{{- $lang := site.Language.Lang -}}
+{{- $title := "Classification" -}}
+{{- $eyebrow := "TOPICAL INDEX" -}}
+{{- $intro := "A topical index for tracing notes, concepts, and fragments growing through this garden." -}}
+{{- $microNote := "Each tag acts like a small marker, gathering related thoughts into visible families." -}}
+{{- $noteSingular := cond (eq $lang "id") "catatan" "note" -}}
+{{- $notePlural := cond (eq $lang "id") "catatan" "notes" -}}
+{{- $terms := .Data.Terms.Alphabetical -}}
+
+<section class="classification classification--tags" aria-labelledby="classification-title" data-taxonomy="tags">
+  <div class="classification__inner">
+    <header class="classification__header">
+      {{- partial "breadcrumbs.html" . }}
+      <div class="classification__hero">
+        <p class="classification__eyebrow">{{ $eyebrow }}</p>
+        <div class="classification__heading">
+          <h1 id="classification-title" class="classification__title">{{ $title }}</h1>
+          <p class="classification__intro">{{ $intro }}</p>
+          <p class="classification__note"><em>{{ $microNote }}</em></p>
+        </div>
+      </div>
+    </header>
+
+    {{- if gt (len $terms) 0 }}
+    <div class="classification__grid" role="list">
+      {{- range $terms }}
+      {{- $name := .Name -}}
+      {{- $count := .Count -}}
+      {{- $noteLabel := cond (eq $count 1) $noteSingular $notePlural -}}
+      {{- $displayName := replaceRE "[-_]+" " " $name | title -}}
+      {{- with site.GetPage (printf "/%s/%s" $.Type $name) }}
+      <article class="classification-card" role="listitem">
+        <div class="classification-card__body">
+          <p class="classification-card__meta">TAGS</p>
+          <h2 class="classification-card__title">{{ $displayName }}</h2>
+          <p class="classification-card__count">{{ $count }} {{ $noteLabel }}</p>
+        </div>
+        <span class="classification-card__arrow" aria-hidden="true">&rarr;</span>
+        <a class="classification-card__link" href="{{ .RelPermalink }}" aria-label="{{ printf "View tag %s" ($displayName | plainify) }}"></a>
+      </article>
+      {{- end }}
+      {{- end }}
+    </div>
+    {{- else }}
+    <section class="classification-empty" aria-live="polite">
+      <p class="classification-empty__copy">{{ cond (eq $lang "id") "Belum ada tag yang dipublikasikan." "No tags have been published yet." }}</p>
+    </section>
+    {{- end }}
+  </div>
+</section>
+{{- else -}}
+{{- if .Title }}
+<header class="page-header">
+    <h1>{{ .Title }}</h1>
+    {{- if .Description }}
+    <div class="post-description">
+        {{ .Description }}
+    </div>
+    {{- end }}
+</header>
+{{- end }}
+
+<ul class="terms-tags">
+    {{- $type := .Type }}
+    {{- range $key, $value := .Data.Terms.Alphabetical }}
+    {{- $name := .Name }}
+    {{- $count := .Count }}
+    {{- with site.GetPage (printf "/%s/%s" $type $name) }}
+    <li>
+        <a href="{{ .Permalink }}">{{ .LinkTitle }} <sup><strong><sup>{{ $count }}</sup></strong></sup> </a>
+    </li>
+    {{- end }}
+    {{- end }}
+</ul>
+{{- end -}}
+
+{{- end -}}

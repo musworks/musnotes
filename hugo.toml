@@ -129,6 +129,11 @@ cleanDestinationDir = true
             weight = 30
 
         [[languages.id.menu.main]]
+            name = "Classification"
+            url = "/tags/"
+            weight = 35
+
+        [[languages.id.menu.main]]
             name = "Cari"
             pageRef = "/search"
             weight = 60
@@ -198,6 +203,11 @@ cleanDestinationDir = true
             name = "Archives"
             url = "/archives/"
             weight = 30
+
+        [[languages.en.menu.main]]
+            name = "Classification"
+            url = "/tags/"
+            weight = 35
 
         [[languages.en.menu.main]]
             name = "Search"

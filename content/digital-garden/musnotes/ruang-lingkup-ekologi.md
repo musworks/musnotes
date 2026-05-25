@@ -6,7 +6,7 @@ math: false
 type: "garden-note"
 summary: "Memahami seberapa luas jangkauan ekologi, mulai dari level genetik hingga biosfer, serta peran sentral manusia di dalamnya."
 categories: ["Biology", "Ecology"]
-tags: ["scope", "biosphere", "human-environment", "ekologi"]
+tags: ["scope", "biosphere", "human-environment", "ecology"]
 ---
 
 Ekologi mempelajari kehidupan dalam banyak lapisan. Para ahli ekologi meneliti interaksi dalam berbagai level biologis, mulai dari gen dan genom, individu, populasi,komunitas, seluruh ekosistem sampai biosfer bumi.

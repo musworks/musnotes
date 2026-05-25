@@ -6,7 +6,7 @@ math: false
 type: "garden-note"
 summary: "Distribusi yolk menentukan di mana pembelahan embrio bisa berlangsung, sehingga menghasilkan pola segmentasi yang berbeda pada telur isolecithal, mesolecithal, telolecithal, dan centrolecithal."
 categories: ["Biologi", "Embriologi"]
-tags: ["embriologi", "yolk", "tipe telur", "cleavage", "segmentasi"]
+tags: ["embryology", "yolk", "egg-types", "cleavage"]
 ---
 
 Distribusi *yolk* menentukan **di mana pembelahan bisa terjadi**.

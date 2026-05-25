@@ -76,8 +76,6 @@
     const navDrawerId = navToggle ? navToggle.getAttribute('aria-controls') : null;
     const navDrawer = navDrawerId ? document.getElementById(navDrawerId) : null;
     const navDrawerPanel = navDrawer ? navDrawer.querySelector('.nav-drawer__panel') : null;
-    const mobileNavMedia = window.matchMedia('(max-width: 768px)');
-
     if (navToggle && navDrawer && navDrawerPanel) {
         const setDrawerState = (isOpen) => {
             navToggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
@@ -85,15 +83,7 @@
             document.documentElement.classList.toggle('mobile-menu-open', isOpen);
             document.body.classList.toggle('mobile-menu-open', isOpen);
             document.body.classList.toggle('nav-drawer-open', isOpen);
-
-            if (mobileNavMedia.matches) {
-                navDrawer.hidden = !isOpen;
-            } else {
-                navDrawer.hidden = true;
-                document.documentElement.classList.remove('mobile-menu-open');
-                document.body.classList.remove('mobile-menu-open');
-                document.body.classList.remove('nav-drawer-open');
-            }
+            navDrawer.hidden = !isOpen;
         };
 
         setDrawerState(false);
@@ -118,12 +108,6 @@
                 setDrawerState(false);
             }
         });
-
-        if (typeof mobileNavMedia.addEventListener === 'function') {
-            mobileNavMedia.addEventListener('change', () => setDrawerState(false));
-        } else if (typeof mobileNavMedia.addListener === 'function') {
-            mobileNavMedia.addListener(() => setDrawerState(false));
-        }
     }
 
 </script>

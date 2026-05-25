@@ -6,7 +6,7 @@ math: true
 type: "garden-note"
 summary: "In a cemetery in Vienna, an equation about entropy is carved onto Ludwig Boltzmann's tombstone. If our identity is a system, this equation explains why we need the space to be 'messy' in order to keep evolving."
 categories: ["Identity", "Certainty"]
-tags: ["equation", "Entropy","perception", "identity"]
+tags: ["equation", "entropy", "perception", "identity"]
 ---
 
 > In a cemetery in Vienna, on the tombstone of Ludwig Boltzmann, an equation is engraved:

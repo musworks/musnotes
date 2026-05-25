@@ -3,7 +3,7 @@ title: "Leptosia & the Café Between Neurons"
 date: 2026-05-01
 draft: false
 type: garden-fragment
-tags: ["dialogue", "consciousness"]
+tags: ["dialogue", "consciousness", "philosophy"]
 cover:
   image: "/images/leptosia-dan-cafe-di-sela-neuron.png"
   hiddenInSingle: true

@@ -7,8 +7,22 @@
 {{- $lang := .Lang -}}
 {{- $muscryptURL := site.Params.externalLinks.muscrypt -}}
 {{- $pageTranslations := dict -}}
+{{- $searchLink := "" -}}
+{{- $searchTitle := cond (eq $lang "id") "Cari" "Search" -}}
 {{- range .Translations -}}
     {{- $pageTranslations = merge $pageTranslations (dict .Lang .RelPermalink) -}}
+{{- end -}}
+{{- range site.Menus.main -}}
+    {{- $href := .URL -}}
+    {{- if not (findRE "://" .URL) -}}
+        {{- $href = .URL | relLangURL -}}
+    {{- end -}}
+    {{- $menu_item_url := cond (strings.HasSuffix $href "/") $href (printf "%s/" $href) -}}
+    {{- $search_url := "/search/" | relLangURL -}}
+    {{- if and (eq $searchLink "") (not (findRE "://" .URL)) (eq $menu_item_url $search_url) -}}
+        {{- $searchLink = $href -}}
+        {{- $searchTitle = .Title | default .Name -}}
+    {{- end -}}
 {{- end -}}
 {{- $headerID := printf "nav-drawer-%s" .Language.Lang -}}
 
@@ -107,6 +121,18 @@
 
         <div class="nav-end">
             <div class="nav-controls">
+                {{- if $searchLink }}
+                <a href="{{ $searchLink }}" class="nav-search-shortcut" accesskey="/" aria-label="{{ $searchTitle }}" title="{{ $searchTitle }} (Alt + /)">
+                    <svg class="nav-link__icon nav-link__icon--search" xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                        viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round"
+                        stroke-linejoin="round" aria-hidden="true">
+                        <circle cx="11" cy="11" r="7"></circle>
+                        <line x1="20" y1="20" x2="16.65" y2="16.65"></line>
+                    </svg>
+                    <span class="visually-hidden">{{- $searchTitle -}}</span>
+                </a>
+                {{- end }}
+
                 {{- if and (not site.Params.disableLangToggle) (hugo.IsMultilingual) }}
                     {{- with site.Home.AllTranslations }}
                     <ul class="lang-menu lang-menu--desktop" aria-label="Language switcher">
