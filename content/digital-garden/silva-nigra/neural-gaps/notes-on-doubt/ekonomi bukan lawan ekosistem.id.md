@@ -75,7 +75,7 @@ Saat hari distopia ekosistem benar-benar terjadi dan aku masih bernapas, mungkin
 
 Pada akhirnya, ekonomi bukan lawan ekosistem. Ekonomi adalah turunannya. Bukan rumah yang berdiri sendiri, tapi tata kelola kecil di dalam rumah yang lebih besar. Dan tidak ada tata kelola rumah yang bisa disebut berhasil jika rumahnya sendiri sedang dibakar dari fondasinya.
 
-_Bersambung ke Bagian 2: Ketika Kerusakan Menjadi Pertumbuhan_
+_Bersambung ke Bagian 2: [Ketika Kerusakan Menjadi Pertumbuhan](./pertumbuhan.id.md)_
 
 {{< mus-divider >}}
 

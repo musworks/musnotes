@@ -7,7 +7,7 @@ categories: ["Identity", "philosophy","social narratives" ]
 tags: ["identity","social narratives", "Human Brain", "perception"]
 ---
 
-
+In the previous article, I stated that [identity](../identitas/) is an ongoing process that develops our assumptions about ourselves. However, the question is not finished: what if identity is actually a label attached by external parties?
 
 To understand this, we can look at how identity is typically verified. In daily life, identity is often reduced to data: name, place of birth, status, or occupation. As if with just that data, a person can be fully "understood."
 

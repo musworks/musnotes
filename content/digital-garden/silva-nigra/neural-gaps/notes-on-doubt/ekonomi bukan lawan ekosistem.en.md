@@ -75,7 +75,7 @@ If that ecological dystopia finally arrives, the most tragic part will not be th
 
 Ultimately, the economy is not the antagonist of the ecosystem. The economy is its derivative. It is not a freestanding mansion, but a minor household arrangement within a much grander home. And no household management can ever be deemed successful when the house itself is being burned down from its foundations.
 
-*To be continued in Part 2: When Destruction Poses as Growth*
+_To be continued in Part 2: [When Destruction Poses as Growth](./pertumbuhan.en.md)_
 
 {{< mus-divider >}}
 
