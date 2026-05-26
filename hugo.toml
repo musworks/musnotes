@@ -119,6 +119,11 @@ cleanDestinationDir = true
             weight = 20
 
         [[languages.id.menu.main]]
+            name = "Library"
+            url = "/library/"
+            weight = 25
+
+        [[languages.id.menu.main]]
             name = "Quiet Hours"
             url = "https://quiet-hours.musnotes.my.id/"
             weight = 40
@@ -193,6 +198,11 @@ cleanDestinationDir = true
             name = "Digital works"
             url = "/en/projects/"
             weight = 20
+
+        [[languages.en.menu.main]]
+            name = "Library"
+            url = "/en/library/"
+            weight = 25
 
         [[languages.en.menu.main]]
             name = "Quiet Hours"

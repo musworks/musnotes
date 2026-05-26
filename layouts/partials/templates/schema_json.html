@@ -1,4 +1,17 @@
 {{- $siteURL := site.Params.siteURL | default site.BaseURL -}}
+{{- $coverImage := "" -}}
+{{- $coverRelative := false -}}
+{{- with .Params.cover -}}
+  {{- if reflect.IsMap . -}}
+    {{- with .image -}}
+      {{- $coverImage = . -}}
+    {{- end -}}
+    {{- $coverRelative = eq .relative true -}}
+  {{- else if reflect.IsSlice . -}}
+  {{- else -}}
+    {{- $coverImage = . -}}
+  {{- end -}}
+{{- end -}}
 {{- if .IsHome }}
 <script type="application/ld+json">
 {
@@ -76,12 +89,12 @@
   "articleBody": {{ .Content | safeJS | htmlUnescape | plainify }},
   "wordCount" : "{{ .WordCount }}",
   "inLanguage": {{ .Language.Lang | default "en-us" }},
-  {{ if .Params.cover.image -}}
+  {{ if $coverImage -}}
   "image":
-    {{- if (ne .Params.cover.relative true) -}}
-    {{ .Params.cover.image | absURL }},
+    {{- if not $coverRelative -}}
+    {{ $coverImage | absURL }},
     {{- else -}}
-    {{ (path.Join .RelPermalink .Params.cover.image ) | absURL }},
+    {{ (path.Join .RelPermalink $coverImage ) | absURL }},
     {{- end}}
   {{- else }}
     {{- $images := partial "templates/_funcs/get-page-images" . -}}

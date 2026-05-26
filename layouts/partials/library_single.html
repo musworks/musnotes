@@ -1,0 +1,106 @@
+{{- $categories := .Params.category -}}
+{{- $topics := .Params.topics -}}
+{{- $links := .Params.links -}}
+
+<article class="library-detail">
+  <header class="library-detail__header">
+    {{- partial "breadcrumbs.html" . -}}
+  </header>
+
+  <section class="library-detail__main">
+    <div class="library-cover library-cover--detail">
+      {{- with .Params.cover -}}
+      {{- if reflect.IsMap . -}}
+      <img src="{{ .image }}" alt="{{ printf "Cover of %s" $.Title }}" loading="eager" decoding="async">
+      {{- else -}}
+      <img src="{{ . }}" alt="{{ printf "Cover of %s" $.Title }}" loading="eager" decoding="async">
+      {{- end -}}
+      {{- else -}}
+      <div class="library-cover__placeholder" aria-hidden="true">{{ substr .Title 0 1 | upper }}</div>
+      {{- end -}}
+    </div>
+
+    <div class="library-detail__content">
+      <p class="library-detail__eyebrow">{{ .Params.type | default "resource" | humanize }}</p>
+      <h1 class="library-detail__title">{{ .Title }}</h1>
+
+      {{- with .Params.author -}}
+      <p class="library-detail__author">{{ . }}</p>
+      {{- end -}}
+
+      <div class="library-detail__facts">
+        {{- with .Params.status -}}
+        <div class="library-detail__fact">
+          <span class="library-detail__label">{{ cond (eq site.Language.Lang "id") "Status" "Status" }}</span>
+          <span class="library-status library-status--{{ . | urlize }}">{{ . | humanize }}</span>
+        </div>
+        {{- end -}}
+
+        {{- with $categories -}}
+        <div class="library-detail__fact">
+          <span class="library-detail__label">{{ cond (eq site.Language.Lang "id") "Category" "Category" }}</span>
+          <div class="library-detail__chips">
+            {{- range . -}}
+            <span class="library-chip">{{ . }}</span>
+            {{- end -}}
+          </div>
+        </div>
+        {{- end -}}
+
+        {{- with $topics -}}
+        <div class="library-detail__fact">
+          <span class="library-detail__label">{{ cond (eq site.Language.Lang "id") "Topics" "Topics" }}</span>
+          <div class="library-detail__chips">
+            {{- range . -}}
+            <span class="library-chip">{{ . }}</span>
+            {{- end -}}
+          </div>
+        </div>
+        {{- end -}}
+      </div>
+
+      {{- with .Params.description -}}
+      <div class="library-detail__description">
+        <h2>{{ cond (eq site.Language.Lang "id") "Description" "Description" }}</h2>
+        <p>{{ . }}</p>
+      </div>
+      {{- end -}}
+
+      {{- if .Content -}}
+      <div class="library-detail__notes post-content">
+        {{- if not (.Param "disableAnchoredHeadings") -}}
+        {{- partial "anchored_headings.html" .Content -}}
+        {{- else -}}
+        {{- .Content -}}
+        {{- end -}}
+      </div>
+      {{- end -}}
+    </div>
+  </section>
+
+  {{- $hasLinks := false -}}
+  {{- range $name, $url := $links -}}
+    {{- if $url -}}
+      {{- $hasLinks = true -}}
+    {{- end -}}
+  {{- end -}}
+
+  {{- if $hasLinks -}}
+  <section class="library-links" aria-labelledby="library-links-title">
+    <div class="library-links__inner">
+      <h2 id="library-links-title">{{ cond (eq site.Language.Lang "id") "Where to find this" "Where to find this" }}</h2>
+      <div class="library-links__list">
+        {{- range $name, $url := $links -}}
+        {{- if $url -}}
+        <a class="library-links__item" href="{{ $url }}" target="_blank" rel="noopener noreferrer">
+          <span>{{ $name | humanize }}</span>
+          <span aria-hidden="true">&rarr;</span>
+        </a>
+        {{- end -}}
+        {{- end -}}
+      </div>
+      <p class="library-links__disclosure">Some links may be affiliate links. I only list resources that are relevant to my own learning or setup.</p>
+    </div>
+  </section>
+  {{- end -}}
+</article>

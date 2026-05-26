@@ -1,0 +1,58 @@
+{{- define "main" -}}
+{{- $pages := .RegularPages.ByTitle -}}
+
+<section class="library-page" aria-labelledby="library-title">
+  <div class="library-page__inner">
+    <header class="library-page__hero">
+      {{- partial "breadcrumbs.html" . -}}
+      <p class="library-page__eyebrow">{{ cond (eq site.Language.Lang "id") "Rak belajar yang terus bertambah" "An evolving shelf for learning" }}</p>
+      <h1 id="library-title" class="library-page__title">{{ .Title }}</h1>
+      <p class="library-page__subtitle">{{ .Description | default (cond (eq site.Language.Lang "id") "Daftar buku dan resource yang aku punya, baca, pakai, atau simpan untuk nanti." "Books and resources I own, read, use, or keep for later.") }}</p>
+    </header>
+
+    {{- if .Content -}}
+    <div class="library-page__intro md-content">
+      {{- if not (.Param "disableAnchoredHeadings") -}}
+      {{- partial "anchored_headings.html" .Content -}}
+      {{- else -}}
+      {{- .Content -}}
+      {{- end -}}
+    </div>
+    {{- end -}}
+
+    {{- if gt (len $pages) 0 -}}
+    <div class="library-grid" role="list">
+      {{- range $pages -}}
+      {{- $cover := .Params.cover -}}
+      <article class="library-card" role="listitem">
+        <a class="library-card__link" href="{{ .RelPermalink }}" aria-label="{{ printf "%s by %s" .Title (.Params.author | default "Unknown author") }}">
+          <div class="library-cover">
+            {{- if $cover -}}
+            <img src="{{ $cover }}" alt="{{ printf "Cover of %s" .Title }}" loading="lazy" decoding="async">
+            {{- else -}}
+            <div class="library-cover__placeholder" aria-hidden="true">{{ substr .Title 0 1 | upper }}</div>
+            {{- end -}}
+          </div>
+          <div class="library-card__body">
+            <div class="library-card__meta">
+              <h2 class="library-card__title">{{ .Title }}</h2>
+              {{- with .Params.author -}}
+              <p class="library-card__author">{{ . }}</p>
+              {{- end -}}
+            </div>
+            {{- with .Params.status -}}
+            <span class="library-status library-status--{{ . | urlize }}">{{ . | humanize }}</span>
+            {{- end -}}
+          </div>
+        </a>
+      </article>
+      {{- end -}}
+    </div>
+    {{- else -}}
+    <div class="library-page__empty">
+      <p>{{ cond (eq site.Language.Lang "id") "Belum ada item di Library." "No library items yet." }}</p>
+    </div>
+    {{- end -}}
+  </div>
+</section>
+{{- end -}}

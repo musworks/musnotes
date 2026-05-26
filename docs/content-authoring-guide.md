@@ -33,8 +33,200 @@ This repo currently uses these content patterns:
 - section index files such as `_index.md`
   - typically `type: "garden-node"`
   - usually `layout: "list"`
+- `content/library/...`
+  - permanent library items for books and resources
+  - one item per Markdown file
+  - typically `type: "book"`, `type: "paper"`, `type: "tool"`, `type: "course"`, or `type: "resource"`
 
 Current section/list visuals such as `musnotes-index`, `silva-archive`, and `archives-register` are layout-level systems. They are not article body classes and should not be pasted into normal Markdown content.
+
+## 2.1 Library section authoring
+
+The `Library` section is a permanent shelf for books and resources. It is not a store page and should be authored like a personal learning archive.
+
+### Structure
+
+- location: `content/library/`
+- each book or resource should live in its own Markdown file
+- use lowercase filenames with dashes
+
+Examples:
+
+- `content/library/self-theories.md`
+- `content/library/campbell-biology.md`
+- `content/library/molecular-biology-of-the-cell.md`
+
+### Full front matter example
+
+```yaml
+---
+title: "Self Theories"
+author: "Carol S. Dweck, Ph.D."
+type: "book"
+status: "owned"
+category:
+  - "Psychology"
+topics:
+  - "Motivation"
+  - "Personality"
+  - "Self-Development"
+cover: "/images/library/self-theories.jpg"
+links:
+  gramedia: "GRAMEDIA_AFFILIATE_LINK_HERE"
+description: "Buku referensi untuk memahami motivasi, kepribadian, dan pengembangan diri."
+---
+```
+
+### Field guide
+
+- `title`
+  - the title of the book or resource
+- `author`
+  - the author, creator, or main source name
+- `type`
+  - use one of: `book`, `paper`, `tool`, `course`, or `resource`
+- `status`
+  - use one of: `owned`, `reading`, `finished`, `wishlist`, `borrowed`, or `used`
+- `category`
+  - broader classification buckets
+- `topics`
+  - narrower, specific themes or subject areas
+- `cover`
+  - image path for the cover or thumbnail
+- `links.gramedia`
+  - Gramedia affiliate link
+  - this can be left empty if no affiliate link is available yet
+- `description`
+  - short, personal, honest note about why the item matters
+
+### Cover image rules
+
+- store Library cover images in `static/images/library/`
+- use lowercase filenames with dashes
+- example:
+  - `static/images/library/self-theories.jpg`
+- preferred public path in front matter:
+  - `cover: "/images/library/self-theories.jpg"`
+- ideal cover ratio is around `2:3`
+- avoid oversized files
+- compress the image first if needed before adding it to the repo
+
+### Affiliate link rules
+
+- for now, use Gramedia Affiliate links first when available
+- buying links only appear on the detail page, not in the Library grid
+- do not write sales-heavy copy around the link
+- do not pressure readers into buying
+- use the site disclosure as written:
+
+> Some links may be affiliate links. I only list resources that are relevant to my own learning or setup.
+
+### Writing style rules
+
+- Library is not an online store
+- write it like a personal study shelf
+- keep descriptions personal, concise, and honest
+- it is fine to mention whether the book is owned, currently being read, already finished, used as reference, or still on the wishlist
+- avoid hard-selling language such as:
+  - "wajib beli"
+  - "terbaik nomor satu"
+  - "harus punya semua orang"
+
+### Example Library items
+
+#### Example 1: Self Theories
+
+```yaml
+---
+title: "Self Theories"
+author: "Carol S. Dweck, Ph.D."
+type: "book"
+status: "owned"
+category:
+  - "Psychology"
+topics:
+  - "Motivation"
+  - "Personality"
+  - "Self-Development"
+cover: "/images/library/self-theories.jpg"
+links:
+  gramedia: "GRAMEDIA_AFFILIATE_LINK_HERE"
+description: "Buku referensi untuk memahami motivasi, kepribadian, dan pengembangan diri."
+---
+```
+
+#### Example 2: Campbell Biology
+
+```yaml
+---
+title: "Campbell Biology"
+author: "Lisa A. Urry, Michael L. Cain, Steven A. Wasserman, Peter V. Minorsky, Rebecca B. Orr"
+type: "book"
+status: "used"
+category:
+  - "Biology"
+topics:
+  - "General Biology"
+  - "Cell Biology"
+  - "Evolution"
+cover: "/images/library/campbell-biology.jpg"
+links:
+  gramedia: "GRAMEDIA_AFFILIATE_LINK_HERE"
+description: "Salah satu pegangan utama untuk biologi umum dan titik awal yang sering kupakai untuk kembali ke konsep dasar."
+---
+```
+
+#### Example 3: Wishlist item
+
+```yaml
+---
+title: "Molecular Biology of the Cell"
+author: "Bruce Alberts, Alexander Johnson, Julian Lewis, Martin Raff, Keith Roberts, Peter Walter"
+type: "book"
+status: "wishlist"
+category:
+  - "Cell Biology"
+topics:
+  - "Molecular Biology"
+  - "Cell Structure"
+  - "Biochemistry"
+cover: "/images/library/molecular-biology-of-the-cell.jpg"
+links:
+  gramedia: ""
+description: "Masuk wishlist karena ingin punya referensi yang lebih dalam untuk biologi sel dan molekuler."
+---
+```
+
+### Steps for adding a new Library item
+
+1. Create a new Markdown file in `content/library/`.
+2. Add the Library front matter fields.
+3. Save the cover image to `static/images/library/`.
+4. Point `cover` to the public path, for example `/images/library/self-theories.jpg`.
+5. Fill in the Gramedia affiliate link if available.
+6. Run Hugo or local preview.
+7. Check `/library/` to confirm the grid item looks correct.
+8. Open the detail page and confirm metadata, cover, and affiliate link rendering.
+
+### Copy-ready blank Library template
+
+```yaml
+---
+title: "Book or Resource Title"
+author: "Author Name"
+type: "book"
+status: "owned"
+category:
+  - "Main Category"
+topics:
+  - "Topic One"
+  - "Topic Two"
+cover: "/images/library/file-name.jpg"
+links:
+  gramedia: ""
+description: "Short personal note about why this item is here."
+---
+```
 
 ## 3. Front matter standards
 

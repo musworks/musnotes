@@ -42,11 +42,25 @@
   <meta property="og:type" content="website">
 {{- end }}
 
-{{- if .Params.cover.image -}}
-  {{- if (ne .Params.cover.relative true) }}
-    <meta property="og:image" content="{{ .Params.cover.image | absURL }}">
+{{- $coverImage := "" -}}
+{{- $coverRelative := false -}}
+{{- with .Params.cover -}}
+  {{- if reflect.IsMap . -}}
+    {{- with .image -}}
+      {{- $coverImage = . -}}
+    {{- end -}}
+    {{- $coverRelative = eq .relative true -}}
+  {{- else if reflect.IsSlice . -}}
+  {{- else -}}
+    {{- $coverImage = . -}}
+  {{- end -}}
+{{- end -}}
+
+{{- if $coverImage -}}
+  {{- if not $coverRelative }}
+    <meta property="og:image" content="{{ $coverImage | absURL }}">
   {{- else}}
-    <meta property="og:image" content="{{ (path.Join .RelPermalink .Params.cover.image ) | absURL }}">
+    <meta property="og:image" content="{{ (path.Join .RelPermalink $coverImage ) | absURL }}">
   {{- end}}
 {{- else }}
   {{- with partial "_funcs/get-page-images" . }}
