@@ -4135,6 +4135,100 @@ article a:hover,
     color: #5C4A3F;
 }
 
+.post-content .mus-glossary {
+    margin: 2.2rem 0;
+    display: grid;
+    gap: 1rem;
+}
+
+.post-content .mus-glossary__item {
+    display: grid;
+    grid-template-columns: minmax(12rem, 0.85fr) minmax(0, 1.65fr);
+    gap: 1.1rem 1.4rem;
+    padding: 1.25rem 1.35rem 1.3rem;
+    background: #FBF8F4;
+    border: 1px solid rgba(226, 220, 211, 0.75);
+    border-radius: 20px;
+    box-shadow: 0 14px 34px rgba(58, 47, 38, 0.05);
+    box-sizing: border-box;
+}
+
+.post-content .mus-glossary__head {
+    display: grid;
+    align-content: start;
+    gap: 0.7rem;
+    min-width: 0;
+}
+
+.post-content .mus-glossary__body {
+    display: grid;
+    gap: 0.9rem;
+    min-width: 0;
+}
+
+.post-content .mus-glossary__symbol,
+.post-content .mus-glossary__example {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+    min-width: 0;
+}
+
+.post-content .mus-glossary__symbol {
+    font-size: 1.02rem;
+    line-height: 1.45;
+    color: #5B4D42;
+}
+
+.post-content .mus-glossary__symbol--cluster {
+    flex-wrap: nowrap;
+}
+
+.post-content .mus-glossary__label {
+    display: inline-flex;
+    align-items: center;
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: #7D6B60;
+}
+
+.post-content .mus-glossary__read,
+.post-content .mus-glossary__meaning,
+.post-content .mus-glossary__example {
+    margin: 0;
+    color: #4A3F35;
+    line-height: 1.7;
+}
+
+.post-content .mus-glossary__read {
+    font-size: 0.96rem;
+}
+
+.post-content .mus-glossary__meaning {
+    font-size: 0.98rem;
+}
+
+.post-content .mus-glossary__symbol code,
+.post-content .mus-glossary__example code {
+    display: inline-block;
+    padding: 0.24rem 0.52rem;
+    border-radius: 7px;
+    background: rgba(107, 79, 91, 0.07);
+    color: color-mix(in srgb, var(--orchid-accent) 82%, var(--main-text) 18%);
+    font-size: 0.93em;
+    line-height: 1.35;
+    white-space: normal;
+    font-family: "STIX Two Text", "Cambria Math", "Segoe UI Symbol", "Noto Sans Symbols 2", "Alice", Georgia, serif;
+    font-variant-ligatures: none;
+}
+
+.post-content .mus-glossary__symbol code {
+    font-size: 1em;
+}
+
 .post-content h3:has(+ .table-wrapper) {
     letter-spacing: 0.04em;
 }
@@ -4171,6 +4265,29 @@ article a:hover,
 
 :root[data-theme="dark"] .post-content .table-wrapper > table td em {
     color: #E6CBD8;
+}
+
+:root[data-theme="dark"] .post-content .mus-glossary__item {
+    background: rgba(37, 32, 40, 0.84);
+    border-color: rgba(214, 168, 188, 0.18);
+    box-shadow: 0 16px 38px rgba(0, 0, 0, 0.22);
+}
+
+:root[data-theme="dark"] .post-content .mus-glossary__label,
+:root[data-theme="dark"] .post-content .mus-glossary__symbol {
+    color: #F0E4EA;
+}
+
+:root[data-theme="dark"] .post-content .mus-glossary__read,
+:root[data-theme="dark"] .post-content .mus-glossary__meaning,
+:root[data-theme="dark"] .post-content .mus-glossary__example {
+    color: #F2F0F1;
+}
+
+:root[data-theme="dark"] .post-content .mus-glossary__symbol code,
+:root[data-theme="dark"] .post-content .mus-glossary__example code {
+    background: rgba(214, 168, 188, 0.1);
+    color: #f0dce6;
 }
 
 /* Post navigation tuned to the current botanical-editorial look */
@@ -4742,6 +4859,22 @@ article a:hover,
     .post-content .table-wrapper > table th:nth-child(4),
     .post-content .table-wrapper > table td:nth-child(4) {
         width: auto;
+    }
+
+    .post-content .mus-glossary__item {
+        grid-template-columns: 1fr;
+        gap: 0.95rem;
+        padding: 1rem 1rem 1.05rem;
+        border-radius: 16px;
+    }
+
+    .post-content .mus-glossary__head,
+    .post-content .mus-glossary__body {
+        gap: 0.72rem;
+    }
+
+    .post-content .mus-glossary__symbol--cluster {
+        flex-wrap: wrap;
     }
 }
 

@@ -403,6 +403,7 @@ The article-level reusable systems currently documented from `assets/css/extende
 - `mus-divider`
 - the generic flow diagram system
 - the styled table wrapper
+- the glossary card system
 - standard Markdown blockquotes
 
 There is no reusable global article callout class or article image wrapper class yet.
@@ -662,7 +663,77 @@ Mobile notes:
 - 4 columns is possible, but only if cell content stays compact
 - avoid wide prose inside cells
 
-### 5.4 Blockquotes as the current note or callout style
+### 5.4 Glossaries
+
+Use for:
+
+- symbol glossaries
+- term-by-term reference entries with longer explanations
+- structured lookup content that becomes awkward in 4-column tables
+
+Current reusable classes:
+
+- `mus-glossary`
+- `mus-glossary__item`
+- `mus-glossary__head`
+- `mus-glossary__body`
+- `mus-glossary__symbol`
+- `mus-glossary__symbol--cluster`
+- `mus-glossary__label`
+- `mus-glossary__read`
+- `mus-glossary__meaning`
+- `mus-glossary__example`
+
+Recommended structure:
+
+```html
+<div class="mus-glossary">
+  <section class="mus-glossary__item">
+    <div class="mus-glossary__head">
+      <div class="mus-glossary__symbol">
+        <span class="mus-glossary__label">Simbol</span>
+        <code>⊢</code>
+      </div>
+      <p class="mus-glossary__read">dibaca sebagai: maka terbukti</p>
+    </div>
+
+    <div class="mus-glossary__body">
+      <p class="mus-glossary__meaning">Blok yang dipilih menghasilkan inferensi yang valid.</p>
+      <p class="mus-glossary__example">
+        <span class="mus-glossary__label">Contoh</span>
+        <code>P, P → Q ⊢ Q</code>
+      </p>
+    </div>
+  </section>
+</div>
+```
+
+When to prefer `mus-glossary` over `table-wrapper`:
+
+- the explanation cell contains sentence-length prose
+- the table wants 4 columns but one column keeps stretching the layout
+- each entry reads more naturally as a standalone unit than as a row in a matrix
+
+Responsive notes:
+
+- `mus-glossary` uses a two-part layout on wider screens
+- on narrow screens, each item stacks vertically without horizontal scrolling
+- code or symbol fragments may still wrap, but the container itself should remain within the article width
+
+Do:
+
+- keep each glossary item concise but complete
+- use `mus-glossary__label` for small contextual labels such as `Simbol` or `Contoh`
+- keep symbol/example fragments inside `<code>` where appropriate
+- use `mus-glossary__symbol--cluster` when several short symbols should stay on one desktop row
+
+Don't:
+
+- use `mus-glossary` for large comparison matrices
+- force every glossary into a table if the meaning field becomes long prose
+- add one-off inline styles around glossary items
+
+### 5.5 Blockquotes as the current note or callout style
 
 There is no dedicated `.mus-callout` or `.mus-note` class in the repo right now.
 
@@ -686,7 +757,7 @@ Do not use blockquotes as a replacement for:
 - multi-column comparison content
 - complex warnings that really need a future reusable component
 
-### 5.5 Images
+### 5.6 Images
 
 Current state:
 
@@ -711,7 +782,7 @@ Temporary minimal image pattern if absolutely needed:
 
 But this should be treated as a fallback, not a documented visual system. If image blocks become common, add a global class in CSS and update this guide.
 
-### 5.6 Archive and list visuals
+### 5.7 Archive and list visuals
 
 These classes exist in the site CSS but are layout-only, not article-body tools:
 
@@ -1017,6 +1088,7 @@ There is no dedicated callout class yet. Use a blockquote:
 - Do not copy older article-local inline CSS patterns into new content.
 - Prefer the global flow system for diagrams.
 - Prefer `table-wrapper` for styled tables.
+- Prefer `mus-glossary` when glossary entries contain longer prose.
 - Use blockquotes instead of inventing an undocumented callout component.
 - Keep Hugo build passing.
 
@@ -1052,6 +1124,16 @@ Article-safe reusable classes currently documented here:
 - `mus-flow-label`
 - `mus-flow-note`
 - `table-wrapper`
+- `mus-glossary`
+- `mus-glossary__item`
+- `mus-glossary__head`
+- `mus-glossary__body`
+- `mus-glossary__symbol`
+- `mus-glossary__symbol--cluster`
+- `mus-glossary__label`
+- `mus-glossary__read`
+- `mus-glossary__meaning`
+- `mus-glossary__example`
 
 Reserved layout-level classes that should not be used inside article bodies:
 
