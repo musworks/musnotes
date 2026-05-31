@@ -62,7 +62,7 @@ Pushes to `main` trigger the GitHub Actions workflow in `.github/workflows/hugo.
 
 Code in this repository is available under the MIT License. See `LICENSE`.
 
-Original written content, images, and other site materials are All Rights Reserved unless stated otherwise. See `CONTENT-LICENSE.md`.
+Original written content, images, and other site materials are licensed under CC BY-NC-ND 4.0 unless stated otherwise. See `CONTENT-LICENSE.md`.
 
 Third-party components keep their own licenses, especially `themes/PaperMod/`.
 
