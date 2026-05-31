@@ -1,8 +1,11 @@
-.codex-hugo-build/
+# Hugo build artifacts
 .hugo_cache/
+.hugo_build.lock
 public/
 public-preview/
-.hugo_build.lock
+docs/
+
+# Local work folders
+.codex-hugo-build/
 .tmp*/
 tmp*/
-docs/
