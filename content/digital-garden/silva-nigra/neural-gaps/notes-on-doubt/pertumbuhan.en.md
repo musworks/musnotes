@@ -109,8 +109,6 @@ We need to remember: a tree does not keep growing taller forever. At some point,
 
 If our economic system does not know when to stop chasing quantitative growth, then it is not moving toward progress. It is walking toward collapse, written in the language of statistics.
 
-*To be continued in Part 3: The Last Tree for a Cuscus*
-
 {{< mus-divider >}}
 
 ### Brief References

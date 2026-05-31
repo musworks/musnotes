@@ -109,7 +109,6 @@ Kita perlu ingat: sebuah pohon tidak terus tumbuh tinggi tanpa akhir. Pada titik
 
 Jika sistem ekonomi kita tidak tahu kapan harus berhenti mengejar pertumbuhan kuantitatif, maka ia bukan sedang menuju kemajuan. Ia sedang berjalan menuju keruntuhan yang ditulis dengan bahasa statistik.
 
-_(Bersambung ke Bagian 3: Pohon Terakhir untuk Seekor Kuskus)_
 
 {{< mus-divider >}}
 
