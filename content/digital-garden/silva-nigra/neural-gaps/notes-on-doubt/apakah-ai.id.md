@@ -10,7 +10,7 @@ tags: ["ai-generated", "creativity", "art", "human-identity", "technology", "neu
 
 > **Peringatan:** Jika setelah selesai membaca esai ini pikiran pertamamu adalah “Ini pasti ditulis AI”, maka tulisan ini memang sedang membicarakanmu.
 
-Ketika aku scroll konten di internet akhir-akhir ini, pertanyaan yang paling sering muncul di komentar bukanlah “Apa yang mungkin senimannya rasakan?”, melainkan pertanyaan yang jauh lebih keren, dari sudut pandang yang berkomentar, mungkin:
+Ketika aku scroll konten di internet akhir-akhir ini, pertanyaan yang paling sering muncul di komentar bukanlah “Apa yang mungkin senimannya rasakan?”, melainkan pertanyaan yang jauh lebih keren, dari sudut pandang yang berkomentar, (mungkin):
 
 “Apakah ini AI?”
 

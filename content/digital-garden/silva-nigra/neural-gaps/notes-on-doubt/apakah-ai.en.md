@@ -11,7 +11,7 @@ tags: ["ai-generated", "creativity", "art", "human-identity", "technology", "neu
 
 > **Warning:** If, after reading this essay, your first thought is “This was definitely written by AI,” then this essay may be talking about you.
 
-When I scroll through content on the internet lately, the question I see most often in the comments is not “What might the artist have felt?”, but a much cooler question, at least from the commenter’s point of view, perhaps:
+When I scroll through content on the internet lately, the question I see most often in the comments is not “What might the artist have felt?”, but a much cooler question, at least from the commenter’s point of view, (perhaps):
 
 “Is this AI?”
 
