@@ -68,3 +68,23 @@ Sometimes I hope AI will never truly replace the depth of human beings.
 Sometimes I fear that we are already too late to realize that “depth” itself may be just another story we invented.
 
 And perhaps that doubt is the most human thing of all.
+
+{{< mus-divider >}}
+
+<div style="max-width: 900px; margin: 0 auto; text-align: center;">
+
+![Hasil AI detector](/images/ai-detector-00.png)
+
+<p style="font-style: italic; font-size: 0.9em; color: #888; margin-top: 10px;">96% AI</p>
+
+</div>
+
+Sepertinya, untuk dianggap manusia oleh mesin, aku harus belajar menjadi lebih primitif. Lebih kasar. Lebih penuh emosi murahan. Lebih “manusiawi” dalam arti yang paling stereotipikal.
+
+Betapa lucunya peradaban kita.
+
+Kita menciptakan mesin yang begitu canggih, tetapi untuk lolos dari deteksi mesin itu sendiri, kita justru harus terdengar lebih bodoh, lebih kasar, dan lebih kacau.
+
+Aku tidak yakin apakah ini kemenangan atau kekalahan.
+
+Yang jelas, ini semakin menegaskan poin esai ini: kita sedang kehilangan kendali atas definisi “manusia” itu sendiri.

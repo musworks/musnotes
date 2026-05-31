@@ -67,3 +67,23 @@ Kadang aku berharap AI tidak akan pernah bisa benar-benar menggantikan kedalaman
 Kadang aku takut bahwa kita sudah terlalu terlambat menyadari bahwa “kedalaman” itu sendiri mungkin hanyalah cerita yang kita buat-buat.
 
 Dan mungkin, justru keraguan itu yang paling manusiawi.
+
+{{< mus-divider >}}
+
+<div style="max-width: 900px; margin: 0 auto; text-align: center;">
+
+![Hasil AI detector](/images/ai-detector-00.png)
+
+<p style="font-style: italic; font-size: 0.9em; color: #888; margin-top: 10px;">96% AI</p>
+
+</div>
+
+Sepertinya, untuk dianggap manusia oleh mesin, aku harus belajar menjadi lebih primitif. Lebih kasar. Lebih penuh emosi murahan. Lebih “manusiawi” dalam arti yang paling stereotipikal.
+
+Betapa lucunya peradaban kita.
+
+Kita menciptakan mesin yang begitu canggih, tetapi untuk lolos dari deteksi mesin itu sendiri, kita justru harus terdengar lebih bodoh, lebih kasar, dan lebih kacau.
+
+Aku tidak yakin apakah ini kemenangan atau kekalahan.
+
+Yang jelas, ini semakin menegaskan poin esai ini: kita sedang kehilangan kendali atas definisi “manusia” itu sendiri.
