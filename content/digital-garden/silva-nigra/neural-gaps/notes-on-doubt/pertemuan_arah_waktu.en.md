@@ -119,4 +119,4 @@ At this point, my head is about to explode. This linear model makes the meeting 
 
 The old professor was right that my language was *"sloppy"* if forced into a rigid linear ruler. But what if time doesn't stretch from end to end, but loops circularly like the **Cell Cycle** or **Homeostasis**?
 
-*(To be continued .....)*
+*[To be continued .....](./pertemuan-arah-waktu-2.en.md)*

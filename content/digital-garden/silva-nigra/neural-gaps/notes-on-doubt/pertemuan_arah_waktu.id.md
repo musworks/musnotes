@@ -120,4 +120,4 @@ Di titik ini, kepalaku hampir pecah. Model linear ini membuat pertemuan dua arah
 
 Profesor tua itu benar bahwa bahasaku *"sloppy"* jika dipaksakan masuk ke dalam penggaris linear yang kaku. Tapi bagaimana jika waktu tidak membentang dari ujung ke ujung, tapi melingkar seperti **Siklus Sel** atau **Homeostasis**?
 
-*(Bersambung .....)*
+*[Bersambung .....](./pertemuan-arah-waktu-2.id.md)*
