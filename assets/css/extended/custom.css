@@ -1013,8 +1013,8 @@ body:has(.home-hero) .home-hero {
     }
 
     .home-hero-card__symbol {
-        min-height: 264px;
-        padding: 0.9rem 1.1rem 0.55rem;
+        min-height: 238px;
+        padding: 0.82rem 1.05rem 0.24rem;
     }
 
     .home-hero-card__symbol svg {
@@ -1188,10 +1188,10 @@ body:has(.home-hero) .home-hero {
     position: relative;
     z-index: 1;
     display: flex;
-    min-height: 250px;
+    min-height: 226px;
     align-items: center;
     justify-content: center;
-    padding: 0.8rem 1.05rem 0.45rem;
+    padding: 0.72rem 1rem 0.12rem;
     color: var(--orchid-accent);
 }
 
@@ -1203,14 +1203,320 @@ body:has(.home-hero) .home-hero {
     filter: none;
 }
 
+.home-hero-card__symbol .home-hero-graph {
+    width: 100%;
+    max-width: 320px;
+    height: auto;
+    overflow: visible;
+    opacity: 1;
+}
+
+.home-hero-graph__edges,
+.home-hero-graph__node,
+.home-hero-graph__orbits {
+    transform-box: fill-box;
+    transform-origin: center;
+}
+
+.home-hero-graph__edge {
+    stroke: color-mix(in srgb, var(--orchid-accent) 22%, var(--primary) 78%);
+    stroke-width: 1.2;
+    stroke-linecap: round;
+    opacity: 0.42;
+}
+
+.home-hero-graph__orbit {
+    fill: none;
+    stroke-width: 0.9;
+    opacity: 0.28;
+}
+
+.home-hero-graph__orbit--inner {
+    stroke: color-mix(in srgb, #89a88a 34%, var(--border) 66%);
+}
+
+.home-hero-graph__orbit--outer {
+    stroke: color-mix(in srgb, var(--orchid-accent) 18%, var(--border) 82%);
+    stroke-dasharray: 2 7;
+}
+
+.home-hero-graph__halo {
+    fill: color-mix(in srgb, var(--orchid-accent) 10%, transparent);
+    stroke: color-mix(in srgb, var(--orchid-accent) 18%, transparent);
+    stroke-width: 1;
+    opacity: 0.75;
+}
+
+.home-hero-graph__dot {
+    stroke: color-mix(in srgb, rgba(255, 255, 255, 0.82) 28%, var(--border) 72%);
+    stroke-width: 1;
+}
+
+.home-hero-graph__dot--core {
+    fill: color-mix(in srgb, var(--orchid-accent) 76%, white 24%);
+}
+
+.home-hero-graph__dot--leaf {
+    fill: color-mix(in srgb, #89a88a 72%, white 28%);
+}
+
+.home-hero-graph__dot--petal {
+    fill: color-mix(in srgb, var(--orchid-accent) 54%, white 46%);
+}
+
+.home-hero-graph__dot--mist {
+    fill: color-mix(in srgb, var(--secondary) 40%, white 60%);
+}
+
+.home-hero-graph__dot--ink {
+    fill: color-mix(in srgb, var(--primary) 68%, var(--secondary) 32%);
+}
+
+.home-hero-graph__label {
+    fill: color-mix(in srgb, var(--primary) 82%, var(--secondary) 18%);
+    font-family: "Alice", Georgia, "Times New Roman", serif;
+    font-size: 11px;
+    letter-spacing: 0.03em;
+    text-rendering: geometricPrecision;
+}
+
+.home-hero-graph__label--center {
+    fill: color-mix(in srgb, var(--orchid-accent) 86%, var(--primary) 14%);
+    font-family: "Gabriela", Georgia, "Times New Roman", serif;
+    font-size: 12px;
+    text-anchor: middle;
+}
+
+.home-hero-graph__label--top,
+.home-hero-graph__label--bottom {
+    text-anchor: middle;
+}
+
+.home-hero-graph__label--left {
+    text-anchor: end;
+}
+
+.home-hero-graph__label--right {
+    text-anchor: start;
+}
+
+.home-hero-graph__node--mus {
+    animation: home-hero-graph-breathe 8.6s ease-in-out infinite;
+}
+
+.home-hero-graph__node--biology,
+.home-hero-graph__node--ecology,
+.home-hero-graph__node--silva,
+.home-hero-graph__node--logic {
+    animation: home-hero-graph-float-a 9s ease-in-out infinite;
+}
+
+.home-hero-graph__node--neural,
+.home-hero-graph__node--essays,
+.home-hero-graph__node--digital,
+.home-hero-graph__node--garden {
+    animation: home-hero-graph-float-b 10.5s ease-in-out infinite;
+}
+
+.home-hero-graph__node--neural,
+.home-hero-graph__node--silva {
+    animation-delay: -2.2s;
+}
+
+.home-hero-graph__node--ecology,
+.home-hero-graph__node--digital {
+    animation-delay: -4.1s;
+}
+
+.home-hero-graph__node--essays,
+.home-hero-graph__node--garden,
+.home-hero-graph__node--logic {
+    animation-delay: -5.4s;
+}
+
+@keyframes home-hero-graph-breathe {
+    0%,
+    100% {
+        opacity: 0.92;
+        transform: scale(1);
+    }
+
+    50% {
+        opacity: 1;
+        transform: scale(1.025);
+    }
+}
+
+@keyframes home-hero-graph-float-a {
+    0%,
+    100% {
+        transform: translate3d(0, 0, 0);
+    }
+
+    50% {
+        transform: translate3d(0, -1.8px, 0);
+    }
+}
+
+@keyframes home-hero-graph-float-b {
+    0%,
+    100% {
+        transform: translate3d(0, 0, 0);
+    }
+
+    50% {
+        transform: translate3d(0, 1.4px, 0);
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .home-hero-graph__node {
+        animation: none !important;
+    }
+}
+
+.home-hero-card__symbol .home-hero-graph {
+    max-width: 300px;
+}
+
+.home-hero-graph__edge {
+    fill: none;
+    stroke: color-mix(in srgb, var(--orchid-accent) 18%, var(--primary) 82%);
+    stroke-width: 1.15;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    opacity: 0.4;
+}
+
+.home-hero-graph__edge--primary {
+    opacity: 0.34;
+}
+
+.home-hero-graph__edge--secondary {
+    stroke: color-mix(in srgb, #89a88a 24%, var(--primary) 76%);
+    stroke-width: 0.95;
+    opacity: 0.23;
+}
+
+.home-hero-graph__mist {
+    opacity: 0.72;
+}
+
+.home-hero-graph__mote {
+    fill: color-mix(in srgb, var(--secondary) 42%, white 58%);
+}
+
+.home-hero-graph__mote--a,
+.home-hero-graph__mote--d {
+    fill: color-mix(in srgb, #89a88a 34%, white 66%);
+}
+
+.home-hero-graph__halo {
+    fill: color-mix(in srgb, var(--orchid-accent) 8%, transparent);
+    stroke: color-mix(in srgb, var(--orchid-accent) 14%, transparent);
+    stroke-width: 0.8;
+    opacity: 0.62;
+}
+
+.home-hero-graph__dot {
+    stroke: color-mix(in srgb, rgba(255, 255, 255, 0.78) 20%, var(--border) 80%);
+    stroke-width: 0.9;
+}
+
+.home-hero-graph__dot--core {
+    fill: color-mix(in srgb, var(--orchid-accent) 62%, white 38%);
+}
+
+.home-hero-graph__dot--leaf {
+    fill: color-mix(in srgb, #89a88a 64%, white 36%);
+}
+
+.home-hero-graph__dot--petal {
+    fill: color-mix(in srgb, var(--orchid-accent) 44%, white 56%);
+}
+
+.home-hero-graph__dot--mist {
+    fill: color-mix(in srgb, var(--secondary) 34%, white 66%);
+}
+
+.home-hero-graph__dot--ink {
+    fill: color-mix(in srgb, var(--primary) 58%, var(--secondary) 42%);
+}
+
+.home-hero-graph__label {
+    fill: color-mix(in srgb, var(--primary) 78%, var(--secondary) 22%);
+    font-size: 10.5px;
+    letter-spacing: 0.02em;
+}
+
+.home-hero-graph__label--primary {
+    font-size: 11.2px;
+}
+
+.home-hero-graph__label--secondary {
+    fill: color-mix(in srgb, var(--secondary) 76%, var(--primary) 24%);
+    font-size: 9.2px;
+    letter-spacing: 0.015em;
+}
+
+.home-hero-graph__node {
+    animation: none;
+}
+
+.home-hero-graph__node--mus .home-hero-graph__halo {
+    animation: home-hero-graph-breathe 11s ease-in-out infinite;
+}
+
+.home-hero-graph__mote--a,
+.home-hero-graph__mote--c {
+    animation: home-hero-graph-fade 12s ease-in-out infinite;
+}
+
+.home-hero-graph__mote--b,
+.home-hero-graph__mote--d {
+    animation: home-hero-graph-fade 14s ease-in-out infinite;
+    animation-delay: -4s;
+}
+
+@keyframes home-hero-graph-breathe {
+    0%,
+    100% {
+        opacity: 0.5;
+        transform: scale(1);
+    }
+
+    50% {
+        opacity: 0.72;
+        transform: scale(1.04);
+    }
+}
+
+@keyframes home-hero-graph-fade {
+    0%,
+    100% {
+        opacity: 0.34;
+    }
+
+    50% {
+        opacity: 0.68;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .home-hero-graph__node .home-hero-graph__halo,
+    .home-hero-graph__mote {
+        animation: none !important;
+    }
+}
+
 .home-hero-card__meta {
     position: relative;
     z-index: 1;
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 0.26rem;
-    padding: 0 0 0.95rem;
+    gap: 0.18rem;
+    padding: 0 0 0.86rem;
     border-top: 0;
     color: color-mix(in srgb, var(--primary) 80%, var(--secondary) 20%);
 }
@@ -1425,6 +1731,103 @@ body:has(.home-hero) .home-hero {
 
 :root[data-theme="dark"] .home-hero-card__note {
     color: var(--sage-fade);
+}
+
+:root[data-theme="dark"] .home-hero-graph__edge {
+    stroke: color-mix(in srgb, var(--orchid-accent) 30%, var(--main-text) 70%);
+    opacity: 0.45;
+}
+
+:root[data-theme="dark"] .home-hero-graph__orbit--inner {
+    stroke: color-mix(in srgb, #a2c39f 28%, var(--border) 72%);
+}
+
+:root[data-theme="dark"] .home-hero-graph__orbit--outer {
+    stroke: color-mix(in srgb, var(--orchid-accent) 24%, var(--border) 76%);
+}
+
+:root[data-theme="dark"] .home-hero-graph__halo {
+    fill: color-mix(in srgb, var(--orchid-accent) 16%, transparent);
+    stroke: color-mix(in srgb, var(--orchid-accent) 24%, transparent);
+}
+
+:root[data-theme="dark"] .home-hero-graph__dot {
+    stroke: rgba(255, 255, 255, 0.08);
+}
+
+:root[data-theme="dark"] .home-hero-graph__dot--core {
+    fill: color-mix(in srgb, var(--orchid-accent) 78%, white 22%);
+}
+
+:root[data-theme="dark"] .home-hero-graph__dot--leaf {
+    fill: color-mix(in srgb, #8fb28c 72%, white 28%);
+}
+
+:root[data-theme="dark"] .home-hero-graph__dot--petal {
+    fill: color-mix(in srgb, var(--orchid-accent) 62%, white 38%);
+}
+
+:root[data-theme="dark"] .home-hero-graph__dot--mist {
+    fill: color-mix(in srgb, var(--sage-fade) 56%, white 44%);
+}
+
+:root[data-theme="dark"] .home-hero-graph__dot--ink {
+    fill: color-mix(in srgb, var(--main-text) 60%, var(--orchid-accent) 40%);
+}
+
+:root[data-theme="dark"] .home-hero-graph__label {
+    fill: color-mix(in srgb, var(--main-text) 86%, var(--sage-fade) 14%);
+}
+
+:root[data-theme="dark"] .home-hero-graph__label--center {
+    fill: color-mix(in srgb, var(--orchid-accent) 78%, white 22%);
+}
+
+:root[data-theme="dark"] .home-hero-graph__edge {
+    stroke: color-mix(in srgb, var(--orchid-accent) 24%, var(--main-text) 76%);
+    opacity: 0.42;
+}
+
+:root[data-theme="dark"] .home-hero-graph__edge--secondary {
+    stroke: color-mix(in srgb, #9ec09a 22%, var(--main-text) 78%);
+    opacity: 0.28;
+}
+
+:root[data-theme="dark"] .home-hero-graph__mote {
+    fill: color-mix(in srgb, var(--sage-fade) 46%, white 54%);
+}
+
+:root[data-theme="dark"] .home-hero-graph__halo {
+    fill: color-mix(in srgb, var(--orchid-accent) 11%, transparent);
+    stroke: color-mix(in srgb, var(--orchid-accent) 18%, transparent);
+}
+
+:root[data-theme="dark"] .home-hero-graph__dot--core {
+    fill: color-mix(in srgb, var(--orchid-accent) 64%, white 36%);
+}
+
+:root[data-theme="dark"] .home-hero-graph__dot--leaf {
+    fill: color-mix(in srgb, #8fb28c 62%, white 38%);
+}
+
+:root[data-theme="dark"] .home-hero-graph__dot--petal {
+    fill: color-mix(in srgb, var(--orchid-accent) 48%, white 52%);
+}
+
+:root[data-theme="dark"] .home-hero-graph__dot--mist {
+    fill: color-mix(in srgb, var(--sage-fade) 44%, white 56%);
+}
+
+:root[data-theme="dark"] .home-hero-graph__dot--ink {
+    fill: color-mix(in srgb, var(--main-text) 54%, var(--orchid-accent) 46%);
+}
+
+:root[data-theme="dark"] .home-hero-graph__label {
+    fill: color-mix(in srgb, var(--main-text) 83%, var(--sage-fade) 17%);
+}
+
+:root[data-theme="dark"] .home-hero-graph__label--secondary {
+    fill: color-mix(in srgb, var(--sage-fade) 82%, var(--main-text) 18%);
 }
 
 body:has(.garden-landing) .main {
@@ -2435,17 +2838,33 @@ body:has(.garden-landing) .main {
     }
 
     .home-hero-card__symbol {
-        min-height: 138px;
-        padding: 0.5rem 0.85rem 0.2rem;
+        min-height: 128px;
+        padding: 0.45rem 0.8rem 0.05rem;
     }
 
     .home-hero-card__symbol svg {
         width: min(100%, 92px);
     }
 
+    .home-hero-card__symbol .home-hero-graph {
+        max-width: 100%;
+    }
+
+    .home-hero-graph__label {
+        font-size: 9.25px;
+    }
+
+    .home-hero-graph__label--primary {
+        font-size: 9.8px;
+    }
+
+    .home-hero-graph__label--secondary {
+        font-size: 8.5px;
+    }
+
     .home-hero-card__meta {
         gap: 0.2rem;
-        padding: 0 0 0.68rem;
+        padding: 0 0 0.62rem;
     }
 
     .home-hero-card__caption {
@@ -2457,6 +2876,7 @@ body:has(.garden-landing) .main {
         letter-spacing: 0.02em;
         opacity: 0.46;
     }
+
     .profile .buttons {
         gap: 0.8rem;
     }

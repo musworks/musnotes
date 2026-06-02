@@ -90,7 +90,7 @@ cleanDestinationDir = true
 
                 [languages.id.params.homepage.visual]
                     caption = "MuS"
-                    meta = "est. 2026"
+                    meta = "non-linear garden"
                     symbol = "svg/mus-card.svg"
                     symbolAlt = "musnotes botanical symbol"
 
@@ -139,6 +139,11 @@ cleanDestinationDir = true
             weight = 35
 
         [[languages.id.menu.main]]
+            name = "Graph"
+            url = "/graph/"
+            weight = 36
+
+        [[languages.id.menu.main]]
             name = "Cari"
             pageRef = "/search"
             weight = 60
@@ -169,7 +174,7 @@ cleanDestinationDir = true
 
                 [languages.en.params.homepage.visual]
                     caption = "MuS"
-                    meta = "est. 2026"
+                    meta = "non-linear garden"
                     symbol = "svg/mus-card.svg"
                     symbolAlt = "musnotes botanical symbol"
 
@@ -218,6 +223,11 @@ cleanDestinationDir = true
             name = "Classification"
             url = "/tags/"
             weight = 35
+
+        [[languages.en.menu.main]]
+            name = "Graph"
+            url = "/en/graph/"
+            weight = 36
 
         [[languages.en.menu.main]]
             name = "Search"

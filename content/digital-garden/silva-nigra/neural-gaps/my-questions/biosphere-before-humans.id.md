@@ -8,7 +8,7 @@ categories: ["Neural Gaps", "Ecology", "Philosophy"]
 tags: ["biosphere", "ethics", "anthropocentrism", "ecological-ethics", "human-centered", "silva-nigra"]
 ---
 
-“Kalau kita benar-benar memprioritaskan biosfer di atas spesies kita sendiri, sejauh mana argumen itu bisa dibawa?”
+> “Kalau kita benar-benar memprioritaskan biosfer di atas spesies kita sendiri, sejauh mana argumen itu bisa dibawa?”
 
 Pertanyaan ini terdengar sederhana, tetapi ia diam-diam membawa pisau kecil ke pusat etika manusia. Selama ini, banyak argumen konservasi alam tetap bergerak dalam orbit yang human-centered: hutan perlu dijaga karena memberi oksigen untuk manusia, laut perlu diselamatkan karena menopang pangan manusia, iklim perlu distabilkan karena peradaban manusia akan terganggu.
 

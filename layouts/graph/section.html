@@ -1,0 +1,121 @@
+﻿{{- define "main" }}
+{{- $jsonOutput := .OutputFormats.Get "JSON" -}}
+{{- $graphScript := resources.Get "js/graph-view-v2.js" | resources.Minify -}}
+{{- if not site.Params.assets.disableFingerprinting -}}
+    {{- $graphScript = $graphScript | fingerprint -}}
+{{- end -}}
+
+<section class="garden-graph" aria-labelledby="garden-graph-title">
+    <div class="garden-graph__inner">
+        <header class="garden-graph__header">
+            {{- partial "breadcrumbs.html" . }}
+            <p class="garden-graph__eyebrow">{{ cond (eq site.Language.Lang "id") "Relasi yang tumbuh sendiri" "An automatically growing map" }}</p>
+            <div class="garden-graph__heading-wrap">
+                <h1 id="garden-graph-title" class="garden-graph__title">{{ .Title }}</h1>
+                {{- with .Description }}
+                <p class="garden-graph__subtitle">{{ . }}</p>
+                {{- end }}
+            </div>
+            {{- if .Content }}
+            <div class="garden-graph__intro">
+                {{- if not (.Param "disableAnchoredHeadings") -}}
+                    {{- partial "anchored_headings.html" .Content -}}
+                {{- else -}}
+                    {{ .Content }}
+                {{- end -}}
+            </div>
+            {{- end }}
+        </header>
+
+        <div
+            class="graph-explorer"
+            id="graph-explorer"
+            data-graph-url="{{ with $jsonOutput }}{{ .RelPermalink }}{{ end }}"
+            data-open-label="{{ cond (eq site.Language.Lang "id") "Buka" "Open" }}"
+            data-empty-label="{{ cond (eq site.Language.Lang "id") "Belum ada node untuk filter ini." "No nodes available for this filter yet." }}"
+            data-loading-label="{{ cond (eq site.Language.Lang "id") "Menumbuhkan peta..." "Growing the map..." }}"
+            data-error-label="{{ cond (eq site.Language.Lang "id") "Peta tidak bisa dimuat saat ini." "The graph could not be loaded right now." }}"
+            data-default-title="{{ cond (eq site.Language.Lang "id") "Arahkan atau klik node" "Hover or click a node" }}"
+            data-default-copy="{{ cond (eq site.Language.Lang "id") "Tulisan, tag, dan kategori akan menampilkan relasinya di sini. Klik sebuah node untuk membuka halamannya." "Posts, tags, and categories will reveal their relationships here. Click a node to open its page." }}"
+            data-stats-template="{{ cond (eq site.Language.Lang "id") "{nodes} node - {links} relasi" "{nodes} nodes - {links} links" }}"
+            data-type-post="{{ cond (eq site.Language.Lang "id") "Tulisan" "Post" }}"
+            data-type-tag="{{ cond (eq site.Language.Lang "id") "Tag" "Tag" }}"
+            data-type-category="{{ cond (eq site.Language.Lang "id") "Kategori" "Category" }}"
+            data-label-type="{{ cond (eq site.Language.Lang "id") "Tipe" "Type" }}"
+            data-label-relations="{{ cond (eq site.Language.Lang "id") "Relasi" "Relations" }}"
+            data-label-section="{{ cond (eq site.Language.Lang "id") "Ruang" "Section" }}"
+            data-label-date="{{ cond (eq site.Language.Lang "id") "Tanggal" "Date" }}"
+            data-label-related="{{ cond (eq site.Language.Lang "id") "Terkait" "Connected" }}"
+            data-related-more="{{ cond (eq site.Language.Lang "id") "+ {count} lagi" "+ {count} more" }}"
+            data-idle-state="{{ cond (eq site.Language.Lang "id") "Belum ada fokus" "No focus yet" }}"
+            data-hover-state="{{ cond (eq site.Language.Lang "id") "Pratinjau" "Preview" }}"
+            data-selected-state="{{ cond (eq site.Language.Lang "id") "Dipilih" "Selected" }}"
+            data-reset-label="{{ cond (eq site.Language.Lang "id") "Reset fokus" "Reset focus" }}"
+            data-copy-post="{{ cond (eq site.Language.Lang "id") "Tulisan ini terhubung ke tag dan kategori yang membentuk konteksnya." "This post connects to the tags and categories that shape its context." }}"
+            data-copy-tag="{{ cond (eq site.Language.Lang "id") "Tag ini mengikat tulisan-tulisan yang tumbuh di tema serupa." "This tag ties together posts growing around a shared theme." }}"
+            data-copy-category="{{ cond (eq site.Language.Lang "id") "Kategori ini menampung cabang tulisan yang lebih besar." "This category gathers a broader branch of related writing." }}"
+        >
+            <div class="graph-explorer__toolbar" role="toolbar" aria-label="{{ cond (eq site.Language.Lang "id") "Filter graph" "Graph filters" }}">
+                <div class="graph-explorer__filters">
+                    <button class="graph-filter is-active" type="button" data-filter="all">{{ cond (eq site.Language.Lang "id") "Semua" "All" }}</button>
+                    <button class="graph-filter" type="button" data-filter="tags">{{ cond (eq site.Language.Lang "id") "Tag saja" "Tags only" }}</button>
+                    <button class="graph-filter" type="button" data-filter="categories">{{ cond (eq site.Language.Lang "id") "Kategori saja" "Categories only" }}</button>
+                    <button class="graph-filter" type="button" data-filter="posts-tags">{{ cond (eq site.Language.Lang "id") "Tulisan + tag" "Posts + tags" }}</button>
+                </div>
+                <div class="graph-explorer__layer-controls">
+                    <button class="graph-layer-toggle is-active" type="button" data-layer="none" title="{{ cond (eq site.Language.Lang "id") "Tampilkan seluruh graf" "Show full graph" }}">{{ cond (eq site.Language.Lang "id") "Semua" "Full" }}</button>
+                    <button class="graph-layer-toggle" type="button" data-layer="1st" title="{{ cond (eq site.Language.Lang "id") "Tampilkan node terdekat" "Show 1st degree neighbors" }}">{{ cond (eq site.Language.Lang "id") "Tetangga 1st" "1st neighbors" }}</button>
+                    <button class="graph-layer-toggle" type="button" data-layer="2nd" title="{{ cond (eq site.Language.Lang "id") "Tampilkan node sampai tingkat 2" "Show up to 2nd degree" }}">{{ cond (eq site.Language.Lang "id") "Tetangga 2nd" "2nd neighbors" }}</button>
+                </div>
+                <div class="graph-explorer__meta">
+                    <p class="graph-explorer__hint">{{ cond (eq site.Language.Lang "id") "Klik node untuk fokus, geser untuk merapikan posisi, klik area kosong untuk reset." "Click a node to focus it, drag to gently reposition, and click empty space to reset." }}</p>
+                    <p class="graph-explorer__stats" data-graph-stats>{{ cond (eq site.Language.Lang "id") "Menumbuhkan peta..." "Growing the map..." }}</p>
+                    {{- with $jsonOutput }}
+                    <a class="graph-explorer__download" href="{{ .RelPermalink }}">{{ cond (eq site.Language.Lang "id") "Lihat JSON" "View JSON" }}</a>
+                    {{- end }}
+                </div>
+            </div>
+
+            <div class="graph-explorer__layout">
+                <div class="graph-explorer__surface">
+                    <div class="graph-explorer__canvas-wrap">
+                        <canvas class="graph-explorer__canvas" data-graph-canvas></canvas>
+                        <div class="graph-explorer__empty" data-graph-empty hidden></div>
+                    </div>
+                    <div class="graph-explorer__legend">
+                        <span class="graph-legend__item graph-legend__item--post">{{ cond (eq site.Language.Lang "id") "Tulisan" "Posts" }}</span>
+                        <span class="graph-legend__item graph-legend__item--tag">{{ cond (eq site.Language.Lang "id") "Tag" "Tags" }}</span>
+                        <span class="graph-legend__item graph-legend__item--category">{{ cond (eq site.Language.Lang "id") "Kategori" "Categories" }}</span>
+                    </div>
+                </div>
+
+                <aside class="graph-inspector" data-graph-inspector>
+                    <div class="graph-inspector__topline">
+                        <p class="graph-inspector__eyebrow">{{ cond (eq site.Language.Lang "id") "Fokus" "Focus" }}</p>
+                        <button class="graph-inspector__reset" type="button" data-graph-reset hidden>{{ cond (eq site.Language.Lang "id") "Reset fokus" "Reset focus" }}</button>
+                    </div>
+                    <p class="graph-inspector__status" data-graph-status>{{ cond (eq site.Language.Lang "id") "Belum ada fokus" "No focus yet" }}</p>
+                    <h2 class="graph-inspector__title" data-graph-title>{{ cond (eq site.Language.Lang "id") "Arahkan atau klik node" "Hover or click a node" }}</h2>
+                    <p class="graph-inspector__copy" data-graph-copy>{{ cond (eq site.Language.Lang "id") "Tulisan, tag, dan kategori akan menampilkan relasinya di sini. Klik sebuah node untuk membuka halamannya." "Posts, tags, and categories will reveal their relationships here. Click a node to open its page." }}</p>
+                    <dl class="graph-inspector__facts" data-graph-facts></dl>
+                    <div class="graph-inspector__related" data-graph-related-wrap hidden>
+                        <p class="graph-inspector__related-label">{{ cond (eq site.Language.Lang "id") "Terkait" "Connected" }}</p>
+                        <div class="graph-inspector__related-list" data-graph-related></div>
+                    </div>
+                    <a class="graph-inspector__link" href="#" data-graph-link hidden>{{ cond (eq site.Language.Lang "id") "Buka" "Open" }}</a>
+                </aside>
+            </div>
+
+            <noscript>
+                <p class="graph-explorer__noscript">{{ cond (eq site.Language.Lang "id") "Graph ini membutuhkan JavaScript untuk dirender. Kamu masih bisa membuka taxonomy lewat halaman tags dan kategori." "This graph needs JavaScript to render. You can still browse the taxonomy through the tags and categories pages." }}</p>
+            </noscript>
+        </div>
+    </div>
+</section>
+
+{{- if not site.Params.assets.disableFingerprinting -}}
+<script defer crossorigin="anonymous" src="{{ $graphScript.RelPermalink }}" integrity="{{ $graphScript.Data.Integrity }}"></script>
+{{- else -}}
+<script defer crossorigin="anonymous" src="{{ $graphScript.RelPermalink }}"></script>
+{{- end -}}
+{{- end }}

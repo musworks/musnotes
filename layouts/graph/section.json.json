@@ -1,0 +1,124 @@
+{{- $nodes := slice -}}
+{{- $links := slice -}}
+{{- $seenNodes := dict -}}
+{{- $pages := where .Site.RegularPages "Params.graphHidden" "!=" true -}}
+
+{{- range $page := $pages.ByTitle -}}
+    {{- if and (not $page.Params.searchHidden) (ne $page.Layout "search") (ne $page.Layout "archives") (ne $page.Section "graph") -}}
+        {{- $tagNodes := slice -}}
+        {{- $categoryNodes := slice -}}
+
+        {{- range $term := $page.GetTerms "tags" -}}
+            {{- $tagNodes = $tagNodes | append (dict
+                "id" (printf "tag:%s" (md5 $term.RelPermalink))
+                "kind" "tag"
+                "label" ($term.LinkTitle | default $term.Title)
+                "url" $term.RelPermalink
+            ) -}}
+        {{- end -}}
+
+        {{- if and (eq (len $tagNodes) 0) $page.Params.tags -}}
+            {{- $rawTags := slice -}}
+            {{- if reflect.IsSlice $page.Params.tags -}}
+                {{- $rawTags = $page.Params.tags -}}
+            {{- else -}}
+                {{- $rawTags = slice $page.Params.tags -}}
+            {{- end -}}
+            {{- range $raw := $rawTags -}}
+                {{- $label := trim (printf "%v" $raw) " " -}}
+                {{- if $label -}}
+                    {{- $slug := urlize $label -}}
+                    {{- $tagNodes = $tagNodes | append (dict
+                        "id" (printf "tag:%s" $slug)
+                        "kind" "tag"
+                        "label" $label
+                        "url" ((printf "/tags/%s/" $slug) | relLangURL)
+                    ) -}}
+                {{- end -}}
+            {{- end -}}
+        {{- end -}}
+
+        {{- range $term := $page.GetTerms "categories" -}}
+            {{- $categoryNodes = $categoryNodes | append (dict
+                "id" (printf "category:%s" (md5 $term.RelPermalink))
+                "kind" "category"
+                "label" ($term.LinkTitle | default $term.Title)
+                "url" $term.RelPermalink
+            ) -}}
+        {{- end -}}
+
+        {{- if and (eq (len $categoryNodes) 0) (or $page.Params.categories $page.Params.category) -}}
+            {{- $rawCategories := slice -}}
+            {{- with $page.Params.categories -}}
+                {{- if reflect.IsSlice . -}}
+                    {{- $rawCategories = $rawCategories | append . -}}
+                {{- else -}}
+                    {{- $rawCategories = $rawCategories | append . -}}
+                {{- end -}}
+            {{- end -}}
+            {{- with $page.Params.category -}}
+                {{- if reflect.IsSlice . -}}
+                    {{- $rawCategories = $rawCategories | append . -}}
+                {{- else -}}
+                    {{- $rawCategories = $rawCategories | append . -}}
+                {{- end -}}
+            {{- end -}}
+            {{- range $raw := uniq $rawCategories -}}
+                {{- $label := trim (printf "%v" $raw) " " -}}
+                {{- if $label -}}
+                    {{- $slug := urlize $label -}}
+                    {{- $categoryNodes = $categoryNodes | append (dict
+                        "id" (printf "category:%s" $slug)
+                        "kind" "category"
+                        "label" $label
+                        "url" ((printf "/categories/%s/" $slug) | relLangURL)
+                    ) -}}
+                {{- end -}}
+            {{- end -}}
+        {{- end -}}
+
+        {{- $relationCount := add (len $tagNodes) (len $categoryNodes) -}}
+        {{- if gt $relationCount 0 -}}
+            {{- $postID := printf "post:%s" (md5 $page.RelPermalink) -}}
+            {{- if not (index $seenNodes $postID) -}}
+                {{- $nodes = $nodes | append (dict
+                    "id" $postID
+                    "kind" "post"
+                    "label" ($page.LinkTitle | default $page.Title)
+                    "url" $page.RelPermalink
+                    "section" ($page.CurrentSection.LinkTitle | default $page.Section)
+                    "date" ($page.Date.Format "2006-01-02")
+                    "featured" (and ($page.Params.featured) true)
+                    "themes" (or $page.Params.themes (slice))
+                ) -}}
+                {{- $seenNodes = merge $seenNodes (dict $postID true) -}}
+            {{- end -}}
+
+            {{- range $node := $tagNodes -}}
+                {{- if not (index $seenNodes $node.id) -}}
+                    {{- $nodes = $nodes | append $node -}}
+                    {{- $seenNodes = merge $seenNodes (dict $node.id true) -}}
+                {{- end -}}
+                {{- $links = $links | append (dict "source" $postID "target" $node.id "kind" "tag") -}}
+            {{- end -}}
+
+            {{- range $node := $categoryNodes -}}
+                {{- if not (index $seenNodes $node.id) -}}
+                    {{- $nodes = $nodes | append $node -}}
+                    {{- $seenNodes = merge $seenNodes (dict $node.id true) -}}
+                {{- end -}}
+                {{- $links = $links | append (dict "source" $postID "target" $node.id "kind" "category") -}}
+            {{- end -}}
+        {{- end -}}
+    {{- end -}}
+{{- end -}}
+
+{{- dict
+    "meta" (dict
+        "title" .Title
+        "language" .Lang
+        "generated" (now.Format "2006-01-02T15:04:05Z07:00")
+    )
+    "nodes" $nodes
+    "links" $links
+| jsonify -}}

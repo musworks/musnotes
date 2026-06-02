@@ -8,7 +8,7 @@ categories: ["Neural Gaps", "Ecology", "Philosophy"]
 tags: ["biosphere", "ethics", "anthropocentrism", "ecological-ethics", "human-centered", "silva-nigra"]
 ---
 
-“If we truly prioritized the biosphere above our own species, how far could that argument be taken?”
+> “If we truly prioritized the biosphere above our own species, how far could that argument be taken?”
 
 The question sounds simple, but it quietly carries a small knife into the center of human ethics. Many arguments for nature conservation still move within a human-centered orbit: forests must be protected because they provide oxygen for humans, oceans must be saved because they support human food systems, and the climate must be stabilized because human civilization would otherwise be disrupted.
 

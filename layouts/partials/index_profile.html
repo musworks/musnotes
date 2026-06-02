@@ -45,11 +45,7 @@
             <div class="home-hero-card">
                 <div class="home-hero-card__frame" aria-hidden="true"></div>
                 <div class="home-hero-card__symbol" role="img" aria-label="{{ .visual.symbolAlt | default "Homepage visual symbol" }}">
-                    {{- with .visual.symbol }}
-                        {{- readFile (printf "assets/%s" .) | safeHTML -}}
-                    {{- else }}
-                        {{- partial "mus-symbol.html" . -}}
-                    {{- end }}
+                    {{- partial "home-hero-graph.html" . -}}
                 </div>
                 <div class="home-hero-card__meta">
                     {{- with .visual.caption }}
