@@ -67,6 +67,9 @@
                     <button class="graph-layer-toggle" type="button" data-layer="1st" title="{{ cond (eq site.Language.Lang "id") "Tampilkan node terdekat" "Show 1st degree neighbors" }}">{{ cond (eq site.Language.Lang "id") "Tetangga 1st" "1st neighbors" }}</button>
                     <button class="graph-layer-toggle" type="button" data-layer="2nd" title="{{ cond (eq site.Language.Lang "id") "Tampilkan node sampai tingkat 2" "Show up to 2nd degree" }}">{{ cond (eq site.Language.Lang "id") "Tetangga 2nd" "2nd neighbors" }}</button>
                 </div>
+                <div class="graph-explorer__theme-controls" data-theme-container hidden>
+                    <!-- Dynamically populated by JavaScript with theme buttons -->
+                </div>
                 <div class="graph-explorer__meta">
                     <p class="graph-explorer__hint">{{ cond (eq site.Language.Lang "id") "Klik node untuk fokus, geser untuk merapikan posisi, klik area kosong untuk reset." "Click a node to focus it, drag to gently reposition, and click empty space to reset." }}</p>
                     <p class="graph-explorer__stats" data-graph-stats>{{ cond (eq site.Language.Lang "id") "Menumbuhkan peta..." "Growing the map..." }}</p>

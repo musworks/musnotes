@@ -7,6 +7,8 @@ type: "garden-note"
 summary: "Esai tentang bagaimana kerusakan ekologis bisa terlihat sebagai pertumbuhan ketika sistem pengukuran ekonomi hanya menghitung transaksi, tetapi gagal melihat kehilangan biologis yang menyertainya."
 categories: ["Neural Gaps", "ekologi", "ekonomi"]
 tags: ["ecology", "economy", "biosphere", "natural capital", "planetary boundaries"]
+atured: true
+themes: ["ecology"]
 ---
 
 ### Siapa yang Berhak Membuat Angka Pertumbuhan Sebagai Nilai Mutlak? Seperti ini |Pertumbuhan| = Pertumbuhan

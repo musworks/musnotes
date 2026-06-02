@@ -6,6 +6,8 @@ math: false
 type: "garden-fragment"
 categories: ["Neural Gaps", "Ecology", "Philosophy"]
 tags: ["biosphere", "ethics", "anthropocentrism", "ecological-ethics", "human-centered", "silva-nigra"]
+featured: true
+themes: ["ecology"]
 ---
 
 > “If we truly prioritized the biosphere above our own species, how far could that argument be taken?”

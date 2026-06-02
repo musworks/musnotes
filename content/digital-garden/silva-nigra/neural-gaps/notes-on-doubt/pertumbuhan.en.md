@@ -7,6 +7,8 @@ type: "garden-note"
 summary: "An essay on how ecological destruction can appear as growth when economic measurement systems count transactions, but fail to see the biological losses behind them."
 categories: ["Neural Gaps", "ecology", "economy"]
 tags: ["ecology", "economy", "biosphere", "natural capital", "planetary boundaries"]
+featured: true
+themes: ["ecology"]
 ---
 
 ### Who Gets to Turn Growth Into an Absolute Value? Like This: |Growth| = Growth

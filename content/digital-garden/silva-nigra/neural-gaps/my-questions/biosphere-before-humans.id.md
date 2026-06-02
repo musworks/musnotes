@@ -6,6 +6,8 @@ math: false
 type: "garden-fragment"
 categories: ["Neural Gaps", "Ecology", "Philosophy"]
 tags: ["biosphere", "ethics", "anthropocentrism", "ecological-ethics", "human-centered", "silva-nigra"]
+featured: true
+themes: ["ecology"]
 ---
 
 > “Kalau kita benar-benar memprioritaskan biosfer di atas spesies kita sendiri, sejauh mana argumen itu bisa dibawa?”

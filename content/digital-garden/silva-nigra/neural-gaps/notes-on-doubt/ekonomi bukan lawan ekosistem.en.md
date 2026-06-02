@@ -7,6 +7,8 @@ type: "garden-note"
 summary: "An essay on the illusion that the economy can be decoupled from the ecosystem, exploring how all human financial activities rest upon biological and ecological foundations."
 categories: ["Neural Gaps", "ecology", "economy"]
 tags: ["ecology", "economy", "biosphere", "natural capital", "planetary boundaries"]
+featured: true
+themes: ["ecology"]
 ---
 
 ### The Great Illusion

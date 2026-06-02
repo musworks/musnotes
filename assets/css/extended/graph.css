@@ -133,8 +133,18 @@
     min-width: 0;
 }
 
+.graph-explorer__theme-controls {
+    display: flex;
+    gap: 0.6rem;
+    min-width: 0;
+    overflow-x: auto;
+    overflow-y: hidden;
+    padding-bottom: 0.2rem;
+}
+
 .graph-filter,
-.graph-layer-toggle {
+.graph-layer-toggle,
+.graph-theme-toggle {
     min-height: 2.3rem;
     padding: 0.45rem 0.88rem 0.48rem;
     border: 1px solid color-mix(in srgb, var(--border) 82%, white 18%);
@@ -153,7 +163,10 @@
 .graph-filter.is-active,
 .graph-layer-toggle:hover,
 .graph-layer-toggle:focus-visible,
-.graph-layer-toggle.is-active {
+.graph-layer-toggle.is-active,
+.graph-theme-toggle:hover,
+.graph-theme-toggle:focus-visible,
+.graph-theme-toggle.is-active {
     border-color: color-mix(in srgb, var(--orchid-accent) 60%, white 40%);
     background: color-mix(in srgb, var(--orchid-accent) 18%, white 82%);
     color: color-mix(in srgb, var(--orchid-accent) 92%, var(--primary) 8%);
@@ -162,7 +175,8 @@
 }
 
 .graph-filter:focus-visible,
-.graph-layer-toggle:focus-visible {
+.graph-layer-toggle:focus-visible,
+.graph-theme-toggle:focus-visible {
     outline: none;
     box-shadow: 0 0 0 3px rgba(107, 79, 91, 0.14);
 }

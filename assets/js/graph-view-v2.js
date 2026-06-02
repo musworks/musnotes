@@ -17,6 +17,8 @@
     const relatedLabelNode = relatedWrap ? relatedWrap.querySelector(".graph-inspector__related-label") : null;
     const filterButtons = Array.from(root.querySelectorAll("[data-filter]"));
     const layerButtons = Array.from(root.querySelectorAll("[data-layer]"));
+    const themeButtons = Array.from(root.querySelectorAll("[data-theme]")); // Phase 2A
+    const themeContainer = root.querySelector("[data-theme-container]"); // Phase 2A
     const graphUrl = root.dataset.graphUrl;
 
     if (!canvas || !stage || !graphUrl) return;
@@ -153,7 +155,8 @@
         threadType: 'all', // 'all' | 'section' | 'date' | 'theme'
         showFullView: true, // layers vs full graph toggle
         featuredNodeIds: new Set(), // marked for curation
-        threads: { bySection: {}, byDate: {}, byTheme: {} } // thread definitions
+        threads: { bySection: {}, byDate: {}, byTheme: {} }, // thread definitions
+        selectedTheme: null // Phase 2A: currently selected theme
     };
 
     const maxRelatedItems = 10;
@@ -282,6 +285,24 @@
         return false;
     }
 
+    // Phase 2A: Check if node belongs to selected theme
+    function isNodeInSelectedTheme(node) {
+        if (!state.selectedTheme) return true; // No theme selected = show all
+        if (!node.themes || !Array.isArray(node.themes)) return false;
+        return node.themes.includes(state.selectedTheme);
+    }
+
+    // Phase 2A: Extract unique themes from all nodes
+    function extractAllThemes() {
+        const themes = new Set();
+        state.rawNodes.forEach((node) => {
+            if (node.themes && Array.isArray(node.themes)) {
+                node.themes.forEach((theme) => themes.add(theme));
+            }
+        });
+        return Array.from(themes).sort();
+    }
+
     function getNodeLayerInfo(node) {
         if (state.layerMode === 'none' || !state.selectedNode) {
             return { layer: 'full', isFaded: false };
@@ -305,7 +326,13 @@
     }
 
     function getNodeLayerOpacity(node) {
-        if (state.layerMode === 'none') return 1;
+        if (state.layerMode === 'none') {
+            // Phase 2A: Apply theme-based opacity when no layer is active
+            if (state.selectedTheme && !isNodeInSelectedTheme(node)) {
+                return 0.6; // Out-of-theme nodes faded to 60%
+            }
+            return 1;
+        }
         
         const { isFaded } = getNodeLayerInfo(node);
         const isInThread = isNodeInThread(node);
@@ -316,7 +343,13 @@
     }
 
     function getNodeLayerScale(node) {
-        if (state.layerMode === 'none') return 1;
+        if (state.layerMode === 'none') {
+            // Phase 2A: Apply theme-based scale when no layer is active
+            if (state.selectedTheme && !isNodeInSelectedTheme(node)) {
+                return 0.85; // Out-of-theme nodes scaled to 85%
+            }
+            return 1;
+        }
         
         const { isFaded } = getNodeLayerInfo(node);
         const isInThread = isNodeInThread(node);
@@ -327,6 +360,20 @@
     }
 
     function getLinkLayerOpacity(link) {
+        // Phase 2A: Apply theme-based link opacity
+        if (state.selectedTheme) {
+            const source = state.nodeMap.get(link.source);
+            const target = state.nodeMap.get(link.target);
+            const sourceBothInTheme = source && isNodeInSelectedTheme(source);
+            const targetInTheme = target && isNodeInSelectedTheme(target);
+            
+            if (sourceBothInTheme && targetInTheme) {
+                return 0.8; // Both in theme = bright
+            } else {
+                return 0.3; // At least one out of theme = faded
+            }
+        }
+        
         if (state.layerMode === 'none') return config.edge.alphaDefault;
         if (!state.selectedNode) return config.edge.alphaDefault;
         
@@ -1089,6 +1136,25 @@
         });
     }
 
+    // Phase 2A: Theme selection
+    function selectTheme(theme) {
+        state.selectedTheme = theme;
+        updateThemeButtons();
+        
+        // Light physics refresh: increase alpha to re-energize
+        state.alpha = Math.max(state.alpha, 0.32);
+        
+        draw();
+        requestFrame();
+    }
+
+    function updateThemeButtons() {
+        themeButtons.forEach((button) => {
+            const theme = button.dataset.theme;
+            button.classList.toggle("is-active", theme === state.selectedTheme);
+        });
+    }
+
     function attachEvents() {
         const finishPointer = (event) => {
             if (!state.pointerDown && !state.draggingNode) return;
@@ -1189,6 +1255,14 @@
             });
         });
 
+        // Phase 2A: Theme selector
+        themeButtons.forEach((button) => {
+            button.addEventListener("click", () => {
+                const theme = button.dataset.theme || null;
+                selectTheme(theme);
+            });
+        });
+
         const resizeObserver = new ResizeObserver(() => {
             updateCanvasSize();
             state.rawNodes.forEach((node) => {
@@ -1221,6 +1295,44 @@
                     .filter((node) => node.featured === true)
                     .map((node) => node.id)
             );
+
+            // Phase 2A: Extract themes and populate selector
+            const allThemes = extractAllThemes();
+            if (allThemes.length > 0 && themeContainer) {
+                themeContainer.hidden = false;
+                
+                // Create "All" button
+                const allButton = document.createElement("button");
+                allButton.className = "graph-theme-toggle is-active";
+                allButton.type = "button";
+                allButton.textContent = "All";
+                allButton.dataset.theme = "";
+                allButton.setAttribute("title", "Show all themes");
+                themeContainer.appendChild(allButton);
+                themeButtons.push(allButton);
+                
+                // Create buttons for each theme
+                allThemes.forEach((theme) => {
+                    const button = document.createElement("button");
+                    button.className = "graph-theme-toggle";
+                    button.type = "button";
+                    button.textContent = theme;
+                    button.dataset.theme = theme;
+                    button.setAttribute("title", `Filter by theme: ${theme}`);
+                    themeContainer.appendChild(button);
+                    themeButtons.push(button);
+                });
+                
+                // Attach event handlers to dynamically created buttons
+                themeButtons.forEach((button) => {
+                    button.addEventListener("click", () => {
+                        const theme = button.dataset.theme || null;
+                        selectTheme(theme);
+                    });
+                });
+            } else if (themeContainer) {
+                themeContainer.hidden = true;
+            }
 
             updateCanvasSize();
             state.rawNodes.forEach((node) => initializeNode(node));
