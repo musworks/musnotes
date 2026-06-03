@@ -36,7 +36,7 @@
             data-loading-label="{{ cond (eq site.Language.Lang "id") "Menumbuhkan peta..." "Growing the map..." }}"
             data-error-label="{{ cond (eq site.Language.Lang "id") "Peta tidak bisa dimuat saat ini." "The graph could not be loaded right now." }}"
             data-default-title="{{ cond (eq site.Language.Lang "id") "Arahkan atau klik node" "Hover or click a node" }}"
-            data-default-copy="{{ cond (eq site.Language.Lang "id") "Tulisan, tag, dan kategori akan menampilkan relasinya di sini. Klik sebuah node untuk membuka halamannya." "Posts, tags, and categories will reveal their relationships here. Click a node to open its page." }}"
+            data-default-copy="{{ cond (eq site.Language.Lang "id") "Tulisan, tag, dan kategori akan menampilkan relasinya di sini. Klik satu kali untuk fokus, lalu klik ganda node tulisan untuk membuka halamannya." "Posts, tags, and categories will reveal their relationships here. Single click to focus, then double click a post node to open its page." }}"
             data-stats-template="{{ cond (eq site.Language.Lang "id") "{nodes} node - {links} relasi" "{nodes} nodes - {links} links" }}"
             data-type-post="{{ cond (eq site.Language.Lang "id") "Tulisan" "Post" }}"
             data-type-tag="{{ cond (eq site.Language.Lang "id") "Tag" "Tag" }}"
@@ -62,16 +62,8 @@
                     <button class="graph-filter" type="button" data-filter="categories">{{ cond (eq site.Language.Lang "id") "Kategori saja" "Categories only" }}</button>
                     <button class="graph-filter" type="button" data-filter="posts-tags">{{ cond (eq site.Language.Lang "id") "Tulisan + tag" "Posts + tags" }}</button>
                 </div>
-                <div class="graph-explorer__layer-controls">
-                    <button class="graph-layer-toggle is-active" type="button" data-layer="none" title="{{ cond (eq site.Language.Lang "id") "Tampilkan seluruh graf" "Show full graph" }}">{{ cond (eq site.Language.Lang "id") "Semua" "Full" }}</button>
-                    <button class="graph-layer-toggle" type="button" data-layer="1st" title="{{ cond (eq site.Language.Lang "id") "Tampilkan node terdekat" "Show 1st degree neighbors" }}">{{ cond (eq site.Language.Lang "id") "Tetangga 1st" "1st neighbors" }}</button>
-                    <button class="graph-layer-toggle" type="button" data-layer="2nd" title="{{ cond (eq site.Language.Lang "id") "Tampilkan node sampai tingkat 2" "Show up to 2nd degree" }}">{{ cond (eq site.Language.Lang "id") "Tetangga 2nd" "2nd neighbors" }}</button>
-                </div>
-                <div class="graph-explorer__theme-controls" data-theme-container hidden>
-                    <!-- Dynamically populated by JavaScript with theme buttons -->
-                </div>
                 <div class="graph-explorer__meta">
-                    <p class="graph-explorer__hint">{{ cond (eq site.Language.Lang "id") "Klik node untuk fokus, geser untuk merapikan posisi, klik area kosong untuk reset." "Click a node to focus it, drag to gently reposition, and click empty space to reset." }}</p>
+                    <p class="graph-explorer__hint">{{ cond (eq site.Language.Lang "id") "Klik satu kali untuk fokus, klik ganda node tulisan untuk membuka halaman, tarik node untuk memindahkan, seret area kosong untuk pan, dan gunakan roda mouse untuk zoom." "Single click to focus, double click a post node to open it, drag nodes to move them, drag empty space to pan, and use the mouse wheel to zoom." }}</p>
                     <p class="graph-explorer__stats" data-graph-stats>{{ cond (eq site.Language.Lang "id") "Menumbuhkan peta..." "Growing the map..." }}</p>
                     {{- with $jsonOutput }}
                     <a class="graph-explorer__download" href="{{ .RelPermalink }}">{{ cond (eq site.Language.Lang "id") "Lihat JSON" "View JSON" }}</a>

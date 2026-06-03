@@ -117,6 +117,7 @@ body:has(.garden-graph) .main {
     display: flex;
     align-items: center;
     justify-content: space-between;
+    flex-wrap: wrap;
     gap: 0.7rem;
     padding: 0.72rem;
     min-width: 0;
@@ -353,7 +354,7 @@ body:has(.garden-graph) .main {
     gap: 0.82rem;
     padding: 1.1rem 1.1rem 1.18rem;
     min-width: 0;
-    display: none;
+    display: grid;
 }
 
 .graph-inspector__topline {
@@ -615,7 +616,7 @@ body:has(.garden-graph) .main {
     }
 
     .graph-explorer__layout {
-        grid-template-columns: minmax(0, 1fr);
+        grid-template-columns: minmax(0, 1fr) minmax(18rem, 22rem);
         gap: 1.4rem;
     }
 
@@ -636,7 +637,7 @@ body:has(.garden-graph) .main {
     }
 
     .graph-explorer__layout {
-        grid-template-columns: minmax(0, 1fr);
+        grid-template-columns: minmax(0, 1fr) minmax(19rem, 23rem);
         gap: 1.6rem;
     }
 
@@ -693,7 +694,9 @@ body:has(.garden-graph) .main {
     }
 
     .graph-explorer__canvas-wrap {
-        min-height: 58vh;
+        height: clamp(340px, 56vh, 460px);
+        height: clamp(340px, 56svh, 460px);
+        min-height: 0;
     }
 
     .graph-explorer__legend {
