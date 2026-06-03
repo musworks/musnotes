@@ -326,64 +326,57 @@
     }
 
     function getNodeLayerOpacity(node) {
+        const themeAlpha = state.selectedTheme && !isNodeInSelectedTheme(node) ? 0.6 : 1;
+
         if (state.layerMode === 'none') {
-            // Phase 2A: Apply theme-based opacity when no layer is active
-            if (state.selectedTheme && !isNodeInSelectedTheme(node)) {
-                return 0.6; // Out-of-theme nodes faded to 60%
-            }
-            return 1;
+            return themeAlpha;
         }
         
         const { isFaded } = getNodeLayerInfo(node);
         const isInThread = isNodeInThread(node);
         
-        if (isFaded) return 0.3;
-        if (!isInThread) return 0.6;
-        return 1;
+        if (isFaded) return 0.3 * themeAlpha;
+        if (!isInThread) return 0.6 * themeAlpha;
+        return themeAlpha;
     }
 
     function getNodeLayerScale(node) {
+        const themeScale = state.selectedTheme && !isNodeInSelectedTheme(node) ? 0.85 : 1;
+
         if (state.layerMode === 'none') {
-            // Phase 2A: Apply theme-based scale when no layer is active
-            if (state.selectedTheme && !isNodeInSelectedTheme(node)) {
-                return 0.85; // Out-of-theme nodes scaled to 85%
-            }
-            return 1;
+            return themeScale;
         }
         
         const { isFaded } = getNodeLayerInfo(node);
         const isInThread = isNodeInThread(node);
         
-        if (isFaded) return 0.8;
-        if (!isInThread) return 0.85;
-        return 1;
+        if (isFaded) return 0.8 * themeScale;
+        if (!isInThread) return 0.85 * themeScale;
+        return themeScale;
     }
 
     function getLinkLayerOpacity(link) {
-        // Phase 2A: Apply theme-based link opacity
+        let themeAlpha = 1;
+
         if (state.selectedTheme) {
             const source = state.nodeMap.get(link.source);
             const target = state.nodeMap.get(link.target);
-            const sourceBothInTheme = source && isNodeInSelectedTheme(source);
+            const sourceInTheme = source && isNodeInSelectedTheme(source);
             const targetInTheme = target && isNodeInSelectedTheme(target);
-            
-            if (sourceBothInTheme && targetInTheme) {
-                return 0.8; // Both in theme = bright
-            } else {
-                return 0.3; // At least one out of theme = faded
-            }
+
+            themeAlpha = sourceInTheme && targetInTheme ? 1 : 0.42;
         }
         
-        if (state.layerMode === 'none') return config.edge.alphaDefault;
-        if (!state.selectedNode) return config.edge.alphaDefault;
+        if (state.layerMode === 'none') return themeAlpha;
+        if (!state.selectedNode) return themeAlpha;
         
         const firstDegreeNeighbors = getNeighborsOfDegree(state.selectedNode, 1);
         const isWithinFirstDegree = (firstDegreeNeighbors.has(link.source) && firstDegreeNeighbors.has(link.target)) || 
                                     (link.source === state.selectedNode.id || link.target === state.selectedNode.id);
         
-        if (isWithinFirstDegree) return config.edge.alphaNeighbor;
+        if (isWithinFirstDegree) return themeAlpha;
         
-        return config.edge.alphaFaded;
+        return 0.45 * themeAlpha;
     }
 
     function getViewportTuning() {
@@ -866,7 +859,7 @@
                     ? config.edge.alphaFocused
                     : isNeighborLink
                         ? config.edge.alphaNeighbor
-                        : config.edge.alphaDefault) * kindAlphaBoost * threadAlpha;
+                        : config.edge.alphaDefault) * kindAlphaBoost * threadAlpha * layerAlpha;
             ctx.lineWidth = isFocused
                 ? config.edge.widthFocused[kind]
                 : isNeighborLink
@@ -1255,14 +1248,6 @@
             });
         });
 
-        // Phase 2A: Theme selector
-        themeButtons.forEach((button) => {
-            button.addEventListener("click", () => {
-                const theme = button.dataset.theme || null;
-                selectTheme(theme);
-            });
-        });
-
         const resizeObserver = new ResizeObserver(() => {
             updateCanvasSize();
             state.rawNodes.forEach((node) => {
@@ -1307,7 +1292,7 @@
                 allButton.type = "button";
                 allButton.textContent = "All";
                 allButton.dataset.theme = "";
-                allButton.setAttribute("title", "Show all themes");
+                allButton.setAttribute("title", "Show all themes equally");
                 themeContainer.appendChild(allButton);
                 themeButtons.push(allButton);
                 
@@ -1318,7 +1303,7 @@
                     button.type = "button";
                     button.textContent = theme;
                     button.dataset.theme = theme;
-                    button.setAttribute("title", `Filter by theme: ${theme}`);
+                    button.setAttribute("title", `Highlight theme: ${theme}`);
                     themeContainer.appendChild(button);
                     themeButtons.push(button);
                 });
