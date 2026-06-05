@@ -124,8 +124,7 @@ body:has(.garden-graph) .main {
 }
 
 .graph-explorer__filters,
-.graph-explorer__layer-controls,
-.graph-explorer__theme-controls {
+.graph-explorer__view-controls {
     display: flex;
     flex-wrap: wrap;
     align-items: center;
@@ -149,26 +148,13 @@ body:has(.garden-graph) .main {
     min-width: 0;
 }
 
-.graph-explorer__layer-controls {
+.graph-explorer__view-controls {
     flex: 0 0 auto;
     min-width: 0;
 }
 
-.graph-explorer__theme-controls {
-    flex: 0 1 auto;
-    max-width: min(28rem, 100%);
-    overflow-x: auto;
-    overflow-y: hidden;
-    scrollbar-width: thin;
-}
-
-.graph-explorer__theme-controls[hidden] {
-    display: none;
-}
-
 .graph-filter,
-.graph-layer-toggle,
-.graph-theme-toggle {
+.graph-view-control {
     min-height: 2rem;
     padding: 0.34rem 0.72rem 0.38rem;
     border: 1px solid transparent;
@@ -186,12 +172,9 @@ body:has(.garden-graph) .main {
 .graph-filter:hover,
 .graph-filter:focus-visible,
 .graph-filter.is-active,
-.graph-layer-toggle:hover,
-.graph-layer-toggle:focus-visible,
-.graph-layer-toggle.is-active,
-.graph-theme-toggle:hover,
-.graph-theme-toggle:focus-visible,
-.graph-theme-toggle.is-active {
+.graph-view-control:hover,
+.graph-view-control:focus-visible,
+.graph-view-control.is-active {
     border-color: color-mix(in srgb, var(--orchid-accent) 60%, white 40%);
     background: color-mix(in srgb, var(--orchid-accent) 16%, white 84%);
     color: color-mix(in srgb, var(--orchid-accent) 92%, var(--primary) 8%);
@@ -200,8 +183,7 @@ body:has(.garden-graph) .main {
 }
 
 .graph-filter:focus-visible,
-.graph-layer-toggle:focus-visible,
-.graph-theme-toggle:focus-visible {
+.graph-view-control:focus-visible {
     outline: none;
     box-shadow: 0 0 0 3px rgba(107, 79, 91, 0.14);
 }
@@ -217,6 +199,14 @@ body:has(.garden-graph) .main {
     min-width: 0;
 }
 
+.graph-explorer__utility-row {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 0.48rem;
+}
+
 .graph-explorer__hint,
 .graph-explorer__stats,
 .graph-explorer__download {
@@ -226,8 +216,8 @@ body:has(.garden-graph) .main {
 
 .graph-explorer__hint {
     max-width: min(21rem, 100%);
-    color: color-mix(in srgb, var(--secondary) 56%, var(--primary) 44%);
-    line-height: 1.42;
+    color: color-mix(in srgb, var(--secondary) 42%, var(--primary) 58%);
+    line-height: 1.5;
     text-align: right;
     overflow-wrap: anywhere;
 }
@@ -235,6 +225,19 @@ body:has(.garden-graph) .main {
 .graph-explorer__stats {
     color: color-mix(in srgb, var(--primary) 82%, var(--orchid-accent) 18%);
     font-weight: 600;
+}
+
+.graph-view-control {
+    display: inline-flex;
+    align-items: center;
+    min-width: 2rem;
+    justify-content: center;
+    text-align: center;
+}
+
+.graph-view-control--fit {
+    min-width: 2.8rem;
+    padding-inline: 0.78rem;
 }
 
 .graph-explorer__download {
@@ -395,7 +398,7 @@ body:has(.garden-graph) .main {
 
 .graph-inspector__copy {
     margin: 0;
-    color: color-mix(in srgb, var(--secondary) 60%, var(--primary) 40%);
+    color: color-mix(in srgb, var(--secondary) 48%, var(--primary) 52%);
     line-height: 1.72;
 }
 
@@ -549,16 +552,14 @@ body:has(.garden-graph) .main {
 }
 
 :root[data-theme="dark"] .graph-explorer__filters,
-:root[data-theme="dark"] .graph-explorer__layer-controls,
-:root[data-theme="dark"] .graph-explorer__theme-controls {
+:root[data-theme="dark"] .graph-explorer__view-controls {
     border-color: rgba(226, 187, 204, 0.16);
     background: rgba(255, 255, 255, 0.035);
     box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.035);
 }
 
 :root[data-theme="dark"] .graph-filter,
-:root[data-theme="dark"] .graph-layer-toggle,
-:root[data-theme="dark"] .graph-theme-toggle,
+:root[data-theme="dark"] .graph-view-control,
 :root[data-theme="dark"] .graph-legend__item,
 :root[data-theme="dark"] .graph-inspector__related-item,
 :root[data-theme="dark"] .graph-inspector__reset,
@@ -571,12 +572,9 @@ body:has(.garden-graph) .main {
 :root[data-theme="dark"] .graph-filter:hover,
 :root[data-theme="dark"] .graph-filter:focus-visible,
 :root[data-theme="dark"] .graph-filter.is-active,
-:root[data-theme="dark"] .graph-layer-toggle:hover,
-:root[data-theme="dark"] .graph-layer-toggle:focus-visible,
-:root[data-theme="dark"] .graph-layer-toggle.is-active,
-:root[data-theme="dark"] .graph-theme-toggle:hover,
-:root[data-theme="dark"] .graph-theme-toggle:focus-visible,
-:root[data-theme="dark"] .graph-theme-toggle.is-active {
+:root[data-theme="dark"] .graph-view-control:hover,
+:root[data-theme="dark"] .graph-view-control:focus-visible,
+:root[data-theme="dark"] .graph-view-control.is-active {
     background: rgba(224, 182, 200, 0.12);
     color: color-mix(in srgb, white 88%, var(--orchid-accent) 12%);
     box-shadow: 0 12px 20px rgba(0, 0, 0, 0.2);
@@ -587,7 +585,7 @@ body:has(.garden-graph) .main {
 :root[data-theme="dark"] .graph-inspector__facts dt,
 :root[data-theme="dark"] .graph-explorer__noscript,
 :root[data-theme="dark"] .graph-inspector__related-label {
-    color: color-mix(in srgb, var(--main-text) 70%, #aea7ae 30%);
+    color: color-mix(in srgb, var(--main-text) 78%, #aea7ae 22%);
 }
 
 :root[data-theme="dark"] .graph-explorer__stats,
@@ -656,6 +654,16 @@ body:has(.garden-graph) .main {
         position: relative;
         top: auto;
         gap: 0.9rem;
+    }
+
+    .graph-explorer__meta {
+        align-items: flex-start;
+    }
+
+    .graph-explorer__hint,
+    .graph-explorer__utility-row {
+        text-align: left;
+        justify-content: flex-start;
     }
 
     .graph-inspector__facts {

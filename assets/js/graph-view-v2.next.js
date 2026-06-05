@@ -16,7 +16,6 @@
     const relatedList = root.querySelector("[data-graph-related]");
     const relatedLabelNode = relatedWrap ? relatedWrap.querySelector(".graph-inspector__related-label") : null;
     const filterButtons = Array.from(root.querySelectorAll("[data-filter]"));
-    const viewButtons = Array.from(root.querySelectorAll("[data-graph-action]"));
     const graphUrl = root.dataset.graphUrl;
 
     if (!canvas || !stage || !graphUrl) return;
@@ -203,13 +202,6 @@
         return {
             x: point.x * state.view.scale + state.view.x,
             y: point.y * state.view.scale + state.view.y
-        };
-    }
-
-    function viewCenter() {
-        return {
-            x: state.width * 0.5,
-            y: state.height * 0.5
         };
     }
 
@@ -838,26 +830,6 @@
         state.view.y = origin.y - world.y * clampedScale;
     }
 
-    function runViewAction(action) {
-        if (!state.visibleNodes.length) return;
-
-        if (action === "fit") {
-            state.userMovedView = false;
-            fitViewToNodes();
-        } else if (action === "zoom-in") {
-            state.userMovedView = true;
-            setViewScale(state.view.scale * 1.18, viewCenter());
-        } else if (action === "zoom-out") {
-            state.userMovedView = true;
-            setViewScale(state.view.scale / 1.18, viewCenter());
-        } else {
-            return;
-        }
-
-        draw();
-        requestFrame();
-    }
-
     function openNode(node) {
         if (!node || !node.url || node.kind !== "post") return;
         window.location.assign(node.url);
@@ -871,9 +843,8 @@
             const point = typeof event.clientX === "number" && typeof event.clientY === "number"
                 ? pointerPosition(event)
                 : state.pointerScreen;
-            const startedOnBlank = state.panning;
             const releasedNode = nearestNode(point);
-            const clickedBlank = startedOnBlank && !releasedNode && !state.pointerMoved;
+            const clickedBlank = !releasedNode && !state.pointerMoved && !state.panning;
 
             if (!state.pointerMoved) {
                 if (releasedNode) {
@@ -979,13 +950,6 @@
                 filterButtons.forEach((item) => item.classList.toggle("is-active", item === button));
                 applyFilter();
                 draw();
-            });
-        });
-
-        viewButtons.forEach((button) => {
-            button.addEventListener("click", () => {
-                runViewAction(button.dataset.graphAction);
-                canvas.style.cursor = "grab";
             });
         });
 

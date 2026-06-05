@@ -110,6 +110,59 @@
         });
     }
 
+    const navScrollShell = document.querySelector('[data-nav-scroll-shell]');
+    const navScroll = navScrollShell ? navScrollShell.querySelector('[data-nav-scroll]') : null;
+    const navPanLeft = navScrollShell ? navScrollShell.querySelector('[data-nav-pan="left"]') : null;
+    const navPanRight = navScrollShell ? navScrollShell.querySelector('[data-nav-pan="right"]') : null;
+    if (navScrollShell && navScroll && navPanLeft && navPanRight) {
+        const desktopNavMedia = window.matchMedia('(min-width: 769px)');
+
+        const navStep = () => Math.max(180, Math.round(navScroll.clientWidth * 0.58));
+
+        const syncNavScrollState = () => {
+            const isDesktopNav = desktopNavMedia.matches;
+            const overflow = navScroll.scrollWidth - navScroll.clientWidth > 4;
+            const canScrollLeft = navScroll.scrollLeft > 4;
+            const canScrollRight = navScroll.scrollLeft + navScroll.clientWidth < navScroll.scrollWidth - 4;
+
+            navScrollShell.classList.toggle('is-left-clipped', isDesktopNav && overflow && canScrollLeft);
+            navScrollShell.classList.toggle('is-right-clipped', isDesktopNav && overflow && canScrollRight);
+
+            navPanLeft.disabled = !(isDesktopNav && overflow && canScrollLeft);
+            navPanRight.disabled = !(isDesktopNav && overflow && canScrollRight);
+            navPanLeft.setAttribute('aria-hidden', navPanLeft.disabled ? 'true' : 'false');
+            navPanRight.setAttribute('aria-hidden', navPanRight.disabled ? 'true' : 'false');
+        };
+
+        navPanLeft.addEventListener('click', () => {
+            navScroll.scrollBy({ left: -navStep(), behavior: 'smooth' });
+        });
+
+        navPanRight.addEventListener('click', () => {
+            navScroll.scrollBy({ left: navStep(), behavior: 'smooth' });
+        });
+
+        navScroll.addEventListener('scroll', syncNavScrollState, { passive: true });
+        window.addEventListener('resize', syncNavScrollState);
+
+        if (typeof desktopNavMedia.addEventListener === 'function') {
+            desktopNavMedia.addEventListener('change', syncNavScrollState);
+        } else if (typeof desktopNavMedia.addListener === 'function') {
+            desktopNavMedia.addListener(syncNavScrollState);
+        }
+
+        if (typeof ResizeObserver === 'function') {
+            const navResizeObserver = new ResizeObserver(syncNavScrollState);
+            navResizeObserver.observe(navScroll);
+            const navMenu = navScroll.querySelector('.menu');
+            if (navMenu) {
+                navResizeObserver.observe(navMenu);
+            }
+        }
+
+        syncNavScrollState();
+    }
+
 </script>
 
 {{- if (not site.Params.disableScrollToTop) }}

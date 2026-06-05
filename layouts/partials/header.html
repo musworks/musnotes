@@ -21,7 +21,7 @@
     {{- $search_url := "/search/" | relLangURL -}}
     {{- if and (eq $searchLink "") (not (findRE "://" .URL)) (eq $menu_item_url $search_url) -}}
         {{- $searchLink = $href -}}
-        {{- $searchTitle = .Title | default .Name -}}
+        {{- $searchTitle = .Name | default .Title -}}
     {{- end -}}
 {{- end -}}
 {{- $headerID := printf "nav-drawer-%s" .Language.Lang -}}
@@ -63,8 +63,13 @@
             </div>
         </div>
 
-        <div class="nav-center">
-            <ul id="menu" class="menu">
+        <div class="nav-center-shell" data-nav-scroll-shell>
+            <button class="nav-pan nav-pan--left" type="button" data-nav-pan="left" aria-label="{{ cond (eq $lang "id") "Geser navigasi ke kiri" "Scroll navigation left" }}" disabled>
+                <span aria-hidden="true">&lsaquo;</span>
+            </button>
+
+            <div class="nav-center" data-nav-scroll>
+                <ul id="menu" class="menu">
                 {{- range site.Menus.main }}
                 {{- $href := .URL }}
                 {{- if not (findRE "://" .URL) }}
@@ -92,7 +97,7 @@
                     <a href="{{ $href }}"
                     {{- cond $is_search (" accesskey=/" | safeHTMLAttr) ("" | safeHTMLAttr ) }}
                     class="nav-link{{ if $is_active }} is-active{{ end }}{{ if $is_search }} nav-link--search{{ end }}"
-                    {{- if $is_search }} aria-label="{{ .Title | default .Name }}" title="{{ .Title | default .Name }} (Alt + /)"{{- end }}
+                    {{- if $is_search }} aria-label="{{ .Name | default .Title }}" title="{{ .Name | default .Title }} (Alt + /)"{{- end }}
                     {{- if $is_active }} aria-current="page"{{ end }}>
                         {{- if $is_search }}
                         <svg class="nav-link__icon nav-link__icon--search" xmlns="http://www.w3.org/2000/svg" width="16" height="16"
@@ -101,7 +106,7 @@
                             <circle cx="11" cy="11" r="7"></circle>
                             <line x1="20" y1="20" x2="16.65" y2="16.65"></line>
                         </svg>
-                        <span class="visually-hidden">{{- .Name -}}</span>
+                        <span class="nav-link__label">{{- .Name -}}</span>
                         {{- else }}
                         <span class="nav-link__label">{{- .Name -}}</span>
                         {{- end }}
@@ -116,7 +121,12 @@
                     </a>
                 </li>
                 {{- end }}
-            </ul>
+                </ul>
+            </div>
+
+            <button class="nav-pan nav-pan--right" type="button" data-nav-pan="right" aria-label="{{ cond (eq $lang "id") "Geser navigasi ke kanan" "Scroll navigation right" }}" disabled>
+                <span aria-hidden="true">&rsaquo;</span>
+            </button>
         </div>
 
         <div class="nav-end">
@@ -227,7 +237,7 @@
                     <a href="{{ $href }}"
                     {{- cond $is_search (" accesskey=/" | safeHTMLAttr) ("" | safeHTMLAttr ) }}
                     class="nav-link{{ if $is_active }} is-active{{ end }}{{ if $is_search }} nav-link--search{{ end }}"
-                    {{- if $is_search }} aria-label="{{ .Title | default .Name }}" title="{{ .Title | default .Name }} (Alt + /)"{{- end }}
+                    {{- if $is_search }} aria-label="{{ .Name | default .Title }}" title="{{ .Name | default .Title }} (Alt + /)"{{- end }}
                     {{- if $is_active }} aria-current="page"{{ end }}>
                         {{- if $is_search }}
                         <svg class="nav-link__icon nav-link__icon--search" xmlns="http://www.w3.org/2000/svg" width="16" height="16"

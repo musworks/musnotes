@@ -3,9 +3,11 @@
 {{- if eq .Type "tags" -}}
 {{- $lang := site.Language.Lang -}}
 {{- $title := "Classification" -}}
-{{- $eyebrow := "TOPICAL INDEX" -}}
-{{- $intro := "A topical index for tracing notes, concepts, and fragments growing through this garden." -}}
-{{- $microNote := "Each tag acts like a small marker, gathering related thoughts into visible families." -}}
+{{- $eyebrow := cond (eq $lang "id") "Peta Topik" "Topical Index" -}}
+{{- $intro := cond (eq $lang "id") "Sebuah indeks tematik untuk menelusuri catatan, konsep, dan fragmen yang tumbuh di taman ini." "A topical index for tracing notes, concepts, and fragments growing through this garden." -}}
+{{- $microNote := cond (eq $lang "id") "Setiap tag bekerja seperti penanda kecil yang mengumpulkan gagasan serumpun ke dalam keluarga yang tampak." "Each tag acts like a small marker, gathering related thoughts into visible families." -}}
+{{- $cardMeta := cond (eq $lang "id") "Tag" "Tags" -}}
+{{- $linkLabel := cond (eq $lang "id") "Buka tag %s" "View tag %s" -}}
 {{- $noteSingular := cond (eq $lang "id") "catatan" "note" -}}
 {{- $notePlural := cond (eq $lang "id") "catatan" "notes" -}}
 {{- $terms := .Data.Terms.Alphabetical -}}
@@ -34,12 +36,12 @@
       {{- with site.GetPage (printf "/%s/%s" $.Type $name) }}
       <article class="classification-card" role="listitem">
         <div class="classification-card__body">
-          <p class="classification-card__meta">TAGS</p>
+          <p class="classification-card__meta">{{ $cardMeta }}</p>
           <h2 class="classification-card__title">{{ $displayName }}</h2>
           <p class="classification-card__count">{{ $count }} {{ $noteLabel }}</p>
         </div>
         <span class="classification-card__arrow" aria-hidden="true">&rarr;</span>
-        <a class="classification-card__link" href="{{ .RelPermalink }}" aria-label="{{ printf "View tag %s" ($displayName | plainify) }}"></a>
+        <a class="classification-card__link" href="{{ .RelPermalink }}" aria-label="{{ printf $linkLabel ($displayName | plainify) }}"></a>
       </article>
       {{- end }}
       {{- end }}

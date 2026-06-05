@@ -36,7 +36,7 @@
             data-loading-label="{{ cond (eq site.Language.Lang "id") "Menumbuhkan peta..." "Growing the map..." }}"
             data-error-label="{{ cond (eq site.Language.Lang "id") "Peta tidak bisa dimuat saat ini." "The graph could not be loaded right now." }}"
             data-default-title="{{ cond (eq site.Language.Lang "id") "Arahkan atau klik node" "Hover or click a node" }}"
-            data-default-copy="{{ cond (eq site.Language.Lang "id") "Tulisan, tag, dan kategori akan menampilkan relasinya di sini. Klik satu kali untuk fokus, lalu klik ganda node tulisan untuk membuka halamannya." "Posts, tags, and categories will reveal their relationships here. Single click to focus, then double click a post node to open its page." }}"
+            data-default-copy="{{ cond (eq site.Language.Lang "id") "Tulisan, tag, dan kategori akan menampilkan kaitannya di sini. Klik satu node untuk melihat relasinya." "Posts, tags, and categories will reveal their links here. Focus a node to inspect its relationships." }}"
             data-stats-template="{{ cond (eq site.Language.Lang "id") "{nodes} node - {links} relasi" "{nodes} nodes - {links} links" }}"
             data-type-post="{{ cond (eq site.Language.Lang "id") "Tulisan" "Post" }}"
             data-type-tag="{{ cond (eq site.Language.Lang "id") "Tag" "Tag" }}"
@@ -63,11 +63,18 @@
                     <button class="graph-filter" type="button" data-filter="posts-tags">{{ cond (eq site.Language.Lang "id") "Tulisan + tag" "Posts + tags" }}</button>
                 </div>
                 <div class="graph-explorer__meta">
-                    <p class="graph-explorer__hint">{{ cond (eq site.Language.Lang "id") "Klik satu kali untuk fokus, klik ganda node tulisan untuk membuka halaman, tarik node untuk memindahkan, seret area kosong untuk pan, dan gunakan roda mouse untuk zoom." "Single click to focus, double click a post node to open it, drag nodes to move them, drag empty space to pan, and use the mouse wheel to zoom." }}</p>
+                    <p class="graph-explorer__hint">{{ cond (eq site.Language.Lang "id") "Klik untuk fokus, klik ganda tulisan untuk membuka, seret untuk pan, gulir untuk zoom." "Click to focus, double click a post to open it, drag to pan, and scroll to zoom." }}</p>
+                    <div class="graph-explorer__utility-row">
+                        <div class="graph-explorer__view-controls" role="group" aria-label="{{ cond (eq site.Language.Lang "id") "Kontrol tampilan graph" "Graph view controls" }}">
+                            <button class="graph-view-control" type="button" data-graph-action="zoom-out" aria-label="{{ cond (eq site.Language.Lang "id") "Perkecil tampilan" "Zoom out" }}" title="{{ cond (eq site.Language.Lang "id") "Perkecil tampilan" "Zoom out" }}">-</button>
+                            <button class="graph-view-control graph-view-control--fit" type="button" data-graph-action="fit" aria-label="{{ cond (eq site.Language.Lang "id") "Sesuaikan tampilan" "Fit view" }}" title="{{ cond (eq site.Language.Lang "id") "Sesuaikan tampilan" "Fit view" }}">{{ cond (eq site.Language.Lang "id") "Pas" "Fit" }}</button>
+                            <button class="graph-view-control" type="button" data-graph-action="zoom-in" aria-label="{{ cond (eq site.Language.Lang "id") "Perbesar tampilan" "Zoom in" }}" title="{{ cond (eq site.Language.Lang "id") "Perbesar tampilan" "Zoom in" }}">+</button>
+                        </div>
+                        {{- with $jsonOutput }}
+                        <a class="graph-explorer__download" href="{{ .RelPermalink }}">{{ cond (eq site.Language.Lang "id") "Lihat JSON" "View JSON" }}</a>
+                        {{- end }}
+                    </div>
                     <p class="graph-explorer__stats" data-graph-stats>{{ cond (eq site.Language.Lang "id") "Menumbuhkan peta..." "Growing the map..." }}</p>
-                    {{- with $jsonOutput }}
-                    <a class="graph-explorer__download" href="{{ .RelPermalink }}">{{ cond (eq site.Language.Lang "id") "Lihat JSON" "View JSON" }}</a>
-                    {{- end }}
                 </div>
             </div>
 
@@ -91,7 +98,7 @@
                     </div>
                     <p class="graph-inspector__status" data-graph-status>{{ cond (eq site.Language.Lang "id") "Belum ada fokus" "No focus yet" }}</p>
                     <h2 class="graph-inspector__title" data-graph-title>{{ cond (eq site.Language.Lang "id") "Arahkan atau klik node" "Hover or click a node" }}</h2>
-                    <p class="graph-inspector__copy" data-graph-copy>{{ cond (eq site.Language.Lang "id") "Tulisan, tag, dan kategori akan menampilkan relasinya di sini. Klik sebuah node untuk membuka halamannya." "Posts, tags, and categories will reveal their relationships here. Click a node to open its page." }}</p>
+                    <p class="graph-inspector__copy" data-graph-copy>{{ cond (eq site.Language.Lang "id") "Tulisan, tag, dan kategori akan menampilkan kaitannya di sini. Fokuskan satu node untuk membaca konteksnya." "Posts, tags, and categories will reveal their links here. Focus a node to read its context." }}</p>
                     <dl class="graph-inspector__facts" data-graph-facts></dl>
                     <div class="graph-inspector__related" data-graph-related-wrap hidden>
                         <p class="graph-inspector__related-label">{{ cond (eq site.Language.Lang "id") "Terkait" "Connected" }}</p>
