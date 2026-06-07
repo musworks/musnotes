@@ -41,22 +41,6 @@
             </div>
         </div>
 
-        <div class="home-hero__visual">
-            <div class="home-hero-card">
-                <div class="home-hero-card__frame" aria-hidden="true"></div>
-                <div class="home-hero-card__symbol" role="img" aria-label="{{ .visual.symbolAlt | default "Homepage visual symbol" }}">
-                    {{- partial "home-hero-graph.html" . -}}
-                </div>
-                <div class="home-hero-card__meta">
-                    {{- with .visual.caption }}
-                    <span class="home-hero-card__caption">{{ . }}</span>
-                    {{- end }}
-                    {{- with .visual.meta }}
-                    <span class="home-hero-card__note">{{ . }}</span>
-                    {{- end }}
-                </div>
-            </div>
-        </div>
     </div>
 </section>
 {{- else }}

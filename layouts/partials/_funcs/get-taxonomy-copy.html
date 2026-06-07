@@ -1,0 +1,35 @@
+{{- $lang := site.Language.Lang -}}
+{{- $taxonomyType := .Type -}}
+{{- $copy := dict "customized" false -}}
+
+{{- if eq $taxonomyType "tags" -}}
+  {{- $copy = dict
+    "customized" true
+    "title" "Classification"
+    "eyebrow" (cond (eq $lang "id") "Peta Topik" "Topical Index")
+    "intro" (cond (eq $lang "id") "Sebuah indeks tematik untuk menelusuri catatan, konsep, dan fragmen yang tumbuh di taman ini." "A topical index for tracing notes, concepts, and fragments growing through this garden.")
+    "note" (cond (eq $lang "id") "Setiap tag bekerja seperti penanda kecil yang mengumpulkan gagasan serumpun ke dalam keluarga yang tampak." "Each tag acts like a small marker, gathering related thoughts into visible families.")
+    "cardMeta" (cond (eq $lang "id") "Tag" "Tag")
+    "linkLabel" (cond (eq $lang "id") "Buka tag %s" "View tag %s")
+    "noteSingular" (cond (eq $lang "id") "catatan" "note")
+    "notePlural" (cond (eq $lang "id") "catatan" "notes")
+    "emptyState" (cond (eq $lang "id") "Belum ada tag yang dipublikasikan." "No tags have been published yet.")
+    "metaDescription" (cond (eq $lang "id") "Sebuah indeks tematik untuk menelusuri catatan, konsep, dan fragmen yang tumbuh di taman ini." "A topical index for tracing notes, concepts, and fragments growing through this garden.")
+  -}}
+{{- else if eq $taxonomyType "categories" -}}
+  {{- $copy = dict
+    "customized" true
+    "title" (cond (eq $lang "id") "Kategori" "Categories")
+    "eyebrow" (cond (eq $lang "id") "Rak Topik" "Subject Shelves")
+    "intro" (cond (eq $lang "id") "Sebuah indeks bidang untuk menelusuri gugus catatan yang disusun menurut domain, disiplin, atau medan kajian." "A subject index for browsing note clusters arranged by domain, discipline, or field of study.")
+    "note" (cond (eq $lang "id") "Setiap kategori menampung catatan yang berbicara dalam lanskap bahasan yang sama." "Each category gathers notes that speak within the same landscape of study.")
+    "cardMeta" (cond (eq $lang "id") "Kategori" "Category")
+    "linkLabel" (cond (eq $lang "id") "Buka kategori %s" "View category %s")
+    "noteSingular" (cond (eq $lang "id") "catatan" "note")
+    "notePlural" (cond (eq $lang "id") "catatan" "notes")
+    "emptyState" (cond (eq $lang "id") "Belum ada kategori yang dipublikasikan." "No categories have been published yet.")
+    "metaDescription" (cond (eq $lang "id") "Sebuah indeks bidang untuk menelusuri gugus catatan yang disusun menurut domain, disiplin, atau medan kajian." "A subject index for browsing note clusters arranged by domain, discipline, or field of study.")
+  -}}
+{{- end -}}
+
+{{- return $copy -}}

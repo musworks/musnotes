@@ -31,11 +31,31 @@
 {{- end }}
 {{- end }}
 
-{{- with or .Title site.Title site.Params.title | plainify }}
+{{- $pageTitle := .Title -}}
+{{- if eq .Kind "taxonomy" -}}
+  {{- $taxonomyCopy := partial "_funcs/get-taxonomy-copy.html" . -}}
+  {{- if $taxonomyCopy.customized -}}
+    {{- $pageTitle = $taxonomyCopy.title -}}
+  {{- end -}}
+{{- end -}}
+{{- with or $pageTitle site.Title site.Params.title | plainify }}
   <meta name="twitter:title" content="{{ . }}">
 {{- end }}
 
-{{- with or .Description .Summary site.Params.description | plainify | htmlUnescape }}
+{{- $pageDescription := "" -}}
+{{- if .Description -}}
+  {{- $pageDescription = .Description -}}
+{{- else if eq .Kind "taxonomy" -}}
+  {{- $taxonomyCopy := partial "_funcs/get-taxonomy-copy.html" . -}}
+  {{- if $taxonomyCopy.customized -}}
+    {{- $pageDescription = $taxonomyCopy.metaDescription -}}
+  {{- end -}}
+{{- else if .Summary -}}
+  {{- $pageDescription = .Summary -}}
+{{- else -}}
+  {{- $pageDescription = site.Params.description -}}
+{{- end -}}
+{{- with $pageDescription | plainify | htmlUnescape }}
   <meta name="twitter:description" content="{{ trim . "\n\r\t " }}">
 {{- end }}
 

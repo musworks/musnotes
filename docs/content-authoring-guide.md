@@ -378,23 +378,25 @@ layout: "list"
 
 ## 4. Divider rule
 
-Use the Hugo shortcode below for thematic breaks:
+Use the Hugo shortcode below for intentional, more decorative thematic breaks:
 
 ```go-html-template
 {{< mus-divider >}}
 ```
 
-Do not use raw Markdown horizontal rules such as:
+Raw Markdown horizontal rules are also safe again when you only need a lighter separator:
 
 ```md
 ---
 ```
 
-Why:
+Preferred usage:
 
 - the repo already has a custom shortcode at `layouts/shortcodes/mus-divider.html`
 - the site styles the `.mus-divider` visual system globally
-- replacing it with raw rules creates inconsistent presentation
+- standard Markdown `<hr>` is now styled as a softer editorial divider in article content
+- use `{{< mus-divider >}}` when the break should feel more authored or ceremonial
+- use raw `---` when the break should stay quiet and minimal
 
 ## 5. Reusable visual systems already in the repo
 
@@ -405,6 +407,7 @@ The article-level reusable systems currently documented from `assets/css/extende
 - the styled table wrapper
 - the glossary card system
 - standard Markdown blockquotes
+- standard Markdown footnotes
 
 There is no reusable global article callout class or article image wrapper class yet.
 
@@ -781,6 +784,29 @@ Temporary minimal image pattern if absolutely needed:
 ```
 
 But this should be treated as a fallback, not a documented visual system. If image blocks become common, add a global class in CSS and update this guide.
+
+### 5.6 Footnotes
+
+Standard Markdown footnotes are supported and now have consistent article styling.
+
+Example:
+
+```md
+Kalimat utama dengan catatan tambahan.[^note]
+
+[^note]: Isi catatan kaki.
+```
+
+Use footnotes for:
+
+- short clarifications
+- source notes
+- side comments that should not interrupt the paragraph flow
+
+Do not use footnotes for:
+
+- long digressions that should become a normal paragraph or blockquote
+- layout hacks or hidden content
 
 ### 5.7 Archive and list visuals
 

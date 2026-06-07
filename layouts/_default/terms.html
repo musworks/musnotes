@@ -1,18 +1,18 @@
 {{- define "main" -}}
 
-{{- if eq .Type "tags" -}}
-{{- $lang := site.Language.Lang -}}
-{{- $title := "Classification" -}}
-{{- $eyebrow := cond (eq $lang "id") "Peta Topik" "Topical Index" -}}
-{{- $intro := cond (eq $lang "id") "Sebuah indeks tematik untuk menelusuri catatan, konsep, dan fragmen yang tumbuh di taman ini." "A topical index for tracing notes, concepts, and fragments growing through this garden." -}}
-{{- $microNote := cond (eq $lang "id") "Setiap tag bekerja seperti penanda kecil yang mengumpulkan gagasan serumpun ke dalam keluarga yang tampak." "Each tag acts like a small marker, gathering related thoughts into visible families." -}}
-{{- $cardMeta := cond (eq $lang "id") "Tag" "Tags" -}}
-{{- $linkLabel := cond (eq $lang "id") "Buka tag %s" "View tag %s" -}}
-{{- $noteSingular := cond (eq $lang "id") "catatan" "note" -}}
-{{- $notePlural := cond (eq $lang "id") "catatan" "notes" -}}
+{{- $taxonomyCopy := partial "_funcs/get-taxonomy-copy.html" . -}}
+{{- if $taxonomyCopy.customized -}}
+{{- $title := $taxonomyCopy.title -}}
+{{- $eyebrow := $taxonomyCopy.eyebrow -}}
+{{- $intro := $taxonomyCopy.intro -}}
+{{- $microNote := $taxonomyCopy.note -}}
+{{- $cardMeta := $taxonomyCopy.cardMeta -}}
+{{- $linkLabel := $taxonomyCopy.linkLabel -}}
+{{- $noteSingular := $taxonomyCopy.noteSingular -}}
+{{- $notePlural := $taxonomyCopy.notePlural -}}
 {{- $terms := .Data.Terms.Alphabetical -}}
 
-<section class="classification classification--tags" aria-labelledby="classification-title" data-taxonomy="tags">
+<section class="classification classification--{{ .Type }}" aria-labelledby="classification-title" data-taxonomy="{{ .Type }}">
   <div class="classification__inner">
     <header class="classification__header">
       {{- partial "breadcrumbs.html" . }}
@@ -48,7 +48,7 @@
     </div>
     {{- else }}
     <section class="classification-empty" aria-live="polite">
-      <p class="classification-empty__copy">{{ cond (eq $lang "id") "Belum ada tag yang dipublikasikan." "No tags have been published yet." }}</p>
+      <p class="classification-empty__copy">{{ $taxonomyCopy.emptyState }}</p>
     </section>
     {{- end }}
   </div>

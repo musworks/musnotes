@@ -1,6 +1,8 @@
 (() => {
     const root = document.getElementById("graph-explorer");
     if (!root) return;
+    if (root.dataset.graphInteractiveBound === "true") return;
+    root.dataset.graphInteractiveBound = "true";
 
     const canvas = root.querySelector("[data-graph-canvas]");
     const stage = canvas ? canvas.parentElement : null;
@@ -12,6 +14,7 @@
     const inspectorLink = root.querySelector("[data-graph-link]");
     const inspectorStatus = root.querySelector("[data-graph-status]");
     const inspectorReset = root.querySelector("[data-graph-reset]");
+    const localToggle = root.querySelector("[data-graph-local-toggle]");
     const relatedWrap = root.querySelector("[data-graph-related-wrap]");
     const relatedList = root.querySelector("[data-graph-related]");
     const relatedLabelNode = relatedWrap ? relatedWrap.querySelector(".graph-inspector__related-label") : null;
@@ -23,6 +26,7 @@
 
     const ctx = canvas.getContext("2d");
     if (!ctx) return;
+    const DEBUG = Boolean(window.__GRAPH_DEBUG__ || root.dataset.graphDebug === "true");
 
     const defaultTitle = root.dataset.defaultTitle || "Hover or click a node";
     const defaultCopy = root.dataset.defaultCopy || "";
@@ -34,25 +38,18 @@
     const idleStateLabel = root.dataset.idleState || "No focus yet";
     const hoverStateLabel = root.dataset.hoverState || "Preview";
     const selectedStateLabel = root.dataset.selectedState || "Selected";
-    const relatedLabel = root.dataset.labelRelated || "Connected";
-    const relatedMoreTemplate = root.dataset.relatedMore || "+ {count} more";
     const resetLabel = root.dataset.resetLabel || "Reset focus";
     const typeLabels = {
         post: root.dataset.typePost || "Post",
         tag: root.dataset.typeTag || "Tag",
         category: root.dataset.typeCategory || "Category"
     };
-    const factLabels = {
-        type: root.dataset.labelType || "Type",
-        relations: root.dataset.labelRelations || "Relations",
-        section: root.dataset.labelSection || "Section",
-        date: root.dataset.labelDate || "Date"
-    };
-    const copyByKind = {
-        post: root.dataset.copyPost || "This post connects to the tags and categories that shape its context.",
-        tag: root.dataset.copyTag || "This tag ties together posts growing around a shared theme.",
-        category: root.dataset.copyCategory || "This category gathers a broader branch of related writing."
-    };
+    const connectionLabel = root.dataset.labelRelated || "Connected";
+
+    function debugLog(...parts) {
+        if (!DEBUG) return;
+        console.log("[graph]", ...parts);
+    }
 
     const config = {
         nodeRadius: { post: 5.6, tag: 8.3, category: 10.4 },
@@ -60,9 +57,9 @@
         maxRadiusBoost: 5.2,
         pickPadding: 12,
         worldPadding: 46,
-        focusFade: 0.12,
-        hoverFade: 0.34,
-        view: { minScale: 0.45, maxScale: 3.2, fitPadding: 56 },
+        focusFade: 0.08,
+        hoverFade: 0.08,
+        view: { minScale: 0.15, maxScale: 6.0, fitPadding: 56 },
         force: {
             repulsionSame: 52,
             repulsionCross: 82,
@@ -80,7 +77,7 @@
             thresholds: { post: 6, tag: 4, category: 2 },
             importantQuota: 12,
             maxAmbientDesktop: 16,
-            maxAmbientMobile: 10
+            maxAmbientMobile: 8
         },
         relatedLimit: 10
     };
@@ -112,9 +109,26 @@
         pointerScreen: { x: 0, y: 0 },
         dragStartScreen: { x: 0, y: 0 },
         dragStartView: { x: 0, y: 0 },
+        dragOriginNode: null,
         view: { x: 0, y: 0, scale: 1 },
-        userMovedView: false
+        userMovedView: false,
+        localViewActive: false,
+        eventsBound: false,
+        resizeObserver: null,
+        activePointers: new Map(),
+        pinchGesture: null,
+        lastHitNodeId: null
     };
+
+    function describeNode(node) {
+        if (!node) return null;
+        return {
+            id: node.id,
+            kind: node.kind,
+            label: node.label,
+            url: node.url || null
+        };
+    }
 
     function css(name, fallback) {
         const local = getComputedStyle(root).getPropertyValue(name).trim();
@@ -149,11 +163,9 @@
     }
 
     function anchorFor(kind) {
-        const centerX = state.width * 0.5;
-        const centerY = state.height * 0.52;
-        if (kind === "category") return { x: centerX, y: centerY - state.height * 0.01, spreadX: state.width * 0.17, spreadY: state.height * 0.14 };
-        if (kind === "tag") return { x: centerX, y: centerY - state.height * 0.015, spreadX: state.width * 0.3, spreadY: state.height * 0.24 };
-        return { x: centerX, y: centerY + state.height * 0.05, spreadX: state.width * 0.42, spreadY: state.height * 0.33 };
+        if (kind === "category") return { x: 0, y: -60, spreadX: 180, spreadY: 120 };
+        if (kind === "tag") return { x: 0, y: -20, spreadX: 360, spreadY: 240 };
+        return { x: 0, y: 80, spreadX: 520, spreadY: 380 };
     }
 
     function initializeNode(node) {
@@ -185,6 +197,7 @@
         canvas.style.width = `${state.width}px`;
         canvas.style.height = `${state.height}px`;
         ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+        debugLog("canvas size", { width: state.width, height: state.height, dpr: state.dpr });
     }
 
     function pointerPosition(event) {
@@ -220,9 +233,8 @@
         return base + boost;
     }
 
-    function visibleScreen(node, margin = 80) {
-        const point = worldToScreen(node);
-        return point.x >= -margin && point.x <= state.width + margin && point.y >= -margin && point.y <= state.height + margin;
+    function visibleScreen(node) {
+        return node.onScreen ?? true;
     }
 
     function nearestNode(point) {
@@ -242,6 +254,14 @@
         });
 
         return best;
+    }
+
+    function noteHit(node, source) {
+        const hitId = node ? node.id : null;
+        if (hitId && hitId !== state.lastHitNodeId) {
+            debugLog("node hit detected", source, describeNode(node));
+        }
+        state.lastHitNodeId = hitId;
     }
 
     function degreeMap(nodes, links) {
@@ -299,9 +319,9 @@
 
     function updateInspector() {
         const target = activeNode();
-        inspectorTitle.textContent = target ? target.label : defaultTitle;
-        inspectorCopy.textContent = target ? (copyByKind[target.kind] || defaultCopy) : defaultCopy;
-        inspectorFacts.innerHTML = "";
+        if (inspectorTitle) {
+            inspectorTitle.textContent = target ? target.label : defaultTitle;
+        }
 
         if (inspectorStatus) {
             inspectorStatus.textContent = state.focusNode
@@ -316,9 +336,13 @@
             inspectorReset.textContent = resetLabel;
         }
 
+        if (localToggle) {
+            localToggle.hidden = !state.focusNode;
+            localToggle.classList.toggle("is-active", state.localViewActive && !!state.focusNode);
+        }
+
         if (!target) {
-            if (relatedWrap) relatedWrap.hidden = true;
-            if (relatedList) relatedList.innerHTML = "";
+            if (inspectorCopy) inspectorCopy.textContent = defaultCopy;
             if (inspectorLink) {
                 inspectorLink.hidden = true;
                 inspectorLink.removeAttribute("href");
@@ -326,50 +350,14 @@
             return;
         }
 
-        const facts = [
-            [factLabels.type, typeLabels[target.kind] || target.kind],
-            [factLabels.relations, String(state.degrees.get(target.id) || 0)]
-        ];
-
-        if (target.section) facts.splice(1, 0, [factLabels.section, target.section]);
-        if (target.date) facts.push([factLabels.date, target.date]);
-
-        facts.forEach(([label, value]) => {
-            const dt = document.createElement("dt");
-            dt.textContent = label;
-            const dd = document.createElement("dd");
-            dd.textContent = value;
-            inspectorFacts.append(dt, dd);
-        });
-
-        if (relatedWrap && relatedList) {
-            const relatedNodes = relatedNodesFor(target);
-            relatedList.innerHTML = "";
-            if (relatedLabelNode) relatedLabelNode.textContent = relatedLabel;
-
-            if (relatedNodes.length > 0) {
-                relatedWrap.hidden = false;
-                relatedNodes.slice(0, config.relatedLimit).forEach((itemNode) => {
-                    const element = document.createElement(itemNode.url ? "a" : "span");
-                    element.className = "graph-inspector__related-item";
-                    element.textContent = itemNode.label;
-                    if (itemNode.url) element.href = itemNode.url;
-                    relatedList.append(element);
-                });
-
-                if (relatedNodes.length > config.relatedLimit) {
-                    const more = document.createElement("span");
-                    more.className = "graph-inspector__related-item";
-                    more.textContent = relatedMoreTemplate.replace("{count}", String(relatedNodes.length - config.relatedLimit));
-                    relatedList.append(more);
-                }
-            } else {
-                relatedWrap.hidden = true;
-            }
+        if (inspectorCopy) {
+            const degree = state.degrees.get(target.id) || 0;
+            const type = typeLabels[target.kind] || target.kind;
+            inspectorCopy.textContent = `${type} - ${degree} ${connectionLabel.toLowerCase()}`;
         }
 
         if (inspectorLink) {
-            if (target.url) {
+            if (state.focusNode && target.url) {
                 inspectorLink.hidden = false;
                 inspectorLink.href = target.url;
                 inspectorLink.textContent = openLabel;
@@ -443,6 +431,11 @@
 
     function clearFocus() {
         state.focusNode = null;
+        state.localViewActive = false;
+        if (localToggle) {
+            localToggle.classList.remove("is-active");
+            localToggle.hidden = true;
+        }
         updateInspector();
         draw();
     }
@@ -487,11 +480,9 @@
     }
 
     function applyCenterForce(nodes) {
-        const centerX = state.width * 0.5;
-        const centerY = state.height * 0.52;
         nodes.forEach((node) => {
-            node.vx += (centerX - node.x) * config.force.centerPull * state.alpha;
-            node.vy += (centerY - node.y) * config.force.centerPull * state.alpha;
+            node.vx += (0 - node.x) * config.force.centerPull * state.alpha;
+            node.vy += (0 - node.y) * config.force.centerPull * state.alpha;
         });
     }
 
@@ -552,9 +543,66 @@
             node.vy *= config.force.damping;
             node.x += node.vx;
             node.y += node.vy;
-            node.x = clamp(node.x, config.worldPadding, state.width - config.worldPadding);
-            node.y = clamp(node.y, config.worldPadding, state.height - config.worldPadding);
+            node.x = clamp(node.x, -1500, 1500);
+            node.y = clamp(node.y, -1500, 1500);
         });
+    }
+
+    function applyCollision(nodes) {
+        const padding = 14;
+        for (let indexA = 0; indexA < nodes.length; indexA += 1) {
+            const nodeA = nodes[indexA];
+            const rA = nodeRadius(nodeA);
+            for (let indexB = indexA + 1; indexB < nodes.length; indexB += 1) {
+                const nodeB = nodes[indexB];
+                const rB = nodeRadius(nodeB);
+                const dx = nodeB.x - nodeA.x;
+                const dy = nodeB.y - nodeA.y;
+                const distance = Math.sqrt(dx * dx + dy * dy) || 1;
+                const minDist = rA + rB + padding;
+                if (distance < minDist) {
+                    const overlap = minDist - distance;
+                    const pushX = (dx / distance) * overlap * 0.5 * Math.max(state.alpha, 0.1);
+                    const pushY = (dy / distance) * overlap * 0.5 * Math.max(state.alpha, 0.1);
+                    nodeA.x -= pushX;
+                    nodeA.y -= pushY;
+                    nodeB.x += pushX;
+                    nodeB.y += pushY;
+                }
+            }
+        }
+    }
+
+    function fitViewToNeighborhood(centerNode) {
+        if (!centerNode) return;
+        const neighbors = relatedNodesFor(centerNode);
+        const nodes = [centerNode, ...neighbors];
+
+        let minX = Infinity;
+        let minY = Infinity;
+        let maxX = -Infinity;
+        let maxY = -Infinity;
+
+        nodes.forEach((node) => {
+            const radius = nodeRadius(node);
+            minX = Math.min(minX, node.x - radius);
+            minY = Math.min(minY, node.y - radius);
+            maxX = Math.max(maxX, node.x + radius);
+            maxY = Math.max(maxY, node.y + radius);
+        });
+
+        const width = Math.max(maxX - minX, 1);
+        const height = Math.max(maxY - minY, 1);
+        const padding = 72;
+        const scaleX = (state.width - padding * 2) / width;
+        const scaleY = (state.height - padding * 2) / height;
+        const scale = clamp(Math.min(scaleX, scaleY, 1.4), config.view.minScale, config.view.maxScale);
+        const centerX = (minX + maxX) * 0.5;
+        const centerY = (minY + maxY) * 0.5;
+
+        state.view.scale = scale;
+        state.view.x = state.width * 0.5 - centerX * scale;
+        state.view.y = state.height * 0.5 - centerY * scale;
     }
 
     function stepSimulation() {
@@ -564,6 +612,7 @@
         applyRepulsion(state.visibleNodes);
         applyLinkForce(state.visibleLinks);
         integrate(state.visibleNodes);
+        applyCollision(state.visibleNodes);
         state.alpha = Math.max(0, state.alpha * config.force.alphaDecay);
         return Boolean(state.draggingNode) || state.alpha > config.force.settleFloor;
     }
@@ -630,44 +679,69 @@
     function drawEdges(focusSet, hoverSet) {
         const focusId = state.focusNode ? state.focusNode.id : null;
         const hoverId = state.hoverNode ? state.hoverNode.id : null;
+        const isLocal = state.localViewActive && focusId;
 
-        ctx.save();
-        ctx.translate(state.view.x, state.view.y);
-        ctx.scale(state.view.scale, state.view.scale);
+        // Group links into style batches with three clue-path states: default, neighbor, focus
+        const batches = {
+            default: [],
+            neighbor: [],
+            focus: []
+        };
 
         state.visibleLinks.forEach((link) => {
             const source = state.nodeMap.get(link.source);
             const target = state.nodeMap.get(link.target);
             if (!source || !target) return;
-            if (!visibleScreen(source, 120) && !visibleScreen(target, 120)) return;
+
+            if (isLocal && link.source !== focusId && link.target !== focusId) return;
+            if (!source.onScreen && !target.onScreen) return;
 
             const incidentToFocus = Boolean(focusId && (link.source === focusId || link.target === focusId));
             const incidentToHover = Boolean(hoverId && (link.source === hoverId || link.target === hoverId));
             const insideFocus = Boolean(focusId && focusSet.has(link.source) && focusSet.has(link.target));
             const insideHover = Boolean(hoverId && hoverSet.has(link.source) && hoverSet.has(link.target));
 
-            let alpha = 0.52;
-            if (focusId) {
-                alpha = incidentToFocus ? 1 : insideFocus ? 0.28 : 0.06;
-            } else if (hoverId) {
-                alpha = incidentToHover ? 0.92 : insideHover ? 0.24 : 0.14;
+            let styleKey = "default";
+            if (incidentToFocus || incidentToHover) {
+                styleKey = "focus";
+            } else if (insideFocus || insideHover) {
+                styleKey = "neighbor";
             }
-            if (incidentToHover) alpha = Math.max(alpha, 0.94);
+
+            batches[styleKey].push({ source, target });
+        });
+
+        ctx.save();
+        ctx.translate(state.view.x, state.view.y);
+        ctx.scale(state.view.scale, state.view.scale);
+
+        Object.entries(batches).forEach(([styleKey, links]) => {
+            if (links.length === 0) return;
 
             ctx.save();
-            ctx.globalAlpha = alpha;
-            ctx.strokeStyle = link.kind === "category"
-                ? css("--graph-link-category", "rgba(121, 92, 111, 0.68)")
-                : css("--graph-link-tag", "rgba(96, 116, 101, 0.68)");
-            ctx.lineWidth = (incidentToFocus || incidentToHover ? 2.2 : link.kind === "category" ? 1.7 : 1.35) / state.view.scale;
             ctx.beginPath();
-            ctx.moveTo(source.x, source.y);
-            ctx.quadraticCurveTo(
-                (source.x + target.x) * 0.5,
-                (source.y + target.y) * 0.5 + (source.kind === "post" ? 8 : -8),
-                target.x,
-                target.y
-            );
+            ctx.lineCap = "round";
+            ctx.lineJoin = "round";
+
+            if (styleKey === "focus") {
+                ctx.strokeStyle = css("--graph-edge-focus", "rgba(170, 52, 70, 0.82)");
+                ctx.lineWidth = 2.2 / state.view.scale;
+                ctx.globalAlpha = 1;
+            } else if (styleKey === "neighbor") {
+                ctx.strokeStyle = css("--graph-edge-neighbor", "rgba(160, 64, 78, 0.58)");
+                ctx.lineWidth = 1.45 / state.view.scale;
+                ctx.globalAlpha = 1;
+            } else {
+                ctx.strokeStyle = css("--graph-edge-default", "rgba(150, 72, 82, 0.34)");
+                ctx.lineWidth = 1.0 / state.view.scale;
+                ctx.globalAlpha = focusId || hoverId ? 0.48 : 0.9;
+            }
+
+            links.forEach(({ source, target }) => {
+                ctx.moveTo(source.x, source.y);
+                ctx.lineTo(target.x, target.y);
+            });
+
             ctx.stroke();
             ctx.restore();
         });
@@ -676,18 +750,32 @@
     }
 
     function labelSpec(node, visual) {
+        // High priority override: hovered/focused nodes and their direct neighbors always show labels
+        const isAlwaysShown = visual.isFocused || visual.isHovered || visual.isNeighbor || visual.isHoverNeighbor;
+
+        if (!isAlwaysShown) {
+            if (state.view.scale < 0.6) {
+                // Zoom < 0.6: Hide all labels except category nodes (and focused/hovered/neighbors)
+                if (node.kind !== "category") return null;
+            } else if (state.view.scale < 1.0) {
+                // Zoom < 1.0: Show tag/category labels; hide post labels unless hovered/focused
+                if (node.kind === "post") return null;
+            }
+            if (isMobileView() && state.view.scale < 1.18 && node.kind === "post") {
+                return null;
+            }
+            // Zoom >= 1.0: Show labels normally according to degree thresholds
+        }
+
         const degree = state.degrees.get(node.id) || 0;
         const threshold = config.labels.thresholds[node.kind] || config.labels.thresholds.post;
-        const show = visual.isFocused
-            || visual.isHovered
-            || visual.isNeighbor
-            || visual.isHoverNeighbor
+        const show = isAlwaysShown
             || state.ambientLabelIds.has(node.id)
             || degree >= threshold;
         if (!show) return null;
 
         const palette = nodePalette(node.kind);
-        const screen = worldToScreen(node);
+        const screen = { x: node.screenX, y: node.screenY };
         const alignLeft = node.kind === "post" || screen.x < state.width * 0.54;
         const priority = visual.isFocused
             ? 120
@@ -707,10 +795,14 @@
             x: screen.x + (alignLeft ? 12 : -12),
             y: screen.y - (visual.isFocused || visual.isHovered ? 14 : 12),
             align: alignLeft ? "left" : "right",
-            font: `${visual.isFocused || visual.isHovered ? "600" : "500"} ${fontSize}px Alice, Gabriela, Georgia, serif`,
+            font: `${visual.isFocused || visual.isHovered ? "600" : "550"} ${fontSize}px Alice, Gabriela, Georgia, serif`,
             size: fontSize,
             color: visual.isFocused || visual.isHovered ? css("--graph-label-strong", "#251f29") : palette.label,
-            alpha: visual.alpha * (visual.isFocused || visual.isHovered ? 1 : 0.92),
+            alpha: visual.alpha * (visual.isFocused || visual.isHovered ? 1 : 0.98),
+            stroke: css("--graph-label-stroke", "rgba(252, 248, 243, 0.98)"),
+            shadow: css("--graph-label-shadow", "rgba(255, 251, 246, 0.74)"),
+            haloWidth: visual.isFocused || visual.isHovered ? 5.6 : visual.isNeighbor || visual.isHoverNeighbor ? 4.8 : 4.2,
+            shadowBlur: visual.isFocused || visual.isHovered ? 7 : visual.isNeighbor || visual.isHoverNeighbor ? 5 : 3,
             priority,
             text: node.label
         };
@@ -718,12 +810,19 @@
 
     function drawNodesAndLabels(focusSet, hoverSet) {
         const labels = [];
+        const focusId = state.focusNode ? state.focusNode.id : null;
+        const isLocal = state.localViewActive && focusId;
 
         ctx.save();
         ctx.translate(state.view.x, state.view.y);
         ctx.scale(state.view.scale, state.view.scale);
 
         state.visibleNodes.forEach((node) => {
+            // Local View filter: only draw focused node and its direct neighbors
+            if (isLocal) {
+                if (node.id !== focusId && !focusSet.has(node.id)) return;
+            }
+
             if (!visibleScreen(node, 120)) return;
             const palette = nodePalette(node.kind);
             const visual = computeVisualState(node, focusSet, hoverSet);
@@ -732,14 +831,27 @@
             ctx.save();
             ctx.globalAlpha = visual.alpha;
 
-            if (visual.isFocused || visual.isHovered || visual.isNeighbor || visual.isHoverNeighbor) {
+            if (visual.isFocused || visual.isHovered) {
+                // Outer soft glow ring
                 ctx.beginPath();
                 ctx.fillStyle = visual.isFocused
-                    ? css("--graph-node-selected", "rgba(126, 86, 112, 0.28)")
-                    : visual.isHovered
-                        ? css("--graph-node-hover", "rgba(104, 145, 109, 0.26)")
-                        : css("--graph-node-neighbor", "rgba(104, 145, 109, 0.2)");
-                ctx.arc(node.x, node.y, radius + (visual.isFocused || visual.isHovered ? 8.2 : 5.8), 0, Math.PI * 2);
+                    ? css("--graph-node-selected-glow-outer", "rgba(126, 86, 112, 0.12)")
+                    : css("--graph-node-hover-glow-outer", "rgba(104, 145, 109, 0.12)");
+                ctx.arc(node.x, node.y, radius + 13.0, 0, Math.PI * 2);
+                ctx.fill();
+
+                // Inner soft glow ring
+                ctx.beginPath();
+                ctx.fillStyle = visual.isFocused
+                    ? css("--graph-node-selected-glow-inner", "rgba(126, 86, 112, 0.26)")
+                    : css("--graph-node-hover-glow-inner", "rgba(104, 145, 109, 0.26)");
+                ctx.arc(node.x, node.y, radius + 6.5, 0, Math.PI * 2);
+                ctx.fill();
+            } else if (visual.isNeighbor || visual.isHoverNeighbor) {
+                // Neighbor halo
+                ctx.beginPath();
+                ctx.fillStyle = css("--graph-node-neighbor", "rgba(104, 145, 109, 0.16)");
+                ctx.arc(node.x, node.y, radius + 5.5, 0, Math.PI * 2);
                 ctx.fill();
             }
 
@@ -796,18 +908,36 @@
             }
 
             occupied.push(box);
+            const drawX = Math.round(label.x);
+            const drawY = Math.round(label.y);
             ctx.globalAlpha = label.alpha;
-            ctx.lineWidth = 4.25;
-            ctx.strokeStyle = css("--graph-label-stroke", "rgba(252, 248, 243, 0.98)");
-            ctx.strokeText(label.text, label.x, label.y);
+            ctx.lineJoin = "round";
+            ctx.lineCap = "round";
+            ctx.shadowColor = label.shadow;
+            ctx.shadowBlur = label.shadowBlur;
+            ctx.lineWidth = label.haloWidth;
+            ctx.strokeStyle = label.stroke;
+            ctx.strokeText(label.text, drawX, drawY);
+            ctx.shadowBlur = 0;
             ctx.fillStyle = label.color;
-            ctx.fillText(label.text, label.x, label.y);
+            ctx.fillText(label.text, drawX, drawY);
             ctx.restore();
         });
     }
 
     function draw() {
         ctx.clearRect(0, 0, state.width, state.height);
+
+        // Precompute screen coordinates for all visible nodes
+        const margin = 120;
+        state.visibleNodes.forEach((node) => {
+            const screen = worldToScreen(node);
+            node.screenX = screen.x;
+            node.screenY = screen.y;
+            node.onScreen = screen.x >= -margin && screen.x <= state.width + margin
+                         && screen.y >= -margin && screen.y <= state.height + margin;
+        });
+
         const focusSet = neighborhoodSet(state.focusNode);
         const hoverSet = neighborhoodSet(state.hoverNode);
         drawEdges(focusSet, hoverSet);
@@ -858,12 +988,90 @@
         requestFrame();
     }
 
-    function openNode(node) {
-        if (!node || !node.url || node.kind !== "post") return;
-        window.location.assign(node.url);
+    function hasModifier(event) {
+        return Boolean(event && (event.metaKey || event.ctrlKey || event.shiftKey || event.altKey));
+    }
+
+    function openNode(node, options = {}) {
+        if (!node || !node.url) return false;
+        const { newTab = false, reason = "unknown" } = options;
+        debugLog("opened URL", reason, describeNode(node));
+        if (newTab) {
+            window.open(node.url, "_blank", "noopener");
+        } else {
+            window.location.assign(node.url);
+        }
+        return true;
+    }
+
+    function pointerDistance(pointA, pointB) {
+        const dx = pointB.x - pointA.x;
+        const dy = pointB.y - pointA.y;
+        return Math.sqrt(dx * dx + dy * dy);
+    }
+
+    function pointerMidpoint(pointA, pointB) {
+        return {
+            x: (pointA.x + pointB.x) * 0.5,
+            y: (pointA.y + pointB.y) * 0.5
+        };
+    }
+
+    function syncPointer(event) {
+        if (event.pointerId === undefined) return;
+        state.activePointers.set(event.pointerId, pointerPosition(event));
+    }
+
+    function clearPointer(event) {
+        if (event.pointerId === undefined) return;
+        state.activePointers.delete(event.pointerId);
+    }
+
+    function maybeStartPinch() {
+        if (state.activePointers.size < 2) return false;
+        const points = Array.from(state.activePointers.values()).slice(0, 2);
+        const midpoint = pointerMidpoint(points[0], points[1]);
+        state.pinchGesture = {
+            startDistance: Math.max(pointerDistance(points[0], points[1]), 1),
+            startScale: state.view.scale,
+            worldMidpoint: screenToWorld(midpoint)
+        };
+        state.pointerMoved = true;
+        state.draggingNode = null;
+        state.dragOriginNode = null;
+        state.panning = false;
+        canvas.style.cursor = "grabbing";
+        return true;
+    }
+
+    function updatePinchGesture() {
+        if (!state.pinchGesture || state.activePointers.size < 2) return false;
+        const points = Array.from(state.activePointers.values()).slice(0, 2);
+        const midpoint = pointerMidpoint(points[0], points[1]);
+        const distance = Math.max(pointerDistance(points[0], points[1]), 1);
+        const nextScale = state.pinchGesture.startScale * (distance / state.pinchGesture.startDistance);
+        const clampedScale = clamp(nextScale, config.view.minScale, config.view.maxScale);
+
+        state.view.scale = clampedScale;
+        state.view.x = midpoint.x - state.pinchGesture.worldMidpoint.x * clampedScale;
+        state.view.y = midpoint.y - state.pinchGesture.worldMidpoint.y * clampedScale;
+        state.userMovedView = true;
+        draw();
+        return true;
     }
 
     function attachEvents() {
+        if (state.eventsBound) return;
+        state.eventsBound = true;
+
+        const refreshCanvasLayout = () => {
+            updateCanvasSize();
+            ensureNodePositions(state.rawNodes);
+            if (!state.userMovedView) fitViewToNodes();
+            draw();
+            requestFrame();
+        };
+
         const finishPointer = (event) => {
             if (!state.pointerDown) return;
             if (state.pointerId !== null && event.pointerId !== undefined && event.pointerId !== state.pointerId) return;
@@ -874,23 +1082,55 @@
             const startedOnBlank = state.panning;
             const releasedNode = nearestNode(point);
             const clickedBlank = startedOnBlank && !releasedNode && !state.pointerMoved;
+            const wasDraggingNode = Boolean(state.dragOriginNode);
+            const modifierOpen = Boolean(releasedNode
+                && hasModifier(event)
+                && (releasedNode.kind === "tag" || releasedNode.kind === "category")
+                && releasedNode.url);
 
-            if (!state.pointerMoved) {
+            if (state.pinchGesture) {
+                debugLog("drag end", "pinch");
+            }
+
+            if (releasedNode) {
+                noteHit(releasedNode, "pointerup");
+            }
+
+            if (!state.pointerMoved && !state.pinchGesture) {
                 if (releasedNode) {
                     state.focusNode = releasedNode;
+                    debugLog("click target", describeNode(releasedNode));
+                    if (state.localViewActive) {
+                        fitViewToNeighborhood(state.focusNode);
+                    }
+                    if (modifierOpen) {
+                        openNode(releasedNode, {
+                            newTab: event.metaKey || event.ctrlKey,
+                            reason: "modifier-click"
+                        });
+                    }
                 } else if (clickedBlank) {
-                    state.focusNode = null;
-                    state.hoverNode = null;
+                    clearFocus();
                 }
             }
 
+            if (wasDraggingNode) {
+                debugLog("drag end", describeNode(state.dragOriginNode));
+            }
+
+            clearPointer(event);
             state.pointerDown = false;
             state.pointerMoved = false;
             state.draggingNode = null;
+            state.dragOriginNode = null;
             state.panning = false;
             state.pointerId = null;
+            state.pinchGesture = null;
             state.alpha = Math.max(state.alpha, 0.18);
 
+            if (canvas.releasePointerCapture && event.pointerId !== undefined && canvas.hasPointerCapture?.(event.pointerId)) {
+                canvas.releasePointerCapture(event.pointerId);
+            }
             updateInspector();
             syncHover(point);
             draw();
@@ -900,6 +1140,7 @@
         canvas.addEventListener("pointerdown", (event) => {
             const point = pointerPosition(event);
             const node = nearestNode(point);
+            syncPointer(event);
             state.pointerDown = true;
             state.pointerMoved = false;
             state.pointerId = event.pointerId;
@@ -907,7 +1148,15 @@
             state.dragStartScreen = point;
             state.dragStartView = { ...state.view };
             state.draggingNode = node;
+            state.dragOriginNode = node;
             state.panning = !node;
+            noteHit(node, "pointerdown");
+            if (node) {
+                debugLog("drag start", describeNode(node));
+            }
+            if (maybeStartPinch()) {
+                debugLog("drag start", "pinch");
+            }
             canvas.style.cursor = "grabbing";
             if (canvas.setPointerCapture) canvas.setPointerCapture(event.pointerId);
         });
@@ -915,8 +1164,14 @@
         canvas.addEventListener("pointermove", (event) => {
             const point = pointerPosition(event);
             state.pointerScreen = point;
+            syncPointer(event);
 
             if (state.pointerDown) {
+                if (updatePinchGesture()) {
+                    debugLog("drag move", "pinch", { scale: state.view.scale });
+                    return;
+                }
+
                 const dx = point.x - state.dragStartScreen.x;
                 const dy = point.y - state.dragStartScreen.y;
                 if (Math.abs(dx) > 3 || Math.abs(dy) > 3) state.pointerMoved = true;
@@ -924,6 +1179,15 @@
                 if (state.draggingNode) {
                     state.hoverNode = state.draggingNode;
                     state.alpha = Math.max(state.alpha, 0.42);
+
+                    // Update node position immediately in world coordinates to prevent 1-frame latency/jitter
+                    const world = screenToWorld(point);
+                    state.draggingNode.x = world.x;
+                    state.draggingNode.y = world.y;
+                    state.draggingNode.vx = 0;
+                    state.draggingNode.vy = 0;
+                    debugLog("drag move", describeNode(state.draggingNode), world);
+
                     draw();
                     requestFrame();
                     return;
@@ -933,6 +1197,7 @@
                     state.userMovedView = true;
                     state.view.x = state.dragStartView.x + dx;
                     state.view.y = state.dragStartView.y + dy;
+                    debugLog("drag move", "pan", { x: state.view.x, y: state.view.y });
                     draw();
                     canvas.style.cursor = "grabbing";
                     return;
@@ -945,6 +1210,7 @@
         canvas.addEventListener("pointerleave", () => {
             if (state.pointerDown) return;
             state.hoverNode = null;
+            state.lastHitNodeId = null;
             updateInspector();
             canvas.style.cursor = "grab";
             draw();
@@ -954,7 +1220,12 @@
         window.addEventListener("pointercancel", finishPointer);
 
         canvas.addEventListener("dblclick", (event) => {
-            openNode(nearestNode(pointerPosition(event)));
+            const node = nearestNode(pointerPosition(event));
+            debugLog("double click target", describeNode(node));
+            if (!node) return;
+            if (node.kind === "post" || node.kind === "tag" || node.kind === "category") {
+                openNode(node, { reason: "double-click" });
+            }
         });
 
         canvas.addEventListener("wheel", (event) => {
@@ -964,12 +1235,28 @@
             setViewScale(state.view.scale * zoomFactor, point);
             state.userMovedView = true;
             draw();
+            requestFrame();
         }, { passive: false });
 
         if (inspectorReset) {
             inspectorReset.addEventListener("click", () => {
                 clearFocus();
+                state.userMovedView = false;
+                fitViewToNodes();
                 canvas.style.cursor = "grab";
+                draw();
+            });
+        }
+
+        if (localToggle) {
+            localToggle.addEventListener("click", () => {
+                state.localViewActive = !state.localViewActive;
+                localToggle.classList.toggle("is-active", state.localViewActive);
+                if (state.localViewActive && state.focusNode) {
+                    state.userMovedView = true;
+                    fitViewToNeighborhood(state.focusNode);
+                }
+                draw();
             });
         }
 
@@ -989,15 +1276,13 @@
             });
         });
 
-        const resizeObserver = new ResizeObserver(() => {
-            updateCanvasSize();
-            ensureNodePositions(state.rawNodes);
-            if (!state.userMovedView) fitViewToNodes();
+        state.resizeObserver = new ResizeObserver(() => {
             state.alpha = Math.max(state.alpha, 0.4);
-            draw();
-            requestFrame();
+            refreshCanvasLayout();
         });
-        resizeObserver.observe(stage);
+        state.resizeObserver.observe(stage);
+        window.addEventListener("orientationchange", refreshCanvasLayout, { passive: true });
+        window.addEventListener("resize", refreshCanvasLayout, { passive: true });
     }
 
     async function bootstrap() {
@@ -1010,6 +1295,10 @@
             state.rawNodes = (payload.nodes || []).map((node) => ({ ...node }));
             state.rawLinks = payload.links || [];
             state.nodeMap = new Map(state.rawNodes.map((node) => [node.id, node]));
+            debugLog("graph data loaded", {
+                nodes: state.rawNodes.length,
+                links: state.rawLinks.length
+            });
 
             updateCanvasSize();
             ensureNodePositions(state.rawNodes);

@@ -9,8 +9,12 @@
 
 {{- /* Title */}}
 {{- $pageTitle := .Title -}}
-{{- if and (eq .Kind "taxonomy") (eq .Type "tags") -}}
-    {{- $pageTitle = "Classification" -}}
+{{- $taxonomyCopy := dict -}}
+{{- if eq .Kind "taxonomy" -}}
+    {{- $taxonomyCopy = partial "_funcs/get-taxonomy-copy.html" . -}}
+{{- end -}}
+{{- if $taxonomyCopy.customized -}}
+    {{- $pageTitle = $taxonomyCopy.title -}}
 {{- end -}}
 <title>{{ if .IsHome }}{{ else }}{{ if $pageTitle }}{{ $pageTitle }} | {{ end }}{{ end }}{{ site.Title }}</title>
 
@@ -22,7 +26,8 @@
     {{- range $i, $e := .Params.keywords }}{{ if $i }}, {{ end }}{{ $e }}{{ end }} {{- else }}
     {{- range $i, $e := .Params.tags }}{{ if $i }}, {{ end }}{{ $e }}{{ end }} {{- end -}}">
 {{- end }}
-<meta name="description" content="{{- with .Description }}{{ . }}{{- else }}{{- if or .IsPage .IsSection}}
+<meta name="description" content="{{- with .Description }}{{ . }}{{- else }}{{- if $taxonomyCopy.customized -}}
+    {{- $taxonomyCopy.metaDescription -}}{{- else if or .IsPage .IsSection}}
     {{- .Summary | default (printf "%s - %s" .Title  site.Title) }}{{- else }}
     {{- with site.Params.description }}{{ . }}{{- end }}{{- end }}{{- end -}}">
 <meta name="author" content="{{ (partial "author.html" . ) }}">
