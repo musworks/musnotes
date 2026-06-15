@@ -3,7 +3,7 @@ title = "MuS"
 theme = "PaperMod"
 defaultContentLanguage = "id"
 defaultContentLanguageInSubdir = false
-enableRobotsTXT = true
+enableRobotsTXT = false
 cleanDestinationDir = true
 
 [markup]

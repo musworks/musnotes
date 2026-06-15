@@ -7,5 +7,5 @@ docs/
 
 # Local work folders
 .codex-hugo-build/
-.tmp*/
+.tmp-*
 tmp*/
