@@ -5,7 +5,7 @@ draft: false
 math: false
 type: "garden-fragment"
 categories: ["Neural Gaps", "Ecology", "Philosophy"]
-tags: ["biosphere", "ethics", "anthropocentrism", "ecological-ethics", "human-centered", "silva-nigra"]
+tags: ["biosphere", "ethics", "anthropocentrism", "ecological-ethics", "human-centered", "silva-nigra","myquestions"]
 featured: true
 themes: ["ecology"]
 ---
