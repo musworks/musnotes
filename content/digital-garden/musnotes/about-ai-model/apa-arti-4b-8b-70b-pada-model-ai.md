@@ -6,34 +6,34 @@ math: false
 type: "garden-note"
 summary: "Catatan singkat tentang arti angka 4B, 8B, dan 70B pada model LLM, serta hubungannya dengan parameter, kebutuhan hardware, dan quantization."
 categories: ["Artificial Intelligence"]
-tags: ["ai", "llm", "local llm", "parameter", "quantization"]
+tags: ["ai", "llm", "local llm"]
 ---
 
-Angka seperti **4B**, **8B**, atau **70B** pada model bahasa besar biasanya menunjukkan jumlah **parameter** dalam model LLM.
+Angka seperti **4B**, **8B**, atau **70B** pada LLM menunjukkan jumlah **parameter**. 
 
 Huruf **B** berarti **billion**, atau **miliar**.
 
-Jadi:
+Angka-angka ini memberikan gambaran kasar tentang kapasitas model. Semakin besar ukuran model, biasanya semakin luas kemampuannya, tetapi juga semakin berat kebutuhan *hardware*-nya.
 
 * **4B** berarti sekitar **4 miliar parameter**
 * **8B** berarti sekitar **8 miliar parameter**
 * **70B** berarti sekitar **70 miliar parameter**
 
-Angka ini sering muncul setelah nama model. Misalnya, **Qwen3 8B** berarti varian Qwen3 dengan sekitar 8 miliar parameter. **Llama 3.1 70B** berarti varian Llama 3.1 dengan sekitar 70 miliar parameter. Sementara **Qwen2-72B** berarti varian Qwen2 dengan sekitar 72 miliar parameter.
+Angka ini sering muncul langsung setelah nama model. Misalnya, **Qwen3 8B** berarti varian Qwen3 dengan sekitar 8 miliar parameter. **Llama 3.1 70B** berarti varian Llama 3.1 dengan sekitar 70 miliar parameter. Sementara **Qwen2-72B** berarti varian Qwen2 dengan sekitar 72 miliar parameter.
 
-> Tanda hubung seperti pada `Qwen2-72B` atau `Llama-70B` bukan tanda negatif. Itu hanya pemisah antara nama model dan ukuran model.
+> Tanda hubung seperti pada `Qwen2-72B` atau `Llama-70B` bukan tanda negatif. Itu hanya pemisah antara nama model dan ukuran dimensinya.
 
 {{< mus-divider >}}
 
 ## Apa Itu Parameter?
 
-Dalam LLM, **parameter** adalah nilai numerik yang dipelajari model selama proses training.
+Dalam LLM, **parameter** adalah nilai numerik yang dipelajari oleh model selama proses *training*.
 
 Parameter bukan “fakta” yang disimpan satu per satu seperti isi kamus. Ia lebih mirip jaringan bobot matematis yang membantu model memperkirakan token berikutnya berdasarkan pola yang sudah dipelajari.
 
-Secara umum, semakin banyak parameter, semakin besar kapasitas model untuk menangkap pola bahasa, instruksi, pengetahuan, dan hubungan antar-konsep.
+Secara umum, semakin banyak jumlah parameter, semakin besar kapasitas model untuk menangkap pola bahasa, instruksi, pengetahuan, dan hubungan antar-konsep.
 
-Namun, ukuran model bukan satu-satunya penentu kualitas. Data training, arsitektur, proses fine-tuning, alignment, context length, dan cara model dijalankan juga sangat berpengaruh.
+Namun, ukuran model bukan satu-satunya penentu kualitas. Data *training*, arsitektur, proses *fine-tuning*, *alignment*, *context length*, dan cara model dijalankan juga sangat berpengaruh.
 
 {{< mus-divider >}}
 
@@ -58,7 +58,7 @@ Namun, ukuran model bukan satu-satunya penentu kualitas. Data training, arsitekt
       </tr>
       <tr>
         <td><code>7B-8B</code></td>
-        <td>Sering menjadi titik seimbang untuk pengguna lokal.</td>
+        <td>Sering menjadi titik seimbang (*sweet spot*) untuk pengguna lokal.</td>
         <td>Masih realistis untuk PC atau laptop yang cukup kuat, terutama dalam format Q4 atau Q5.</td>
         <td>Llama 3 8B, Qwen3 8B, Mistral 7B</td>
       </tr>
@@ -70,7 +70,7 @@ Namun, ukuran model bukan satu-satunya penentu kualitas. Data training, arsitekt
       </tr>
       <tr>
         <td><code>70B+</code></td>
-        <td>Kapasitas tinggi, lebih baik untuk tugas kompleks, tetapi sangat rakus sumber daya.</td>
+        <td>Kapasitas tinggi, terbaik untuk tugas kompleks, tetapi sangat rakus sumber daya.</td>
         <td>Biasanya membutuhkan GPU besar, banyak RAM/VRAM, atau teknik optimasi seperti quantization dan offloading.</td>
         <td>Llama 3.1 70B, Qwen2-72B</td>
       </tr>
@@ -78,27 +78,27 @@ Namun, ukuran model bukan satu-satunya penentu kualitas. Data training, arsitekt
   </table>
 </div>
 
-Tabel ini hanya gambaran praktis. Dua model dengan jumlah parameter yang sama belum tentu punya kualitas yang sama.
+Tabel ini hanya gambaran praktis. Dua model dengan jumlah parameter yang sama belum tentu memiliki kualitas yang identik.
 
-Model 8B yang dilatih dengan data bagus bisa terasa lebih berguna daripada model lebih besar yang training atau tuning-nya kurang cocok untuk tugas tertentu.
+Model 8B yang dilatih dengan data berkualitas tinggi bisa terasa lebih berguna daripada model yang lebih besar namun proses *training* atau *tuning*-nya kurang optimal untuk tugas tertentu.
 
 {{< mus-divider >}}
 
 ## Mengapa Ukuran Model Penting untuk Local LLM?
 
-Ukuran model penting karena berpengaruh langsung pada kebutuhan hardware.
+Ukuran model penting karena berpengaruh langsung pada kebutuhan *hardware*.
 
-Model kecil seperti 4B atau 8B biasanya lebih mudah dijalankan secara lokal. Ia lebih cepat, lebih hemat memori, dan lebih cocok untuk laptop atau PC biasa.
+Model kecil seperti 4B atau 8B biasanya lebih ramah untuk dijalankan secara lokal. Karakteristiknya lebih cepat, hemat memori, dan cocok untuk laptop atau PC standar.
 
-Model besar seperti 70B biasanya punya kemampuan lebih kuat, terutama untuk instruksi kompleks, reasoning, dan tulisan panjang. Tetapi konsekuensinya jelas: model menjadi lebih lambat dan membutuhkan memori jauh lebih besar.
+Model besar seperti 70B memiliki kemampuan reasoning yang jauh lebih kuat untuk instruksi kompleks dan tulisan panjang. Namun, konsekuensinya jelas: model menjadi lebih lambat dan membutuhkan memori yang masif.
 
-Dengan kata lain, local LLM selalu berhadapan dengan pertukaran antara:
+Dengan kata lain, pengguna *local* LLM selalu berhadapan dengan *trade-off* antara:
 
-* kualitas output
-* kecepatan respons
-* kebutuhan RAM atau VRAM
-* ukuran file model
-* suhu laptop yang mulai terdengar seperti mesin espresso kecil
+* Kualitas output
+* Kecepatan respons (tokens per second)
+* Kebutuhan RAM atau VRAM
+* Ukuran file model
+* Suhu laptop yang mulai terdengar seperti mesin espresso kecil
 
 {{< mus-divider >}}
 
@@ -106,31 +106,29 @@ Dengan kata lain, local LLM selalu berhadapan dengan pertukaran antara:
 
 **Quantization** adalah teknik untuk mengurangi presisi angka dalam parameter model.
 
-Model asli sering disimpan dalam presisi tinggi, misalnya FP16. Pada model besar, ini membuat ukuran file dan kebutuhan memori menjadi sangat besar.
+Model asli sering kali disimpan dalam presisi tinggi, misalnya FP16 (16-bit). Pada model besar, hal ini membuat ukuran file dan kebutuhan memori menjadi raksasa.
 
-Dengan quantization, angka-angka itu disimpan dalam presisi yang lebih rendah, misalnya 8-bit, 5-bit, atau 4-bit. Hasilnya, model menjadi lebih kecil dan lebih mudah dijalankan di perangkat lokal.
+Melalui *quantization*, angka-angka tersebut dikompresi ke presisi yang lebih rendah, seperti 8-bit, 5-bit, atau 4-bit. Hasilnya, model menjadi jauh lebih ringan dan bisa masuk ke perangkat lokal.
 
-Contohnya, model 70B dalam FP16 bisa membutuhkan memori sekitar 140 GB. Setelah diubah ke format 4-bit, kebutuhan memorinya bisa turun ke kisaran sekitar 40-45 GB, tergantung format quantization, backend, context length, dan cara model dijalankan.
+Contohnya, model 70B dalam format FP16 membutuhkan memori sekitar 140 GB. Setelah di-quantize ke format 4-bit (Q4), kebutuhan memorinya turun drastis ke kisaran 40–45 GB saja.
 
-> Catatan: estimasi memori model lokal dapat berubah tergantung format quantization, context length, backend, dan konfigurasi offload CPU/GPU. Angka seperti 140 GB untuk FP16 dan sekitar 40-45 GB untuk Q4 sebaiknya dibaca sebagai perkiraan praktis, bukan aturan absolut.
+> Catatan: Estimasi kebutuhan memori model lokal dapat berubah tergantung format quantization, context length, backend, dan konfigurasi offload CPU/GPU. Angka di atas sebaiknya dibaca sebagai perkiraan praktis, bukan aturan absolut.
 
-Tetapi quantization bukan sihir gratis. Semakin agresif kompresinya, semakin besar kemungkinan kualitas output menurun.
+Tetapi *quantization* bukan sihir gratis. Semakin agresif kompresinya, semakin besar kemungkinan terjadi penurunan kualitas (*perplexity*) pada output model.
 
 {{< mus-divider >}}
 
 ## Kesimpulan
 
-Angka seperti **4B**, **8B**, dan **70B** menunjukkan jumlah parameter dalam model LLM.
+Angka seperti **4B**, **8B**, dan **70B** menunjukkan jumlah parameter yang menjadi tolok ukur kapasitas sebuah model LLM. Semakin besar angkanya, semakin pintar modelnya, tetapi semakin tinggi pula spesifikasi komputer yang diminta. 
 
-Jumlah parameter memberi gambaran kasar tentang kapasitas model. Semakin besar model, biasanya semakin besar pula kemampuannya, tetapi juga semakin berat kebutuhan hardware-nya.
+Sementara itu, **quantization** adalah solusi cerdas untuk memangkas ukuran model tersebut agar lebih bersahabat dengan perangkat harian kita.
 
-Sementara itu, **quantization** menjelaskan cara membuat model lebih ringan dengan mengurangi presisi angka dalam parameter.
+Singkatnya:
 
-Jadi, dalam local LLM:
+> Jumlah parameter menentukan seberapa besar kapasitas otak modelnya, sedangkan quantization menentukan seberapa ringan model itu saat dijalankan.
 
-> Jumlah parameter menjelaskan seberapa besar modelnya, sedangkan quantization menjelaskan seberapa ringan model itu bisa dijalankan.
-
-Untuk kebanyakan pengguna lokal, model **7B-8B** sering menjadi pilihan seimbang. Ia cukup mampu untuk chat, belajar, coding ringan, dan eksplorasi harian, tanpa langsung menuntut hardware kelas naga server.
+Untuk kebanyakan pengguna lokal, model **7B–8B** adalah titik tengah yang paling ideal. Sudah cukup cerdas untuk menemani *chat*, belajar, *coding* ringan, hingga eksplorasi harian tanpa harus memaksa kamu membeli *hardware* kelas naga server.
 
 {{< mus-divider >}}
 
