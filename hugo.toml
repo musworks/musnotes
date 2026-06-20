@@ -27,6 +27,17 @@ cleanDestinationDir = true
     disableThemeToggle = false
     disableLangToggle = false
 
+    ShowReadingTime = false
+    ShowShareButtons = false
+    ShowPostNavLinks = true
+    ShowBreadCrumbs = true
+    ShowToc = true
+    ShowWordCount = false
+    ShowFullTextinRSS = true
+
+    ShowCodeCopyButtons = false
+    disableScrollToTop = false
+
     [params.externalLinks]
         muscrypt = "https://muscrypt.musnotes.my.id/"
 
@@ -34,17 +45,6 @@ cleanDestinationDir = true
         text = "MuS"
         icon = "mus-logo.png"
         iconHeight = 28
-
-    ShowReadingTime = false
-    ShowShareButtons = false
-    ShowPostNavLinks = true
-    ShowBreadCrumbs = true
-    ShowToc = false
-    ShowWordCount = false
-    ShowFullTextinRSS = true
-
-    ShowCodeCopyButtons = false
-    disableScrollToTop = false
 
     [[params.socialIcons]]
         name = "github"

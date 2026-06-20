@@ -1,0 +1,66 @@
+/* Left TOC sidebar for PaperMod posts */
+
+@media (min-width: 1280px) {
+  .main:has(.post-single > details.toc) {
+    max-width: none;
+  }
+
+  .post-single:has(> details.toc) {
+    --mus-content-width: 760px;
+    --mus-toc-width: 300px;
+    --mus-gap: 56px;
+
+    display: grid;
+    grid-template-columns: var(--mus-toc-width) minmax(0, var(--mus-content-width));
+    column-gap: var(--mus-gap);
+
+    max-width: calc(
+      var(--mus-toc-width) + var(--mus-gap) + var(--mus-content-width)
+    );
+
+    margin-inline: auto;
+    align-items: start;
+  }
+
+  .post-single:has(> details.toc) > :not(details.toc) {
+    grid-column: 2;
+    min-width: 0;
+  }
+
+  .post-single > details.toc {
+    grid-column: 1;
+    grid-row: 1 / span 999;
+
+    position: sticky;
+    top: calc(var(--header-height, 60px) + 1.25rem);
+
+    align-self: start;
+    width: auto;
+    margin: 0;
+
+    max-height: calc(100dvh - var(--header-height, 60px) - 2.5rem);
+    overflow-y: auto;
+    overflow-x: hidden;
+    scrollbar-gutter: stable;
+
+    font-size: 0.92rem;
+  }
+
+  .post-single > details.toc ul {
+    padding-inline-start: 1.1rem;
+  }
+}
+
+@media (max-width: 1279px) {
+  .post-single:has(> details.toc) {
+    display: block;
+  }
+
+  .post-single > details.toc {
+    position: static;
+    width: auto;
+    max-height: none;
+    overflow: visible;
+    margin: 0 0 2rem;
+  }
+}
