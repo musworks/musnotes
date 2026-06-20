@@ -1,4 +1,4 @@
-{{- $notes := .RegularPages.ByDate.Reverse -}}
+{{- $notes := .RegularPagesRecursive.ByDate.Reverse -}}
 {{- $paginator := .Paginate $notes -}}
 {{- $lang := site.Language.Lang -}}
 {{- $eyebrow := cond (eq $lang "id") "Indeks catatan" "Field notes index" -}}
