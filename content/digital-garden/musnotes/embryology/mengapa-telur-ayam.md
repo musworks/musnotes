@@ -9,7 +9,7 @@ math: false
 type: "garden-note"
 summary: "Telur ayam mengalami discoidal meroblastic cleavage karena yolk (kuning telur) nya sangat besar, sehingga pembelahan hanya dapat terjadi pada blastodisc di kutub animal."
 categories: ["Biologi", "Embriologi"]
-tags: ["embriologi", "telur ayam", "meroblastic cleavage", "discoidal cleavage", "blastodisc", "yolk"]
+tags: ["meroblastic cleavage", "discoidal cleavage", "blastodisc", "yolk"]
 ---
 
 Telur ayam mengalami **discoidal meroblastic cleavage** (pembelahan meroblastik diskoidal) karena struktur telurnya tidak memungkinkan pembelahan terjadi di seluruh bagian.
@@ -204,7 +204,7 @@ Jadi:
 - [Tipe Telur Berdasarkan Distribusi Yolk](./tipe-telur-berdasarkan-distribusi-yolk.md)
 - [Perbedaan Segmentasi Holoblastik dan Meroblastik](./segmentasi-holoblastik-dan-meroblastik.md)
 - [Segmentasi Meroblastik Diskoidal dan Superfisial](./segmentasi-meroblastik-diskoidal-dan-superfisial.md)
-- [Morula Cakram dan Blastoderm pada Telur Ayam](./morula-cakram-dan-blastoderm-pada-telur-ayam.md)
+- [Dari Blastodisc ke Blastoderm pada Telur Ayam](./morula-cakram-dan-blastoderm-pada-telur-ayam.md)
 
 {{< mus-divider >}}
 
