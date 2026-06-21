@@ -45,9 +45,3 @@ Perempuan itu membagi dirinya menjadi dua
 " kau ambil kanan, aku yang kiri" kata si kesepian kepada dirinya sendiri, dan mereka pun melakukan perjalanan terpisah.
 
 {{< mus-divider >}}
-
-<div style="max-width: 350px; margin: 0 auto; text-align: center;">
-
-![si kesepian](/images/sebelum-kesepian-didefinisikan.png)
-
-</div>

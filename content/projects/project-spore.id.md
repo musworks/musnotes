@@ -1,7 +1,7 @@
 ---
 title: "Project Spore"
 date: 2026-05-15T22:00:00+07:00
-draft: false
+draft: true
 math: false
 type: "garden-note"
 summary: "Catatan kecil tentang bagaimana Project Spore lahir dari keinginan sederhana untuk membuat sesuatu bersama tim LLM."

@@ -5285,6 +5285,38 @@ body:has(.musnotes-index) .main {
     line-height: 1.65;
 }
 
+.classification .classification__section {
+    display: grid;
+    gap: 0.9rem;
+}
+
+.classification .classification__section--index {
+    margin-top: 0.25rem;
+}
+
+.classification .classification__section-heading {
+    display: grid;
+    gap: 0.2rem;
+}
+
+.classification .classification__section-kicker {
+    margin: 0;
+    color: var(--muted-meta);
+    font-size: 0.7rem;
+    font-weight: 600;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+}
+
+.classification .classification__section-title {
+    margin: 0;
+    color: color-mix(in srgb, var(--primary) 90%, var(--secondary) 10%);
+    font-family: "Alice", Georgia, "Times New Roman", serif;
+    font-size: clamp(1.35rem, 3vw, 1.75rem);
+    font-weight: 400;
+    line-height: 1.2;
+}
+
 .classification .classification__grid {
     display: grid;
     grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -5385,6 +5417,66 @@ body:has(.musnotes-index) .main {
     outline-offset: -4px;
 }
 
+.classification .classification-index {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 0.55rem;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.classification .classification-index__item {
+    min-width: 0;
+}
+
+.classification .classification-index__link {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    align-items: center;
+    gap: 0.7rem;
+    min-height: 2.8rem;
+    padding: 0.62rem 0.75rem;
+    border: 1px solid var(--surface-card-border);
+    border-radius: 12px;
+    background: color-mix(in srgb, var(--surface-card-bg) 72%, transparent);
+    color: color-mix(in srgb, var(--primary) 90%, var(--secondary) 10%);
+    transition: border-color 0.2s ease, background 0.2s ease, color 0.2s ease;
+}
+
+.classification .classification-index__link:hover,
+.classification .classification-index__link:focus-visible {
+    border-color: var(--surface-card-hover-border);
+    background: var(--surface-card-hover-bg);
+    color: var(--orchid-accent);
+}
+
+.classification .classification-index__link:focus-visible {
+    outline: 2px solid var(--focus-ring-strong);
+    outline-offset: 2px;
+}
+
+.classification .classification-index__name {
+    overflow: hidden;
+    font-size: 0.9rem;
+    line-height: 1.35;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.classification .classification-index__count {
+    display: inline-grid;
+    min-width: 1.65rem;
+    min-height: 1.65rem;
+    place-items: center;
+    padding: 0.12rem 0.35rem;
+    border-radius: 999px;
+    background: color-mix(in srgb, var(--surface-card-border) 55%, transparent);
+    color: var(--muted-copy);
+    font-size: 0.72rem;
+    line-height: 1;
+}
+
 .classification .classification-empty {
     padding: 1.4rem 1.1rem;
     border: 1px dashed rgba(107, 79, 91, 0.18);
@@ -5415,10 +5507,28 @@ body:has(.musnotes-index) .main {
 
 :root[data-theme="dark"] .classification .classification__intro,
 :root[data-theme="dark"] .classification .classification__note,
+:root[data-theme="dark"] .classification .classification__section-kicker,
 :root[data-theme="dark"] .classification .classification-card__count,
 :root[data-theme="dark"] .classification .classification-card__meta,
 :root[data-theme="dark"] .classification .classification-empty__copy {
     color: var(--muted-copy-soft);
+}
+
+:root[data-theme="dark"] .classification .classification__section-title,
+:root[data-theme="dark"] .classification .classification-index__link {
+    color: color-mix(in srgb, var(--main-text) 90%, var(--sage-fade) 10%);
+}
+
+:root[data-theme="dark"] .classification .classification-index__link {
+    border-color: var(--surface-card-border);
+    background: color-mix(in srgb, var(--surface-card-bg) 72%, transparent);
+}
+
+:root[data-theme="dark"] .classification .classification-index__link:hover,
+:root[data-theme="dark"] .classification .classification-index__link:focus-visible {
+    border-color: var(--surface-card-hover-border);
+    background: var(--surface-card-hover-bg);
+    color: var(--orchid-accent);
 }
 
 :root[data-theme="dark"] .classification .classification-card {
@@ -5451,6 +5561,10 @@ body:has(.musnotes-index) .main {
     .classification .classification__grid {
         grid-template-columns: repeat(2, minmax(0, 1fr));
     }
+
+    .classification .classification-index {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
 }
 
 @media (max-width: 640px) {
@@ -5472,6 +5586,16 @@ body:has(.musnotes-index) .main {
     .classification .classification__grid {
         grid-template-columns: 1fr;
         gap: 0.85rem;
+    }
+
+    .classification .classification-index {
+        grid-template-columns: 1fr;
+        gap: 0.45rem;
+    }
+
+    .classification .classification-index__link {
+        min-height: 2.65rem;
+        padding: 0.58rem 0.7rem;
     }
 
     .classification .classification-card {

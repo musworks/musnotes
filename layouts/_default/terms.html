@@ -11,6 +11,7 @@
 {{- $noteSingular := $taxonomyCopy.noteSingular -}}
 {{- $notePlural := $taxonomyCopy.notePlural -}}
 {{- $terms := .Data.Terms.Alphabetical -}}
+{{- $isTagClassification := eq .Type "tags" -}}
 
 <section class="classification classification--{{ .Type }}" aria-labelledby="classification-title" data-taxonomy="{{ .Type }}">
   <div class="classification__inner">
@@ -27,6 +28,55 @@
     </header>
 
     {{- if gt (len $terms) 0 }}
+    {{- if $isTagClassification }}
+    <section class="classification__section" aria-labelledby="featured-tags-title">
+      <div class="classification__section-heading">
+        <p class="classification__section-kicker">{{ $taxonomyCopy.featuredKicker }}</p>
+        <h2 id="featured-tags-title" class="classification__section-title">{{ $taxonomyCopy.featuredTitle }}</h2>
+      </div>
+      <div class="classification__grid classification__grid--featured" role="list">
+        {{- range first 6 .Data.Terms.ByCount }}
+        {{- $name := .Name -}}
+        {{- $count := .Count -}}
+        {{- $noteLabel := cond (eq $count 1) $noteSingular $notePlural -}}
+        {{- $displayName := replaceRE "[-_]+" " " $name | title -}}
+        {{- with site.GetPage (printf "/%s/%s" $.Type $name) }}
+        <article class="classification-card" role="listitem">
+          <div class="classification-card__body">
+            <p class="classification-card__meta">{{ $cardMeta }}</p>
+            <h3 class="classification-card__title">{{ $displayName }}</h3>
+            <p class="classification-card__count">{{ $count }} {{ $noteLabel }}</p>
+          </div>
+          <span class="classification-card__arrow" aria-hidden="true">&rarr;</span>
+          <a class="classification-card__link" href="{{ .RelPermalink }}" aria-label="{{ printf $linkLabel ($displayName | plainify) }}"></a>
+        </article>
+        {{- end }}
+        {{- end }}
+      </div>
+    </section>
+
+    <section class="classification__section classification__section--index" aria-labelledby="all-tags-title">
+      <div class="classification__section-heading">
+        <p class="classification__section-kicker">{{ $taxonomyCopy.allKicker }}</p>
+        <h2 id="all-tags-title" class="classification__section-title">{{ $taxonomyCopy.allTitle }}</h2>
+      </div>
+      <ul class="classification-index">
+        {{- range $terms }}
+        {{- $name := .Name -}}
+        {{- $count := .Count -}}
+        {{- $displayName := replaceRE "[-_]+" " " $name | title -}}
+        {{- with site.GetPage (printf "/%s/%s" $.Type $name) }}
+        <li class="classification-index__item">
+          <a class="classification-index__link" href="{{ .RelPermalink }}">
+            <span class="classification-index__name">{{ $displayName }}</span>
+            <span class="classification-index__count" aria-label="{{ $count }} {{ cond (eq $count 1) $noteSingular $notePlural }}">{{ $count }}</span>
+          </a>
+        </li>
+        {{- end }}
+        {{- end }}
+      </ul>
+    </section>
+    {{- else }}
     <div class="classification__grid" role="list">
       {{- range $terms }}
       {{- $name := .Name -}}
@@ -46,6 +96,7 @@
       {{- end }}
       {{- end }}
     </div>
+    {{- end }}
     {{- else }}
     <section class="classification-empty" aria-live="polite">
       <p class="classification-empty__copy">{{ $taxonomyCopy.emptyState }}</p>
