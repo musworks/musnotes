@@ -55,6 +55,12 @@ cleanDestinationDir = true
         title = "Digital Tools & Lab" 
         url = "https://musnotes.gumroad.com/?section=a7r1zAUgatCZskqezjjFQQ==#a7r1zAUgatCZskqezjjFQQ=="
 
+    [[params.socialIcons]]
+        name = "buymeacoffee"
+        title = "Support Musnotes on Ko-fi"
+        url = "https://ko-fi.com/musnotes"
+    [[params.socialIcons]]
+
 
     [params.assets]
         favicon = "/favicon.ico"
