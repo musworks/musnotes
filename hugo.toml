@@ -91,8 +91,12 @@ cleanDestinationDir = true
                     url = "/digital-garden/"
 
                 [languages.id.params.homepage.secondaryButton]
-                    name = "View Digital Works"
-                    url = "/projects/"
+                    name = "Try Muscrypt"
+                    url = "https://muscrypt.musnotes.my.id/"
+
+                [languages.id.params.homepage.tertiaryButton]
+                    name = "Play Axiom Room"
+                    url = "https://axiom-room.musnotes.my.id/"
 
                 [languages.id.params.homepage.visual]
                     caption = "MuS"
@@ -175,8 +179,12 @@ cleanDestinationDir = true
                     url = "/en/digital-garden/"
 
                 [languages.en.params.homepage.secondaryButton]
-                    name = "View Digital Works"
-                    url = "/en/projects/"
+                    name = "Try Muscrypt"
+                    url = "https://muscrypt.musnotes.my.id/"
+
+                [languages.en.params.homepage.tertiaryButton]
+                    name = "Play Axiom Room"
+                    url = "https://axiom-room.musnotes.my.id/"
 
                 [languages.en.params.homepage.visual]
                     caption = "MuS"

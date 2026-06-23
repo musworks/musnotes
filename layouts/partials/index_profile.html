@@ -34,6 +34,9 @@
                 {{- with .secondaryButton }}
                 <a class="home-hero__button home-hero__button--secondary" href="{{ trim .url " " }}" title="{{ .name }}">{{ .name }}</a>
                 {{- end }}
+                {{- with .tertiaryButton }}
+                <a class="home-hero__button home-hero__button--secondary" href="{{ trim .url " " }}" title="{{ .name }}">{{ .name }}</a>
+                {{- end }}
             </div>
 
             <div class="home-hero__social">
