@@ -11,7 +11,7 @@ tags: ["scientific temper", "video notes", "malaka"]
 
 *This note is a personal summary and reflection written while listening to Prof. Iwan Pranoto's presentation on the MALAKA YouTube channel.*
 
-{{< youtube IjQ46WyDtp4>}}
+{{< youtube IjQ46WyDtp4 >}}
 
 {{< mus-divider >}}
 

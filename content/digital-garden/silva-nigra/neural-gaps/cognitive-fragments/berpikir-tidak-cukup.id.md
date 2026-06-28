@@ -12,7 +12,7 @@ tags: ["scientific temper", "video notes", "malaka"]
 
 *Catatan ini merupakan rangkuman dan refleksi pribadi saat menyimak pemaparan Prof. Iwan Pranoto di kanal YouTube MALAKA.*
 
-{{< youtube IjQ46WyDtp4>}}
+{{< youtube IjQ46WyDtp4 >}}
 
 {{< mus-divider >}}
 
