@@ -1,5 +1,4 @@
 ---
-
 title: "Dari Blastodisc ke Blastoderm pada Telur Ayam"
 date: 2026-05-20T21:40:00+07:00
 draft: false
@@ -299,9 +298,9 @@ Jadi:
 
 * [Mengapa Telur Ayam Mengalami Segmentasi Meroblastik Diskoidal](./mengapa-telur-ayam.md)
 * [Segmentasi Meroblastik Diskoidal dan Superfisial](./segmentasi-meroblastik-diskoidal-dan-superfisial.md)
-* [Blastodisc sebagai Lokasi Segmentasi pada Telur Ayam](./blastodisc-sebagai-lokasi-segmentasi-pada-telur-ayam.md)
 * [Yolk Sebagai Pengatur Ritme dan Pola Pembelahan](./yolk-sebagai-pengatur-segmentasi-embrio.md)
 * [Tipe Telur Berdasarkan Distribusi Yolk](./tipe-telur-berdasarkan-distribusi-yolk.md)
+* [Dari Blastodisc ke Blastoderm pada Telur Ayam](./morula-cakram-dan-blastoderm-pada-telur-ayam.md)
 
 {{< mus-divider >}}
 

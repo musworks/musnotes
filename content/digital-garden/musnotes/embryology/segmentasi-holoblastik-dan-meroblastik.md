@@ -201,7 +201,7 @@ Pada segmentasi holoblastik, alur pembelahan dapat masuk ke seluruh bagian zigot
 - [Tipe Telur Berdasarkan Distribusi Yolk](./tipe-telur-berdasarkan-distribusi-yolk.md)
 - [Segmentasi Holoblastik Equal dan Unequal](./segmentasi-holoblastik-equal-dan-unequal.md)
 - [Segmentasi Meroblastik Diskoidal dan Superfisial](./segmentasi-meroblastik-diskoidal-dan-superfisial.md)
-- [Blastodisc sebagai Lokasi Segmentasi pada Telur Ayam](./blastodisc-sebagai-lokasi-segmentasi-pada-telur-ayam.md)
+- [Dari Blastodisc ke Blastoderm pada Telur Ayam](./morula-cakram-dan-blastoderm-pada-telur-ayam.md)
 
 {{< mus-divider >}}
 

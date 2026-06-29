@@ -241,7 +241,7 @@ Jadi, ketika kita melihat tipe segmentasi embrio, kita sebenarnya sedang melihat
 * [Tipe Telur Berdasarkan Distribusi Yolk](./tipe-telur-berdasarkan-distribusi-yolk.md)
 * [Segmentasi Holoblastik dan Meroblastik](./segmentasi-holoblastik-dan-meroblastik.md)
 * [Animal Pole dan Vegetal Pole](./animal-pole-dan-vegetal-pole.md)
-* [Blastodisc sebagai Lokasi Segmentasi pada Telur Ayam](./blastodisc-sebagai-lokasi-segmentasi-pada-telur-ayam.md)
+* [Dari Blastodisc ke Blastoderm pada Telur Ayam](./morula-cakram-dan-blastoderm-pada-telur-ayam.md)
 
 {{< mus-divider >}}
 

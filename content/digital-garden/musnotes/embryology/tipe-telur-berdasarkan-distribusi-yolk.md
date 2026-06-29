@@ -14,8 +14,6 @@ tags: ["embryology", "yolk", "egg-types", "cleavage"]
 
 Distribusi *yolk* menentukan **di mana pembelahan bisa terjadi**.
 
-Jadi, bukan cuma jumlah *yolk* yang penting, tetapi juga **lokasinya di dalam telur**.
-
 > Bukan cuma “berapa banyak yolk”, tapi “di mana yolk itu berada”.
 
 {{< mus-divider >}}
@@ -34,48 +32,26 @@ Tidak ada massa yolk besar
 → seluruh bagian telur bisa ikut membelah
 ```
 
-Ini ciri khas:
-
- **Isolecithal + Holoblastic cleavage**
-
-Dengan kata lain, tipe telur ini biasanya mengalami **segmentasi holoblastik** atau pembelahan total.
+Tipe telur ini biasanya mengalami **segmentasi holoblastik** atau pembelahan total.
 
 {{< mus-divider >}}
 
-<div style="max-width: 400px; margin: 0 auto; text-align: center;">
+<div style="max-width: 512px; margin: 0 auto; text-align: center;">
 
-![Cleavage stages in Paracentrotus lividus](https://commons.wikimedia.org/wiki/Special:FilePath/Paracentrotus_lividus_cleavage_stadia.jpg)
+![Cleavage stages in Paracentrotus lividus](/images/Paracentrotus_lividus_cleavage_stadia.jpg)
 
 <p style="font-style: italic; font-size: 0.9em; color: #888; margin-top: 10px;">
 Cleavage stages in <em>Paracentrotus lividus</em> (sea urchin). Via Wikimedia Commons. Digunakan sebagai contoh visual pembelahan pada embrio dengan yolk relatif sedikit.
 </p>
-
 </div>
 
 Pada gambar, pola umumnya menunjukkan pembelahan yang terjadi pada seluruh bagian telur.
 
-🔹 Baris pertama menunjukkan tahap awal:
+🔹 Baris pertama menunjukkan tahap awal: Semua sel terlihat membelah secara relatif simetris.
 
-- A = oocyte atau sel telur sebelum fertilisasi
-- B = 1 sel atau zigot
-- C = 2 sel
-- D = 4 sel
-- E = 8 sel
+🔹 Baris tengah menunjukkan tahap selanjutnya: Mulai muncul sedikit perbedaan ukuran sel. Tetapi, seluruh telur tetap ikut membelah.
 
- Semua sel terlihat membelah secara relatif simetris.
-
-🔹 Baris tengah menunjukkan tahap selanjutnya:
-
-- 16 sel
-- 28 sel
-- 32 sel
-- mulai tampak perbedaan seperti **mesomeres**, **macromeres**, dan **micromeres**
-
-Artinya, sudah mulai muncul sedikit perbedaan ukuran sel. Tetapi, seluruh telur tetap ikut membelah.
-
-🔹 Baris bawah menunjukkan tahap menuju blastula.
-
-Sel semakin banyak, dan struktur mulai membentuk bola.
+🔹 Baris bawah menunjukkan tahap menuju blastula: Sel semakin banyak, dan struktur mulai membentuk bola.
 
 Pola umumnya:
 
@@ -85,7 +61,7 @@ Pola umumnya:
 
 {{< mus-divider >}}
 
-## Detail Menarik
+### Detail Menarik
 
 Walaupun pada tahap lanjut bisa muncul **micromeres** dan **macromeres**, perbedaan ini bukan karena ada *yolk* besar yang menghalangi pembelahan.
 

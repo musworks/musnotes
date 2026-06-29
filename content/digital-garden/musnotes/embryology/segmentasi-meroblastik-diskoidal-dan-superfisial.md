@@ -86,7 +86,7 @@ Tipe ini terjadi pada telur **centrolecithal**, yaitu telur dengan massa *yolk* 
   yolk padat di tengah
 ```
 
-Alur sederhananya:
+### Alur sederhananya
 
 {{< rawhtml >}}
 <div class="flow-container">
@@ -217,7 +217,7 @@ Deep dive: proses pembentukan **syncytial blastoderm** pada *Drosophila* dibahas
 - [Tipe Telur Berdasarkan Distribusi Yolk](./tipe-telur-berdasarkan-distribusi-yolk.md)
 - [Perbedaan Segmentasi Holoblastik dan Meroblastik](./segmentasi-holoblastik-dan-meroblastik.md)
 - [Segmentasi Holoblastik Equal dan Unequal](./segmentasi-holoblastik-equal-dan-unequal.md)
-- [Blastodisc sebagai Lokasi Segmentasi pada Telur Ayam](./blastodisc-sebagai-lokasi-segmentasi-pada-telur-ayam.md)
+- [Dari Blastodisc ke Blastoderm pada Telur Ayam](./morula-cakram-dan-blastoderm-pada-telur-ayam.md)
 - [Syncytial Blastoderm pada Drosophila](./syncytial-blastoderm-pada-drosophila.md)
 
 {{< mus-divider >}}

@@ -20,7 +20,7 @@ Pada telur ayam, *yolk* membentuk massa besar dan kental yang mendominasi hampir
 
 Dengan kata lain:
 
-> 🥚 Telur ayam bukan membelah seperti bola kecil yang lunak, tetapi seperti cakram kecil yang membelah di atas permukaan massa yolk yang besar.
+> Telur ayam bukan membelah seperti bola kecil yang lunak, tetapi seperti cakram kecil yang membelah di atas permukaan massa yolk yang besar.
 
 {{< mus-divider >}}
 
@@ -167,7 +167,7 @@ Sedikit dramatis, tapi memang begitulah embrio ayam memulai hidupnya: bukan dari
 
 Hasil pembelahan pada blastodisc kemudian membentuk **blastoderm**, yaitu lapisan sel berbentuk cakram di atas massa *yolk*. Pada perkembangan ayam, blastoderm ini kemudian berkaitan dengan pembentukan **subgerminal cavity**, **area pellucida**, dan **area opaca**.
 
-Bagian ini akan dibahas lebih khusus pada catatan berikutnya, karena fokus catatan ini hanya menjelaskan mengapa telur ayam mengalami **discoidal meroblastic cleavage**.
+Bagian ini akan dibahas pada catatan lain, karena fokus catatan ini hanya menjelaskan mengapa telur ayam mengalami **discoidal meroblastic cleavage**.
 
 {{< mus-divider >}}
 
