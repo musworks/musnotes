@@ -25,7 +25,7 @@ Pertanyaan tentang tidur berlebihan, waktu, dan menanam bunga di dunia yang seka
 
 Aku juga menanam spesies tanaman dengan bunga yang indah di pekarangan rumahku. Tapi aku tidak pernah benar-benar bertanya mengapa. Aku hanya melakukannya.
 
-Jika sekarang aku yang bertanya kepada alam semesta, mungkin pertanyaanku bukan tentang mengapa aku menanam bunga. Pertanyaanku : kenapa Laufey dan aku bisa bertanya?
+Jika sekarang aku yang bertanya kepada alam semesta, aku akan bertanya "kenapa Laufey dan aku bisa bertanya?"
 
 Ketika aku mereduksi kehidupan hanya menjadi soal mempertahankan hidup selama mungkin, aku jadi punya pertanyaan: jika begitu, mengapa bertanya diperlukan?
 

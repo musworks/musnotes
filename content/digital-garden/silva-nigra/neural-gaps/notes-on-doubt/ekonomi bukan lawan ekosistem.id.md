@@ -37,7 +37,7 @@ Keadaan ini menunjukkan bahwa ekonomi pada dasarnya adalah aturan permainan. Jik
 
 Semua komoditas ekonomi, mulai dari segelas kopi di kafe tempat aku menulis ini, lembaran kertas saham, hingga laptop 15 inci yang sedang kupakai sekarang, pada dasarnya adalah bentuk materi dan energi alam yang telah diubah wujudnya oleh manusia. Ekonomi bukan sihir yang menciptakan realitas dari ruang hampa. Ia hanya mengatur, memindahkan, memproses, memberi harga, lalu menyebutnya nilai.
 
-Begitu pula dengan tanah yang subur. Bukan sekadar “properti lahan” atau komoditas real estat, melainkan hasil kerja panjang organisme, mikroorganisme, dekomposer, mineral, air, udara, dan waktu. Ketika proses biologis ini terganggu dalam skala besar, rantai pasok pangan tidak hanya mengalami gangguan teknis tapi juga mengalami gangguan pada fondasi materialnya.
+Begitu pula dengan tanah yang subur, ia di hasilakan dari kerja panjang organisme, mikroorganisme, dekomposer, mineral, air, udara, dan waktu. Ketika proses biologis ini terganggu dalam skala besar, rantai pasok pangan tidak hanya mengalami gangguan teknis tapi juga mengalami gangguan pada fondasi materialnya.
 
 Dengan kata lain, krisis ekologis bukan sekadar masalah lingkungan. krisis ekologis adalah masalah ekonomi yang belum dikenali oleh bahasa ekonomi itu sendiri.
 
@@ -49,7 +49,7 @@ Di dunia finansial, jika seseorang memiliki modal di bank, kebijakan yang waras 
 
 Siklus ekologis yang stabil adalah bentuk “bunga” alami yang bisa dinikmati manusia. Namaun, sistem ekonomi modern sering bekerja dengan cara sebaliknya: merusak hutan, mencemari tanah, menekan keanekaragaman hayati, dan mengganggu sistem iklim demi mengejar keuntungan jangka pendek.
 
-Ini bukan pertumbuhan yang utuh. Ini lebih mirip kebangkrutan sistemis yang sedang ditunda.
+Ini lebih mirip kebangkrutan sistemis yang sedang ditunda, daripada prtumbuhan.
 
 Kecenderungan absurd ini juga terlihat pada cara manusia modern membicarakan data. Banyak korporasi hari ini menyebut data sebagai bahan bakar utama pertumbuhan. Tapi ada pusat data yang lebih tua, lebih besar, dan lebih fundamental daripada semua server manusia: alam itu sendiri.
 
@@ -61,11 +61,9 @@ Ketika pusat data biologis ini rusak, kerugiannya tidak selalu langsung muncul d
 
 ### Ekonomi Tidak Berdiri di Luar Biosfer
 
-Kerangka seperti _natural capital_ dan _planetary boundaries_ sebenarnya sudah menunjukkan bahwa ekonomi tidak bisa dipisahkan dari kondisi ekologis yang menopangnya. Alam bukan sekadar latar belakang bagi aktivitas manusia. Ia adalah sistem pendukung kehidupan yang membuat aktivitas manusia mungkin dilakukan sejak awal.
+Kerangka seperti _natural capital_ dan _planetary boundaries_ sebenarnya sudah menunjukkan bahwa ekonomi tidak bisa dipisahkan dari kondisi ekologis yang menopangnya. Alam adalah sistem pendukung kehidupan yang membuat aktivitas manusia mungkin dilakukan sejak awal.
 
-Maka, pertanyaan utamanya bukan apakah manusia harus memilih antara ekonomi atau ekosistem.
-
-Pertanyaan yang lebih tepat adalah: ekonomi macam apa yang masih bisa disebut rasional jika ia merusak prasyarat ekologis dari keberadaannya sendiri?
+Maka, pertanyaan utamanya: "ekonomi macam apa yang masih bisa disebut rasional jika ia merusak prasyarat ekologis dari keberadaannya sendiri?"
 
 Sains tidak bernegosiasi dengan retorika politik, diplomasi iklim, atau nilai tukar mata uang. Hukum biologi dan fisika tetap bekerja, bahkan ketika manusia sedang sibuk memberi nama yang elegan pada tindakannya sendiri.
 

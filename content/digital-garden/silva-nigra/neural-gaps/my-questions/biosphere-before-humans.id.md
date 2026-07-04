@@ -14,7 +14,7 @@ themes: ["ecology"]
 
 Pertanyaan ini terdengar sederhana, tetapi ia diam-diam membawa pisau kecil ke pusat etika manusia. Selama ini, banyak argumen konservasi alam tetap bergerak dalam orbit yang human-centered: hutan perlu dijaga karena memberi oksigen untuk manusia, laut perlu diselamatkan karena menopang pangan manusia, iklim perlu distabilkan karena peradaban manusia akan terganggu.
 
-Tidak salah. Manusia memang bagian dari biosfer, dan penderitaan manusia bukan sesuatu yang bisa disapu dari meja diskusi. Namun, ada asumsi yang jarang diuji: apakah manusia harus selalu menjadi pusat moral dari seluruh percakapan ekologis?
+Tidak salah. Manusia memang bagian dari biosfer, dan penderitaan manusia bukan sesuatu yang bisa disapu dari meja diskusi. Tapi, ada asumsi yang jarang diuji: apakah manusia harus selalu menjadi pusat moral dari seluruh percakapan ekologis?
 
 Bila biosfer benar-benar diprioritaskan, maka nilai alam tidak lagi hanya bergantung pada manfaatnya bagi manusia. Spesies lain tidak harus “berguna” dulu untuk layak dipertahankan. Ekosistem tidak harus menjadi nyaman, indah, atau produktif bagi kita agar bisa disebut bernilai. Ia memiliki keberadaan yang mendahului kalkulasi ekonomi, politik, dan selera estetika manusia.
 

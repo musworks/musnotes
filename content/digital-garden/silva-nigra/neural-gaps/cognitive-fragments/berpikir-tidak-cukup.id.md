@@ -62,11 +62,11 @@ tags: ["scientific temper", "video notes", "malaka"]
 
 Jawaharlal Nehru, dalam bukunya *The Discovery of India*, membahas gagasan tentang *scientific temper*. Walaupun tidak selalu didefinisikan secara eksplisit sebagai istilah teknis, Prof. Iwan menjelaskan bahwa gagasan ini dapat dipahami sebagai suatu jalan hidup.
 
-Nehru memandang bahwa masa depan India sangat bergantung pada kemampuan warganya untuk meninggalkan takhayul. Dalam konteks ini, *scientific temper* bukan sekadar kemampuan berpikir secara ilmiah dalam konteks akademik, melainkan sikap hidup yang terbuka pada bukti, rasa ingin tahu, dan kesediaan mengubah pandangan ketika berhadapan dengan informasi yang lebih kuat.
+Nehru memandang bahwa masa depan India sangat bergantung pada kemampuan warganya untuk meninggalkan takhayul. Dalam konteks ini, *scientific temper* adalah sikap hidup yang terbuka pada bukti, rasa ingin tahu, dan kesediaan mengubah pandangan ketika berhadapan dengan informasi yang lebih kuat.
 
-Mengapa digunakan kata *temper*, bukan sekedar *scientific thinking*? Karena yang ditekankan bukan hanya aktivitas intelektual formal, melainkan watak, kebiasaan batin, dan disposisi seseorang dalam menghadapi klaim tentang dunia.
+Mengapa digunakan kata *temper*, bukan *scientific thinking*? Karena yang ditekankan bukan hanya aktivitas intelektual formal, tapi juga watak, kebiasaan batin, dan disposisi seseorang dalam menghadapi klaim tentang dunia.
 
-Dengan kata lain, *scientific temper* bukan hanya milik ilmuwan. Ia bisa menjadi sikap hidup siapa pun.
+Dengan kata lain, *scientific temper* bisa menjadi sikap hidup siapa pun.
 
 {{< rawhtml >}}
 
@@ -94,8 +94,6 @@ Dengan kata lain, *scientific temper* bukan hanya milik ilmuwan. Ia bisa menjadi
   </div>
 </div>
 {{< /rawhtml >}}
-
-> *Scientific temper* bukan hanya tentang bernalar, melainkan tentang cara berpikir dan cara hidup. Ia dapat dimiliki semua orang, bukan hanya ilmuwan.
 
 {{< mus-divider >}}
 
@@ -178,7 +176,7 @@ Dengan demikian, pendidikan tidak hanya berkaitan dengan pengetahuan. Pendidikan
 
 Ini adalah salah satu pemaparan yang paling dekat dengan asumsiku tentang pendidikan.
 
-Sebelumnya aku tidak tahu bahwa ada istilah *scientific temper*, gagasan yang menekankan pentingnya membentuk watak dan disposisi seseorang dalam menghadapi klaim tentang dunia. Jadi, yang dibentuk bukan hanya kemampuan berpikir ilmiah secara formal, tetapi juga sikap mental ketika seseorang bertemu dengan informasi, bukti, ketidakpastian, dan klaim yang belum tentu benar.
+Sebelumnya aku tidak tahu bahwa ada istilah *scientific temper*, gagasan yang menekankan pentingnya membentuk watak dan disposisi seseorang dalam menghadapi klaim tentang dunia. Jadi, yang dibentuk sikap mental ketika seseorang bertemu dengan informasi, bukti, ketidakpastian, dan klaim yang belum tentu benar.
 
 Pemaparan ini juga membuatku lebih sadar terhadap perbedaan antara berpikir dan bernalar.
 
@@ -188,7 +186,7 @@ Ujian memang diperlukan dalam konteks formal untuk menguji kompetensi siswa berd
 
 Karena itu, perlu ada latihan yang secara sadar didorong oleh institusi pendidikan agar siswa terbiasa menggunakan informasi untuk berpikir.
 
-Sebelum menonton video ini, aku memahami berpikir sebagai kegiatan mengasosiasikan informasi yang tersimpan di memori untuk memecahkan suatu masalah. Dalam pengertian ini, berpikir bukan hanya mengingat, tetapi juga menghubungkan, membandingkan, menguji, dan menggunakan informasi dalam konteks baru.
+Sebelum menonton video ini, aku memahami berpikir sebagai kegiatan mengasosiasikan informasi yang tersimpan di memori untuk memecahkan suatu masalah. Dalam pengertian ini, berpikir termasuk menghubungkan, membandingkan, menguji, dan menggunakan informasi dalam konteks baru.
 
 Kerendahan hati juga dapat terlatih dengan sendirinya jika siswa terbiasa berpikir sesuai kompetensinya. Ketika seseorang benar-benar menggunakan pengetahuan untuk menghadapi masalah, ia akan bertemu dengan ketidakpastian. Ia akan bertemu dengan persoalan yang tidak memiliki jawaban pasti, atau persoalan yang tidak dapat diselesaikan hanya dengan mengingat informasi yang pernah dipelajari di sekolah.
 
@@ -208,17 +206,17 @@ Dengan pendekatan seperti ini, siswa tidak hanya menghafal bahwa manusia termasu
 
 Ini penting karena banyak konsep biologi sebenarnya sangat dekat dengan struktur berpikir matematis. Evolusi berkaitan dengan perubahan frekuensi sifat dalam populasi. Ekologi berkaitan dengan jaringan hubungan. Genetika berkaitan dengan pola pewarisan. Taksonomi berkaitan dengan pengelompokan. Bahkan konsep “spesies” sendiri mengajarkan bahwa kategori ilmiah tidak selalu sesederhana kotak-kotak rapi di buku pelajaran.
 
-Jika siswa sejak awal diajak melihat biologi sebagai sistem hubungan, bukan hanya kumpulan label, mungkin mereka akan lebih mudah memahami mengapa ilmu pengetahuan bersifat dinamis. Mereka akan melihat bahwa sains bukan sekadar jawaban yang sudah jadi, melainkan cara mengorganisasi kebingungan secara lebih disiplin.
+Jika siswa sejak awal diajak melihat biologi sebagai sistem hubungan, bukan kumpulan label, mungkin mereka akan lebih mudah memahami mengapa ilmu pengetahuan bersifat dinamis.
 
-Di sinilah aku melihat hubungan antara pendidikan biologi dan *scientific temper*. Siswa tidak hanya diajari “apa nama benda ini?”, tetapi juga “mengapa kita mengelompokkannya seperti itu?”, “bukti apa yang mendukung pengelompokan ini?”, dan “apakah kategori ini bisa berubah jika ada bukti baru?”
+Di sinilah aku melihat hubungan antara pendidikan biologi dan *scientific temper*. Siswa bebas bertanya “mengapa kita mengelompokkannya seperti itu?”, “bukti apa yang mendukung pengelompokan ini?”, dan “apakah kategori ini bisa berubah jika ada bukti baru?”
 
 Pertanyaan-pertanyaan seperti itu melatih rasa ingin tahu, kebiasaan menuntut bukti, dan kerendahan hati di hadapan ketidakpastian.
 
 Maka, bagiku, berpikir saja memang tidak cukup jika berpikir hanya dipahami sebagai aktivitas mental yang bebas dan reaktif. Tetapi bernalar juga belum cukup jika hanya dilatih untuk menjawab soal formal. Pendidikan perlu menghubungkan keduanya: memberi ruang bagi rasa ingin tahu, tetapi juga melatih struktur; memberi informasi, tetapi juga melatih penggunaan informasi; memberi jawaban, tetapi juga menjaga kemampuan untuk bertanya.
 
-Mungkin pendidikan yang baik bukan pendidikan yang membuat siswa merasa tahu banyak, melainkan pendidikan yang membuat siswa mampu bertanya dengan lebih "baik".
+Mungkin pendidikan yang baik bukan pendidikan yang membuat siswa merasa tahu banyak, tapi pendidikan yang membuat siswa mampu bertanya dengan lebih "baik".
 
-Dan dalam konteks itu, *scientific temper* terasa penting karena ia bukan hanya tentang menjadi ilmuwan. Ia tentang menjadi manusia yang tidak mudah tunduk pada klaim tanpa bukti, tidak malu mengubah pendapat, dan tidak berhenti berpikir hanya karena sudah menemukan jawaban pertama.
+Dan dalam konteks itu, *scientific temper* terasa penting karena Ia tentang menjadi manusia yang tidak mudah tunduk pada klaim tanpa bukti, tidak malu mengubah pendapat, dan tidak berhenti berpikir hanya karena sudah menemukan jawaban pertama.
 
 
 {{< mus-divider >}}

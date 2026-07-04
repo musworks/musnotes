@@ -10,33 +10,6 @@ The site is bilingual (`id` and `en`) and includes notes, essays, library entrie
 - PaperMod theme as a Git submodule
 - GitHub Pages deployment via GitHub Actions
 
-## Local development
-
-Clone the repository with submodules:
-
-```powershell
-git clone --recurse-submodules https://github.com/musworks/musnotes.git
-cd musnotes
-```
-
-If you already cloned it without submodules:
-
-```powershell
-git submodule update --init --recursive
-```
-
-Run the local development server:
-
-```powershell
-hugo server -D
-```
-
-Build the production output:
-
-```powershell
-hugo --minify --cleanDestinationDir
-```
-
 ## Project structure
 
 - `content/` main site content

@@ -83,7 +83,7 @@ cleanDestinationDir = true
                 enabled = true
                 eyebrow = "PERSONAL BLOG · DIGITAL GARDEN · DIGITAL WORKS STUDIO"
                 title = "More often confused than knowing."
-                subheadline = "Biology student, digital gardener, and maker of quiet web things."
+                subheadline = "Biology student, digital gardener, and maker of web things."
                 intro = "Sebuah arsip untuk catatan non-linear, esai reflektif, pikiran yang belum selesai, dan eksperimen digital kecil."
 
                 [languages.id.params.homepage.primaryButton]
@@ -134,8 +134,8 @@ cleanDestinationDir = true
             weight = 25
 
         [[languages.id.menu.main]]
-            name = "Quiet Hours"
-            url = "https://quiet-hours.musnotes.my.id/"
+            name = "Mustimere"
+            url = "https://mustimere.musnotes.my.id/"
             weight = 40
 
         [[languages.id.menu.main]]
@@ -171,8 +171,8 @@ cleanDestinationDir = true
                 enabled = true
                 eyebrow = "PERSONAL BLOG · DIGITAL GARDEN · DIGITAL WORKS STUDIO"
                 title = "More often confused than knowing."
-                subheadline = "Biology student, digital gardener, and maker of quiet web things."
-                intro = "A quiet archive for non-linear notes, reflective essays, unfinished thoughts, and small digital experiments."
+                subheadline = "Biology student, digital gardener, and maker of web things."
+                intro = " archive for non-linear notes, reflective essays, unfinished thoughts, and small digital experiments."
 
                 [languages.en.params.homepage.primaryButton]
                     name = "Enter the Garden"
@@ -224,8 +224,8 @@ cleanDestinationDir = true
             weight = 25
 
         [[languages.en.menu.main]]
-            name = "Quiet Hours"
-            url = "https://quiet-hours.musnotes.my.id/"
+            name = "Mustimere"
+            url = "https://mustimere.musnotes.my.id/"
             weight = 40
 
         [[languages.en.menu.main]]

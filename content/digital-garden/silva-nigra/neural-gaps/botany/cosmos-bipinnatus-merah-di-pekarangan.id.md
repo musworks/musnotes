@@ -1,5 +1,5 @@
 ---
-title: "Cosmos bipinnatus:Bunga Merah di Pekarangan"
+title: "Cosmos bipinnatus: Bunga Merah di Pekarangan"
 date: 2026-06-24T09:00:00+07:00
 draft: false
 math: false
@@ -143,9 +143,9 @@ Kalimat itu tidak dramatis, tapi sains memang sering lebih suka memakai sepatu d
 
 ## Catatan penutup
 
-Bunga merah ini memberi gangguan kecil pada ekspektasi.
+Bunga merah ini memberi gangguan pada ekspektasi.
 
-Berdasarkan pengalamanku, gangguan kecil sering menjadi pintu masuk menuju pertanyaan yang lebih jernih. Awalnya hanya “kenapa yang ini berbeda?”, lalu perlahan berubah menjadi pertanyaan: informasi apa yang belum lengkap, faktor apa yang mungkin berperan, dan bagaimana cara mengamatinya lagi?
+Berdasarkan pengalamanku, gangguan seperti ini sering menjadi pintu masuk menuju pertanyaan yang lebih jernih. Awalnya hanya “kenapa yang ini berbeda?”, lalu perlahan berubah menjadi pertanyaan: informasi apa yang belum lengkap, faktor apa yang mungkin berperan, dan bagaimana cara mengamatinya lagi?
 
 Kadang sains tidak dimulai dari mikroskop atau laboratorium, tetapi dari satu bunga di pekarangan yang keliatan tidak mengikuti naskah warna mayoritas.
 
