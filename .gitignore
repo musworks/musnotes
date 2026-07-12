@@ -5,6 +5,7 @@ public/
 public-preview/
 
 # Local work folders
+.codex/environments/
 .codex-hugo-build/
 .tmp-*
 tmp*/
