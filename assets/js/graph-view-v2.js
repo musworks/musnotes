@@ -65,9 +65,12 @@
             anchorPull: { post: 0.00105, tag: 0.00142, category: 0.00178 },
             centerPull: 0.00052,
             damping: 0.9,
-            alphaDecay: 0.985,
-            settleFloor: 0.02,
-            prewarm: 160
+            alphaDecay: 0.985
+        },
+        settling: {
+            desktop: { iterations: 192, batchSize: 4, budgetMs: 4, alphaFloor: 0.055 },
+            mobile: { iterations: 160, batchSize: 3, budgetMs: 3, alphaFloor: 0.09 },
+            reduced: { iterations: 96, batchSize: 2, budgetMs: 2, alphaFloor: 0.24 }
         },
         labels: {
             thresholds: { post: 6, tag: 4, category: 2 },
@@ -86,6 +89,10 @@
         frame: 0,
         renderRequested: false,
         simulationRequested: false,
+        settlingProfile: null,
+        settlingIterationsRemaining: 0,
+        settlingStepsCompleted: 0,
+        deferSettlingUntilAfterRender: false,
         activeFilter: "all",
         rawNodes: [],
         rawLinks: [],
@@ -113,6 +120,7 @@
         eventsBound: false,
         resizeObserver: null,
         themeObserver: null,
+        motionQuery: null,
         activePointers: new Map(),
         pinchGesture: null,
         lastHitNodeId: null,
@@ -475,7 +483,22 @@
         requestRenderFrame();
     }
 
-    function applyFilter() {
+    function settlingProfile() {
+        if (state.motionQuery?.matches) return config.settling.reduced;
+        return isMobileView() ? config.settling.mobile : config.settling.desktop;
+    }
+
+    function prepareSettling(deferUntilAfterRender = false) {
+        state.settlingProfile = settlingProfile();
+        state.settlingIterationsRemaining = state.settlingProfile.iterations;
+        state.settlingStepsCompleted = 0;
+        state.deferSettlingUntilAfterRender = deferUntilAfterRender;
+        state.alpha = 1;
+        if (!deferUntilAfterRender) requestSimulationFrame();
+    }
+
+    function applyFilter(options = {}) {
+        const { deferSettling = false } = options;
         const filters = {
             all: (node) => true,
             tags: (node) => node.kind === "tag",
@@ -501,8 +524,7 @@
 
         state.userMovedView = false;
         fitViewToNodes();
-        state.alpha = 1;
-        requestSimulationFrame();
+        prepareSettling(deferSettling);
     }
 
     function applyAnchorForce(nodes) {
@@ -640,7 +662,7 @@
         state.view.y = state.height * 0.5 - centerY * scale;
     }
 
-    function stepSimulation() {
+    function stepSimulation(alphaFloor = settlingProfile().alphaFloor) {
         if (state.visibleNodes.length === 0) return false;
         applyAnchorForce(state.visibleNodes);
         applyCenterForce(state.visibleNodes);
@@ -649,13 +671,45 @@
         integrate(state.visibleNodes);
         applyCollision(state.visibleNodes);
         state.alpha = Math.max(0, state.alpha * config.force.alphaDecay);
-        return Boolean(state.draggingNode) || state.alpha > config.force.settleFloor;
+        return Boolean(state.draggingNode) || state.alpha > alphaFloor;
     }
 
-    function prewarmLayout(iterations = config.force.prewarm) {
-        for (let index = 0; index < iterations; index += 1) {
-            if (!stepSimulation()) break;
+    function runSimulationBatch() {
+        const isInitialSettling = state.settlingIterationsRemaining > 0;
+        const profile = isInitialSettling ? state.settlingProfile : settlingProfile();
+        const maxSteps = isInitialSettling
+            ? Math.min(profile.batchSize, state.settlingIterationsRemaining)
+            : 1;
+        const startedAt = performance.now();
+        let keepGoing = false;
+        let steps = 0;
+
+        while (steps < maxSteps) {
+            keepGoing = stepSimulation(profile.alphaFloor);
+            steps += 1;
+
+            if (isInitialSettling) {
+                state.settlingIterationsRemaining -= 1;
+                state.settlingStepsCompleted += 1;
+            }
+
+            if (!keepGoing || performance.now() - startedAt >= profile.budgetMs) break;
         }
+
+        if (isInitialSettling) {
+            const settlingComplete = !keepGoing || state.settlingIterationsRemaining <= 0;
+            if (settlingComplete) {
+                state.settlingIterationsRemaining = 0;
+                debugLog("initial settling complete", {
+                    steps: state.settlingStepsCompleted,
+                    alpha: state.alpha,
+                    reducedMotion: Boolean(state.motionQuery?.matches)
+                });
+                return Boolean(state.draggingNode);
+            }
+        }
+
+        return keepGoing;
     }
 
     function ensureFrame() {
@@ -680,12 +734,19 @@
         const shouldSimulate = state.simulationRequested;
         state.simulationRequested = false;
 
-        const keepGoing = shouldSimulate ? stepSimulation() : false;
+        const keepGoing = shouldSimulate ? runSimulationBatch() : false;
         const shouldRender = state.renderRequested || eventNeedsRender || shouldSimulate;
         state.renderRequested = false;
 
         if (shouldRender) draw();
-        if (keepGoing) requestSimulationFrame();
+
+        // Bootstrap paints deterministic positions once before incremental settling begins.
+        if (state.deferSettlingUntilAfterRender && shouldRender) {
+            state.deferSettlingUntilAfterRender = false;
+            requestSimulationFrame();
+        } else if (keepGoing) {
+            requestSimulationFrame();
+        }
     }
 
     function nodePalette(kind) {
@@ -1374,12 +1435,12 @@
                 links: state.rawLinks.length
             });
 
+            state.motionQuery = window.matchMedia("(prefers-reduced-motion: reduce)");
             refreshStyleCache();
             updateCanvasSize();
             ensureNodePositions(state.rawNodes);
             attachEvents();
-            applyFilter();
-            prewarmLayout();
+            applyFilter({ deferSettling: true });
             updateInspector();
             canvas.style.cursor = "grab";
             requestRenderFrame();
