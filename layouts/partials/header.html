@@ -78,7 +78,8 @@
                 {{- $menu_item_url := cond (strings.HasSuffix $href "/") $href (printf "%s/" $href) }}
                 {{- $search_url := "/search/" | relLangURL }}
                 {{- $is_search := and (not (findRE "://" .URL)) (eq $menu_item_url $search_url) }}
-                {{- $is_active := and (not (findRE "://" .URL)) (eq $menu_item_url $pageURL) }}
+                {{- $is_current := and (not (findRE "://" .URL)) (eq $menu_item_url $pageURL) }}
+                {{- $is_active := and (not (findRE "://" .URL)) (hasPrefix $pageURL $menu_item_url) }}
                 {{- if and $is_search $muscryptURL }}
                 <li>
                     <a href="{{ $muscryptURL }}" class="nav-link">
@@ -98,7 +99,7 @@
                     {{- cond $is_search (" accesskey=/" | safeHTMLAttr) ("" | safeHTMLAttr ) }}
                     class="nav-link{{ if $is_active }} is-active{{ end }}{{ if $is_search }} nav-link--search{{ end }}"
                     {{- if $is_search }} aria-label="{{ .Name | default .Title }}" title="{{ .Name | default .Title }} (Alt + /)"{{- end }}
-                    {{- if $is_active }} aria-current="page"{{ end }}>
+                    {{- if $is_current }} aria-current="page"{{ end }}>
                         {{- if $is_search }}
                         <svg class="nav-link__icon nav-link__icon--search" xmlns="http://www.w3.org/2000/svg" width="16" height="16"
                             viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round"
@@ -218,7 +219,8 @@
                 {{- $menu_item_url := cond (strings.HasSuffix $href "/") $href (printf "%s/" $href) }}
                 {{- $search_url := "/search/" | relLangURL }}
                 {{- $is_search := and (not (findRE "://" .URL)) (eq $menu_item_url $search_url) }}
-                {{- $is_active := and (not (findRE "://" .URL)) (eq $menu_item_url $pageURL) }}
+                {{- $is_current := and (not (findRE "://" .URL)) (eq $menu_item_url $pageURL) }}
+                {{- $is_active := and (not (findRE "://" .URL)) (hasPrefix $pageURL $menu_item_url) }}
                 {{- if and $is_search $muscryptURL }}
                 <li>
                     <a href="{{ $muscryptURL }}" class="nav-link">
@@ -238,7 +240,7 @@
                     {{- cond $is_search (" accesskey=/" | safeHTMLAttr) ("" | safeHTMLAttr ) }}
                     class="nav-link{{ if $is_active }} is-active{{ end }}{{ if $is_search }} nav-link--search{{ end }}"
                     {{- if $is_search }} aria-label="{{ .Name | default .Title }}" title="{{ .Name | default .Title }} (Alt + /)"{{- end }}
-                    {{- if $is_active }} aria-current="page"{{ end }}>
+                    {{- if $is_current }} aria-current="page"{{ end }}>
                         {{- if $is_search }}
                         <svg class="nav-link__icon nav-link__icon--search" xmlns="http://www.w3.org/2000/svg" width="16" height="16"
                             viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round"

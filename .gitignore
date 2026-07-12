@@ -4,6 +4,13 @@
 public/
 public-preview/
 
+# Local Hugo audit output
+.hugo-audit-public/
+hugo-mobile-audit.err.log
+hugo-mobile-audit.out.log
+hugo-server.audit.err.log
+hugo-server.audit.out.log
+
 # Local work folders
 .codex-hugo-build/
 .tmp-*

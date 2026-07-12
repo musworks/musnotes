@@ -22,6 +22,7 @@ cleanDestinationDir = true
     env = "production"
     author = "mus"
     siteURL = "https://www.musnotes.my.id/"
+    musTheme = "herbarium-lavender"
     mainSections = ["digital-garden"]
     defaultTheme = "auto"
     disableThemeToggle = false
@@ -138,15 +139,15 @@ cleanDestinationDir = true
             url = "https://mustimere.musnotes.my.id/"
             weight = 40
 
-        [[languages.id.menu.main]]
-            name = "Archives"
-            url = "/archives/"
-            weight = 30
+        # [[languages.id.menu.main]]
+        #     name = "Archives"
+        #     url = "/archives/"
+        #     weight = 30
 
-        [[languages.id.menu.main]]
-            name = "Classification"
-            url = "/tags/"
-            weight = 35
+        # [[languages.id.menu.main]]
+        #     name = "Classification"
+        #     url = "/tags/"
+        #     weight = 35
 
         [[languages.id.menu.main]]
             name = "Graph"
@@ -228,15 +229,15 @@ cleanDestinationDir = true
             url = "https://mustimere.musnotes.my.id/"
             weight = 40
 
-        [[languages.en.menu.main]]
-            name = "Archives"
-            url = "/archives/"
-            weight = 30
+        # [[languages.en.menu.main]]
+        #     name = "Archives"
+        #     url = "/archives/"
+        #     weight = 30
 
-        [[languages.en.menu.main]]
-            name = "Classification"
-            url = "/tags/"
-            weight = 35
+        # [[languages.en.menu.main]]
+        #     name = "Classification"
+        #     url = "/tags/"
+        #     weight = 35
 
         [[languages.en.menu.main]]
             name = "Graph"
