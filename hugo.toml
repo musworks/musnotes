@@ -22,6 +22,7 @@ cleanDestinationDir = true
     env = "production"
     author = "mus"
     siteURL = "https://www.musnotes.my.id/"
+    musTheme = "herbarium-lavender"
     mainSections = ["digital-garden"]
     defaultTheme = "auto"
     disableThemeToggle = false
