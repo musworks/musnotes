@@ -1,0 +1,1728 @@
+/* Herbarium Lavender theme experiment.
+   Keep this scoped so the classic UI can remain the stable default. */
+
+/* === Tokens === */
+
+html[data-mus-theme="herbarium-lavender"] {
+    --mus-bg: #FBF8FD;
+    --mus-surface: #FAF5FA;
+    --mus-surface-soft: #FFFBFE;
+    --mus-border: #D8C9DA;
+    --mus-border-strong: #A989AB;
+    --mus-text: #4E3F50;
+    --mus-heading: #735377;
+    --mus-muted: #6F5B72;
+    --mus-meta: #735F76;
+    --mus-accent: #735377;
+    --mus-accent-soft: #A989AB;
+    --mus-accent-wash: #D8C9DB;
+    --mus-accent-mist: #F1E7F3;
+    --mus-font-heading: "Cormorant Garamond", "Spectral", Georgia, serif;
+    --mus-font-reading: "Literata", "Spectral", Georgia, serif;
+    --mus-font-body: "Karla", system-ui, sans-serif;
+    --mus-font-ui: "Karla", system-ui, sans-serif;
+
+    --bg-color: var(--mus-bg);
+    --main-text: var(--mus-text);
+    --orchid-accent: var(--mus-accent);
+    --sage-fade: var(--mus-muted);
+    --section-heading: color-mix(in srgb, var(--mus-heading) 92%, var(--mus-text) 8%);
+    --muted-copy: color-mix(in srgb, var(--mus-text) 74%, var(--mus-muted) 26%);
+    --muted-copy-soft: color-mix(in srgb, var(--mus-text) 68%, var(--mus-muted) 32%);
+    --muted-meta: var(--mus-meta);
+    --muted-eyebrow: color-mix(in srgb, var(--mus-accent-soft) 58%, var(--mus-text) 42%);
+
+    --theme: var(--mus-bg);
+    --entry: color-mix(in srgb, var(--mus-surface) 86%, var(--mus-bg) 14%);
+    --primary: var(--mus-text);
+    --secondary: var(--mus-muted);
+    --tertiary: color-mix(in srgb, var(--mus-accent-wash) 42%, var(--mus-border) 58%);
+    --content: var(--mus-text);
+    --code-block-bg: #F4EDF6;
+    --code-bg: #FAF5FA;
+    --code-block-text: #4E3F50;
+    --border: color-mix(in srgb, var(--mus-border) 88%, var(--mus-accent) 12%);
+
+    --surface-panel-border: color-mix(in srgb, var(--mus-border) 72%, var(--mus-border-strong) 28%);
+    --surface-panel-bg: var(--mus-panel-bg);
+    --surface-panel-shadow: none;
+    --surface-card-border: color-mix(in srgb, var(--mus-border) 72%, var(--mus-border-strong) 28%);
+    --surface-card-bg: var(--mus-card-bg);
+    --surface-card-shadow: none;
+    --surface-card-hover-border: color-mix(in srgb, var(--mus-accent) 36%, var(--mus-border) 64%);
+    --surface-card-hover-bg: var(--mus-panel-bg);
+    --surface-card-hover-shadow: none;
+    --surface-subcard-border: color-mix(in srgb, var(--mus-border) 84%, var(--mus-border-strong) 16%);
+    --surface-subcard-bg: var(--mus-card-bg);
+    --surface-subcard-hover-border: color-mix(in srgb, var(--mus-accent) 28%, var(--mus-border) 72%);
+    --surface-subcard-hover-bg: var(--mus-panel-bg);
+    --surface-subcard-hover-shadow: none;
+    --focus-ring-soft: rgba(115, 83, 119, 0.14);
+    --focus-ring-strong: rgba(115, 83, 119, 0.32);
+    --mus-link: var(--mus-accent);
+    --mus-action: var(--mus-accent);
+    --mus-card-bg: #FFFBFE;
+    --mus-panel-bg: #FAF5FA;
+    --mus-code-bg: #F4EDF6;
+    --mus-featured-card-bg: #F7F1F7;
+    --mus-featured-border: var(--mus-border-strong);
+    --mus-decorative: #A989AB;
+    --mus-focus: var(--focus-ring-strong);
+    --mus-nav-bg: var(--mus-bg);
+    --mus-nav-surface: color-mix(in srgb, var(--mus-surface) 92%, var(--mus-bg) 8%);
+    --mus-nav-text: color-mix(in srgb, var(--mus-text) 92%, var(--mus-accent) 8%);
+    --mus-nav-active: color-mix(in srgb, var(--mus-accent) 88%, var(--mus-text) 12%);
+    --mus-nav-border: color-mix(in srgb, var(--mus-border) 82%, var(--mus-accent) 18%);
+    --mus-nav-wash: color-mix(in srgb, var(--mus-accent-mist) 72%, transparent);
+    --mus-nav-shadow: rgba(78, 63, 80, 0.1);
+    color-scheme: light;
+}
+
+html[data-mus-theme="herbarium-lavender"][data-theme="dark"] {
+    --mus-bg: #151812;
+    --mus-surface: #1D2119;
+    --mus-surface-soft: #252B20;
+    --mus-border: #3A4232;
+    --mus-border-strong: #819765;
+    --mus-text: #EFE7DA;
+    --mus-heading: #E6D8C7;
+    --mus-muted: #B8AA98;
+    --mus-meta: #B8AA98;
+    --mus-accent: #A8BF7A;
+    --mus-accent-soft: #819765;
+    --mus-accent-wash: #4B5A3F;
+    --mus-accent-mist: #2B3328;
+    --mus-lavender-night: #C7A8CC;
+
+    --bg-color: var(--mus-bg);
+    --main-text: var(--mus-text);
+    --orchid-accent: var(--mus-accent);
+    --sage-fade: var(--mus-muted);
+    --section-heading: color-mix(in srgb, var(--mus-heading) 92%, var(--mus-text) 8%);
+    --muted-copy: color-mix(in srgb, var(--mus-text) 76%, var(--mus-muted) 24%);
+    --muted-copy-soft: color-mix(in srgb, var(--mus-text) 82%, var(--mus-muted) 18%);
+    --muted-meta: color-mix(in srgb, var(--mus-text) 70%, var(--mus-muted) 30%);
+    --muted-eyebrow: color-mix(in srgb, var(--mus-accent) 74%, var(--mus-muted) 26%);
+
+    --theme: var(--mus-bg);
+    --entry: var(--mus-surface);
+    --primary: var(--mus-text);
+    --secondary: var(--mus-muted);
+    --tertiary: rgba(168, 191, 122, 0.16);
+    --content: var(--mus-text);
+    --code-block-bg: #22261D;
+    --code-bg: #282E23;
+    --code-block-text: #F0E6D8;
+    --border: rgba(168, 191, 122, 0.22);
+
+    --surface-panel-border: rgba(168, 191, 122, 0.17);
+    --surface-panel-bg: var(--mus-surface);
+    --surface-panel-shadow: none;
+    --surface-card-border: rgba(168, 191, 122, 0.19);
+    --surface-card-bg: var(--mus-surface-soft);
+    --surface-card-shadow: none;
+    --surface-card-hover-border: rgba(168, 191, 122, 0.3);
+    --surface-card-hover-bg: var(--mus-accent-mist);
+    --surface-card-hover-shadow: none;
+    --surface-subcard-border: rgba(168, 191, 122, 0.12);
+    --surface-subcard-bg: var(--mus-surface);
+    --surface-subcard-hover-border: rgba(168, 191, 122, 0.22);
+    --surface-subcard-hover-bg: rgba(168, 191, 122, 0.065);
+    --surface-subcard-hover-shadow: none;
+    --focus-ring-soft: rgba(168, 191, 122, 0.16);
+    --focus-ring-strong: rgba(168, 191, 122, 0.36);
+    --mus-link: var(--mus-accent);
+    --mus-action: var(--mus-accent);
+    --mus-card-bg: var(--mus-surface-soft);
+    --mus-panel-bg: var(--mus-surface);
+    --mus-code-bg: var(--code-block-bg);
+    --mus-featured-card-bg: var(--mus-surface-soft);
+    --mus-featured-border: var(--surface-panel-border);
+    --mus-decorative: var(--mus-lavender-night);
+    --mus-focus: var(--focus-ring-strong);
+    --mus-nav-bg: var(--mus-bg);
+    --mus-nav-surface: #28202B;
+    --mus-nav-text: #E9DFEA;
+    --mus-nav-active: #D8BCDC;
+    --mus-nav-border: rgba(199, 168, 204, 0.28);
+    --mus-nav-wash: rgba(199, 168, 204, 0.12);
+    --mus-nav-shadow: rgba(8, 5, 10, 0.28);
+    color-scheme: dark;
+}
+
+@media (prefers-color-scheme: dark) {
+    html[data-mus-theme="herbarium-lavender"][data-theme="auto"] {
+        --mus-bg: #151812;
+        --mus-surface: #1D2119;
+        --mus-surface-soft: #252B20;
+        --mus-border: #3A4232;
+        --mus-border-strong: #819765;
+        --mus-text: #EFE7DA;
+        --mus-heading: #E6D8C7;
+        --mus-muted: #B8AA98;
+        --mus-meta: #B8AA98;
+        --mus-accent: #A8BF7A;
+        --mus-accent-soft: #819765;
+        --mus-accent-wash: #4B5A3F;
+        --mus-accent-mist: #2B3328;
+        --mus-lavender-night: #C7A8CC;
+
+        --bg-color: var(--mus-bg);
+        --main-text: var(--mus-text);
+        --orchid-accent: var(--mus-accent);
+        --sage-fade: var(--mus-muted);
+        --section-heading: color-mix(in srgb, var(--mus-heading) 92%, var(--mus-text) 8%);
+        --muted-copy: color-mix(in srgb, var(--mus-text) 76%, var(--mus-muted) 24%);
+        --muted-copy-soft: color-mix(in srgb, var(--mus-text) 82%, var(--mus-muted) 18%);
+        --muted-meta: color-mix(in srgb, var(--mus-text) 70%, var(--mus-muted) 30%);
+        --muted-eyebrow: color-mix(in srgb, var(--mus-accent) 74%, var(--mus-muted) 26%);
+
+        --theme: var(--mus-bg);
+        --entry: var(--mus-surface);
+        --primary: var(--mus-text);
+        --secondary: var(--mus-muted);
+        --tertiary: rgba(168, 191, 122, 0.16);
+        --content: var(--mus-text);
+        --code-block-bg: #22261D;
+        --code-bg: #282E23;
+        --code-block-text: #F0E6D8;
+        --border: rgba(168, 191, 122, 0.22);
+
+        --surface-panel-border: rgba(168, 191, 122, 0.17);
+        --surface-panel-bg: var(--mus-surface);
+        --surface-panel-shadow: none;
+        --surface-card-border: rgba(168, 191, 122, 0.19);
+        --surface-card-bg: var(--mus-surface-soft);
+        --surface-card-shadow: none;
+        --surface-card-hover-border: rgba(168, 191, 122, 0.3);
+        --surface-card-hover-bg: var(--mus-accent-mist);
+        --surface-card-hover-shadow: none;
+        --surface-subcard-border: rgba(168, 191, 122, 0.12);
+        --surface-subcard-bg: var(--mus-surface);
+        --surface-subcard-hover-border: rgba(168, 191, 122, 0.22);
+        --surface-subcard-hover-bg: rgba(168, 191, 122, 0.065);
+        --surface-subcard-hover-shadow: none;
+        --focus-ring-soft: rgba(168, 191, 122, 0.16);
+        --focus-ring-strong: rgba(168, 191, 122, 0.36);
+        --mus-link: var(--mus-accent);
+        --mus-action: var(--mus-accent);
+        --mus-card-bg: var(--mus-surface-soft);
+        --mus-panel-bg: var(--mus-surface);
+        --mus-code-bg: var(--code-block-bg);
+        --mus-featured-card-bg: var(--mus-surface-soft);
+        --mus-featured-border: var(--surface-panel-border);
+        --mus-decorative: var(--mus-lavender-night);
+        --mus-focus: var(--focus-ring-strong);
+        --mus-nav-bg: var(--mus-bg);
+        --mus-nav-surface: #28202B;
+        --mus-nav-text: #E9DFEA;
+        --mus-nav-active: #D8BCDC;
+        --mus-nav-border: rgba(199, 168, 204, 0.28);
+        --mus-nav-wash: rgba(199, 168, 204, 0.12);
+        --mus-nav-shadow: rgba(8, 5, 10, 0.28);
+        color-scheme: dark;
+    }
+}
+
+/* === Typography === */
+
+html[data-mus-theme="herbarium-lavender"] body,
+html[data-mus-theme="herbarium-lavender"] button,
+html[data-mus-theme="herbarium-lavender"] input,
+html[data-mus-theme="herbarium-lavender"] textarea,
+html[data-mus-theme="herbarium-lavender"] select {
+    font-family: var(--mus-font-body);
+}
+
+html[data-mus-theme="herbarium-lavender"] body {
+    background: var(--mus-bg);
+    color: var(--mus-text);
+}
+
+html[data-mus-theme="herbarium-lavender"] h1,
+html[data-mus-theme="herbarium-lavender"] h2,
+html[data-mus-theme="herbarium-lavender"] h3,
+html[data-mus-theme="herbarium-lavender"] h4,
+html[data-mus-theme="herbarium-lavender"] .post-title,
+html[data-mus-theme="herbarium-lavender"] .page-header h1,
+html[data-mus-theme="herbarium-lavender"] .entry-header h1,
+html[data-mus-theme="herbarium-lavender"] .entry-header h2,
+html[data-mus-theme="herbarium-lavender"] .entry-header h3,
+html[data-mus-theme="herbarium-lavender"] .home-hero__title,
+html[data-mus-theme="herbarium-lavender"] .home-feed__title,
+html[data-mus-theme="herbarium-lavender"] .garden-landing__title,
+html[data-mus-theme="herbarium-lavender"] .garden-graph__title,
+html[data-mus-theme="herbarium-lavender"] .library-page__title,
+html[data-mus-theme="herbarium-lavender"] .library-detail__title,
+html[data-mus-theme="herbarium-lavender"] .library-card__title,
+html[data-mus-theme="herbarium-lavender"] .classification .classification__title,
+html[data-mus-theme="herbarium-lavender"] .classification .classification__section-title,
+html[data-mus-theme="herbarium-lavender"] .classification .classification-card__title,
+html[data-mus-theme="herbarium-lavender"] .musnotes-index__title,
+html[data-mus-theme="herbarium-lavender"] .silva-archive__title,
+html[data-mus-theme="herbarium-lavender"] .silva-chamber__title,
+html[data-mus-theme="herbarium-lavender"] .silva-fragment__title,
+html[data-mus-theme="herbarium-lavender"] .archives-register__title,
+html[data-mus-theme="herbarium-lavender"] .archives-year__title,
+html[data-mus-theme="herbarium-lavender"] .archives-month__title,
+html[data-mus-theme="herbarium-lavender"] .archives-entry__title {
+    color: var(--section-heading);
+    font-family: var(--mus-font-heading);
+    font-weight: 500;
+}
+
+html[data-mus-theme="herbarium-lavender"] nav,
+html[data-mus-theme="herbarium-lavender"] .post-meta,
+html[data-mus-theme="herbarium-lavender"] .entry-footer,
+html[data-mus-theme="herbarium-lavender"] .home-hero__eyebrow,
+html[data-mus-theme="herbarium-lavender"] .home-feed__eyebrow,
+html[data-mus-theme="herbarium-lavender"] .footer {
+    font-family: var(--mus-font-ui);
+}
+
+html[data-mus-theme="herbarium-lavender"] .entry-content,
+html[data-mus-theme="herbarium-lavender"] .entry-content p,
+html[data-mus-theme="herbarium-lavender"] .entry-content li,
+html[data-mus-theme="herbarium-lavender"] .home-feed__intro,
+html[data-mus-theme="herbarium-lavender"] .archives-entry__summary,
+html[data-mus-theme="herbarium-lavender"] .classification .classification-card__count,
+html[data-mus-theme="herbarium-lavender"] .library-card__author {
+    color: var(--mus-text);
+}
+
+html[data-mus-theme="herbarium-lavender"] .post-meta,
+html[data-mus-theme="herbarium-lavender"] .entry-footer,
+html[data-mus-theme="herbarium-lavender"] .home-feed .entry-footer,
+html[data-mus-theme="herbarium-lavender"] .archives-entry__meta,
+html[data-mus-theme="herbarium-lavender"] .archives-register__meta,
+html[data-mus-theme="herbarium-lavender"] .archives-year__meta,
+html[data-mus-theme="herbarium-lavender"] .archives-month__meta,
+html[data-mus-theme="herbarium-lavender"] .classification .classification-card__meta,
+html[data-mus-theme="herbarium-lavender"] .home-hero-card__meta,
+html[data-mus-theme="herbarium-lavender"] .home-hero-card__note {
+    color: var(--mus-meta);
+}
+
+html[data-mus-theme="herbarium-lavender"] a {
+    color: var(--mus-link);
+}
+
+/* === Buttons === */
+
+html[data-mus-theme="herbarium-lavender"] .button,
+html[data-mus-theme="herbarium-lavender"] .home-hero__button,
+html[data-mus-theme="herbarium-lavender"] .profile .buttons .button {
+    border-color: color-mix(in srgb, var(--mus-accent) 34%, var(--mus-border) 66%);
+}
+
+html[data-mus-theme="herbarium-lavender"] .home-hero__button:not(.home-hero__button--secondary),
+html[data-mus-theme="herbarium-lavender"] .profile .buttons .button {
+    background: color-mix(in srgb, var(--mus-action) 88%, var(--mus-text) 12%);
+    color: var(--mus-surface-soft);
+}
+
+html[data-mus-theme="herbarium-lavender"] .home-hero__button:not(.home-hero__button--secondary):hover,
+html[data-mus-theme="herbarium-lavender"] .home-hero__button:not(.home-hero__button--secondary):focus-visible,
+html[data-mus-theme="herbarium-lavender"] .profile .buttons .button:hover,
+html[data-mus-theme="herbarium-lavender"] .profile .buttons .button:focus-visible {
+    background: color-mix(in srgb, var(--mus-accent) 78%, var(--mus-text) 22%);
+    color: var(--mus-surface-soft);
+}
+
+html[data-mus-theme="herbarium-lavender"] .nav-link.is-active,
+html[data-mus-theme="herbarium-lavender"] .nav-link[aria-current="page"],
+html[data-mus-theme="herbarium-lavender"] .lang-link.is-active {
+    color: color-mix(in srgb, var(--mus-accent) 88%, var(--mus-text) 12%);
+}
+
+html[data-mus-theme="herbarium-lavender"] .nav-link::after,
+html[data-mus-theme="herbarium-lavender"] .lang-link.is-active::after {
+    background: color-mix(in srgb, var(--mus-heading) 72%, var(--mus-accent-wash) 28%);
+}
+
+html[data-mus-theme="herbarium-lavender"] #theme-toggle,
+html[data-mus-theme="herbarium-lavender"] .nav-menu-toggle {
+    color: color-mix(in srgb, var(--mus-accent) 72%, var(--mus-text) 28%);
+}
+
+/* === Navbar === */
+
+html[data-mus-theme="herbarium-lavender"] .header,
+html[data-mus-theme="herbarium-lavender"] body.list:has(.home-hero) .header {
+    background: var(--mus-nav-bg);
+    border-bottom: 0;
+    box-shadow: none;
+    backdrop-filter: none;
+    margin-bottom: 0;
+}
+
+html[data-mus-theme="herbarium-lavender"] .header-nav,
+html[data-mus-theme="herbarium-lavender"] body:has(.home-hero) .header-nav {
+    padding-top: 0.75rem;
+    padding-bottom: 0.78rem;
+    font-family: var(--mus-font-ui);
+}
+
+html[data-mus-theme="herbarium-lavender"] .brand-link,
+html[data-mus-theme="herbarium-lavender"] .nav-link,
+html[data-mus-theme="herbarium-lavender"] .lang-link,
+html[data-mus-theme="herbarium-lavender"] .nav-search-shortcut,
+html[data-mus-theme="herbarium-lavender"] #theme-toggle,
+html[data-mus-theme="herbarium-lavender"] .nav-menu-toggle,
+html[data-mus-theme="herbarium-lavender"] .nav-pan {
+    color: var(--mus-nav-text);
+}
+
+html[data-mus-theme="herbarium-lavender"] .nav-link {
+    font-family: var(--mus-font-ui);
+    font-weight: 500;
+    line-height: 1.2;
+}
+
+html[data-mus-theme="herbarium-lavender"] .nav-link:hover,
+html[data-mus-theme="herbarium-lavender"] .nav-link:focus-visible,
+html[data-mus-theme="herbarium-lavender"] .brand-link:hover,
+html[data-mus-theme="herbarium-lavender"] .brand-link:focus-visible,
+html[data-mus-theme="herbarium-lavender"] .lang-link:hover,
+html[data-mus-theme="herbarium-lavender"] .lang-link:focus-visible,
+html[data-mus-theme="herbarium-lavender"] .nav-search-shortcut:hover,
+html[data-mus-theme="herbarium-lavender"] .nav-search-shortcut:focus-visible,
+html[data-mus-theme="herbarium-lavender"] .nav-menu-toggle:hover,
+html[data-mus-theme="herbarium-lavender"] .nav-menu-toggle:focus-visible,
+html[data-mus-theme="herbarium-lavender"] .nav-pan:hover,
+html[data-mus-theme="herbarium-lavender"] .nav-pan:focus-visible {
+    color: var(--mus-nav-active) !important;
+}
+
+html[data-mus-theme="herbarium-lavender"] .nav-link.is-active,
+html[data-mus-theme="herbarium-lavender"] .nav-link[aria-current="page"],
+html[data-mus-theme="herbarium-lavender"] .lang-link.is-active {
+    color: var(--mus-nav-active);
+    font-weight: 600;
+}
+
+html[data-mus-theme="herbarium-lavender"] .nav-link:focus-visible,
+html[data-mus-theme="herbarium-lavender"] .nav-search-shortcut:focus-visible,
+html[data-mus-theme="herbarium-lavender"] #theme-toggle:focus-visible,
+html[data-mus-theme="herbarium-lavender"] .nav-menu-toggle:focus-visible,
+html[data-mus-theme="herbarium-lavender"] .nav-pan:focus-visible,
+html[data-mus-theme="herbarium-lavender"] .lang-link:focus-visible {
+    outline: 2px solid var(--mus-nav-active);
+    outline-offset: 3px;
+    box-shadow: none;
+}
+
+html[data-mus-theme="herbarium-lavender"] .nav-search-shortcut:hover,
+html[data-mus-theme="herbarium-lavender"] .nav-menu-toggle:hover,
+html[data-mus-theme="herbarium-lavender"] .nav-menu-toggle:focus-visible,
+html[data-mus-theme="herbarium-lavender"] #theme-toggle:hover,
+html[data-mus-theme="herbarium-lavender"] #theme-toggle:focus-visible {
+    border-color: var(--mus-nav-border);
+    background: var(--mus-nav-wash);
+}
+
+html[data-mus-theme="herbarium-lavender"] #theme-toggle:hover {
+    color: var(--mus-nav-active) !important;
+    box-shadow: none;
+}
+
+html[data-mus-theme="herbarium-lavender"] .nav-drawer__panel,
+html[data-mus-theme="herbarium-lavender"] .nav-pan {
+    border-color: var(--mus-nav-border);
+    background: var(--mus-nav-surface);
+    box-shadow: 0 10px 24px var(--mus-nav-shadow);
+}
+
+html[data-mus-theme="herbarium-lavender"] .nav-controls {
+    border-color: transparent;
+    background: transparent;
+    box-shadow: none;
+}
+
+html[data-mus-theme="herbarium-lavender"] .nav-drawer__section + .nav-drawer__section,
+html[data-mus-theme="herbarium-lavender"] .menu--drawer .nav-link {
+    border-color: var(--mus-nav-border) !important;
+}
+
+html[data-mus-theme="herbarium-lavender"] .nav-drawer__eyebrow {
+    color: var(--mus-nav-active);
+}
+
+html[data-mus-theme="herbarium-lavender"][data-theme="dark"] .header,
+html[data-mus-theme="herbarium-lavender"][data-theme="dark"] body.list:has(.home-hero) .header {
+    background: var(--mus-nav-bg);
+    border-bottom: 0;
+    box-shadow: none;
+}
+
+html[data-mus-theme="herbarium-lavender"][data-theme="dark"] .brand-link,
+html[data-mus-theme="herbarium-lavender"][data-theme="dark"] #theme-toggle {
+    color: var(--mus-nav-text);
+}
+
+html[data-mus-theme="herbarium-lavender"][data-theme="dark"] .nav-drawer__panel,
+html[data-mus-theme="herbarium-lavender"][data-theme="dark"] .nav-pan,
+html[data-mus-theme="herbarium-lavender"][data-theme="dark"] .nav-pan:hover,
+html[data-mus-theme="herbarium-lavender"][data-theme="dark"] .nav-pan:focus-visible {
+    border-color: var(--mus-nav-border);
+    background: var(--mus-nav-surface);
+    color: var(--mus-nav-text);
+    box-shadow: 0 10px 24px var(--mus-nav-shadow);
+}
+
+html[data-mus-theme="herbarium-lavender"][data-theme="dark"] .nav-controls {
+    border-color: transparent;
+    background: transparent;
+    box-shadow: none;
+}
+
+@media (min-width: 769px) {
+    html[data-mus-theme="herbarium-lavender"] .nav-center-shell::before,
+    html[data-mus-theme="herbarium-lavender"] .nav-center-shell::after,
+    html[data-mus-theme="herbarium-lavender"][data-theme="dark"] .nav-center-shell::before,
+    html[data-mus-theme="herbarium-lavender"][data-theme="dark"] .nav-center-shell::after {
+        content: none;
+        background: none;
+    }
+}
+
+/* === Accessibility / Focus States === */
+
+html[data-mus-theme="herbarium-lavender"] :focus-visible {
+    outline: 2px solid var(--mus-focus);
+    outline-offset: 3px;
+}
+
+html[data-mus-theme="herbarium-lavender"] .button,
+html[data-mus-theme="herbarium-lavender"] button:not(#theme-toggle):not(.nav-menu-toggle):not(.nav-pan):not(.copy-code),
+html[data-mus-theme="herbarium-lavender"] .graph-filter,
+html[data-mus-theme="herbarium-lavender"] .graph-view-control,
+html[data-mus-theme="herbarium-lavender"] .graph-inspector__reset,
+html[data-mus-theme="herbarium-lavender"] .graph-inspector__local-toggle,
+html[data-mus-theme="herbarium-lavender"] .library-links__item,
+html[data-mus-theme="herbarium-lavender"] .classification .classification-index__link {
+    border-color: color-mix(in srgb, var(--mus-accent) 24%, var(--mus-border) 76%);
+    background: color-mix(in srgb, var(--mus-surface) 72%, var(--mus-bg) 28%);
+    color: color-mix(in srgb, var(--mus-text) 86%, var(--mus-accent) 14%);
+}
+
+html[data-mus-theme="herbarium-lavender"] .home-hero__button--secondary,
+html[data-mus-theme="herbarium-lavender"] .library-links__item,
+html[data-mus-theme="herbarium-lavender"] .classification .classification-index__link {
+    box-shadow:
+        inset 0 1px 0 rgba(255, 255, 255, 0.38),
+        0 8px 18px rgba(63, 52, 44, 0.045);
+}
+
+html[data-mus-theme="herbarium-lavender"] .home-hero__button--secondary {
+    border-color: var(--mus-border-strong);
+    background: transparent;
+    color: var(--mus-accent);
+}
+
+html[data-mus-theme="herbarium-lavender"] .home-hero__button--secondary:hover,
+html[data-mus-theme="herbarium-lavender"] .home-hero__button--secondary:focus-visible,
+html[data-mus-theme="herbarium-lavender"] .button:hover,
+html[data-mus-theme="herbarium-lavender"] .button:focus-visible,
+html[data-mus-theme="herbarium-lavender"] .library-links__item:hover,
+html[data-mus-theme="herbarium-lavender"] .library-links__item:focus-visible,
+html[data-mus-theme="herbarium-lavender"] .classification .classification-index__link:hover,
+html[data-mus-theme="herbarium-lavender"] .classification .classification-index__link:focus-visible {
+    border-color: color-mix(in srgb, var(--mus-accent) 42%, var(--mus-border) 58%);
+    background: color-mix(in srgb, var(--mus-accent-mist) 42%, var(--mus-surface) 58%);
+    color: color-mix(in srgb, var(--mus-accent) 88%, var(--mus-text) 12%) !important;
+    box-shadow: 0 10px 20px var(--focus-ring-soft);
+}
+
+html[data-mus-theme="herbarium-lavender"] .home-hero__button--secondary:hover,
+html[data-mus-theme="herbarium-lavender"] .home-hero__button--secondary:focus-visible {
+    border-color: var(--mus-accent);
+    background: var(--mus-panel-bg);
+    color: var(--mus-accent) !important;
+}
+
+html[data-mus-theme="herbarium-lavender"] .home-hero__button:active,
+html[data-mus-theme="herbarium-lavender"] .button:active,
+html[data-mus-theme="herbarium-lavender"] .library-links__item:active,
+html[data-mus-theme="herbarium-lavender"] .classification .classification-index__link:active {
+    transform: translateY(0);
+    box-shadow: inset 0 1px 2px rgba(63, 52, 44, 0.12);
+}
+
+/* === Cards And Panels === */
+
+html[data-mus-theme="herbarium-lavender"] .post-entry,
+html[data-mus-theme="herbarium-lavender"] .first-entry,
+html[data-mus-theme="herbarium-lavender"] .home-feed .post-entry,
+html[data-mus-theme="herbarium-lavender"] .home-feed .first-entry,
+html[data-mus-theme="herbarium-lavender"] .home-hero-card,
+html[data-mus-theme="herbarium-lavender"] .garden-landing__card,
+html[data-mus-theme="herbarium-lavender"] .archives-entry__card,
+html[data-mus-theme="herbarium-lavender"] .classification .classification-card,
+html[data-mus-theme="herbarium-lavender"] .library-page__hero,
+html[data-mus-theme="herbarium-lavender"] .library-detail__main,
+html[data-mus-theme="herbarium-lavender"] .library-links__inner,
+html[data-mus-theme="herbarium-lavender"] .graph-explorer__toolbar,
+html[data-mus-theme="herbarium-lavender"] .graph-explorer__surface,
+html[data-mus-theme="herbarium-lavender"] .graph-statusbar {
+    border-color: var(--surface-card-border);
+    background: var(--mus-card-bg);
+    box-shadow: var(--surface-card-shadow);
+}
+
+html[data-mus-theme="herbarium-lavender"] .home-hero-card,
+html[data-mus-theme="herbarium-lavender"] .garden-landing__card,
+html[data-mus-theme="herbarium-lavender"] .classification .classification__hero,
+html[data-mus-theme="herbarium-lavender"] .library-page__hero,
+html[data-mus-theme="herbarium-lavender"] .library-detail__main,
+html[data-mus-theme="herbarium-lavender"] .library-links__inner,
+html[data-mus-theme="herbarium-lavender"] .graph-explorer__toolbar,
+html[data-mus-theme="herbarium-lavender"] .graph-explorer__surface,
+html[data-mus-theme="herbarium-lavender"] .graph-statusbar {
+    border-color: var(--surface-panel-border);
+    background: var(--mus-panel-bg);
+    box-shadow: var(--surface-panel-shadow);
+}
+
+html[data-mus-theme="herbarium-lavender"] .home-feed .first-entry {
+    border-color: var(--mus-featured-border);
+    background: var(--mus-featured-card-bg);
+    box-shadow:
+        inset 0 1px 0 rgba(255, 255, 255, 0.56),
+        0 16px 34px rgba(63, 52, 44, 0.09);
+}
+
+/* Keep Digital Garden's page hero boxless; garden cards are styled above. */
+html[data-mus-theme="herbarium-lavender"] .garden-landing__header {
+    border: 0;
+    background: transparent;
+    box-shadow: none;
+}
+
+html[data-mus-theme="herbarium-lavender"] .garden-landing__heading-wrap {
+    border-top-color: color-mix(in srgb, var(--mus-accent) 18%, var(--mus-border) 82%);
+    background: transparent;
+    box-shadow: none;
+}
+
+html[data-mus-theme="herbarium-lavender"][data-theme="light"] .silva-archive__header .breadcrumbs,
+html[data-mus-theme="herbarium-lavender"][data-theme="light"] .silva-archive__header .breadcrumbs a,
+html[data-mus-theme="herbarium-lavender"][data-theme="light"] .silva-archive__eyebrow,
+html[data-mus-theme="herbarium-lavender"][data-theme="light"] .silva-archive__section-kicker,
+html[data-mus-theme="herbarium-lavender"][data-theme="light"] .silva-chamber__meta,
+html[data-mus-theme="herbarium-lavender"][data-theme="light"] .silva-chamber__count,
+html[data-mus-theme="herbarium-lavender"][data-theme="light"] .silva-fragment__index,
+html[data-mus-theme="herbarium-lavender"][data-theme="light"] .silva-fragment__meta {
+    color: var(--mus-meta);
+}
+
+html[data-mus-theme="herbarium-lavender"][data-theme="light"] .silva-archive__heading,
+html[data-mus-theme="herbarium-lavender"][data-theme="light"] .silva-archive__prologue {
+    border-color: var(--mus-border);
+}
+
+html[data-mus-theme="herbarium-lavender"][data-theme="light"] .silva-archive__title,
+html[data-mus-theme="herbarium-lavender"][data-theme="light"] .silva-archive__section-title,
+html[data-mus-theme="herbarium-lavender"][data-theme="light"] .silva-chamber__title,
+html[data-mus-theme="herbarium-lavender"][data-theme="light"] .silva-fragment__title {
+    color: var(--mus-heading);
+}
+
+html[data-mus-theme="herbarium-lavender"][data-theme="light"] .silva-archive__subtitle,
+html[data-mus-theme="herbarium-lavender"][data-theme="light"] .silva-archive__section-intro,
+html[data-mus-theme="herbarium-lavender"][data-theme="light"] .silva-chamber__summary,
+html[data-mus-theme="herbarium-lavender"][data-theme="light"] .silva-fragment__summary {
+    color: color-mix(in srgb, var(--mus-text) 74%, var(--mus-muted) 26%);
+}
+
+html[data-mus-theme="herbarium-lavender"][data-theme="light"] .silva-chamber {
+    border-color: var(--mus-border);
+    background: var(--mus-card-bg);
+    box-shadow: none;
+}
+
+html[data-mus-theme="herbarium-lavender"][data-theme="light"] .silva-chamber::before {
+    background: none;
+}
+
+html[data-mus-theme="herbarium-lavender"][data-theme="light"] .silva-chamber:hover,
+html[data-mus-theme="herbarium-lavender"][data-theme="light"] .silva-chamber:focus-within {
+    border-color: var(--mus-border-strong);
+    background: var(--mus-panel-bg);
+    box-shadow: none;
+}
+
+html[data-mus-theme="herbarium-lavender"][data-theme="light"] .silva-chamber__footer,
+html[data-mus-theme="herbarium-lavender"][data-theme="light"] .silva-fragment,
+html[data-mus-theme="herbarium-lavender"][data-theme="light"] .silva-fragment:last-child {
+    border-color: var(--mus-border);
+}
+
+html[data-mus-theme="herbarium-lavender"][data-theme="light"] .silva-fragment:hover,
+html[data-mus-theme="herbarium-lavender"][data-theme="light"] .silva-fragment:focus-within {
+    border-color: var(--mus-border-strong);
+    background: var(--mus-accent-mist);
+}
+
+html[data-mus-theme="herbarium-lavender"][data-theme="light"] .silva-chamber:hover .silva-chamber__title,
+html[data-mus-theme="herbarium-lavender"][data-theme="light"] .silva-chamber:focus-within .silva-chamber__title,
+html[data-mus-theme="herbarium-lavender"][data-theme="light"] .silva-fragment:hover .silva-fragment__title,
+html[data-mus-theme="herbarium-lavender"][data-theme="light"] .silva-fragment:focus-within .silva-fragment__title {
+    color: var(--mus-accent);
+}
+
+html[data-mus-theme="herbarium-lavender"][data-theme="light"] .silva-chamber__link:focus-visible,
+html[data-mus-theme="herbarium-lavender"][data-theme="light"] .silva-fragment__link:focus-visible {
+    outline-color: var(--mus-focus);
+}
+
+html[data-mus-theme="herbarium-lavender"] .post-entry:hover,
+html[data-mus-theme="herbarium-lavender"] .post-entry:focus-within,
+html[data-mus-theme="herbarium-lavender"] .first-entry:hover,
+html[data-mus-theme="herbarium-lavender"] .first-entry:focus-within,
+html[data-mus-theme="herbarium-lavender"] .home-feed .post-entry:hover,
+html[data-mus-theme="herbarium-lavender"] .home-feed .post-entry:focus-within,
+html[data-mus-theme="herbarium-lavender"] .home-feed .first-entry:hover,
+html[data-mus-theme="herbarium-lavender"] .home-feed .first-entry:focus-within,
+html[data-mus-theme="herbarium-lavender"] .garden-landing__card:hover,
+html[data-mus-theme="herbarium-lavender"] .garden-landing__card:focus-within,
+html[data-mus-theme="herbarium-lavender"] .archives-entry__card:hover,
+html[data-mus-theme="herbarium-lavender"] .archives-entry__card:focus-within,
+html[data-mus-theme="herbarium-lavender"] .classification .classification-card:hover,
+html[data-mus-theme="herbarium-lavender"] .classification .classification-card:focus-within {
+    border-color: var(--surface-card-hover-border);
+    background: var(--surface-card-hover-bg);
+    box-shadow: var(--surface-card-hover-shadow);
+}
+
+html[data-mus-theme="herbarium-lavender"] .home-feed .post-entry::before,
+html[data-mus-theme="herbarium-lavender"] .home-feed .first-entry::before,
+html[data-mus-theme="herbarium-lavender"] .archives-year__months::before,
+html[data-mus-theme="herbarium-lavender"] .archives-month__rail::after {
+    background: var(--mus-decorative);
+    opacity: 0.78;
+}
+
+html[data-mus-theme="herbarium-lavender"] .mus-divider::before {
+    background: var(--mus-decorative);
+    opacity: 0.72;
+}
+
+/* === Secondary Pages === */
+
+html[data-mus-theme="herbarium-lavender"] .library-cover {
+    background:
+        linear-gradient(180deg, color-mix(in srgb, var(--mus-surface) 88%, white 12%), color-mix(in srgb, var(--mus-bg) 72%, var(--mus-border) 28%)),
+        linear-gradient(135deg, color-mix(in srgb, var(--mus-accent) 12%, transparent), transparent);
+    box-shadow:
+        inset 0 0 0 1px color-mix(in srgb, var(--mus-accent) 14%, transparent),
+        0 12px 24px rgba(63, 52, 44, 0.065);
+}
+
+html[data-mus-theme="herbarium-lavender"] .library-card__link:focus-visible,
+html[data-mus-theme="herbarium-lavender"] .post-entry:focus-within,
+html[data-mus-theme="herbarium-lavender"] .garden-landing__card:focus-within,
+html[data-mus-theme="herbarium-lavender"] .archives-entry__card:focus-within,
+html[data-mus-theme="herbarium-lavender"] .classification .classification-card:focus-within {
+    outline: 2px solid var(--mus-focus);
+    outline-offset: 4px;
+}
+
+html[data-mus-theme="herbarium-lavender"] .library-status,
+html[data-mus-theme="herbarium-lavender"] .library-chip,
+html[data-mus-theme="herbarium-lavender"] .post-tags a {
+    border-color: color-mix(in srgb, var(--mus-accent) 22%, var(--mus-border) 78%);
+    background: color-mix(in srgb, var(--mus-accent-mist) 30%, var(--mus-surface) 70%);
+    color: color-mix(in srgb, var(--mus-accent) 82%, var(--mus-text) 18%);
+}
+
+/* === Post Content === */
+
+html[data-mus-theme="herbarium-lavender"] .post-single {
+    border-color: var(--mus-border);
+    background: var(--mus-card-bg);
+    box-shadow: none;
+}
+
+html[data-mus-theme="herbarium-lavender"] .post-single.post-single--section-digital-garden {
+    background: transparent;
+    border-color: transparent;
+    box-shadow: none;
+}
+
+html[data-mus-theme="herbarium-lavender"] .post-content,
+html[data-mus-theme="herbarium-lavender"] .post-single .post-content p,
+html[data-mus-theme="herbarium-lavender"] .post-single .post-content li {
+    color: var(--mus-text);
+}
+
+html[data-mus-theme="herbarium-lavender"] .post-content {
+    font-family: var(--mus-font-reading);
+    font-size: clamp(1.035rem, 0.18vw + 1rem, 1.09rem);
+    line-height: 1.86;
+}
+
+html[data-mus-theme="herbarium-lavender"] .post-content :where(p, li, blockquote, td, th, figcaption),
+html[data-mus-theme="herbarium-lavender"] .post-content :where(strong, em) {
+    color: inherit;
+    font-family: var(--mus-font-reading);
+}
+
+html[data-mus-theme="herbarium-lavender"] .post-content > * + * {
+    margin-top: clamp(1.12rem, 1.7vw, 1.42rem);
+}
+
+html[data-mus-theme="herbarium-lavender"] .post-content p {
+    color: var(--mus-text);
+    line-height: 1.88;
+}
+
+html[data-mus-theme="herbarium-lavender"] .post-content li {
+    color: var(--mus-text);
+    line-height: 1.78;
+}
+
+html[data-mus-theme="herbarium-lavender"] .post-content h2,
+html[data-mus-theme="herbarium-lavender"] .post-content h3,
+html[data-mus-theme="herbarium-lavender"] .post-content h4,
+html[data-mus-theme="herbarium-lavender"] .post-content h5,
+html[data-mus-theme="herbarium-lavender"] .post-content h6 {
+    color: color-mix(in srgb, var(--section-heading) 84%, var(--mus-text) 16%);
+    font-family: var(--mus-font-heading);
+    font-weight: 600;
+    line-height: 1.14;
+    letter-spacing: 0;
+}
+
+html[data-mus-theme="herbarium-lavender"] .post-content h2 {
+    font-size: clamp(1.75rem, 3vw, 2.2rem);
+}
+
+html[data-mus-theme="herbarium-lavender"] .post-content h3 {
+    font-size: clamp(1.38rem, 2vw, 1.68rem);
+}
+
+html[data-mus-theme="herbarium-lavender"] .post-content h4 {
+    color: var(--mus-heading);
+    font-family: var(--mus-font-reading);
+    font-size: clamp(1.05rem, 1vw + 0.85rem, 1.18rem);
+    font-weight: 650;
+    line-height: 1.45;
+    margin: 2.1rem 0 0.75rem;
+}
+
+html[data-mus-theme="herbarium-lavender"] .post-content > h2:not(:first-child) {
+    margin-top: clamp(2.35rem, 4vw, 3rem);
+}
+
+html[data-mus-theme="herbarium-lavender"] .post-content > h3:not(:first-child),
+html[data-mus-theme="herbarium-lavender"] .post-content > h4:not(:first-child) {
+    margin-top: clamp(1.85rem, 3vw, 2.35rem);
+}
+
+html[data-mus-theme="herbarium-lavender"] .post-content > h4:not(:first-child) {
+    margin-top: 2.1rem;
+}
+
+html[data-mus-theme="herbarium-lavender"] .post-content a,
+html[data-mus-theme="herbarium-lavender"] .post-content a:visited {
+    color: color-mix(in srgb, var(--mus-accent) 92%, var(--mus-text) 8%);
+    border-bottom-color: color-mix(in srgb, var(--mus-accent) 58%, transparent);
+    text-decoration-thickness: 0.09em;
+    text-underline-offset: 0.18em;
+}
+
+html[data-mus-theme="herbarium-lavender"] .post-content a:hover,
+html[data-mus-theme="herbarium-lavender"] .post-content a:focus-visible {
+    color: color-mix(in srgb, var(--mus-accent) 72%, var(--mus-heading) 28%);
+    border-bottom-color: currentColor;
+    background: var(--mus-accent-mist);
+}
+
+html[data-mus-theme="herbarium-lavender"] .post-content blockquote {
+    margin: clamp(2.6rem, 5vw, 3.4rem) auto;
+    padding: clamp(1.7rem, 3.2vw, 2.25rem) clamp(1rem, 4vw, 2rem);
+    border: 0;
+    border-block: 1px solid color-mix(in srgb, var(--mus-border) 84%, var(--mus-accent-soft) 16%);
+    border-radius: 0;
+    background: transparent;
+    color: color-mix(in srgb, var(--mus-heading) 58%, var(--mus-text) 42%);
+    font-family: var(--mus-font-reading);
+    font-style: italic;
+    line-height: 1.85;
+    box-shadow: none;
+    text-align: center;
+}
+
+html[data-mus-theme="herbarium-lavender"] .post-content blockquote p {
+    color: inherit;
+}
+
+html[data-mus-theme="herbarium-lavender"] .post-content blockquote > p {
+    max-width: min(38rem, 100%);
+    margin-right: auto;
+    margin-left: auto;
+}
+
+html[data-mus-theme="herbarium-lavender"] .post-content blockquote::before {
+    content: none;
+}
+
+html[data-mus-theme="herbarium-lavender"] .post-content mjx-container[display="true"] {
+    width: 100%;
+}
+
+html[data-mus-theme="herbarium-lavender"] .post-single .paginav > a {
+    border-color: var(--mus-nav-border);
+    background: var(--mus-nav-surface);
+    box-shadow: none;
+    color: var(--mus-nav-text);
+}
+
+html[data-mus-theme="herbarium-lavender"] .post-single .paginav > a:hover,
+html[data-mus-theme="herbarium-lavender"] .post-single .paginav > a:focus-visible {
+    border-color: var(--mus-nav-active);
+    background: color-mix(in srgb, var(--mus-nav-surface) 86%, var(--mus-nav-active) 14%);
+    box-shadow: none;
+    transform: translateY(-1px);
+}
+
+html[data-mus-theme="herbarium-lavender"] .post-single .paginav > a:focus-visible {
+    outline: 2px solid var(--mus-nav-active);
+    outline-offset: 3px;
+}
+
+html[data-mus-theme="herbarium-lavender"] .post-single .paginav > a > span:last-child {
+    color: var(--mus-nav-active);
+    font-family: var(--mus-font-heading);
+    font-weight: 500;
+}
+
+html[data-mus-theme="herbarium-lavender"] .post-single .paginav .title {
+    color: var(--mus-nav-active);
+}
+
+html[data-mus-theme="herbarium-lavender"] .post-single .paginav__arrow {
+    border-color: var(--mus-nav-border);
+    background: transparent;
+    color: var(--mus-nav-active);
+}
+
+html[data-mus-theme="herbarium-lavender"] .post-single .paginav > a:hover .paginav__arrow,
+html[data-mus-theme="herbarium-lavender"] .post-single .paginav > a:focus-visible .paginav__arrow {
+    border-color: var(--mus-nav-active);
+    background: var(--mus-nav-wash);
+}
+
+html[data-mus-theme="herbarium-lavender"] .post-content :where(p, li, blockquote, td, th, .footnotes li) > code,
+html[data-mus-theme="herbarium-lavender"] .post-content code,
+html[data-mus-theme="herbarium-lavender"] .post-content .table-wrapper > table code,
+html[data-mus-theme="herbarium-lavender"] .post-content .mus-glossary__symbol code,
+html[data-mus-theme="herbarium-lavender"] .post-content .mus-glossary__example code {
+    background: var(--mus-code-bg);
+    color: color-mix(in srgb, var(--mus-accent) 78%, var(--mus-text) 22%);
+    border: 1px solid var(--mus-border);
+    font-family: ui-monospace, SFMono-Regular, "Cascadia Code", Consolas, monospace;
+}
+
+html[data-mus-theme="herbarium-lavender"] .post-content .highlight:not(table),
+html[data-mus-theme="herbarium-lavender"] .post-content pre {
+    border-color: var(--mus-border);
+    border-radius: 12px;
+    background: var(--mus-code-bg);
+    box-shadow: none;
+    overflow-x: auto;
+    overflow-y: hidden;
+    -webkit-overflow-scrolling: touch;
+}
+
+html[data-mus-theme="herbarium-lavender"] .post-content pre code,
+html[data-mus-theme="herbarium-lavender"] .post-content .highlight pre code {
+    color: var(--code-block-text) !important;
+    border: 0;
+    background: transparent !important;
+    font-family: ui-monospace, SFMono-Regular, "Cascadia Code", Consolas, monospace;
+}
+
+html[data-mus-theme="herbarium-lavender"] .post-content .table-wrapper,
+html[data-mus-theme="herbarium-lavender"] .post-content .mus-glossary__item {
+    border-color: var(--mus-border);
+    border-radius: 12px;
+    background: var(--mus-card-bg);
+    box-shadow: none;
+}
+
+html[data-mus-theme="herbarium-lavender"] .post-content .table-wrapper > table {
+    font-family: var(--mus-font-reading);
+}
+
+html[data-mus-theme="herbarium-lavender"] .post-content .table-wrapper > table th {
+    color: color-mix(in srgb, var(--mus-heading) 76%, var(--mus-text) 24%);
+    background: var(--mus-panel-bg);
+    border-bottom-color: var(--mus-border-strong);
+    font-family: var(--mus-font-reading);
+}
+
+html[data-mus-theme="herbarium-lavender"] .post-content .table-wrapper > table td {
+    color: var(--mus-text);
+    border-bottom-color: var(--mus-border);
+}
+
+html[data-mus-theme="herbarium-lavender"] .post-content .table-wrapper > table tbody tr:nth-child(even) {
+    background-color: var(--mus-surface-soft);
+}
+
+html[data-mus-theme="herbarium-lavender"] .post-content .table-wrapper > table tbody tr:hover {
+    background-color: var(--mus-panel-bg);
+}
+
+html[data-mus-theme="herbarium-lavender"] .post-content .table-wrapper > table td:first-child,
+html[data-mus-theme="herbarium-lavender"] .post-content .mus-glossary__label,
+html[data-mus-theme="herbarium-lavender"] .post-content .mus-glossary__symbol {
+    color: color-mix(in srgb, var(--mus-heading) 72%, var(--mus-text) 28%);
+}
+
+html[data-mus-theme="herbarium-lavender"] .post-content .table-wrapper > table td em {
+    color: color-mix(in srgb, var(--mus-heading) 68%, var(--mus-text) 32%);
+    font-family: var(--mus-font-reading);
+}
+
+html[data-mus-theme="herbarium-lavender"] .post-content .mus-glossary__label {
+    font-family: var(--mus-font-ui);
+}
+
+html[data-mus-theme="herbarium-lavender"] .post-content .mus-glossary__symbol {
+    font-family: var(--mus-font-heading);
+    font-weight: 600;
+}
+
+html[data-mus-theme="herbarium-lavender"] .post-content figcaption,
+html[data-mus-theme="herbarium-lavender"] .post-content .footnotes,
+html[data-mus-theme="herbarium-lavender"] .post-content .mus-glossary__read,
+html[data-mus-theme="herbarium-lavender"] .post-content .mus-glossary__meaning,
+html[data-mus-theme="herbarium-lavender"] .post-content .mus-glossary__example {
+    color: var(--muted-copy);
+}
+
+html[data-mus-theme="herbarium-lavender"] .post-content mjx-container[display="true"],
+html[data-mus-theme="herbarium-lavender"] .post-content .footnotes {
+    border-color: color-mix(in srgb, var(--mus-accent) 18%, var(--mus-border) 82%);
+}
+
+html[data-mus-theme="herbarium-lavender"] .post-content .flowchart,
+html[data-mus-theme="herbarium-lavender"] .post-content .flow-container,
+html[data-mus-theme="herbarium-lavender"] .post-content .mus-flow-tree {
+    --flow-bg: var(--mus-panel-bg);
+    --flow-panel-border: var(--mus-border);
+    --flow-panel-shadow: none;
+    --flow-panel-highlight: none;
+    --flow-node-border: var(--mus-border);
+    --flow-node-shadow: none;
+    --flow-node-highlight: none;
+    --flow-arrow-neutral: color-mix(in srgb, var(--mus-muted) 62%, var(--mus-border) 38%);
+    --flow-sage: color-mix(in srgb, var(--mus-accent) 46%, #6F7F55 54%);
+    --flow-sage-soft: color-mix(in srgb, var(--mus-panel-bg) 78%, #EEF3E6 22%);
+    --flow-plum: var(--mus-accent);
+    --flow-plum-soft: var(--mus-accent-mist);
+    --flow-blue: color-mix(in srgb, var(--mus-muted) 72%, #7F909D 28%);
+    --flow-blue-soft: color-mix(in srgb, var(--mus-card-bg) 80%, #EEF2F4 20%);
+    --flow-rose: color-mix(in srgb, var(--mus-accent-soft) 64%, var(--mus-muted) 36%);
+    --flow-rose-soft: color-mix(in srgb, var(--mus-panel-bg) 86%, var(--mus-accent-mist) 14%);
+    --flow-neutral: var(--mus-muted);
+    --flow-neutral-soft: var(--mus-panel-bg);
+    --flow-alert: color-mix(in srgb, var(--mus-accent) 54%, var(--mus-text) 46%);
+    --flow-alert-soft: color-mix(in srgb, var(--mus-accent-mist) 62%, var(--mus-card-bg) 38%);
+    --font-serif: var(--mus-font-reading);
+    border-color: var(--flow-panel-border);
+    border-radius: 14px;
+    background: var(--flow-bg);
+    box-shadow: none;
+}
+
+html[data-mus-theme="herbarium-lavender"] .post-content .flow-node,
+html[data-mus-theme="herbarium-lavender"] .post-content .flowchart-node,
+html[data-mus-theme="herbarium-lavender"] .post-content .mus-flow-node {
+    border-color: var(--flow-node-border);
+    border-radius: 10px;
+    background: var(--mus-card-bg);
+    box-shadow: none;
+    color: color-mix(in srgb, var(--mus-text) 88%, var(--mus-accent) 12%);
+}
+
+html[data-mus-theme="herbarium-lavender"] .post-content .mus-flow-branch {
+    border-color: var(--mus-border);
+    border-radius: 12px;
+    background: var(--mus-card-bg);
+    box-shadow: none;
+}
+
+html[data-mus-theme="herbarium-lavender"] .post-content .mus-flow-label {
+    color: color-mix(in srgb, var(--mus-heading) 74%, var(--mus-text) 26%);
+}
+
+html[data-mus-theme="herbarium-lavender"] .post-content .mus-flow-note,
+html[data-mus-theme="herbarium-lavender"] .post-content .flow-node small {
+    color: var(--mus-muted);
+}
+
+html[data-mus-theme="herbarium-lavender"] .post-content .flow-node--alert {
+    border-color: color-mix(in srgb, var(--mus-accent) 32%, var(--mus-border) 68%);
+    color: color-mix(in srgb, var(--mus-accent) 68%, var(--mus-text) 32%);
+}
+
+html[data-mus-theme="herbarium-lavender"] .post-content .flowchart,
+html[data-mus-theme="herbarium-lavender"] .post-content .mus-flow-tree {
+    max-width: 100%;
+    overflow-x: auto;
+    overflow-y: hidden;
+    overscroll-behavior-x: contain;
+    -webkit-overflow-scrolling: touch;
+    cursor: grab;
+    scrollbar-width: thin;
+    scrollbar-color: color-mix(in srgb, var(--mus-border-strong) 62%, transparent) transparent;
+}
+
+html[data-mus-theme="herbarium-lavender"] .post-content .flowchart *,
+html[data-mus-theme="herbarium-lavender"] .post-content .mus-flow-tree * {
+    cursor: grab;
+}
+
+html[data-mus-theme="herbarium-lavender"] .post-content .flowchart :is(a, button, input, textarea, select, summary, [role="button"]),
+html[data-mus-theme="herbarium-lavender"] .post-content .mus-flow-tree :is(a, button, input, textarea, select, summary, [role="button"]) {
+    cursor: pointer;
+}
+
+html[data-mus-theme="herbarium-lavender"] .post-content .flowchart::-webkit-scrollbar,
+html[data-mus-theme="herbarium-lavender"] .post-content .mus-flow-tree::-webkit-scrollbar {
+    display: block;
+    height: 0.55rem;
+}
+
+html[data-mus-theme="herbarium-lavender"] .post-content .flowchart::-webkit-scrollbar-track,
+html[data-mus-theme="herbarium-lavender"] .post-content .mus-flow-tree::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+html[data-mus-theme="herbarium-lavender"] .post-content .flowchart::-webkit-scrollbar-thumb,
+html[data-mus-theme="herbarium-lavender"] .post-content .mus-flow-tree::-webkit-scrollbar-thumb {
+    border-radius: 999px;
+    background: color-mix(in srgb, var(--mus-border-strong) 56%, transparent);
+}
+
+html[data-mus-theme="herbarium-lavender"] .post-content .flowchart:focus-visible,
+html[data-mus-theme="herbarium-lavender"] .post-content .mus-flow-tree:focus-visible {
+    outline: 2px solid var(--mus-focus);
+    outline-offset: 3px;
+}
+
+html[data-mus-theme="herbarium-lavender"] .post-content .flowchart.is-dragging,
+html[data-mus-theme="herbarium-lavender"] .post-content .mus-flow-tree.is-dragging {
+    cursor: grabbing;
+    scroll-behavior: auto;
+    user-select: none;
+}
+
+html[data-mus-theme="herbarium-lavender"] .post-content .flowchart.is-dragging *,
+html[data-mus-theme="herbarium-lavender"] .post-content .mus-flow-tree.is-dragging * {
+    cursor: grabbing;
+    user-select: none;
+}
+
+html[data-mus-theme="herbarium-lavender"] .post-content .flowchart-track,
+html[data-mus-theme="herbarium-lavender"] .post-content .flowchart-track--start,
+html[data-mus-theme="herbarium-lavender"] .post-content .flowchart-track--end,
+html[data-mus-theme="herbarium-lavender"] .post-content .flowchart-track--spaced {
+    display: inline-flex;
+    flex-direction: row;
+    align-items: center;
+    flex-wrap: nowrap;
+    width: max-content;
+    min-width: max-content;
+}
+
+html[data-mus-theme="herbarium-lavender"] .post-content .flow-stack {
+    width: max-content;
+    min-width: max-content;
+}
+
+html[data-mus-theme="herbarium-lavender"] .post-content .flow-wrapper--start {
+    align-self: flex-start;
+}
+
+html[data-mus-theme="herbarium-lavender"] .post-content .flow-wrapper--end {
+    align-self: flex-end;
+}
+
+html[data-mus-theme="herbarium-lavender"] .post-content .flowchart-node {
+    flex: 0 0 auto;
+    min-width: min(18rem, calc(100vw - 5rem));
+    max-width: 22rem;
+}
+
+html[data-mus-theme="herbarium-lavender"] .post-content .flowchart-connector {
+    flex: 0 0 auto;
+}
+
+html[data-mus-theme="herbarium-lavender"] .post-content .mus-flow-branches {
+    width: max-content;
+    min-width: max-content;
+}
+
+html[data-mus-theme="herbarium-lavender"] .post-content .mus-flow-branches {
+    grid-template-columns: repeat(2, minmax(16rem, 18rem));
+}
+
+html[data-mus-theme="herbarium-lavender"] .post-content .mus-flow-branch,
+html[data-mus-theme="herbarium-lavender"] .post-content .mus-flow-node,
+html[data-mus-theme="herbarium-lavender"] .post-content .mus-flow-label,
+html[data-mus-theme="herbarium-lavender"] .post-content .mus-flow-note {
+    min-width: 0;
+}
+
+@media (min-width: 721px) {
+    html[data-mus-theme="herbarium-lavender"] .post-content .flow-container {
+        max-width: 100%;
+        overflow-x: auto;
+        overflow-y: hidden;
+        overscroll-behavior-x: contain;
+        -webkit-overflow-scrolling: touch;
+        cursor: grab;
+        scrollbar-width: thin;
+        scrollbar-color: color-mix(in srgb, var(--mus-border-strong) 62%, transparent) transparent;
+    }
+
+    html[data-mus-theme="herbarium-lavender"] .post-content .flow-container * {
+        cursor: grab;
+    }
+
+    html[data-mus-theme="herbarium-lavender"] .post-content .flow-container :is(a, button, input, textarea, select, summary, [role="button"]) {
+        cursor: pointer;
+    }
+
+    html[data-mus-theme="herbarium-lavender"] .post-content .flow-container::-webkit-scrollbar {
+        display: block;
+        height: 0.55rem;
+    }
+
+    html[data-mus-theme="herbarium-lavender"] .post-content .flow-container::-webkit-scrollbar-track {
+        background: transparent;
+    }
+
+    html[data-mus-theme="herbarium-lavender"] .post-content .flow-container::-webkit-scrollbar-thumb {
+        border-radius: 999px;
+        background: color-mix(in srgb, var(--mus-border-strong) 56%, transparent);
+    }
+
+    html[data-mus-theme="herbarium-lavender"] .post-content .flow-container:focus-visible {
+        outline: 2px solid var(--mus-focus);
+        outline-offset: 3px;
+    }
+
+    html[data-mus-theme="herbarium-lavender"] .post-content .flow-container.is-dragging {
+        cursor: grabbing;
+        scroll-behavior: auto;
+        user-select: none;
+    }
+
+    html[data-mus-theme="herbarium-lavender"] .post-content .flow-container.is-dragging * {
+        cursor: grabbing;
+        user-select: none;
+    }
+
+    html[data-mus-theme="herbarium-lavender"] .post-content .flow-wrapper,
+    html[data-mus-theme="herbarium-lavender"] .post-content .flow-wrapper--start,
+    html[data-mus-theme="herbarium-lavender"] .post-content .flow-wrapper--end,
+    html[data-mus-theme="herbarium-lavender"] .post-content .flow-wrapper--spaced {
+        display: inline-flex;
+        flex-direction: row;
+        align-items: center;
+        flex-wrap: nowrap;
+        width: max-content;
+        min-width: max-content;
+    }
+
+    html[data-mus-theme="herbarium-lavender"] .post-content .flow-node {
+        flex: 0 0 auto;
+        min-width: min(18rem, calc(100vw - 5rem));
+        max-width: 22rem;
+    }
+
+    html[data-mus-theme="herbarium-lavender"] .post-content .flow-arrow {
+        flex: 0 0 auto;
+    }
+}
+
+@media (max-width: 720px) {
+    html[data-mus-theme="herbarium-lavender"] .post-content .flow-container {
+        overflow-x: clip;
+        overflow-y: visible;
+        cursor: default;
+        scrollbar-width: none;
+    }
+
+    html[data-mus-theme="herbarium-lavender"] .post-content .flow-container * {
+        cursor: auto;
+    }
+
+    html[data-mus-theme="herbarium-lavender"] .post-content .flow-wrapper,
+    html[data-mus-theme="herbarium-lavender"] .post-content .flow-wrapper--start,
+    html[data-mus-theme="herbarium-lavender"] .post-content .flow-wrapper--end,
+    html[data-mus-theme="herbarium-lavender"] .post-content .flow-wrapper--spaced {
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+        flex-wrap: nowrap;
+        width: 100%;
+        min-width: 0;
+    }
+
+    html[data-mus-theme="herbarium-lavender"] .post-content .flow-node {
+        flex: 0 1 auto;
+        width: 100%;
+        min-width: 0;
+        max-width: none;
+    }
+
+    html[data-mus-theme="herbarium-lavender"] .post-content .flow-arrow {
+        flex: 0 0 auto;
+        width: 100%;
+        min-width: 0;
+    }
+}
+
+/* === TOC === */
+
+html[data-mus-theme="herbarium-lavender"] details.toc,
+html[data-mus-theme="herbarium-lavender"] .toc {
+    border-color: color-mix(in srgb, var(--mus-accent) 18%, var(--mus-border) 82%);
+    background: color-mix(in srgb, var(--mus-surface) 76%, var(--mus-bg) 24%);
+    font-family: var(--mus-font-ui);
+}
+
+html[data-mus-theme="herbarium-lavender"] details.toc summary,
+html[data-mus-theme="herbarium-lavender"] .toc summary,
+html[data-mus-theme="herbarium-lavender"] .toc .details {
+    color: color-mix(in srgb, var(--mus-heading) 82%, var(--mus-text) 18%);
+}
+
+html[data-mus-theme="herbarium-lavender"] details.toc a,
+html[data-mus-theme="herbarium-lavender"] .toc a {
+    color: color-mix(in srgb, var(--mus-accent) 84%, var(--mus-text) 16%);
+    font-family: var(--mus-font-ui);
+}
+
+html[data-mus-theme="herbarium-lavender"] details.toc a:hover,
+html[data-mus-theme="herbarium-lavender"] details.toc a:focus-visible,
+html[data-mus-theme="herbarium-lavender"] .toc a:hover,
+html[data-mus-theme="herbarium-lavender"] .toc a:focus-visible {
+    color: color-mix(in srgb, var(--mus-accent) 68%, var(--mus-text) 32%);
+    background: color-mix(in srgb, var(--mus-accent-mist) 28%, transparent);
+}
+
+/* === Graph === */
+
+html[data-mus-theme="herbarium-lavender"] .graph-explorer {
+    --graph-panel-bg-top: color-mix(in srgb, var(--mus-surface) 86%, var(--mus-bg) 14%);
+    --graph-panel-bg-bottom: color-mix(in srgb, var(--mus-bg) 78%, var(--mus-surface) 22%);
+    --graph-canvas-grid: color-mix(in srgb, var(--mus-accent) 11%, transparent);
+    --graph-canvas-glow-a: color-mix(in srgb, var(--mus-accent) 10%, transparent);
+    --graph-canvas-glow-b: color-mix(in srgb, var(--mus-accent-soft) 10%, transparent);
+    --graph-canvas-base-top: color-mix(in srgb, var(--mus-surface) 88%, var(--mus-bg) 12%);
+    --graph-canvas-base-bottom: color-mix(in srgb, var(--mus-bg) 82%, var(--mus-surface) 18%);
+}
+
+html[data-mus-theme="herbarium-lavender"] .graph-explorer__canvas-wrap,
+html[data-mus-theme="herbarium-lavender"] .graph-explorer__filters,
+html[data-mus-theme="herbarium-lavender"] .graph-explorer__view-controls {
+    border-color: color-mix(in srgb, var(--mus-accent) 20%, var(--mus-border) 80%);
+}
+
+html[data-mus-theme="herbarium-lavender"] .graph-filter:hover,
+html[data-mus-theme="herbarium-lavender"] .graph-filter:focus-visible,
+html[data-mus-theme="herbarium-lavender"] .graph-filter.is-active,
+html[data-mus-theme="herbarium-lavender"] .graph-view-control:hover,
+html[data-mus-theme="herbarium-lavender"] .graph-view-control:focus-visible,
+html[data-mus-theme="herbarium-lavender"] .graph-view-control.is-active,
+html[data-mus-theme="herbarium-lavender"] .graph-inspector__reset:hover,
+html[data-mus-theme="herbarium-lavender"] .graph-inspector__reset:focus-visible,
+html[data-mus-theme="herbarium-lavender"] .graph-inspector__local-toggle:hover,
+html[data-mus-theme="herbarium-lavender"] .graph-inspector__local-toggle:focus-visible,
+html[data-mus-theme="herbarium-lavender"] .graph-inspector__local-toggle.is-active {
+    border-color: color-mix(in srgb, var(--mus-accent) 46%, var(--mus-border) 54%);
+    background: color-mix(in srgb, var(--mus-accent-mist) 38%, var(--mus-surface) 62%);
+    color: color-mix(in srgb, var(--mus-accent) 70%, var(--mus-text) 30%);
+    box-shadow: 0 10px 20px var(--focus-ring-soft);
+}
+
+@media (max-width: 768px) {
+    html[data-mus-theme="herbarium-lavender"] .graph-explorer__toolbar {
+        flex-wrap: nowrap;
+    }
+}
+
+@media (max-width: 640px) {
+    html[data-mus-theme="herbarium-lavender"] .home-feed .first-entry {
+        min-height: 13.25rem;
+        padding-top: 0.9rem;
+    }
+
+    html[data-mus-theme="herbarium-lavender"] .home-feed .first-entry::before {
+        width: 2.8rem;
+        margin-bottom: 0.55rem;
+    }
+}
+
+/* === Dark Overrides === */
+
+html[data-mus-theme="herbarium-lavender"][data-theme="dark"] .nav-link::after,
+html[data-mus-theme="herbarium-lavender"][data-theme="dark"] .lang-link.is-active::after {
+    background: color-mix(in srgb, var(--mus-lavender-night) 58%, var(--mus-accent-mist) 42%);
+}
+
+html[data-mus-theme="herbarium-lavender"][data-theme="dark"] .home-hero__button:not(.home-hero__button--secondary),
+html[data-mus-theme="herbarium-lavender"][data-theme="dark"] .profile .buttons .button {
+    color: var(--mus-surface-soft);
+}
+
+html[data-mus-theme="herbarium-lavender"][data-theme="dark"] .home-hero__button--secondary,
+html[data-mus-theme="herbarium-lavender"][data-theme="dark"] .button,
+html[data-mus-theme="herbarium-lavender"][data-theme="dark"] .library-links__item,
+html[data-mus-theme="herbarium-lavender"][data-theme="dark"] .classification .classification-index__link,
+html[data-mus-theme="herbarium-lavender"][data-theme="dark"] .graph-filter,
+html[data-mus-theme="herbarium-lavender"][data-theme="dark"] .graph-view-control,
+html[data-mus-theme="herbarium-lavender"][data-theme="dark"] .graph-inspector__reset,
+html[data-mus-theme="herbarium-lavender"][data-theme="dark"] .graph-inspector__local-toggle {
+    border-color: rgba(168, 191, 122, 0.22);
+    background: rgba(255, 255, 255, 0.035);
+    color: color-mix(in srgb, var(--mus-text) 84%, var(--mus-accent) 16%);
+    box-shadow: none;
+}
+
+html[data-mus-theme="herbarium-lavender"][data-theme="dark"] .home-hero__button--secondary:hover,
+html[data-mus-theme="herbarium-lavender"][data-theme="dark"] .home-hero__button--secondary:focus-visible,
+html[data-mus-theme="herbarium-lavender"][data-theme="dark"] .button:hover,
+html[data-mus-theme="herbarium-lavender"][data-theme="dark"] .button:focus-visible,
+html[data-mus-theme="herbarium-lavender"][data-theme="dark"] .library-links__item:hover,
+html[data-mus-theme="herbarium-lavender"][data-theme="dark"] .library-links__item:focus-visible,
+html[data-mus-theme="herbarium-lavender"][data-theme="dark"] .classification .classification-index__link:hover,
+html[data-mus-theme="herbarium-lavender"][data-theme="dark"] .classification .classification-index__link:focus-visible {
+    border-color: rgba(168, 191, 122, 0.34);
+    background: rgba(168, 191, 122, 0.09);
+    color: color-mix(in srgb, var(--mus-accent) 82%, var(--mus-text) 18%) !important;
+    box-shadow: 0 12px 22px rgba(0, 0, 0, 0.22);
+}
+
+html[data-mus-theme="herbarium-lavender"][data-theme="dark"] .library-cover {
+    background:
+        linear-gradient(180deg, rgba(37, 43, 32, 0.96), rgba(21, 24, 18, 0.98)),
+        linear-gradient(135deg, rgba(168, 191, 122, 0.1), transparent);
+    box-shadow:
+        inset 0 0 0 1px rgba(168, 191, 122, 0.12),
+        0 14px 26px rgba(0, 0, 0, 0.24);
+}
+
+html[data-mus-theme="herbarium-lavender"][data-theme="dark"] .library-status,
+html[data-mus-theme="herbarium-lavender"][data-theme="dark"] .library-chip,
+html[data-mus-theme="herbarium-lavender"][data-theme="dark"] .post-tags a {
+    border-color: rgba(168, 191, 122, 0.22);
+    background: rgba(168, 191, 122, 0.07);
+    color: color-mix(in srgb, var(--mus-accent) 78%, var(--mus-text) 22%);
+}
+
+html[data-mus-theme="herbarium-lavender"][data-theme="dark"] .home-feed .first-entry {
+    border-color: var(--mus-featured-border);
+    background: var(--mus-featured-card-bg);
+    box-shadow: none;
+}
+
+html[data-mus-theme="herbarium-lavender"][data-theme="dark"] .garden-landing__card {
+    border-color: var(--surface-panel-border);
+    background: var(--surface-panel-bg);
+    box-shadow: none;
+}
+
+html[data-mus-theme="herbarium-lavender"][data-theme="dark"] .garden-landing__card:hover,
+html[data-mus-theme="herbarium-lavender"][data-theme="dark"] .garden-landing__card:focus-visible,
+html[data-mus-theme="herbarium-lavender"][data-theme="dark"] .garden-landing__card:focus-within {
+    border-color: var(--surface-card-hover-border);
+    background: var(--surface-card-hover-bg);
+    box-shadow: none;
+}
+
+html[data-mus-theme="herbarium-lavender"][data-theme="dark"] .garden-landing__card-media {
+    border-color: rgba(168, 191, 122, 0.16);
+    background:
+        linear-gradient(180deg, rgba(37, 43, 32, 0.76), rgba(21, 24, 18, 0.76)),
+        radial-gradient(circle at top right, rgba(199, 168, 204, 0.08), transparent 42%);
+}
+
+html[data-mus-theme="herbarium-lavender"][data-theme="dark"] .silva-archive {
+    --silva-card-bg: #181C16;
+    --silva-card-bg-2: #1D2119;
+    --silva-card-border: #3A4232;
+    --silva-card-border-strong: rgba(168, 191, 122, 0.28);
+    --silva-heading: #E6D8C7;
+    --silva-text: #EFE7DA;
+    --silva-muted: #B8AA98;
+    --silva-accent: #A8BF7A;
+    --silva-accent-soft: rgba(168, 191, 122, 0.1);
+}
+
+html[data-mus-theme="herbarium-lavender"][data-theme="dark"] .silva-archive__header .breadcrumbs,
+html[data-mus-theme="herbarium-lavender"][data-theme="dark"] .silva-archive__header .breadcrumbs a,
+html[data-mus-theme="herbarium-lavender"][data-theme="dark"] .silva-archive__eyebrow,
+html[data-mus-theme="herbarium-lavender"][data-theme="dark"] .silva-archive__section-kicker,
+html[data-mus-theme="herbarium-lavender"][data-theme="dark"] .silva-chamber__meta,
+html[data-mus-theme="herbarium-lavender"][data-theme="dark"] .silva-chamber__count,
+html[data-mus-theme="herbarium-lavender"][data-theme="dark"] .silva-fragment__index,
+html[data-mus-theme="herbarium-lavender"][data-theme="dark"] .silva-fragment__meta {
+    color: var(--silva-muted);
+}
+
+html[data-mus-theme="herbarium-lavender"][data-theme="dark"] .silva-archive__heading,
+html[data-mus-theme="herbarium-lavender"][data-theme="dark"] .silva-archive__prologue {
+    border-color: var(--silva-card-border);
+}
+
+html[data-mus-theme="herbarium-lavender"][data-theme="dark"] .silva-archive__title,
+html[data-mus-theme="herbarium-lavender"][data-theme="dark"] .silva-archive__section-title,
+html[data-mus-theme="herbarium-lavender"][data-theme="dark"] .silva-chamber__title,
+html[data-mus-theme="herbarium-lavender"][data-theme="dark"] .silva-fragment__title {
+    color: var(--silva-heading);
+}
+
+html[data-mus-theme="herbarium-lavender"][data-theme="dark"] .silva-archive__subtitle,
+html[data-mus-theme="herbarium-lavender"][data-theme="dark"] .silva-archive__section-intro,
+html[data-mus-theme="herbarium-lavender"][data-theme="dark"] .silva-chamber__summary,
+html[data-mus-theme="herbarium-lavender"][data-theme="dark"] .silva-fragment__summary {
+    color: color-mix(in srgb, var(--silva-text) 74%, var(--silva-muted) 26%);
+}
+
+html[data-mus-theme="herbarium-lavender"][data-theme="dark"] .silva-chamber {
+    border-color: var(--silva-card-border);
+    background: var(--silva-card-bg-2);
+    box-shadow: none;
+}
+
+html[data-mus-theme="herbarium-lavender"][data-theme="dark"] .silva-chamber::before {
+    background: none;
+}
+
+html[data-mus-theme="herbarium-lavender"][data-theme="dark"] .silva-chamber:hover,
+html[data-mus-theme="herbarium-lavender"][data-theme="dark"] .silva-chamber:focus-within {
+    border-color: var(--silva-card-border-strong);
+    background: color-mix(in srgb, var(--silva-card-bg-2) 82%, var(--silva-accent) 18%);
+    box-shadow: none;
+}
+
+html[data-mus-theme="herbarium-lavender"][data-theme="dark"] .silva-chamber__footer,
+html[data-mus-theme="herbarium-lavender"][data-theme="dark"] .silva-fragment,
+html[data-mus-theme="herbarium-lavender"][data-theme="dark"] .silva-fragment:last-child {
+    border-color: var(--silva-card-border);
+}
+
+html[data-mus-theme="herbarium-lavender"][data-theme="dark"] .silva-fragment:hover,
+html[data-mus-theme="herbarium-lavender"][data-theme="dark"] .silva-fragment:focus-within {
+    border-color: var(--silva-card-border-strong);
+    background: var(--silva-accent-soft);
+}
+
+html[data-mus-theme="herbarium-lavender"][data-theme="dark"] .silva-chamber:hover .silva-chamber__title,
+html[data-mus-theme="herbarium-lavender"][data-theme="dark"] .silva-chamber:focus-within .silva-chamber__title,
+html[data-mus-theme="herbarium-lavender"][data-theme="dark"] .silva-fragment:hover .silva-fragment__title,
+html[data-mus-theme="herbarium-lavender"][data-theme="dark"] .silva-fragment:focus-within .silva-fragment__title {
+    color: color-mix(in srgb, var(--silva-heading) 78%, var(--silva-accent) 22%);
+}
+
+html[data-mus-theme="herbarium-lavender"][data-theme="dark"] .silva-chamber__link:focus-visible,
+html[data-mus-theme="herbarium-lavender"][data-theme="dark"] .silva-fragment__link:focus-visible {
+    outline-color: rgba(168, 191, 122, 0.48);
+}
+
+html[data-mus-theme="herbarium-lavender"][data-theme="dark"] .post-single {
+    background: var(--mus-surface);
+    border-color: var(--mus-border);
+    box-shadow: none;
+}
+
+html[data-mus-theme="herbarium-lavender"][data-theme="dark"] .post-single.post-single--section-digital-garden {
+    background: transparent;
+    border-color: transparent;
+    box-shadow: none;
+}
+
+html[data-mus-theme="herbarium-lavender"][data-theme="dark"] .post-content blockquote {
+    border-block-color: color-mix(in srgb, var(--mus-border) 68%, var(--mus-accent-soft) 32%);
+    background: transparent;
+    color: color-mix(in srgb, var(--mus-text) 88%, var(--mus-heading) 12%);
+}
+
+html[data-mus-theme="herbarium-lavender"][data-theme="dark"] .post-content :where(p, li, blockquote, td, th, .footnotes li) > code,
+html[data-mus-theme="herbarium-lavender"][data-theme="dark"] .post-content code,
+html[data-mus-theme="herbarium-lavender"][data-theme="dark"] .post-content .table-wrapper > table code {
+    background: var(--mus-code-bg);
+    border-color: var(--mus-border);
+    color: color-mix(in srgb, var(--mus-accent) 72%, var(--mus-text) 28%);
+}
+
+html[data-mus-theme="herbarium-lavender"][data-theme="dark"] .post-content .highlight:not(table),
+html[data-mus-theme="herbarium-lavender"][data-theme="dark"] .post-content pre,
+html[data-mus-theme="herbarium-lavender"][data-theme="dark"] .post-content .table-wrapper,
+html[data-mus-theme="herbarium-lavender"][data-theme="dark"] .post-content .mus-glossary__item {
+    border-color: var(--mus-border);
+    background: var(--mus-code-bg);
+    box-shadow: none;
+}
+
+html[data-mus-theme="herbarium-lavender"][data-theme="dark"] .post-content .table-wrapper > table th {
+    color: var(--mus-heading);
+    background: var(--mus-surface-soft);
+    border-bottom-color: var(--mus-border-strong);
+}
+
+html[data-mus-theme="herbarium-lavender"][data-theme="dark"] .post-content .table-wrapper > table td {
+    color: var(--mus-text);
+    border-bottom-color: var(--mus-border);
+}
+
+html[data-mus-theme="herbarium-lavender"][data-theme="dark"] .post-content .table-wrapper > table tbody tr:nth-child(even) {
+    background-color: var(--mus-surface);
+}
+
+html[data-mus-theme="herbarium-lavender"][data-theme="dark"] .post-content .table-wrapper > table tbody tr:hover {
+    background-color: var(--mus-accent-mist);
+}
+
+html[data-mus-theme="herbarium-lavender"][data-theme="dark"] .post-content .table-wrapper > table td:first-child,
+html[data-mus-theme="herbarium-lavender"][data-theme="dark"] .post-content .table-wrapper > table td em,
+html[data-mus-theme="herbarium-lavender"][data-theme="dark"] .post-content .mus-glossary__label,
+html[data-mus-theme="herbarium-lavender"][data-theme="dark"] .post-content .mus-glossary__symbol {
+    color: color-mix(in srgb, var(--mus-heading) 86%, var(--mus-accent) 14%);
+}
+
+html[data-mus-theme="herbarium-lavender"][data-theme="dark"] .post-content .flowchart,
+html[data-mus-theme="herbarium-lavender"][data-theme="dark"] .post-content .flow-container,
+html[data-mus-theme="herbarium-lavender"][data-theme="dark"] .post-content .mus-flow-tree {
+    --flow-bg: var(--mus-surface);
+    --flow-panel-border: var(--mus-border);
+    --flow-panel-shadow: none;
+    --flow-panel-highlight: none;
+    --flow-node-border: var(--mus-border);
+    --flow-node-shadow: none;
+    --flow-node-highlight: none;
+    --flow-arrow-neutral: rgba(168, 191, 122, 0.36);
+    --flow-sage: var(--mus-accent);
+    --flow-sage-soft: rgba(168, 191, 122, 0.09);
+    --flow-plum: var(--mus-lavender-night);
+    --flow-plum-soft: rgba(199, 168, 204, 0.09);
+    --flow-blue: color-mix(in srgb, var(--mus-accent) 46%, var(--mus-muted) 54%);
+    --flow-blue-soft: rgba(168, 191, 122, 0.07);
+    --flow-rose: var(--mus-accent-soft);
+    --flow-rose-soft: rgba(168, 191, 122, 0.075);
+    --flow-neutral: var(--mus-muted);
+    --flow-neutral-soft: rgba(255, 255, 255, 0.025);
+    --flow-alert: var(--mus-accent);
+    --flow-alert-soft: rgba(168, 191, 122, 0.095);
+    background: var(--flow-bg);
+    border-color: var(--flow-panel-border);
+    box-shadow: none;
+}
+
+html[data-mus-theme="herbarium-lavender"][data-theme="dark"] .post-content .flow-node,
+html[data-mus-theme="herbarium-lavender"][data-theme="dark"] .post-content .flowchart-node,
+html[data-mus-theme="herbarium-lavender"][data-theme="dark"] .post-content .mus-flow-node {
+    background: var(--mus-surface-soft);
+    border-color: var(--flow-node-border);
+    box-shadow: none;
+    color: color-mix(in srgb, var(--mus-text) 90%, var(--mus-accent) 10%);
+}
+
+html[data-mus-theme="herbarium-lavender"][data-theme="dark"] .post-content .mus-flow-branch {
+    border-color: var(--mus-border);
+    background: var(--mus-surface);
+    box-shadow: none;
+}
+
+html[data-mus-theme="herbarium-lavender"][data-theme="dark"] .post-content .mus-flow-label {
+    color: color-mix(in srgb, var(--mus-heading) 84%, var(--mus-accent) 16%);
+}
+
+html[data-mus-theme="herbarium-lavender"][data-theme="dark"] .post-content .mus-flow-note,
+html[data-mus-theme="herbarium-lavender"][data-theme="dark"] .post-content .flow-node small {
+    color: var(--mus-muted);
+}
+
+html[data-mus-theme="herbarium-lavender"][data-theme="dark"] .post-content .flow-node--alert {
+    border-color: rgba(168, 191, 122, 0.32);
+    color: color-mix(in srgb, var(--mus-accent) 72%, var(--mus-text) 28%);
+}
+
+html[data-mus-theme="herbarium-lavender"][data-theme="dark"] details.toc,
+html[data-mus-theme="herbarium-lavender"][data-theme="dark"] .toc {
+    border-color: rgba(168, 191, 122, 0.18);
+    background: rgba(37, 43, 32, 0.72);
+}
+
+html[data-mus-theme="herbarium-lavender"][data-theme="dark"] .graph-explorer {
+    --graph-post-fill: rgba(168, 191, 122, 0.9);
+    --graph-post-stroke: rgba(230, 216, 199, 0.76);
+    --graph-post-label: rgba(239, 231, 218, 0.92);
+    --graph-tag-fill: rgba(129, 151, 101, 0.92);
+    --graph-tag-stroke: rgba(214, 228, 170, 0.76);
+    --graph-tag-label: rgba(239, 231, 218, 0.9);
+    --graph-category-fill: rgba(199, 168, 204, 0.78);
+    --graph-category-stroke: rgba(231, 211, 235, 0.72);
+    --graph-category-label: rgba(239, 231, 218, 0.9);
+    --graph-edge-default: rgba(168, 191, 122, 0.34);
+    --graph-edge-neighbor: rgba(168, 191, 122, 0.58);
+    --graph-edge-focus: rgba(199, 168, 204, 0.82);
+    --graph-node-hover: rgba(168, 191, 122, 0.16);
+    --graph-node-selected: rgba(168, 191, 122, 0.22);
+    --graph-node-neighbor: rgba(168, 191, 122, 0.13);
+    --graph-node-outline-medium: rgba(230, 216, 199, 0.6);
+    --graph-node-outline-strong: rgba(239, 231, 218, 0.9);
+    --graph-label: rgba(239, 231, 218, 0.88);
+    --graph-label-muted: rgba(184, 170, 152, 0.84);
+    --graph-label-strong: rgba(239, 231, 218, 0.98);
+    --graph-label-stroke: rgba(21, 24, 18, 0.92);
+    --graph-label-shadow: rgba(10, 12, 9, 0.7);
+    --graph-panel-bg-top: rgba(37, 43, 32, 0.95);
+    --graph-panel-bg-bottom: rgba(21, 24, 18, 0.96);
+    --graph-canvas-grid: rgba(168, 191, 122, 0.065);
+    --graph-canvas-glow-a: rgba(168, 191, 122, 0.09);
+    --graph-canvas-glow-b: rgba(199, 168, 204, 0.08);
+    --graph-canvas-base-top: rgba(37, 43, 32, 0.97);
+    --graph-canvas-base-bottom: rgba(21, 24, 18, 0.99);
+}
+
+html[data-mus-theme="herbarium-lavender"][data-theme="dark"] .graph-explorer__toolbar,
+html[data-mus-theme="herbarium-lavender"][data-theme="dark"] .graph-explorer__surface,
+html[data-mus-theme="herbarium-lavender"][data-theme="dark"] .graph-statusbar {
+    border-color: rgba(168, 191, 122, 0.2);
+    background: linear-gradient(180deg, var(--graph-panel-bg-top), var(--graph-panel-bg-bottom));
+    box-shadow:
+        inset 0 1px 0 rgba(255, 255, 255, 0.045),
+        0 24px 42px rgba(0, 0, 0, 0.3);
+}
+
+html[data-mus-theme="herbarium-lavender"][data-theme="dark"] .graph-explorer__canvas-wrap {
+    border-color: rgba(168, 191, 122, 0.18);
+    background:
+        linear-gradient(var(--graph-canvas-grid) 1px, transparent 1px),
+        linear-gradient(90deg, var(--graph-canvas-grid) 1px, transparent 1px),
+        radial-gradient(circle at 22% 22%, var(--graph-canvas-glow-a), transparent 29%),
+        radial-gradient(circle at 78% 20%, var(--graph-canvas-glow-b), transparent 24%),
+        linear-gradient(180deg, var(--graph-canvas-base-top), var(--graph-canvas-base-bottom));
+}
+
+html[data-mus-theme="herbarium-lavender"][data-theme="dark"] details.toc a,
+html[data-mus-theme="herbarium-lavender"][data-theme="dark"] .toc a,
+html[data-mus-theme="herbarium-lavender"][data-theme="dark"] .post-content a {
+    color: color-mix(in srgb, var(--mus-accent) 88%, var(--mus-text) 12%);
+}
+
+html[data-mus-theme="herbarium-lavender"][data-theme="dark"] .post-single .post-content a,
+html[data-mus-theme="herbarium-lavender"][data-theme="dark"] .post-single .post-content a:visited {
+    color: color-mix(in srgb, var(--mus-accent) 88%, var(--mus-text) 12%) !important;
+    border-bottom-color: currentColor;
+}

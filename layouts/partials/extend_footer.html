@@ -1,7 +1,11 @@
 {{- $cursorScript := resources.Get "js/mus-cursor.js" | resources.Minify -}}
+{{- $flowDragScript := resources.Get "js/flow-drag-scroll.js" | resources.Minify -}}
 {{- if not site.Params.assets.disableFingerprinting -}}
     {{- $cursorScript = $cursorScript | fingerprint -}}
+    {{- $flowDragScript = $flowDragScript | fingerprint -}}
 <script defer crossorigin="anonymous" src="{{ $cursorScript.RelPermalink }}" integrity="{{ $cursorScript.Data.Integrity }}"></script>
+<script defer crossorigin="anonymous" src="{{ $flowDragScript.RelPermalink }}" integrity="{{ $flowDragScript.Data.Integrity }}"></script>
 {{- else -}}
 <script defer crossorigin="anonymous" src="{{ $cursorScript.RelPermalink }}"></script>
+<script defer crossorigin="anonymous" src="{{ $flowDragScript.RelPermalink }}"></script>
 {{- end -}}
