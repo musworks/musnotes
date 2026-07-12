@@ -12,6 +12,7 @@ hugo-server.audit.err.log
 hugo-server.audit.out.log
 
 # Local work folders
+.codex/environments/
 .codex-hugo-build/
 .tmp-*
 tmp*/
