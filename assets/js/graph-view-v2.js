@@ -10,14 +10,10 @@
     const emptyState = root.querySelector("[data-graph-empty]");
     const inspectorTitle = root.querySelector("[data-graph-title]");
     const inspectorCopy = root.querySelector("[data-graph-copy]");
-    const inspectorFacts = root.querySelector("[data-graph-facts]");
     const inspectorLink = root.querySelector("[data-graph-link]");
     const inspectorStatus = root.querySelector("[data-graph-status]");
     const inspectorReset = root.querySelector("[data-graph-reset]");
     const localToggle = root.querySelector("[data-graph-local-toggle]");
-    const relatedWrap = root.querySelector("[data-graph-related-wrap]");
-    const relatedList = root.querySelector("[data-graph-related]");
-    const relatedLabelNode = relatedWrap ? relatedWrap.querySelector(".graph-inspector__related-label") : null;
     const filterButtons = Array.from(root.querySelectorAll("[data-filter]"));
     const viewButtons = Array.from(root.querySelectorAll("[data-graph-action]"));
     const graphUrl = root.dataset.graphUrl;
@@ -88,6 +84,8 @@
         dpr: 1,
         alpha: 0,
         frame: 0,
+        renderRequested: false,
+        simulationRequested: false,
         activeFilter: "all",
         rawNodes: [],
         rawLinks: [],
@@ -97,7 +95,6 @@
         visibleNodeIds: new Set(),
         degrees: new Map(),
         adjacency: new Map(),
-        incidentLinks: new Map(),
         ambientLabelIds: new Set(),
         focusNode: null,
         hoverNode: null,
@@ -115,9 +112,16 @@
         localViewActive: false,
         eventsBound: false,
         resizeObserver: null,
+        themeObserver: null,
         activePointers: new Map(),
         pinchGesture: null,
-        lastHitNodeId: null
+        lastHitNodeId: null,
+        pendingPointerMove: null,
+        pendingWheelDelta: 0,
+        pendingWheelOrigin: null,
+        resizePending: false,
+        palettes: null,
+        colors: null
     };
 
     function describeNode(node) {
@@ -130,10 +134,45 @@
         };
     }
 
-    function css(name, fallback) {
-        const local = getComputedStyle(root).getPropertyValue(name).trim();
-        const global = getComputedStyle(document.documentElement).getPropertyValue(name).trim();
-        return local || global || fallback;
+    function refreshStyleCache() {
+        const local = getComputedStyle(root);
+        const global = getComputedStyle(document.documentElement);
+        const read = (name, fallback) => local.getPropertyValue(name).trim()
+            || global.getPropertyValue(name).trim()
+            || fallback;
+
+        state.palettes = {
+            tag: {
+                fill: read("--graph-tag-fill", "#94ad94"),
+                stroke: read("--graph-tag-stroke", "#708d70"),
+                label: read("--graph-tag-label", "#465a47")
+            },
+            category: {
+                fill: read("--graph-category-fill", "#a995a2"),
+                stroke: read("--graph-category-stroke", "#846d7c"),
+                label: read("--graph-category-label", "#544653")
+            },
+            post: {
+                fill: read("--graph-post-fill", "#49404f"),
+                stroke: read("--graph-post-stroke", "#2f2934"),
+                label: read("--graph-post-label", "#342d39")
+            }
+        };
+        state.colors = {
+            edgeFocus: read("--graph-edge-focus", "rgba(170, 52, 70, 0.82)"),
+            edgeNeighbor: read("--graph-edge-neighbor", "rgba(160, 64, 78, 0.58)"),
+            edgeDefault: read("--graph-edge-default", "rgba(150, 72, 82, 0.34)"),
+            labelStrong: read("--graph-label-strong", "#251f29"),
+            labelStroke: read("--graph-label-stroke", "rgba(252, 248, 243, 0.98)"),
+            labelShadow: read("--graph-label-shadow", "rgba(255, 251, 246, 0.74)"),
+            selectedGlowOuter: read("--graph-node-selected-glow-outer", "rgba(126, 86, 112, 0.12)"),
+            hoverGlowOuter: read("--graph-node-hover-glow-outer", "rgba(104, 145, 109, 0.12)"),
+            selectedGlowInner: read("--graph-node-selected-glow-inner", "rgba(126, 86, 112, 0.26)"),
+            hoverGlowInner: read("--graph-node-hover-glow-inner", "rgba(104, 145, 109, 0.26)"),
+            nodeNeighbor: read("--graph-node-neighbor", "rgba(104, 145, 109, 0.16)"),
+            nodeOutlineStrong: read("--graph-node-outline-strong", "rgba(31, 27, 34, 0.92)"),
+            nodeOutlineMedium: read("--graph-node-outline-medium", "rgba(46, 40, 48, 0.72)")
+        };
     }
 
     function clamp(value, min, max) {
@@ -275,17 +314,13 @@
 
     function adjacencyMap(nodes, links) {
         const adjacency = new Map(nodes.map((node) => [node.id, new Set()]));
-        const incident = new Map(nodes.map((node) => [node.id, []]));
 
         links.forEach((link) => {
             if (!adjacency.has(link.source) || !adjacency.has(link.target)) return;
             adjacency.get(link.source).add(link.target);
             adjacency.get(link.target).add(link.source);
-            incident.get(link.source).push(link);
-            incident.get(link.target).push(link);
         });
 
-        state.incidentLinks = incident;
         return adjacency;
     }
 
@@ -437,7 +472,7 @@
             localToggle.hidden = true;
         }
         updateInspector();
-        draw();
+        requestRenderFrame();
     }
 
     function applyFilter() {
@@ -467,7 +502,7 @@
         state.userMovedView = false;
         fitViewToNodes();
         state.alpha = 1;
-        requestFrame();
+        requestSimulationFrame();
     }
 
     function applyAnchorForce(nodes) {
@@ -623,39 +658,38 @@
         }
     }
 
-    function requestFrame() {
-        if (!state.frame) {
-            state.frame = window.requestAnimationFrame(tick);
-        }
+    function ensureFrame() {
+        if (!state.frame) state.frame = window.requestAnimationFrame(runFrame);
     }
 
-    function tick() {
+    // Render-only requests share the RAF coordinator but never enable force simulation.
+    function requestRenderFrame() {
+        state.renderRequested = true;
+        ensureFrame();
+    }
+
+    // Simulation frames opt into stepping the layout, then render the resulting positions.
+    function requestSimulationFrame() {
+        state.simulationRequested = true;
+        ensureFrame();
+    }
+
+    function runFrame() {
         state.frame = 0;
-        const keepGoing = stepSimulation();
-        draw();
-        if (keepGoing) requestFrame();
+        const eventNeedsRender = flushPendingEvents();
+        const shouldSimulate = state.simulationRequested;
+        state.simulationRequested = false;
+
+        const keepGoing = shouldSimulate ? stepSimulation() : false;
+        const shouldRender = state.renderRequested || eventNeedsRender || shouldSimulate;
+        state.renderRequested = false;
+
+        if (shouldRender) draw();
+        if (keepGoing) requestSimulationFrame();
     }
 
     function nodePalette(kind) {
-        if (kind === "tag") {
-            return {
-                fill: css("--graph-tag-fill", "#94ad94"),
-                stroke: css("--graph-tag-stroke", "#708d70"),
-                label: css("--graph-tag-label", "#465a47")
-            };
-        }
-        if (kind === "category") {
-            return {
-                fill: css("--graph-category-fill", "#a995a2"),
-                stroke: css("--graph-category-stroke", "#846d7c"),
-                label: css("--graph-category-label", "#544653")
-            };
-        }
-        return {
-            fill: css("--graph-post-fill", "#49404f"),
-            stroke: css("--graph-post-stroke", "#2f2934"),
-            label: css("--graph-post-label", "#342d39")
-        };
+        return state.palettes[kind] || state.palettes.post;
     }
 
     function computeVisualState(node, focusSet, hoverSet) {
@@ -724,15 +758,15 @@
             ctx.lineJoin = "round";
 
             if (styleKey === "focus") {
-                ctx.strokeStyle = css("--graph-edge-focus", "rgba(170, 52, 70, 0.82)");
+                ctx.strokeStyle = state.colors.edgeFocus;
                 ctx.lineWidth = 2.2 / state.view.scale;
                 ctx.globalAlpha = 1;
             } else if (styleKey === "neighbor") {
-                ctx.strokeStyle = css("--graph-edge-neighbor", "rgba(160, 64, 78, 0.58)");
+                ctx.strokeStyle = state.colors.edgeNeighbor;
                 ctx.lineWidth = 1.45 / state.view.scale;
                 ctx.globalAlpha = 1;
             } else {
-                ctx.strokeStyle = css("--graph-edge-default", "rgba(150, 72, 82, 0.34)");
+                ctx.strokeStyle = state.colors.edgeDefault;
                 ctx.lineWidth = 1.0 / state.view.scale;
                 ctx.globalAlpha = focusId || hoverId ? 0.48 : 0.9;
             }
@@ -797,10 +831,10 @@
             align: alignLeft ? "left" : "right",
             font: `${visual.isFocused || visual.isHovered ? "600" : "550"} ${fontSize}px Alice, Gabriela, Georgia, serif`,
             size: fontSize,
-            color: visual.isFocused || visual.isHovered ? css("--graph-label-strong", "#251f29") : palette.label,
+            color: visual.isFocused || visual.isHovered ? state.colors.labelStrong : palette.label,
             alpha: visual.alpha * (visual.isFocused || visual.isHovered ? 1 : 0.98),
-            stroke: css("--graph-label-stroke", "rgba(252, 248, 243, 0.98)"),
-            shadow: css("--graph-label-shadow", "rgba(255, 251, 246, 0.74)"),
+            stroke: state.colors.labelStroke,
+            shadow: state.colors.labelShadow,
             haloWidth: visual.isFocused || visual.isHovered ? 5.6 : visual.isNeighbor || visual.isHoverNeighbor ? 4.8 : 4.2,
             shadowBlur: visual.isFocused || visual.isHovered ? 7 : visual.isNeighbor || visual.isHoverNeighbor ? 5 : 3,
             priority,
@@ -835,22 +869,22 @@
                 // Outer soft glow ring
                 ctx.beginPath();
                 ctx.fillStyle = visual.isFocused
-                    ? css("--graph-node-selected-glow-outer", "rgba(126, 86, 112, 0.12)")
-                    : css("--graph-node-hover-glow-outer", "rgba(104, 145, 109, 0.12)");
+                    ? state.colors.selectedGlowOuter
+                    : state.colors.hoverGlowOuter;
                 ctx.arc(node.x, node.y, radius + 13.0, 0, Math.PI * 2);
                 ctx.fill();
 
                 // Inner soft glow ring
                 ctx.beginPath();
                 ctx.fillStyle = visual.isFocused
-                    ? css("--graph-node-selected-glow-inner", "rgba(126, 86, 112, 0.26)")
-                    : css("--graph-node-hover-glow-inner", "rgba(104, 145, 109, 0.26)");
+                    ? state.colors.selectedGlowInner
+                    : state.colors.hoverGlowInner;
                 ctx.arc(node.x, node.y, radius + 6.5, 0, Math.PI * 2);
                 ctx.fill();
             } else if (visual.isNeighbor || visual.isHoverNeighbor) {
                 // Neighbor halo
                 ctx.beginPath();
-                ctx.fillStyle = css("--graph-node-neighbor", "rgba(104, 145, 109, 0.16)");
+                ctx.fillStyle = state.colors.nodeNeighbor;
                 ctx.arc(node.x, node.y, radius + 5.5, 0, Math.PI * 2);
                 ctx.fill();
             }
@@ -858,9 +892,9 @@
             ctx.beginPath();
             ctx.fillStyle = palette.fill;
             ctx.strokeStyle = visual.isFocused || visual.isHovered
-                ? css("--graph-node-outline-strong", "rgba(31, 27, 34, 0.92)")
+                ? state.colors.nodeOutlineStrong
                 : visual.isNeighbor || visual.isHoverNeighbor
-                    ? css("--graph-node-outline-medium", "rgba(46, 40, 48, 0.72)")
+                    ? state.colors.nodeOutlineMedium
                     : palette.stroke;
             ctx.lineWidth = (visual.isFocused || visual.isHovered ? 2.25 : visual.isNeighbor || visual.isHoverNeighbor ? 1.6 : 1.3) / state.view.scale;
             ctx.arc(node.x, node.y, radius, 0, Math.PI * 2);
@@ -947,17 +981,18 @@
     function syncHover(point) {
         if (state.draggingNode) {
             state.hoverNode = state.draggingNode;
-            return;
+            return false;
         }
-        if (state.panning) return;
+        if (state.panning) return false;
 
         const nextNode = nearestNode(point);
+        const changed = nextNode !== state.hoverNode;
         if (nextNode !== state.hoverNode) {
             state.hoverNode = nextNode;
             updateInspector();
-            draw();
         }
         canvas.style.cursor = nextNode ? "pointer" : "grab";
+        return changed;
     }
 
     function setViewScale(nextScale, origin) {
@@ -984,8 +1019,7 @@
             return;
         }
 
-        draw();
-        requestFrame();
+        requestRenderFrame();
     }
 
     function hasModifier(event) {
@@ -1017,9 +1051,9 @@
         };
     }
 
-    function syncPointer(event) {
+    function syncPointer(event, point = pointerPosition(event)) {
         if (event.pointerId === undefined) return;
-        state.activePointers.set(event.pointerId, pointerPosition(event));
+        state.activePointers.set(event.pointerId, point);
     }
 
     function clearPointer(event) {
@@ -1056,25 +1090,98 @@
         state.view.x = midpoint.x - state.pinchGesture.worldMidpoint.x * clampedScale;
         state.view.y = midpoint.y - state.pinchGesture.worldMidpoint.y * clampedScale;
         state.userMovedView = true;
-        draw();
         return true;
+    }
+
+    function processPointerMove(move) {
+        if (!move) return false;
+        const { point } = move;
+        state.pointerScreen = point;
+
+        if (state.pointerDown) {
+            if (updatePinchGesture()) {
+                debugLog("drag move", "pinch", { scale: state.view.scale });
+                return true;
+            }
+
+            const dx = point.x - state.dragStartScreen.x;
+            const dy = point.y - state.dragStartScreen.y;
+            if (Math.abs(dx) > 3 || Math.abs(dy) > 3) state.pointerMoved = true;
+
+            if (state.draggingNode) {
+                state.hoverNode = state.draggingNode;
+                state.alpha = Math.max(state.alpha, 0.42);
+
+                const world = screenToWorld(point);
+                state.draggingNode.x = world.x;
+                state.draggingNode.y = world.y;
+                state.draggingNode.vx = 0;
+                state.draggingNode.vy = 0;
+                debugLog("drag move", describeNode(state.draggingNode), world);
+                requestSimulationFrame();
+                return true;
+            }
+
+            if (state.panning) {
+                state.userMovedView = true;
+                state.view.x = state.dragStartView.x + dx;
+                state.view.y = state.dragStartView.y + dy;
+                debugLog("drag move", "pan", { x: state.view.x, y: state.view.y });
+                canvas.style.cursor = "grabbing";
+                return true;
+            }
+        }
+
+        return syncHover(point);
+    }
+
+    function flushPendingEvents() {
+        let needsRender = false;
+
+        if (state.resizePending) {
+            state.resizePending = false;
+            updateCanvasSize();
+            ensureNodePositions(state.rawNodes);
+            if (!state.userMovedView) fitViewToNodes();
+            needsRender = true;
+        }
+
+        if (state.pendingWheelDelta !== 0 && state.pendingWheelOrigin) {
+            const zoomFactor = Math.exp(-state.pendingWheelDelta * 0.0012);
+            setViewScale(state.view.scale * zoomFactor, state.pendingWheelOrigin);
+            state.userMovedView = true;
+            state.pendingWheelDelta = 0;
+            state.pendingWheelOrigin = null;
+            needsRender = true;
+        }
+
+        if (state.pendingPointerMove) {
+            const move = state.pendingPointerMove;
+            state.pendingPointerMove = null;
+            needsRender = processPointerMove(move) || needsRender;
+        }
+
+        return needsRender;
     }
 
     function attachEvents() {
         if (state.eventsBound) return;
         state.eventsBound = true;
 
-        const refreshCanvasLayout = () => {
-            updateCanvasSize();
-            ensureNodePositions(state.rawNodes);
-            if (!state.userMovedView) fitViewToNodes();
-            draw();
-            requestFrame();
+        const queueCanvasLayout = () => {
+            state.resizePending = true;
+            ensureFrame();
         };
 
         const finishPointer = (event) => {
             if (!state.pointerDown) return;
             if (state.pointerId !== null && event.pointerId !== undefined && event.pointerId !== state.pointerId) return;
+
+            if (state.pendingPointerMove && state.pendingPointerMove.pointerId === event.pointerId) {
+                const move = state.pendingPointerMove;
+                state.pendingPointerMove = null;
+                processPointerMove(move);
+            }
 
             const point = typeof event.clientX === "number" && typeof event.clientY === "number"
                 ? pointerPosition(event)
@@ -1083,6 +1190,7 @@
             const releasedNode = nearestNode(point);
             const clickedBlank = startedOnBlank && !releasedNode && !state.pointerMoved;
             const wasDraggingNode = Boolean(state.dragOriginNode);
+            const didDragNode = wasDraggingNode && state.pointerMoved;
             const modifierOpen = Boolean(releasedNode
                 && hasModifier(event)
                 && (releasedNode.kind === "tag" || releasedNode.kind === "category")
@@ -1126,21 +1234,23 @@
             state.panning = false;
             state.pointerId = null;
             state.pinchGesture = null;
-            state.alpha = Math.max(state.alpha, 0.18);
+            if (didDragNode) {
+                state.alpha = Math.max(state.alpha, 0.18);
+                requestSimulationFrame();
+            }
 
             if (canvas.releasePointerCapture && event.pointerId !== undefined && canvas.hasPointerCapture?.(event.pointerId)) {
                 canvas.releasePointerCapture(event.pointerId);
             }
             updateInspector();
             syncHover(point);
-            draw();
-            requestFrame();
+            requestRenderFrame();
         };
 
         canvas.addEventListener("pointerdown", (event) => {
             const point = pointerPosition(event);
             const node = nearestNode(point);
-            syncPointer(event);
+            syncPointer(event, point);
             state.pointerDown = true;
             state.pointerMoved = false;
             state.pointerId = event.pointerId;
@@ -1163,57 +1273,19 @@
 
         canvas.addEventListener("pointermove", (event) => {
             const point = pointerPosition(event);
-            state.pointerScreen = point;
-            syncPointer(event);
-
-            if (state.pointerDown) {
-                if (updatePinchGesture()) {
-                    debugLog("drag move", "pinch", { scale: state.view.scale });
-                    return;
-                }
-
-                const dx = point.x - state.dragStartScreen.x;
-                const dy = point.y - state.dragStartScreen.y;
-                if (Math.abs(dx) > 3 || Math.abs(dy) > 3) state.pointerMoved = true;
-
-                if (state.draggingNode) {
-                    state.hoverNode = state.draggingNode;
-                    state.alpha = Math.max(state.alpha, 0.42);
-
-                    // Update node position immediately in world coordinates to prevent 1-frame latency/jitter
-                    const world = screenToWorld(point);
-                    state.draggingNode.x = world.x;
-                    state.draggingNode.y = world.y;
-                    state.draggingNode.vx = 0;
-                    state.draggingNode.vy = 0;
-                    debugLog("drag move", describeNode(state.draggingNode), world);
-
-                    draw();
-                    requestFrame();
-                    return;
-                }
-
-                if (state.panning) {
-                    state.userMovedView = true;
-                    state.view.x = state.dragStartView.x + dx;
-                    state.view.y = state.dragStartView.y + dy;
-                    debugLog("drag move", "pan", { x: state.view.x, y: state.view.y });
-                    draw();
-                    canvas.style.cursor = "grabbing";
-                    return;
-                }
-            }
-
-            syncHover(point);
+            syncPointer(event, point);
+            state.pendingPointerMove = { pointerId: event.pointerId, point };
+            ensureFrame();
         });
 
         canvas.addEventListener("pointerleave", () => {
             if (state.pointerDown) return;
+            state.pendingPointerMove = null;
             state.hoverNode = null;
             state.lastHitNodeId = null;
             updateInspector();
             canvas.style.cursor = "grab";
-            draw();
+            requestRenderFrame();
         });
 
         window.addEventListener("pointerup", finishPointer);
@@ -1230,12 +1302,9 @@
 
         canvas.addEventListener("wheel", (event) => {
             event.preventDefault();
-            const point = pointerPosition(event);
-            const zoomFactor = Math.exp(-event.deltaY * 0.0012);
-            setViewScale(state.view.scale * zoomFactor, point);
-            state.userMovedView = true;
-            draw();
-            requestFrame();
+            state.pendingWheelDelta += event.deltaY;
+            state.pendingWheelOrigin = pointerPosition(event);
+            ensureFrame();
         }, { passive: false });
 
         if (inspectorReset) {
@@ -1244,7 +1313,7 @@
                 state.userMovedView = false;
                 fitViewToNodes();
                 canvas.style.cursor = "grab";
-                draw();
+                requestRenderFrame();
             });
         }
 
@@ -1256,7 +1325,7 @@
                     state.userMovedView = true;
                     fitViewToNeighborhood(state.focusNode);
                 }
-                draw();
+                requestRenderFrame();
             });
         }
 
@@ -1265,7 +1334,6 @@
                 state.activeFilter = button.dataset.filter || "all";
                 filterButtons.forEach((item) => item.classList.toggle("is-active", item === button));
                 applyFilter();
-                draw();
             });
         });
 
@@ -1276,13 +1344,19 @@
             });
         });
 
-        state.resizeObserver = new ResizeObserver(() => {
-            state.alpha = Math.max(state.alpha, 0.4);
-            refreshCanvasLayout();
-        });
+        state.resizeObserver = new ResizeObserver(queueCanvasLayout);
         state.resizeObserver.observe(stage);
-        window.addEventListener("orientationchange", refreshCanvasLayout, { passive: true });
-        window.addEventListener("resize", refreshCanvasLayout, { passive: true });
+        window.addEventListener("orientationchange", queueCanvasLayout, { passive: true });
+        window.addEventListener("resize", queueCanvasLayout, { passive: true });
+
+        state.themeObserver = new MutationObserver(() => {
+            refreshStyleCache();
+            requestRenderFrame();
+        });
+        state.themeObserver.observe(document.documentElement, {
+            attributes: true,
+            attributeFilter: ["data-theme"]
+        });
     }
 
     async function bootstrap() {
@@ -1300,6 +1374,7 @@
                 links: state.rawLinks.length
             });
 
+            refreshStyleCache();
             updateCanvasSize();
             ensureNodePositions(state.rawNodes);
             attachEvents();
@@ -1307,8 +1382,7 @@
             prewarmLayout();
             updateInspector();
             canvas.style.cursor = "grab";
-            draw();
-            requestFrame();
+            requestRenderFrame();
         } catch (error) {
             if (stats) stats.textContent = errorLabel;
             if (emptyState) {
