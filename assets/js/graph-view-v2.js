@@ -53,8 +53,11 @@
         maxRadiusBoost: 5.2,
         pickPadding: 12,
         worldPadding: 46,
-        focusFade: 0.08,
-        hoverFade: 0.08,
+        focusFade: 0.045,
+        hoverFade: 0.045,
+        renderScale: { post: 0.84, tag: 0.95, category: 1.04 },
+        strokeWidth: { post: 0.9, tag: 1.2, category: 1.5 },
+        neighborOpacity: { post: 0.76, tag: 0.9, category: 0.98 },
         view: { minScale: 0.15, maxScale: 6.0, fitPadding: 56 },
         force: {
             repulsionSame: 52,
@@ -73,12 +76,11 @@
             reduced: { iterations: 96, batchSize: 2, budgetMs: 2, alphaFloor: 0.24 }
         },
         labels: {
-            thresholds: { post: 6, tag: 4, category: 2 },
-            importantQuota: 12,
-            maxAmbientDesktop: 16,
-            maxAmbientMobile: 8
-        },
-        relatedLimit: 10
+            ambientDesktop: { max: 14, categories: 10, tags: 4, tagMinDegree: 4 },
+            ambientMobile: { max: 7, categories: 5, tags: 2, tagMinDegree: 5 },
+            neighborhoodDesktop: 10,
+            neighborhoodMobile: 6
+        }
     };
 
     const state = {
@@ -148,31 +150,39 @@
         const read = (name, fallback) => local.getPropertyValue(name).trim()
             || global.getPropertyValue(name).trim()
             || fallback;
+        const readNumber = (name, fallback) => {
+            const value = Number.parseFloat(read(name, String(fallback)));
+            return Number.isFinite(value) ? value : fallback;
+        };
 
         state.palettes = {
             tag: {
                 fill: read("--graph-tag-fill", "#94ad94"),
                 stroke: read("--graph-tag-stroke", "#708d70"),
-                label: read("--graph-tag-label", "#465a47")
+                label: read("--graph-tag-label", "#465a47"),
+                opacity: readNumber("--graph-tag-opacity", 0.82)
             },
             category: {
                 fill: read("--graph-category-fill", "#a995a2"),
                 stroke: read("--graph-category-stroke", "#846d7c"),
-                label: read("--graph-category-label", "#544653")
+                label: read("--graph-category-label", "#544653"),
+                opacity: readNumber("--graph-category-opacity", 0.96)
             },
             post: {
                 fill: read("--graph-post-fill", "#49404f"),
                 stroke: read("--graph-post-stroke", "#2f2934"),
-                label: read("--graph-post-label", "#342d39")
+                label: read("--graph-post-label", "#342d39"),
+                opacity: readNumber("--graph-post-opacity", 0.62)
             }
         };
         state.colors = {
             edgeFocus: read("--graph-edge-focus", "rgba(170, 52, 70, 0.82)"),
             edgeNeighbor: read("--graph-edge-neighbor", "rgba(160, 64, 78, 0.58)"),
             edgeDefault: read("--graph-edge-default", "rgba(150, 72, 82, 0.34)"),
+            edgeDefaultAlpha: readNumber("--graph-edge-default-alpha", 0.72),
+            edgeDimAlpha: readNumber("--graph-edge-dim-alpha", 0.16),
             labelStrong: read("--graph-label-strong", "#251f29"),
             labelStroke: read("--graph-label-stroke", "rgba(252, 248, 243, 0.98)"),
-            labelShadow: read("--graph-label-shadow", "rgba(255, 251, 246, 0.74)"),
             selectedGlowOuter: read("--graph-node-selected-glow-outer", "rgba(126, 86, 112, 0.12)"),
             hoverGlowOuter: read("--graph-node-hover-glow-outer", "rgba(104, 145, 109, 0.12)"),
             selectedGlowInner: read("--graph-node-selected-glow-inner", "rgba(126, 86, 112, 0.26)"),
@@ -201,12 +211,6 @@
 
     function isMobileView() {
         return state.width > 0 && state.width < 720;
-    }
-
-    function scoreNode(node) {
-        const degree = state.degrees.get(node.id) || 0;
-        const kindWeight = node.kind === "category" ? 24 : node.kind === "tag" ? 14 : 8;
-        return degree * 10 + kindWeight + (node.featured ? 18 : 0);
     }
 
     function anchorFor(kind) {
@@ -348,6 +352,12 @@
             });
     }
 
+    function compareByDegreeThenLabel(nodeA, nodeB) {
+        const degreeDiff = (state.degrees.get(nodeB.id) || 0) - (state.degrees.get(nodeA.id) || 0);
+        if (degreeDiff !== 0) return degreeDiff;
+        return nodeA.label.localeCompare(nodeB.label, undefined, { sensitivity: "base" });
+    }
+
     function activeNode() {
         return state.focusNode || state.hoverNode;
     }
@@ -430,16 +440,30 @@
     }
 
     function rebuildAmbientLabels() {
-        const threshold = config.labels.thresholds;
-        const maxAmbient = isMobileView() ? config.labels.maxAmbientMobile : config.labels.maxAmbientDesktop;
-        const candidates = state.visibleNodes
-            .filter((node) => node.featured || (state.degrees.get(node.id) || 0) >= (threshold[node.kind] || threshold.post))
-            .sort((nodeA, nodeB) => scoreNode(nodeB) - scoreNode(nodeA));
+        const policy = isMobileView() ? config.labels.ambientMobile : config.labels.ambientDesktop;
+        const categories = state.visibleNodes
+            .filter((node) => node.kind === "category")
+            .sort(compareByDegreeThenLabel)
+            .slice(0, policy.categories);
+        const tags = state.visibleNodes
+            .filter((node) => node.kind === "tag" && (state.degrees.get(node.id) || 0) >= policy.tagMinDegree)
+            .sort(compareByDegreeThenLabel)
+            .slice(0, policy.tags);
 
-        const ambient = new Set();
-        candidates.slice(0, config.labels.importantQuota).forEach((node) => ambient.add(node.id));
-        candidates.slice(0, maxAmbient).forEach((node) => ambient.add(node.id));
-        state.ambientLabelIds = ambient;
+        state.ambientLabelIds = new Set(
+            [...categories, ...tags].slice(0, policy.max).map((node) => node.id)
+        );
+    }
+
+    function neighborhoodLabelRanks() {
+        const target = state.focusNode || state.hoverNode;
+        if (!target) return new Map();
+        const limit = isMobileView()
+            ? config.labels.neighborhoodMobile
+            : config.labels.neighborhoodDesktop;
+        return new Map(
+            relatedNodesFor(target).slice(0, limit).map((node, index) => [node.id, index])
+        );
     }
 
     function fitViewToNodes() {
@@ -759,11 +783,13 @@
         const isHovered = Boolean(state.hoverNode && node.id === state.hoverNode.id);
         const isHoverNeighbor = !isHovered && hoverSet.has(node.id);
 
-        let alpha = 0.98;
+        const baseOpacity = nodePalette(node.kind).opacity;
+        const neighborOpacity = config.neighborOpacity[node.kind] || config.neighborOpacity.post;
+        let alpha = baseOpacity;
         if (state.focusNode) {
-            alpha = focusSet.has(node.id) ? 1 : config.focusFade;
+            alpha = isFocused ? 1 : focusSet.has(node.id) ? neighborOpacity : config.focusFade;
         } else if (state.hoverNode) {
-            alpha = hoverSet.has(node.id) ? (isHovered ? 1 : 0.82) : config.hoverFade;
+            alpha = isHovered ? 1 : hoverSet.has(node.id) ? neighborOpacity : config.hoverFade;
         }
         if (isHovered) alpha = 1;
 
@@ -829,7 +855,9 @@
             } else {
                 ctx.strokeStyle = state.colors.edgeDefault;
                 ctx.lineWidth = 1.0 / state.view.scale;
-                ctx.globalAlpha = focusId || hoverId ? 0.48 : 0.9;
+                ctx.globalAlpha = focusId || hoverId
+                    ? state.colors.edgeDimAlpha
+                    : state.colors.edgeDefaultAlpha;
             }
 
             links.forEach(({ source, target }) => {
@@ -844,66 +872,52 @@
         ctx.restore();
     }
 
-    function labelSpec(node, visual) {
-        // High priority override: hovered/focused nodes and their direct neighbors always show labels
-        const isAlwaysShown = visual.isFocused || visual.isHovered || visual.isNeighbor || visual.isHoverNeighbor;
+    function labelSpec(node, visual, neighborRanks) {
+        const isMain = visual.isFocused || visual.isHovered;
+        const neighborRank = neighborRanks.get(node.id);
+        const isLabeledNeighbor = Number.isInteger(neighborRank);
+        const isAmbient = !state.focusNode
+            && !state.hoverNode
+            && state.ambientLabelIds.has(node.id);
 
-        if (!isAlwaysShown) {
-            if (state.view.scale < 0.6) {
-                // Zoom < 0.6: Hide all labels except category nodes (and focused/hovered/neighbors)
-                if (node.kind !== "category") return null;
-            } else if (state.view.scale < 1.0) {
-                // Zoom < 1.0: Show tag/category labels; hide post labels unless hovered/focused
-                if (node.kind === "post") return null;
-            }
-            if (isMobileView() && state.view.scale < 1.18 && node.kind === "post") {
-                return null;
-            }
-            // Zoom >= 1.0: Show labels normally according to degree thresholds
-        }
-
-        const degree = state.degrees.get(node.id) || 0;
-        const threshold = config.labels.thresholds[node.kind] || config.labels.thresholds.post;
-        const show = isAlwaysShown
-            || state.ambientLabelIds.has(node.id)
-            || degree >= threshold;
-        if (!show) return null;
+        if (!isMain && !isLabeledNeighbor && !isAmbient) return null;
+        if (isAmbient && node.kind === "post") return null;
 
         const palette = nodePalette(node.kind);
+        const degree = state.degrees.get(node.id) || 0;
         const screen = { x: node.screenX, y: node.screenY };
         const alignLeft = node.kind === "post" || screen.x < state.width * 0.54;
         const priority = visual.isFocused
             ? 120
             : visual.isHovered
-                ? 110
-                : visual.isNeighbor
-                    ? 100
-                    : node.featured
-                        ? 90
-                        : scoreNode(node);
+                ? 115
+                : isLabeledNeighbor
+                    ? 100 - neighborRank
+                    : node.kind === "category"
+                        ? 80 + Math.min(degree, 12)
+                        : 60 + Math.min(degree, 12);
 
         let fontSize = node.kind === "category" ? 12.6 : node.kind === "tag" ? 11.6 : 11;
-        if (visual.isFocused || visual.isHovered) fontSize += 1.3;
-        if (visual.isNeighbor || visual.isHoverNeighbor) fontSize += 0.5;
+        if (isMain) fontSize += 1.3;
+        if (isLabeledNeighbor) fontSize += 0.35;
 
         return {
             x: screen.x + (alignLeft ? 12 : -12),
-            y: screen.y - (visual.isFocused || visual.isHovered ? 14 : 12),
+            y: screen.y - (isMain ? 14 : 12),
             align: alignLeft ? "left" : "right",
-            font: `${visual.isFocused || visual.isHovered ? "600" : "550"} ${fontSize}px Alice, Gabriela, Georgia, serif`,
+            font: `${isMain ? "600" : node.kind === "category" ? "550" : "500"} ${fontSize}px Alice, Gabriela, Georgia, serif`,
             size: fontSize,
-            color: visual.isFocused || visual.isHovered ? state.colors.labelStrong : palette.label,
-            alpha: visual.alpha * (visual.isFocused || visual.isHovered ? 1 : 0.98),
+            color: isMain ? state.colors.labelStrong : palette.label,
+            alpha: isMain ? 1 : isLabeledNeighbor ? Math.max(visual.alpha, 0.82) : Math.min(0.94, palette.opacity + 0.08),
             stroke: state.colors.labelStroke,
-            shadow: state.colors.labelShadow,
-            haloWidth: visual.isFocused || visual.isHovered ? 5.6 : visual.isNeighbor || visual.isHoverNeighbor ? 4.8 : 4.2,
-            shadowBlur: visual.isFocused || visual.isHovered ? 7 : visual.isNeighbor || visual.isHoverNeighbor ? 5 : 3,
+            haloWidth: isMain ? 3.2 : isLabeledNeighbor ? 1.8 : 0,
+            forceDraw: isMain,
             priority,
             text: node.label
         };
     }
 
-    function drawNodesAndLabels(focusSet, hoverSet) {
+    function drawNodesAndLabels(focusSet, hoverSet, neighborRanks) {
         const labels = [];
         const focusId = state.focusNode ? state.focusNode.id : null;
         const isLocal = state.localViewActive && focusId;
@@ -921,7 +935,8 @@
             if (!visibleScreen(node, 120)) return;
             const palette = nodePalette(node.kind);
             const visual = computeVisualState(node, focusSet, hoverSet);
-            const radius = nodeRadius(node) * visual.scale;
+            const renderScale = config.renderScale[node.kind] || config.renderScale.post;
+            const radius = nodeRadius(node) * renderScale * visual.scale;
 
             ctx.save();
             ctx.globalAlpha = visual.alpha;
@@ -957,13 +972,18 @@
                 : visual.isNeighbor || visual.isHoverNeighbor
                     ? state.colors.nodeOutlineMedium
                     : palette.stroke;
-            ctx.lineWidth = (visual.isFocused || visual.isHovered ? 2.25 : visual.isNeighbor || visual.isHoverNeighbor ? 1.6 : 1.3) / state.view.scale;
+            const baseStrokeWidth = config.strokeWidth[node.kind] || config.strokeWidth.post;
+            ctx.lineWidth = (visual.isFocused || visual.isHovered
+                ? 2.25
+                : visual.isNeighbor || visual.isHoverNeighbor
+                    ? Math.max(baseStrokeWidth, 1.6)
+                    : baseStrokeWidth) / state.view.scale;
             ctx.arc(node.x, node.y, radius, 0, Math.PI * 2);
             ctx.fill();
             ctx.stroke();
             ctx.restore();
 
-            const label = labelSpec(node, visual);
+            const label = labelSpec(node, visual, neighborRanks);
             if (label) labels.push(label);
         });
 
@@ -995,7 +1015,7 @@
                 height: label.size * 1.45
             };
 
-            const forceDraw = label.priority >= 100;
+            const forceDraw = label.forceDraw;
             const collides = occupied.some((other) => boxesIntersect(box, other));
             if (!forceDraw && collides) {
                 ctx.restore();
@@ -1008,12 +1028,11 @@
             ctx.globalAlpha = label.alpha;
             ctx.lineJoin = "round";
             ctx.lineCap = "round";
-            ctx.shadowColor = label.shadow;
-            ctx.shadowBlur = label.shadowBlur;
-            ctx.lineWidth = label.haloWidth;
-            ctx.strokeStyle = label.stroke;
-            ctx.strokeText(label.text, drawX, drawY);
-            ctx.shadowBlur = 0;
+            if (label.haloWidth > 0) {
+                ctx.lineWidth = label.haloWidth;
+                ctx.strokeStyle = label.stroke;
+                ctx.strokeText(label.text, drawX, drawY);
+            }
             ctx.fillStyle = label.color;
             ctx.fillText(label.text, drawX, drawY);
             ctx.restore();
@@ -1035,8 +1054,9 @@
 
         const focusSet = neighborhoodSet(state.focusNode);
         const hoverSet = neighborhoodSet(state.hoverNode);
+        const neighborRanks = neighborhoodLabelRanks();
         drawEdges(focusSet, hoverSet);
-        drawNodesAndLabels(focusSet, hoverSet);
+        drawNodesAndLabels(focusSet, hoverSet, neighborRanks);
     }
 
     function syncHover(point) {
@@ -1203,6 +1223,7 @@
             state.resizePending = false;
             updateCanvasSize();
             ensureNodePositions(state.rawNodes);
+            rebuildAmbientLabels();
             if (!state.userMovedView) fitViewToNodes();
             needsRender = true;
         }
