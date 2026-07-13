@@ -67,28 +67,36 @@ body:has(.garden-graph) .main {
 }
 
 .graph-explorer {
-    --graph-post-fill: rgba(92, 88, 116, 0.86);
-    --graph-post-stroke: rgba(64, 58, 82, 0.98);
-    --graph-post-label: rgba(66, 48, 58, 0.9);
-    --graph-tag-fill: rgba(82, 132, 105, 0.86);
-    --graph-tag-stroke: rgba(58, 96, 76, 0.98);
-    --graph-tag-label: rgba(56, 88, 70, 0.92);
-    --graph-category-fill: rgba(136, 96, 128, 0.88);
-    --graph-category-stroke: rgba(98, 66, 92, 0.98);
-    --graph-category-label: rgba(84, 58, 80, 0.92);
-    --graph-edge-default: rgba(150, 72, 82, 0.34);
-    --graph-edge-neighbor: rgba(160, 64, 78, 0.58);
-    --graph-edge-focus: rgba(170, 52, 70, 0.82);
+    --graph-post-fill: rgba(80, 76, 105, 0.78);
+    --graph-post-stroke: rgba(58, 54, 78, 0.9);
+    --graph-post-label: rgba(62, 48, 58, 0.9);
+    --graph-post-opacity: 0.54;
+    --graph-tag-fill: rgba(64, 126, 88, 0.92);
+    --graph-tag-stroke: rgba(42, 88, 60, 0.96);
+    --graph-tag-label: rgba(42, 78, 55, 0.96);
+    --graph-tag-opacity: 0.78;
+    --graph-category-fill: rgba(132, 82, 124, 0.94);
+    --graph-category-stroke: rgba(88, 52, 82, 0.98);
+    --graph-category-label: rgba(72, 42, 68, 0.98);
+    --graph-category-opacity: 0.96;
+    --graph-edge-default: rgba(116, 82, 94, 0.24);
+    --graph-edge-neighbor: rgba(148, 66, 82, 0.56);
+    --graph-edge-focus: rgba(170, 42, 66, 0.94);
+    --graph-edge-default-alpha: 0.48;
+    --graph-edge-dim-alpha: 0.1;
     --graph-node-hover: rgba(150, 86, 96, 0.18);
     --graph-node-selected: rgba(166, 84, 96, 0.2);
     --graph-node-neighbor: rgba(154, 92, 100, 0.15);
     --graph-node-outline-medium: rgba(74, 52, 61, 0.84);
     --graph-node-outline-strong: rgba(52, 34, 42, 0.98);
+    --graph-node-selected-glow-outer: rgba(166, 84, 96, 0.11);
+    --graph-node-selected-glow-inner: rgba(166, 84, 96, 0.23);
+    --graph-node-hover-glow-outer: rgba(86, 132, 98, 0.1);
+    --graph-node-hover-glow-inner: rgba(86, 132, 98, 0.22);
     --graph-label: rgba(66, 48, 58, 0.88);
     --graph-label-muted: rgba(92, 72, 82, 0.82);
     --graph-label-strong: rgba(48, 34, 40, 0.98);
     --graph-label-stroke: rgba(252, 248, 243, 0.98);
-    --graph-label-shadow: rgba(255, 251, 246, 0.74);
     --graph-panel-bg-top: rgba(255, 252, 248, 0.96);
     --graph-panel-bg-bottom: rgba(242, 235, 228, 0.96);
     --graph-canvas-grid: rgba(112, 84, 91, 0.055);
@@ -304,6 +312,10 @@ body:has(.garden-graph) .main {
     pointer-events: none;
 }
 
+.graph-explorer__empty[hidden] {
+    display: none;
+}
+
 .graph-legend__item {
     display: inline-flex;
     align-items: center;
@@ -485,28 +497,36 @@ body:has(.garden-graph) .main {
 }
 
 :root[data-theme="dark"] .graph-explorer {
-    --graph-post-fill: rgba(196, 190, 226, 0.92);
-    --graph-post-stroke: rgba(240, 232, 248, 0.86);
-    --graph-post-label: rgba(246, 228, 238, 0.9);
-    --graph-tag-fill: rgba(154, 208, 176, 0.92);
-    --graph-tag-stroke: rgba(214, 242, 222, 0.84);
-    --graph-tag-label: rgba(230, 245, 236, 0.9);
-    --graph-category-fill: rgba(218, 168, 212, 0.92);
-    --graph-category-stroke: rgba(246, 212, 240, 0.84);
-    --graph-category-label: rgba(248, 224, 242, 0.9);
-    --graph-edge-default: rgba(218, 118, 132, 0.42);
-    --graph-edge-neighbor: rgba(232, 132, 148, 0.68);
-    --graph-edge-focus: rgba(246, 146, 162, 0.9);
+    --graph-post-fill: rgba(174, 168, 204, 0.78);
+    --graph-post-stroke: rgba(224, 216, 236, 0.7);
+    --graph-post-label: rgba(232, 216, 226, 0.88);
+    --graph-post-opacity: 0.56;
+    --graph-tag-fill: rgba(132, 194, 157, 0.88);
+    --graph-tag-stroke: rgba(198, 228, 207, 0.78);
+    --graph-tag-label: rgba(224, 242, 230, 0.96);
+    --graph-tag-opacity: 0.78;
+    --graph-category-fill: rgba(207, 151, 199, 0.9);
+    --graph-category-stroke: rgba(238, 204, 232, 0.82);
+    --graph-category-label: rgba(248, 224, 242, 0.98);
+    --graph-category-opacity: 0.96;
+    --graph-edge-default: rgba(210, 135, 150, 0.22);
+    --graph-edge-neighbor: rgba(228, 126, 145, 0.5);
+    --graph-edge-focus: rgba(248, 144, 166, 0.9);
+    --graph-edge-default-alpha: 0.52;
+    --graph-edge-dim-alpha: 0.12;
     --graph-node-hover: rgba(236, 142, 156, 0.18);
     --graph-node-selected: rgba(246, 156, 170, 0.2);
     --graph-node-neighbor: rgba(232, 138, 154, 0.14);
     --graph-node-outline-medium: rgba(255, 236, 244, 0.68);
     --graph-node-outline-strong: rgba(255, 244, 248, 0.96);
+    --graph-node-selected-glow-outer: rgba(246, 156, 170, 0.1);
+    --graph-node-selected-glow-inner: rgba(246, 156, 170, 0.2);
+    --graph-node-hover-glow-outer: rgba(154, 208, 176, 0.09);
+    --graph-node-hover-glow-inner: rgba(154, 208, 176, 0.18);
     --graph-label: rgba(246, 228, 238, 0.88);
     --graph-label-muted: rgba(226, 198, 212, 0.84);
     --graph-label-strong: rgba(255, 244, 248, 0.98);
     --graph-label-stroke: rgba(22, 18, 24, 0.92);
-    --graph-label-shadow: rgba(16, 12, 18, 0.66);
     --graph-panel-bg-top: rgba(36, 31, 37, 0.95);
     --graph-panel-bg-bottom: rgba(25, 22, 28, 0.95);
     --graph-canvas-grid: rgba(224, 176, 190, 0.065);

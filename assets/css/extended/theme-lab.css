@@ -1669,13 +1669,13 @@ html[data-mus-theme="herbarium-lavender"][data-theme="dark"] .graph-explorer {
     --graph-post-label: rgba(239, 231, 218, 0.92);
     --graph-tag-fill: rgba(129, 151, 101, 0.92);
     --graph-tag-stroke: rgba(214, 228, 170, 0.76);
-    --graph-tag-label: rgba(239, 231, 218, 0.9);
+    --graph-tag-label: rgba(239, 231, 218, 0.94);
     --graph-category-fill: rgba(199, 168, 204, 0.78);
     --graph-category-stroke: rgba(231, 211, 235, 0.72);
-    --graph-category-label: rgba(239, 231, 218, 0.9);
+    --graph-category-label: rgba(239, 231, 218, 0.94);
     --graph-edge-default: rgba(168, 191, 122, 0.34);
     --graph-edge-neighbor: rgba(168, 191, 122, 0.58);
-    --graph-edge-focus: rgba(199, 168, 204, 0.82);
+    --graph-edge-focus: rgba(211, 177, 216, 0.92);
     --graph-node-hover: rgba(168, 191, 122, 0.16);
     --graph-node-selected: rgba(168, 191, 122, 0.22);
     --graph-node-neighbor: rgba(168, 191, 122, 0.13);
