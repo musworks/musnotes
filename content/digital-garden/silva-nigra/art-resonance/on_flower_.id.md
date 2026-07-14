@@ -15,15 +15,15 @@ cover:
 
 {{< mus-divider >}}
 
-Aku tidak benar-benar memahami seluruh liriknya ketika pertama kali mendengarkan lagu ini. Mungkin justru karena itu aku lebih dulu menangkap suasananya daripada maknanya.
+Aku tidak benar-benar memahami seluruh liriknya ketika pertama kali mendengarkan lagu ini. aku lebih dulu menangkap suasananya daripada maknanya.
 
 Tapi aku mungkin mengerti sedikit: Laufey sedang mengekspresikan keraguan dan kebingungan tentang cinta, kehidupan, dan diri sendiri.
 
-Ketidakpastian cinta digambarkan seperti kutukan, lalu berakhir dengan pertanyaan apakah ia akan benar-benar jatuh cinta, atau terus mencari sesuatu yang tidak pernah selesai.
+Ketidakpastian cinta digambarkan seperti kutukan, lalu berakhir dengan pertanyaan apakah ia akan benar-benar jatuh cinta, atau terus mencari?
 
-Pertanyaan tentang tidur berlebihan, waktu, dan menanam bunga di dunia yang sekarat sepertinya menunjukkan kebingungan tentang tujuan, juga tentang tempat individu di dalam alam semesta.
+Pertanyaan tentang tidur berlebihan, waktu, dan menanam bunga di dunia yang sekarat sepertinya menunjukkan kebingungan tentang tujuan dan tentang tempat individu di dalam alam semesta.
 
-Aku juga menanam spesies tanaman dengan bunga yang indah di pekarangan rumahku. Tapi aku tidak pernah benar-benar bertanya mengapa. Aku hanya melakukannya.
+Aku juga menanam spesies tanaman dengan bunga yang indah di pekarangan rumahku. Tapi aku tidak pernah benar-benar bertanya "mengapa?". Aku hanya melakukannya.
 
 Jika sekarang aku yang bertanya kepada alam semesta, aku akan bertanya "kenapa Laufey dan aku bisa bertanya?"
 

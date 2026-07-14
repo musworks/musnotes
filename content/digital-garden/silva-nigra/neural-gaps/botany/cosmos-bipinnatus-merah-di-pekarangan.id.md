@@ -39,7 +39,7 @@ Lalu satu bunga merah muncul, seperti catatan kaki dari genetika.
 
 Bunganya tersusun sebagai kapitulum khas Asteraceae: bagian tepi berupa ray florets yang seperti “mahkota”, sedangkan bagian tengahnya berupa disc florets kuning. Daunnya halus, bercabang menyirip ganda, dan memberi kesan ringan seperti renda hijau.
 
-Sebagai spesies yang sering di jadikan tanaman hias, *Cosmos bipinnatus* umum dijumpai dalam variasi warna putih, pink, ungu muda, merah, sampai maroon. Karena itu, bunga merah yang muncul di pekaranganku kemungkinan besar bukan spesies yang berbeda. Ia lebih mungkin merupakan salah satu variasi warna dalam spesies yang sama, terutama benihnya berasal dari campuran varietas.
+Sebagai spesies yang sering di jadikan tanaman hias, *Cosmos bipinnatus* umum ditemui dalam variasi warna putih, pink, ungu muda, merah, sampai maroon. Karena itu, bunga merah yang muncul di pekaranganku kemungkinan besar bukan spesies yang berbeda. Ia lebih mungkin salah satu variasi warna dalam spesies yang sama, terutama benihnya berasal dari campuran varietas.
 
 <div style="max-width: 512px; margin: 0 auto; text-align: center;">
 
@@ -78,7 +78,7 @@ Sebagai spesies yang sering di jadikan tanaman hias, *Cosmos bipinnatus* umum di
     <div class="mus-glossary__head">
       <div class="mus-glossary__symbol">
         <span class="mus-glossary__label">Populasi</span>
-        <code>🌸</code>
+        <code>P</code>
       </div>
       <p class="mus-glossary__read">Dominansi Warna</p>
     </div>
@@ -92,7 +92,7 @@ Sebagai spesies yang sering di jadikan tanaman hias, *Cosmos bipinnatus* umum di
     <div class="mus-glossary__head">
       <div class="mus-glossary__symbol">
         <span class="mus-glossary__label">Yang menarik</span>
-        <code>🔴</code>
+        <code>（￣︶￣）↗　</code>
       </div>
       <p class="mus-glossary__read">Individu Berbeda dari kecenderungan populasi</p>
     </div>
@@ -145,7 +145,7 @@ Kalimat itu tidak dramatis, tapi sains memang sering lebih suka memakai sepatu d
 
 Bunga merah ini memberi gangguan pada ekspektasi.
 
-Berdasarkan pengalamanku, gangguan seperti ini sering menjadi pintu masuk menuju pertanyaan yang lebih jernih. Awalnya hanya “kenapa yang ini berbeda?”, lalu perlahan berubah menjadi pertanyaan: informasi apa yang belum lengkap, faktor apa yang mungkin berperan, dan bagaimana cara mengamatinya lagi?
+Berdasarkan pengalamanku, gangguan seperti ini sering menjadi pintu masuk menuju pertanyaan yang lebih jernih. Awalnya hanya “kenapa yang ini berbeda?”, lalu berubah menjadi pertanyaan: informasi apa yang belum lengkap, faktor apa yang mungkin berperan, dan bagaimana cara mengamatinya lagi?
 
 Kadang sains tidak dimulai dari mikroskop atau laboratorium, tetapi dari satu bunga di pekarangan yang keliatan tidak mengikuti naskah warna mayoritas.
 

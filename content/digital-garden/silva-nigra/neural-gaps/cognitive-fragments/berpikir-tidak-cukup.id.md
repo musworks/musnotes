@@ -99,13 +99,13 @@ Dengan kata lain, *scientific temper* bisa menjadi sikap hidup siapa pun.
 
 ## *Frugal Education*: Mewah dalam Berpikir, Hemat dalam Alat
 
-Dalam pemaparan Prof. Iwan, pendidikan tidak diukur dari seberapa canggih teknologi yang digunakan, melainkan dari seberapa tajam nalar yang dilatih. Ia menekankan bahwa bernalar merupakan inti dari proses belajar: memiliki struktur logika, tujuan yang jelas, serta kemampuan menguji validitas informasi.
+Dalam pemaparan Prof. Iwan, pendidikan tidak diukur dari seberapa canggih teknologi yang digunakan, melainkan dari seberapa tajam nalar yang dilatih. ia menekankan bahwa bernalar merupakan inti dari proses belajar: memiliki struktur logika, tujuan yang jelas, serta kemampuan menguji validitas informasi.
 
 > *Matematika dasar dapat menjadi “gym” bagi otak: murah, tetapi efektif.*
 
 Dengan *scientific temper*, sebagaimana ditekankan dalam gagasan Jawaharlal Nehru, siswa diajak untuk terbiasa berpikir rasional, terbuka pada bukti, dan tidak mudah terjebak hoaks.
 
-Bernalar membuat pendidikan terasa “mewah” karena ia menghasilkan manusia yang mandiri, kritis, dan kreatif. Pendidikan hemat bukan berarti miskin kualitas. Justru dengan alat sederhana dan murah, bahkan kadang nyaris tanpa biaya, pendidikan tetap dapat melahirkan cara berpikir yang kaya, mendalam, dan tahan menghadapi tantangan zaman.
+Bernalar membuat pendidikan terasa “mewah” karena menghasilkan manusia yang mandiri, kritis, dan kreatif. Pendidikan hemat bukan berarti miskin kualitas. Justru dengan alat sederhana dan murah, bahkan kadang nyaris tanpa biaya, pendidikan tetap dapat melahirkan cara berpikir yang kaya, mendalam, dan tahan menghadapi tantangan zaman.
 
 Dalam pengertian ini, pendidikan di pinggiran tetap dapat memiliki kualitas kelas dunia melalui prinsip *frugal education*.
 
@@ -165,7 +165,7 @@ Dengan demikian, pendidikan tidak hanya berkaitan dengan pengetahuan. Pendidikan
       <p class="mus-glossary__read">Model Manusia Seutuhnya</p>
     </div>
     <div class="mus-glossary__body">
-      <p class="mus-glossary__meaning">Manusia dipahami secara utuh melalui dimensi tubuh, pikiran, hati, dan jiwa. Dalam konteks pendidikan, gagasan ini dapat dibaca sebagai dorongan untuk membentuk manusia yang tidak hanya cerdas, tetapi juga peka, berdaya, dan mampu memberi kontribusi bermakna.</p>
+      <p class="mus-glossary__meaning">Manusia dipahami secara utuh melalui dimensi tubuh, pikiran, hati, dan jiwa. Dalam konteks pendidikan, gagasan ini dapat dibaca sebagai dorongan untuk membentuk manusia yang tidak hanya cerdas, tetapi juga peka, berdaya, dan mampu memberi kontribusi </p>
     </div>
   </section>
 </div>
@@ -180,7 +180,7 @@ Sebelumnya aku tidak tahu bahwa ada istilah *scientific temper*, gagasan yang me
 
 Pemaparan ini juga membuatku lebih sadar terhadap perbedaan antara berpikir dan bernalar.
 
-Sebelum menonton video ini, aku punya asumsi yang muncul dari intuisiku sebagai penyendiri berpengalaman 😌. Menurutku, pendidikan dasar atau pendidikan pada tingkat sekolah menengah idealnya tidak hanya mentransfer informasi untuk diingat. Pendidikan juga perlu membuat siswa terbiasa menggunakan informasi yang sudah mereka ingat untuk memecahkan masalah yang tidak selalu berbentuk soal ujian.
+Sebelum menonton video ini, aku punya asumsi yang muncul dari intuisiku sebagai penyendiri berpengalaman （￣︶￣）. Menurutku, pendidikan dasar atau pendidikan pada tingkat sekolah menengah idealnya tidak hanya mentransfer informasi untuk diingat. Pendidikan juga perlu membuat siswa terbiasa menggunakan informasi yang sudah mereka ingat untuk memecahkan masalah yang tidak selalu berbentuk soal ujian.
 
 Ujian memang diperlukan dalam konteks formal untuk menguji kompetensi siswa berdasarkan standar tertentu. Namun, ujian belum cukup untuk membuat siswa mampu memecahkan masalah sehari-hari dengan informasi yang pernah mereka pelajari di sekolah atau institusi formal.
 
@@ -214,7 +214,7 @@ Pertanyaan-pertanyaan seperti itu melatih rasa ingin tahu, kebiasaan menuntut bu
 
 Maka, bagiku, berpikir saja memang tidak cukup jika berpikir hanya dipahami sebagai aktivitas mental yang bebas dan reaktif. Tetapi bernalar juga belum cukup jika hanya dilatih untuk menjawab soal formal. Pendidikan perlu menghubungkan keduanya: memberi ruang bagi rasa ingin tahu, tetapi juga melatih struktur; memberi informasi, tetapi juga melatih penggunaan informasi; memberi jawaban, tetapi juga menjaga kemampuan untuk bertanya.
 
-Mungkin pendidikan yang baik bukan pendidikan yang membuat siswa merasa tahu banyak, tapi pendidikan yang membuat siswa mampu bertanya dengan lebih "baik".
+Mungkin pendidikan adalah pendidikan yang membuat siswa mampu bertanya dengan lebih "baik".
 
 Dan dalam konteks itu, *scientific temper* terasa penting karena Ia tentang menjadi manusia yang tidak mudah tunduk pada klaim tanpa bukti, tidak malu mengubah pendapat, dan tidak berhenti berpikir hanya karena sudah menemukan jawaban pertama.
 
