@@ -10,15 +10,15 @@ tags: ["ai-generated", "creativity", "art", "human-identity", "technology", "neu
 
 > **Peringatan:** Jika setelah selesai membaca esai ini pikiran pertamamu adalah “Ini pasti ditulis AI”, maka tulisan ini memang sedang membicarakanmu.
 
-Ketika aku scroll konten di internet akhir-akhir ini, pertanyaan yang paling sering muncul di komentar bukanlah “Apa yang mungkin senimannya rasakan?”, melainkan pertanyaan yang jauh lebih keren, dari sudut pandang yang berkomentar, (mungkin):
+Ketika aku scroll konten di internet akhir-akhir ini, pertanyaan yang paling sering muncul di komentar bukan “Apa yang mungkin senimannya rasakan?”, tapi pertanyaan yang lebih keren, dari sudut pandang yang berkomentar, (mungkin):
 
 “Apakah ini AI?”
 
-Lucu sekali, bukan?
+Lucu sekali, kan?
 
 Atau menyedihkan?
 
-Bayangkan seseorang memainkan piano dengan begitu indah hingga membuatmu terdiam.
+Bayangkan seseorang memainkan piano dengan indah
 
 Apakah reaksi pertamamu adalah menikmati harmoni dan emosi yang muncul? Atau justru bertanya-tanya apakah jari-jari itu milik manusia atau bukan?
 
@@ -54,9 +54,7 @@ Bagaimana jika selama ini kita terlalu sombong?
 
 Bagaimana jika “keistimewaan manusia” yang kita pertahankan mati-matian hanyalah ilusi kolektif yang nyaman?
 
-Mungkin pertanyaan “Apakah ini AI?” bukanlah pertanyaan tentang teknologi, etika, atau seni.
-
-Mungkin itu adalah pertanyaan tentang kita.
+Mungkin pertanyaan “Apakah ini AI?” itu tentang kita.
 
 Tentang betapa takutnya kita kehilangan status istimewa yang selama ini kita anggap hak kita.
 
