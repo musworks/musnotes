@@ -15,7 +15,7 @@ hiddenInList: true
 
 [Bagian I](./pertemuan_arah_waktu.id.md) berhenti pada kegagalan model linear.
 
-Gambarannya, dua observer dengan arah temporal berlawanan tampak masih bisa bertemu di satu titik. A bergerak dari masa lalu ke masa depan, sementara B bergerak dari masa depan ke masa lalu. Jika “bertemu” hanya berarti berada pada koordinat eksternal yang sama, maka masalahnya terlihat sederhana.
+Gambarannya, dua observer dengan arah temporal berlawanan terlihat masih bisa bertemu di satu titik. A bergerak dari masa lalu ke masa depan, sementara B bergerak dari masa depan ke masa lalu. Jika “bertemu” hanya berarti berada pada koordinat eksternal yang sama, maka masalahnya terlihat sederhana.
 
 Tapi kesederhanaan itu menipu.
 
@@ -29,12 +29,12 @@ Di titik ini, pertanyaanku bukan lagi “apakah mereka bisa bertemu?”, tetapi 
   <div class="flow-stack">
     <div class="flow-wrapper flow-wrapper--start">
       <div class="flow-node node-sage">
-        <span class="node-icon">☕</span>
+        <span class="node-icon">©</span>
         <span class="node-label">A: Cangkir utuh</span>
       </div>
       <div class="flow-arrow arrow-sage"></div>
       <div class="flow-node node-sage">
-        <span class="node-icon">💥</span>
+        <span class="node-icon">⁕</span>
         <span class="node-label">Jatuh lalu pecah</span>
       </div>
     </div>
@@ -48,12 +48,12 @@ Di titik ini, pertanyaanku bukan lagi “apakah mereka bisa bertemu?”, tetapi 
 
 <div class="flow-wrapper flow-wrapper--end">
   <div class="flow-node node-orchid">
-    <span class="node-icon">🧩</span>
+    <span class="node-icon">¤</span>
     <span class="node-label">B: Pecahan berkumpul</span>
   </div>
   <div class="flow-arrow arrow-orchid"></div>
   <div class="flow-node node-orchid">
-    <span class="node-icon">☕</span>
+    <span class="node-icon">©</span>
     <span class="node-label">Menjadi cangkir utuh</span>
   </div>
 </div>
@@ -84,17 +84,17 @@ Selama ini, waktu yang kita rasakan sehari-hari tampak linear:
 <div class="flow-container">
   <div class="flow-wrapper">
     <div class="flow-node node-sage">
-      <span class="node-icon">🌒</span>
+      <span class="node-icon">←</span>
       <span class="node-label">Masa lalu</span>
     </div>
     <div class="flow-arrow arrow-sage"></div>
     <div class="flow-node node-blue">
-      <span class="node-icon">👁️</span>
+      <span class="node-icon">O.O</span>
       <span class="node-label">Sekarang</span>
     </div>
     <div class="flow-arrow arrow-blue"></div>
     <div class="flow-node node-orchid">
-      <span class="node-icon">🌕</span>
+      <span class="node-icon">→</span>
       <span class="node-label">Masa depan</span>
     </div>
   </div>
@@ -107,7 +107,7 @@ Dalam bahasa termodinamika, entropi cenderung meningkat.
 
 Tetapi dalam imajinasiku, muncul kemungkinan lain: bagaimana jika waktu tidak hanya berupa garis, tetapi sesuatu yang melengkung, menutup, atau kembali pada dirinya sendiri?
 
-Mungkin waktu tidak seperti anak panah yang ditembakkan sekali dari awal menuju akhir. Mungkin ia lebih mirip angka 0, lingkaran, atau siklus. Dalam bentuk seperti itu, apa yang kita sebut “awal” dan “akhir” tidak sepenuhnya terpisah. Keduanya bisa menjadi dua sisi dari struktur yang sama.
+Mungkin waktu tidak seperti anak panah yang ditembakkan sekali dari awal menuju akhir. Mungkin waktu lebih mirip angka 0, lingkaran, atau siklus. Dalam bentuk seperti itu, apa yang kita sebut “awal” dan “akhir” tidak sepenuhnya terpisah. Keduanya bisa menjadi dua sisi dari struktur yang sama.
 
 {{< rawhtml >}}
 
@@ -179,7 +179,7 @@ Di sinilah muncul gagasan seperti Chronology Protection Conjecture dari Stephen 
 
 Tetapi ada juga bentuk siklik yang lebih kosmologis, bukan mesin waktu lokal.
 
-Salah satunya adalah Conformal Cyclic Cosmology dari Roger Penrose. Dalam model ini, alam semesta tidak hanya memiliki satu Big Bang dan satu akhir mutlak, melainkan rangkaian siklus kosmik. Masa depan sangat jauh dari satu alam semesta dapat, melalui transformasi konformal, menjadi semacam awal bagi siklus berikutnya.
+Salah satunya adalah Conformal Cyclic Cosmology dari Roger Penrose. Dalam model ini, alam semesta tidak hanya memiliki satu Big Bang dan satu akhir mutlak, tapi rangkaian siklus kosmik. Masa depan sangat jauh dari satu alam semesta dapat, melalui transformasi konformal, menjadi semacam awal bagi siklus berikutnya.
 
 Dengan kata lain, ini bukan cerita tentang seseorang masuk wormhole lalu muncul di hari kemarin. Ini lebih seperti sejarah kosmos yang tersusun dalam bab-bab besar: satu aeon berakhir, lalu bentuk geometrinya dapat dipahami sebagai awal aeon berikutnya.
 

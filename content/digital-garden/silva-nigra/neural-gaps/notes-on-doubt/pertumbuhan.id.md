@@ -17,11 +17,11 @@ Mari kita mulai dengan sebuah pertanyaan yang mungkin jarang diberi ruang di kel
 
 Di dalam banyak narasi pembangunan, `|Pertumbuhan| = Pertumbuhan` diperlakukan seperti berhala modern: sebuah entitas sakral yang harus diterima tanpa banyak keberatan. Ketika pertumbuhan diumumkan naik sekian persen, kita seolah-olah diharapkan bersorak, tanpa selalu diberi kesempatan untuk bertanya: pertumbuhan apa, bagi siapa, dengan biaya apa, dan kehilangan apa?
 
-Di sinilah bias kekuasaan bekerja dengan tenang. Angka tidak hanya menjadi alat ukur, tetapi juga alat legitimasi, menentukan mana yang disebut kemajuan, mana yang disebut hambatan, mana yang dianggap produktif, dan mana yang boleh dikorbankan demi grafik yang keliatan naik.
+Di sinilah bias kekuasaan bekerja. Angka tidak hanya menjadi alat ukur, tetapi juga alat legitimasi, menentukan mana yang disebut kemajuan, mana yang disebut hambatan, mana yang dianggap produktif, dan mana yang boleh dikorbankan demi grafik yang keliatan naik.
 
 Esai ini tidak berangkat dari anggapan bahwa semua pertumbuhan ekonomi pasti buruk. Yang ingin aku bongkar adalah cara pertumbuhan diperlakukan sebagai tanda kemajuan yang hampir mutlak, sementara kerusakan ekologis yang menyertainya sering disingkirkan sebagai biaya luar, efek samping, atau sekadar eksternalitas. Dengan sistem hitung seperti ini, kerusakan bisa terlihat seperti pertumbuhan bukan karena realitasnya berubah, tapi karena metriknya terlalu sempit untuk melihat apa yang sedang hilang.
 
-Seperti yang sudah kubahas dalam [esai sebelumnya](./ekonomi-bukan-lawan-ekosistem/), ekonomi bukan sistem yang berdiri di luar ekosistem, melainkan sistem turunan yang bergantung pada stabilitas biosfer.
+Seperti yang sudah kubahas dalam [esai sebelumnya](./ekonomi-bukan-lawan-ekosistem/), ekonomi bukan sistem yang berdiri di luar ekosistem, ekonomi adalah sistem turunan yang bergantung pada stabilitas biosfer.
 
 {{< mus-divider >}}
 
@@ -63,7 +63,7 @@ Selama hutan itu berdiri, memurnikan udara, menampung banyak spesies, menjaga si
 
 Hutan yang hidup dianggap menganggur dan tidak produktif.
 
-Namun, bawa masuk buldozer, tebang pohonnya, jual kayunya ke pasar, lalu ubah lahannya menjadi monokultur, kawasan industri, atau lubang tambang. Seketika itu juga, ada aktivitas ekonomi yang bisa dicatat: alat berat disewa, pekerja dibayar, kayu dijual, lahan diproses, investasi masuk, dan angka bergerak.
+Tapi, bawa masuk buldozer, tebang pohonnya, jual kayunya ke pasar, lalu ubah lahannya menjadi monokultur, kawasan industri, atau lubang tambang. Seketika itu juga, ada aktivitas ekonomi yang bisa dicatat: alat berat disewa, pekerja dibayar, kayu dijual, lahan diproses, investasi masuk, dan angka bergerak.
 
 Grafik ekonomi bisa mencatatnya sebagai prestasi. Hutan baru dianggap berguna justru setelah ia mati dan berhenti menjadi hutan.
 

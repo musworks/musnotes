@@ -29,12 +29,12 @@ At this point, my question is no longer “can they meet?”, but “if they int
   <div class="flow-stack">
     <div class="flow-wrapper flow-wrapper--start">
       <div class="flow-node node-sage">
-        <span class="node-icon">☕</span>
+        <span class="node-icon">©</span>
         <span class="node-label">A: Intact cup</span>
       </div>
       <div class="flow-arrow arrow-sage"></div>
       <div class="flow-node node-sage">
-        <span class="node-icon">💥</span>
+        <span class="node-icon">⁕</span>
         <span class="node-label">Falls, then breaks</span>
       </div>
     </div>
@@ -48,12 +48,12 @@ At this point, my question is no longer “can they meet?”, but “if they int
 
 <div class="flow-wrapper flow-wrapper--end">
   <div class="flow-node node-orchid">
-    <span class="node-icon">🧩</span>
+    <span class="node-icon">¤</span>
     <span class="node-label">B: Shards gather</span>
   </div>
   <div class="flow-arrow arrow-orchid"></div>
   <div class="flow-node node-orchid">
-    <span class="node-icon">☕</span>
+    <span class="node-icon">©</span>
     <span class="node-label">Become an intact cup</span>
   </div>
 </div>
@@ -84,17 +84,17 @@ So far, the time we experience in everyday life appears linear:
 <div class="flow-container">
   <div class="flow-wrapper">
     <div class="flow-node node-sage">
-      <span class="node-icon">🌒</span>
+      <span class="node-icon">←</span>
       <span class="node-label">Past</span>
     </div>
     <div class="flow-arrow arrow-sage"></div>
     <div class="flow-node node-blue">
-      <span class="node-icon">👁️</span>
+      <span class="node-icon">O.O</span>
       <span class="node-label">Present</span>
     </div>
     <div class="flow-arrow arrow-blue"></div>
     <div class="flow-node node-orchid">
-      <span class="node-icon">🌕</span>
+      <span class="node-icon">→</span>
       <span class="node-label">Future</span>
     </div>
   </div>
