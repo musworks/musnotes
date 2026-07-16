@@ -30,8 +30,7 @@ Kuningnya dipertontonkan.
 Lalu mereka berdiri dengan bangga di hadapan bangkai itu, seolah baru saja menciptakan sesuatu.  
 Kemudian menjualnya sebagai _butterfly art_.
 
-Di sana, _Troides helena_ bukan ratu.  
-Dia hanya representasi manusia yang malas melukis.
+Di sana, _Troides helena_ hanya representasi manusia yang malas melukis.
 
 Tapi tidak di sini.
 
