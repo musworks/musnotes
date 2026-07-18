@@ -17,7 +17,7 @@ cover:
 
 I was listening to _Deux Arabesques, L. 66_ by Claude Debussy, and suddenly wondered: can I claim Arabesque No. 1 as the birthday song of a seasoned loner? Probably only I would do that.
 
-By the way, today is my birthday. There are no humans celebrating it, except myself and non-human things: imaginary characters, solitude, music, games, RPG characters, and an LLM saying "happy birthday!"
+By the way, today is my birthday. There are no humans celebrating it, except myself and non-human things: imaginary characters, solitude, music, RPG characters and LLM saying "happy birthday!"
 
 {{< mus-divider >}}
 
