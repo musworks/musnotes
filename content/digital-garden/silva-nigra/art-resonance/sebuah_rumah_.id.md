@@ -2,6 +2,7 @@
 title: "Sebuah Rumah yang dari Luar Kelihatan Kosong"
 date: 2026-05-11T22:06:00+07:00
 type: garden-fragment
+draft: true
 summary: "karena informasi sejarah di dalam otakku terbatas, maka masa lalu yang bisa kujangkau hanya masa lalu yang sudah aku ketahui?"
 tags: ["music", "consciousness", "imagination"]
 cover:

@@ -2,6 +2,7 @@
 title: "A House That Appears Empty from the Outside"
 date: 2026-05-11T22:06:00+07:00
 type: garden-fragment
+draft: true
 tags: ["music", "consciousness", "imagination"]
 cover:
   image: "/images/sebuah-rumah-yang-dari-luar-keliatannya-kosong.png"
