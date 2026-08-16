@@ -75,7 +75,7 @@ Before I could finish my sentence, Greta interrupted and spoke to Lynella.
 
 She turned around. The small crystal on her bracelet once again refracted the dim light of the luminescent crystals.
 
-> "It is not because my master is unable to remember, but rather because the process of creation itself sometimes requires forgetting in order to move forward, to paint a new canvas. Yet, its traces, its energy, remain. Sometimes, through deep reflection, or even through a story like this, those memories can resurface."
+> "because the process of creation itself sometimes requires forgetting in order to move forward, to paint a new canvas. Yet, its traces, its energy, remain. Sometimes, through deep reflection, or even through a story like this, those memories can resurface."
 
 > "Why do you ask about wounds, about the forgotten, in a place that is supposed to hold only knowledge?"
 

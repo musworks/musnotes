@@ -646,7 +646,7 @@ A glossary for reading the symbols, inference rules, and basic terms that appear
       <p class="mus-glossary__read">read as: valid but misleading consequence</p>
     </div>
     <div class="mus-glossary__body">
-      <p class="mus-glossary__meaning">The name of Level 11. It does not mean a false conclusion, but a valid consequence that does not help with the target.</p>
+      <p class="mus-glossary__meaning">The name of Level 11. It does not mean a valid consequence that does not help with the target.</p>
       <p class="mus-glossary__example">
         <span class="mus-glossary__label">Example</span>
         <code>P → Q</code> produces <code>Q</code>, but the target is <code>R</code>

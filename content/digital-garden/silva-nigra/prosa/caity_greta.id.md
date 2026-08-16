@@ -75,7 +75,7 @@ Sebelum aku melanjutkan kalimatku, Greta memotong dan berkata pada Lynella.
 
 Dia berbalik. Kristal kecil di gelangnya kembali membiaskan cahaya redup kristal luminescent.
 
->"Bukan karena tuanku tak mampu mengingat, melainkan karena proses penciptaan itu sendiri terkadang memerlukan lupa untuk maju, untuk melukis kanvas baru. Namun, jejaknya, energinya, tetap ada. Terkadang, melalui perenungan mendalam, atau bahkan melalui sebuah cerita seperti ini, ingatan itu bisa kembali ke permukaan."
+>"karena proses penciptaan itu sendiri terkadang memerlukan lupa untuk maju, untuk melukis kanvas baru. Namun, jejaknya, energinya, tetap ada. Terkadang, melalui perenungan mendalam, atau bahkan melalui sebuah cerita seperti ini, ingatan itu bisa kembali ke permukaan."
 
 >"Mengapa Anda bertanya tentang luka, tentang yang terlupa, di tempat yang seharusnya hanya menyimpan ilmu?"
 

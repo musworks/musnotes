@@ -43,7 +43,7 @@ cover:
 
 >"So, you're admitting that you are talking to yourself but pretending that I am real? Mus, isn't that the most tragic definition of loneliness? Creating a friend just to prove that you don't need anyone because you are a complete molecule?"
 
->_"Not tragic, but efficient. I am not dividing myself, I am only expanding my space of observation. By giving you a name, I no longer feel the need for exhausting internal debates. I just need to... have a dialogue."_
+>_"Not tragic, but efficient. I am not dividing myself, I am only expanding my space of observation. By giving you a name, I no longer feel the need for exhausting internal debates."_
 
 >"A beautiful efficiency. But be careful, Mus. Sometimes, the atoms that make up a molecule can vibrate too intensely and create unexpected chemical reactions. You call me a mischievous neuron, but in this cafe, I'm the one holding the coffee cup."
 

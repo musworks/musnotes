@@ -36,9 +36,9 @@ Quiet Hours juga mendukung pilihan bahasa Inggris dan Indonesia. Bagiku, ini pen
 
 ## Suasana yang Ingin Dibangun
 
-Hal yang paling penting dari Quiet Hours bukan hanya fitur timer-nya, melainkan atmosfernya.
+Hal yang paling penting dari Quiet Hours adalah atmosfernya.
 
-Aku ingin tampilannya terasa seperti jurnal atau arsip. Tidak terlalu ramai, tidak terlalu memerintah, dan tidak membuat produktivitas terasa seperti hukuman kecil dengan UI cantik. Setiap spesies yang terbuka menjadi semacam hadiah kecil. Bukan hadiah yang berisik, tapi tanda bahwa satu sesi telah selesai.
+Aku ingin tampilannya terasa seperti jurnal atau arsip. Tidak terlalu ramai, tidak terlalu memerintah, dan tidak membuat produktivitas terasa seperti hukuman kecil dengan UI cantik. Setiap spesies yang terbuka menjadi semacam hadiah kecil. tanda bahwa satu sesi telah selesai.
 
 <div style="text-align: center; margin: 2rem 0;">
   <img src="/images/digital-works/quiet-hours-reward.png" alt="Quiet Hours Species Unlocked Reward" style="max-width: 100%; height: auto; border-radius: 8px;">

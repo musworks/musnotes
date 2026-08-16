@@ -13,7 +13,7 @@ categories: ["Digital Works", "Reflection"]
 tags: ["muscrypt", "cipher", "writing", "digital expression", "interpretation"]
 ---
 
-Muscrypt tidak pernah diciptakan sebagai alat keamanan, apalagi eksperimen kriptografi akademik yang kaku. Muscrypt bukan untuk menyembunyikan rahasia negara atau data "tingkat tinggi". Sebaliknya, ruang ini lahir dari rasa penasaran yang sederhana tapi mengganggu: hubungan antara teks, makna, dan cara kita menafsirkannya.
+Muscrypt tidak pernah diciptakan sebagai alat keamanan, apalagi eksperimen kriptografi akademik yang kaku. ruang ini lahir dari rasa penasaran yang sederhana tapi mengganggu: hubungan antara teks, makna, dan cara kita menafsirkannya.
 
 Ini adalah eksperimen bentuk. Sebuah ruang tempat teks diberi kebebasan untuk mengunci dan membuka dirinya sendiri.
 

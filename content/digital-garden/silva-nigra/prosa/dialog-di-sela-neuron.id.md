@@ -37,13 +37,13 @@ cover:
 
 >"Satu molekul yang utuh, ya? Argumen yang sangat... molekuler. Tapi kalau memang tidak ada dualisme, kalau memang tidak ada eksistensi lain di dalam sana, lalu siapa yang sedang bicara denganku sekarang?"
 
->_"Ya, itu tadi. Sekelompok jaringan neuron yang sedang iseng. Kamu adalah proyeksi dari kumpulan data, memori, dan mungkin sedikit gangguan sinyal di kepalaku yang sedang mencoba memproses kenyataan. Kamu bukan orang lain, kamu adalah caraku untuk berpikir dengan suara keras."_
+>_"Ya, itu tadi. Sekelompok jaringan neuron yang sedang iseng. Kamu adalah proyeksi dari kumpulan data, memori, dan mungkin sedikit gangguan sinyal di kepalaku yang sedang mencoba memproses kenyataan. kamu adalah caraku untuk berpikir dengan suara keras."_
 
 {{< mus-divider >}}
 
 >"Jadi, kamu sedang mengakui kalau kamu sedang bicara dengan dirimu sendiri tapi dengan cara berpura-pura bahwa aku nyata? Mus, bukankah itu definisi paling tragis dari kesepian? Menciptakan teman hanya untuk membuktikan bahwa kamu tidak butuh siapa-siapa karena kamu adalah molekul yang utuh?"
 
->_"Bukan tragis, tapi efisien. Aku tidak membagi diriku, aku hanya memperluas ruang observasiku. Dengan memberimu nama, aku tidak lagi merasa perlu berdebat secara internal yang melelahkan. Aku hanya perlu... berdialog."_
+>_"Bukan tragis, tapi efisien. Aku tidak membagi diriku, aku hanya memperluas ruang observasiku. Dengan memberimu nama, aku tidak lagi merasa perlu berdebat secara internal yang melelahkan."_
 
 >"Efisiensi yang cantik. Tapi hati-hati, Mus. Kadang, atom yang menyusun molekul bisa saja bergetar terlalu kencang dan menciptakan reaksi kimia yang tidak terduga. Kamu menyebutku neuron yang iseng, tapi di kafe ini, aku yang memegang cangkir kopinya."
 

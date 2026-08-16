@@ -11,8 +11,6 @@ tags: ["project-spore", "hugo", "digital-garden", "web-development"]
 
 Project Spore lahir dari alasan yang cukup sederhana: aku ingin sibuk seharian.
 
-Bukan sibuk dalam arti produktif yang megah. Bukan juga karena sejak awal aku membawa rencana bisnis yang rapi, lengkap dengan grafik pertumbuhan dan presentasi investor yang terlalu percaya diri.
-
 Aku hanya ingin membuat sesuatu. Sebuah benda digital kecil yang bisa kubongkar, kususun, kupoles, lalu kubongkar lagi ketika ada bagian yang terasa kurang nyaman. Dalam proses itu, aku tidak benar-benar bekerja sendirian. Ada “tim LLM”-ku: sekumpulan asisten berbasis AI yang ikut membantu berpikir, menulis kode, merapikan struktur, menguji layout, dan kadang membuatku merasa seperti punya studio kecil yang anggota timnya tidak pernah minta kopi.
 
 Dari proses yang awalnya sederhana itu, Project Spore perlahan menemukan bentuknya.
@@ -23,7 +21,7 @@ Dari proses yang awalnya sederhana itu, Project Spore perlahan menemukan bentukn
 
 Project Spore adalah *starter theme* untuk Hugo, dibuat sebagai titik awal bagi siapa pun yang ingin membangun blog personal, *digital garden*, atau ruang menulis kecil di web.
 
-Aku membayangkannya bukan sebagai *theme* yang terlalu besar dan penuh fitur, melainkan sebagai benih. Sesuatu yang cukup ringan untuk ditanam, cukup rapi untuk dikembangkan, dan cukup untuk tidak mengganggu isi pikiran penggunanya.
+Aku membayangkannya bukan sebagai *theme* yang terlalu besar dan penuh fitur, melainkan Sesuatu yang cukup ringan untuk ditanam, cukup rapi untuk dikembangkan, dan cukup untuk tidak mengganggu isi pikiran penggunanya.
 
 Spore tidak mencoba menjadi hutan yang sudah selesai. Ia hanya mencoba menjadi awal yang nyaman.
 

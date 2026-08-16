@@ -11,8 +11,6 @@ tags: ["project-spore", "hugo", "digital-garden", "web-development"]
 
 Project Spore was born from a fairly simple reason: I wanted to spend my day being busy.
 
-Not busy in a grand, hyper-productive sense. Nor was it because I started with a polished business plan, complete with growth charts and overconfident investor presentations.
-
 I just wanted to make something. A small digital object that I could dismantle, reassemble, polish, and then break down again whenever a part felt slightly off. In this process, I wasn't exactly working alone. I had my "LLM team": a collection of AI-based assistants who helped think, write code, organize structures, test layouts, and occasionally made me feel like I was running a small studio where the team members never asked for coffee.
 
 From that initially simple process, Project Spore slowly found its form.

@@ -646,7 +646,7 @@ Glosarium untuk membaca simbol, aturan inferensi, dan istilah dasar yang muncul 
       <p class="mus-glossary__read">dibaca sebagai: konsekuensi benar yang menyesatkan</p>
     </div>
     <div class="mus-glossary__body">
-      <p class="mus-glossary__meaning">Nama Level 11. Maksudnya bukan kesimpulan yang salah, tetapi konsekuensi valid yang tidak berguna untuk target.</p>
+      <p class="mus-glossary__meaning">Nama Level 11. Maksudnya konsekuensi valid yang tidak berguna untuk target.</p>
       <p class="mus-glossary__example">
         <span class="mus-glossary__label">Contoh</span>
         <code>P → Q</code> menghasilkan <code>Q</code>, tetapi target level adalah <code>R</code>

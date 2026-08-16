@@ -13,7 +13,7 @@ categories: ["Digital Works", "Reflection"]
 tags: ["muscrypt", "cipher", "writing", "digital expression", "interpretation"]
 ---
 
-Muscrypt was never created as a security tool, let alone as a rigid academic cryptography experiment. Muscrypt is not meant to hide state secrets or "high-level" data. Instead, this space was born from a simple but persistent curiosity: the relationship between text, meaning, and the way we interpret it.
+Muscrypt was never created as a security tool, let alone as a rigid academic cryptography experiment. this space was born from a simple but persistent curiosity: the relationship between text, meaning, and the way we interpret it.
 
 It is an experiment in form. A space where text is given the freedom to lock and unlock itself.
 
