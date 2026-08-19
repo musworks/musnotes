@@ -26,7 +26,7 @@
       {{- with $musnotesPage }}
       <a href="{{ .RelPermalink }}" class="garden-landing__card garden-landing__card--musnotes">
         <div class="garden-landing__card-media">
-          <img src="/images/musnotes-cover.svg" alt="{{ .Title }}">
+          <img src="/images/musnotes-cover.svg" alt="{{ .Title }}" width="419.25" height="297.75" loading="eager" decoding="async" fetchpriority="high">
         </div>
         <div class="garden-landing__card-copy">
           <p class="garden-landing__card-kicker">{{ cond (eq site.Language.Lang "id") "Catatanku" "Living notes" }}</p>
@@ -39,7 +39,7 @@
       {{- with $silvaNigraPage }}
       <a href="{{ .RelPermalink }}" class="garden-landing__card garden-landing__card--silva">
         <div class="garden-landing__card-media">
-          <img src="/images/silva-nigra-cover.svg" alt="{{ .Title }}">
+          <img src="/images/silva-nigra-cover.svg" alt="{{ .Title }}" width="419.25" height="297.75" loading="eager" decoding="async" fetchpriority="auto">
         </div>
         <div class="garden-landing__card-copy">
           <p class="garden-landing__card-kicker">{{ cond (eq site.Language.Lang "id") "Hutan imajiner" "Imagined forest" }}</p>
