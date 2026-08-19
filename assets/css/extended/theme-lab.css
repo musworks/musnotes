@@ -92,7 +92,8 @@ html[data-mus-theme="herbarium-lavender"][data-theme="dark"] {
     --mus-accent-soft: #819765;
     --mus-accent-wash: #4B5A3F;
     --mus-accent-mist: #2B3328;
-    --mus-lavender-night: #C7A8CC;
+    /* Dark-mode accent stays sage-led across navigation and interactive UI. */
+    --mus-lavender-night: #C8D99A;
 
     --bg-color: var(--mus-bg);
     --main-text: var(--mus-text);
@@ -141,12 +142,12 @@ html[data-mus-theme="herbarium-lavender"][data-theme="dark"] {
     --mus-decorative: var(--mus-lavender-night);
     --mus-focus: var(--focus-ring-strong);
     --mus-nav-bg: var(--mus-bg);
-    --mus-nav-surface: #28202B;
-    --mus-nav-text: #E9DFEA;
-    --mus-nav-active: #D8BCDC;
-    --mus-nav-border: rgba(199, 168, 204, 0.28);
-    --mus-nav-wash: rgba(199, 168, 204, 0.12);
-    --mus-nav-shadow: rgba(8, 5, 10, 0.28);
+    --mus-nav-surface: #20271D;
+    --mus-nav-text: #E8EFDF;
+    --mus-nav-active: #C8D99A;
+    --mus-nav-border: rgba(168, 191, 122, 0.28);
+    --mus-nav-wash: rgba(168, 191, 122, 0.12);
+    --mus-nav-shadow: rgba(8, 12, 6, 0.34);
     color-scheme: dark;
 }
 
@@ -165,7 +166,7 @@ html[data-mus-theme="herbarium-lavender"][data-theme="dark"] {
         --mus-accent-soft: #819765;
         --mus-accent-wash: #4B5A3F;
         --mus-accent-mist: #2B3328;
-        --mus-lavender-night: #C7A8CC;
+        --mus-lavender-night: #C8D99A;
 
         --bg-color: var(--mus-bg);
         --main-text: var(--mus-text);
@@ -214,12 +215,12 @@ html[data-mus-theme="herbarium-lavender"][data-theme="dark"] {
         --mus-decorative: var(--mus-lavender-night);
         --mus-focus: var(--focus-ring-strong);
         --mus-nav-bg: var(--mus-bg);
-        --mus-nav-surface: #28202B;
-        --mus-nav-text: #E9DFEA;
-        --mus-nav-active: #D8BCDC;
-        --mus-nav-border: rgba(199, 168, 204, 0.28);
-        --mus-nav-wash: rgba(199, 168, 204, 0.12);
-        --mus-nav-shadow: rgba(8, 5, 10, 0.28);
+        --mus-nav-surface: #20271D;
+        --mus-nav-text: #E8EFDF;
+        --mus-nav-active: #C8D99A;
+        --mus-nav-border: rgba(168, 191, 122, 0.28);
+        --mus-nav-wash: rgba(168, 191, 122, 0.12);
+        --mus-nav-shadow: rgba(8, 12, 6, 0.34);
         color-scheme: dark;
     }
 }
@@ -1453,7 +1454,7 @@ html[data-mus-theme="herbarium-lavender"][data-theme="dark"] .garden-landing__ca
     border-color: rgba(168, 191, 122, 0.16);
     background:
         linear-gradient(180deg, rgba(37, 43, 32, 0.76), rgba(21, 24, 18, 0.76)),
-        radial-gradient(circle at top right, rgba(199, 168, 204, 0.08), transparent 42%);
+        radial-gradient(circle at top right, rgba(168, 191, 122, 0.08), transparent 42%);
 }
 
 html[data-mus-theme="herbarium-lavender"][data-theme="dark"] .silva-archive {
@@ -1614,7 +1615,7 @@ html[data-mus-theme="herbarium-lavender"][data-theme="dark"] .post-content .mus-
     --flow-sage: var(--mus-accent);
     --flow-sage-soft: rgba(168, 191, 122, 0.09);
     --flow-plum: var(--mus-lavender-night);
-    --flow-plum-soft: rgba(199, 168, 204, 0.09);
+    --flow-plum-soft: rgba(168, 191, 122, 0.09);
     --flow-blue: color-mix(in srgb, var(--mus-accent) 46%, var(--mus-muted) 54%);
     --flow-blue-soft: rgba(168, 191, 122, 0.07);
     --flow-rose: var(--mus-accent-soft);
@@ -1670,12 +1671,12 @@ html[data-mus-theme="herbarium-lavender"][data-theme="dark"] .graph-explorer {
     --graph-tag-fill: rgba(129, 151, 101, 0.92);
     --graph-tag-stroke: rgba(214, 228, 170, 0.76);
     --graph-tag-label: rgba(239, 231, 218, 0.94);
-    --graph-category-fill: rgba(199, 168, 204, 0.78);
-    --graph-category-stroke: rgba(231, 211, 235, 0.72);
+    --graph-category-fill: rgba(168, 191, 122, 0.78);
+    --graph-category-stroke: rgba(214, 228, 170, 0.72);
     --graph-category-label: rgba(239, 231, 218, 0.94);
     --graph-edge-default: rgba(168, 191, 122, 0.34);
     --graph-edge-neighbor: rgba(168, 191, 122, 0.58);
-    --graph-edge-focus: rgba(211, 177, 216, 0.92);
+    --graph-edge-focus: rgba(200, 217, 154, 0.92);
     --graph-node-hover: rgba(168, 191, 122, 0.16);
     --graph-node-selected: rgba(168, 191, 122, 0.22);
     --graph-node-neighbor: rgba(168, 191, 122, 0.13);
@@ -1690,7 +1691,7 @@ html[data-mus-theme="herbarium-lavender"][data-theme="dark"] .graph-explorer {
     --graph-panel-bg-bottom: rgba(21, 24, 18, 0.96);
     --graph-canvas-grid: rgba(168, 191, 122, 0.065);
     --graph-canvas-glow-a: rgba(168, 191, 122, 0.09);
-    --graph-canvas-glow-b: rgba(199, 168, 204, 0.08);
+    --graph-canvas-glow-b: rgba(168, 191, 122, 0.08);
     --graph-canvas-base-top: rgba(37, 43, 32, 0.97);
     --graph-canvas-base-bottom: rgba(21, 24, 18, 0.99);
 }
