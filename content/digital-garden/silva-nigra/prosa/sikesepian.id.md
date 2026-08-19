@@ -18,7 +18,7 @@ dalam sebuah cerita yang ditulis oleh seorang penyendiri berpengalaman.
 Dia dipanggil begitu karena tak seorang pun menyadari dirinya kesepian,
 bahkan dirinya sendiri.
 
-Alasannya sederhana,
+Alasannya simpel,
 Dia belum pernah mendefinisikan "kesepian".
 
 Maka perempuan itu memutuskan untuk memulai perjalanan.
