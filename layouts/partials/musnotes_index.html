@@ -34,10 +34,6 @@
       {{- $topic := "" -}}
       {{- with .Params.categories }}
         {{- $topic = index . 0 -}}
-      {{- else }}
-        {{- with .Params.tags }}
-          {{- $topic = index . 0 -}}
-        {{- end }}
       {{- end }}
       {{- $summary := ((.Description | default .Summary) | plainify | htmlUnescape | replaceRE "\\s+" " ") -}}
       <article class="musnotes-note" role="listitem">
@@ -46,7 +42,7 @@
             <time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date | time.Format ":date_long" }}</time>
             {{- with $topic }}
             <span class="musnotes-note-meta__separator" aria-hidden="true">&middot;</span>
-            <span class="musnotes-note-meta__tag">{{ . }}</span>
+            <span class="musnotes-note-meta__category">{{ . }}</span>
             {{- end }}
           </div>
           <h2 class="musnotes-note-title">{{ .Title }}</h2>

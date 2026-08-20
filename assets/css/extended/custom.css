@@ -3570,7 +3570,7 @@ body:has(.musnotes-index) .main {
     line-height: 1;
 }
 
-.musnotes-note-meta__tag {
+.musnotes-note-meta__category {
     display: inline-flex;
     align-items: center;
     padding: 0.22rem 0.55rem 0.18rem;
@@ -3680,7 +3680,7 @@ body:has(.musnotes-index) .main {
     color: #efe5ea;
 }
 
-:root[data-theme="dark"] .musnotes-note-meta__tag {
+:root[data-theme="dark"] .musnotes-note-meta__category {
     border-color: rgba(214, 168, 188, 0.14);
     background: rgba(255, 255, 255, 0.04);
 }
