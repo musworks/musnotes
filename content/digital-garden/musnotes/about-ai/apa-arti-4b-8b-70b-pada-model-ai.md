@@ -23,19 +23,17 @@ Angka-angka ini memberikan gambaran kasar tentang kapasitas model. Semakin besar
 
 Angka ini sering muncul langsung setelah nama model. Misalnya, **Qwen3 8B** berarti varian Qwen3 dengan sekitar 8 miliar parameter. **Llama 3.1 70B** berarti varian Llama 3.1 dengan sekitar 70 miliar parameter. Sementara **Qwen2-72B** berarti varian Qwen2 dengan sekitar 72 miliar parameter.
 
-> Tanda hubung seperti pada `Qwen2-72B` atau `Llama-70B` bukan tanda negatif. Itu hanya pemisah antara nama model dan ukuran dimensinya.
-
 {{< mus-divider >}}
 
 ## Apa Itu Parameter?
 
 Dalam LLM, **parameter** adalah nilai numerik yang dipelajari oleh model selama proses *training*.
 
-Parameter bukan “fakta” yang disimpan satu per satu seperti isi kamus. Ia lebih mirip jaringan bobot matematis yang membantu model memperkirakan token berikutnya berdasarkan pola yang sudah dipelajari.
+Parameter itu mirip jaringan bobot matematis yang membantu model memperkirakan token berikutnya berdasarkan pola yang sudah dipelajari.
 
 Secara umum, semakin banyak jumlah parameter, semakin besar kapasitas model untuk menangkap pola bahasa, instruksi, pengetahuan, dan hubungan antar-konsep.
 
-Namun, ukuran model bukan satu-satunya penentu kualitas. Data *training*, arsitektur, proses *fine-tuning*, *alignment*, *context length*, dan cara model dijalankan juga sangat berpengaruh.
+Tapi, ukuran model bukan satu-satunya penentu kualitas. Data *training*, arsitektur, proses *fine-tuning*, *alignment*, *context length*, dan cara model dijalankan juga sangat berpengaruh.
 
 {{< mus-divider >}}
 
