@@ -5,38 +5,7 @@
 
 {{- range $page := $pages.ByTitle -}}
     {{- if and (not $page.Params.searchHidden) (ne $page.Layout "search") (ne $page.Layout "archives") (ne $page.Section "graph") -}}
-        {{- $tagNodes := slice -}}
         {{- $categoryNodes := slice -}}
-
-        {{- range $term := $page.GetTerms "tags" -}}
-            {{- $tagNodes = $tagNodes | append (dict
-                "id" (printf "tag:%s" (md5 $term.RelPermalink))
-                "kind" "tag"
-                "label" ($term.LinkTitle | default $term.Title)
-                "url" $term.RelPermalink
-            ) -}}
-        {{- end -}}
-
-        {{- if and (eq (len $tagNodes) 0) $page.Params.tags -}}
-            {{- $rawTags := slice -}}
-            {{- if reflect.IsSlice $page.Params.tags -}}
-                {{- $rawTags = $page.Params.tags -}}
-            {{- else -}}
-                {{- $rawTags = slice $page.Params.tags -}}
-            {{- end -}}
-            {{- range $raw := $rawTags -}}
-                {{- $label := trim (printf "%v" $raw) " " -}}
-                {{- if $label -}}
-                    {{- $slug := urlize $label -}}
-                    {{- $tagNodes = $tagNodes | append (dict
-                        "id" (printf "tag:%s" $slug)
-                        "kind" "tag"
-                        "label" $label
-                        "url" ((printf "/tags/%s/" $slug) | relLangURL)
-                    ) -}}
-                {{- end -}}
-            {{- end -}}
-        {{- end -}}
 
         {{- range $term := $page.GetTerms "categories" -}}
             {{- $categoryNodes = $categoryNodes | append (dict
@@ -77,7 +46,7 @@
             {{- end -}}
         {{- end -}}
 
-        {{- $relationCount := add (len $tagNodes) (len $categoryNodes) -}}
+        {{- $relationCount := len $categoryNodes -}}
         {{- if gt $relationCount 0 -}}
             {{- $postID := printf "post:%s" (md5 $page.RelPermalink) -}}
             {{- if not (index $seenNodes $postID) -}}
@@ -92,14 +61,6 @@
                     "themes" (or $page.Params.themes (slice))
                 ) -}}
                 {{- $seenNodes = merge $seenNodes (dict $postID true) -}}
-            {{- end -}}
-
-            {{- range $node := $tagNodes -}}
-                {{- if not (index $seenNodes $node.id) -}}
-                    {{- $nodes = $nodes | append $node -}}
-                    {{- $seenNodes = merge $seenNodes (dict $node.id true) -}}
-                {{- end -}}
-                {{- $links = $links | append (dict "source" $postID "target" $node.id "kind" "tag") -}}
             {{- end -}}
 
             {{- range $node := $categoryNodes -}}

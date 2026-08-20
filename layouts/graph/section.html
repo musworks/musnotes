@@ -39,7 +39,6 @@
             data-default-copy=""
             data-stats-template="{{ cond (eq site.Language.Lang "id") "{nodes} node - {links} relasi" "{nodes} nodes - {links} links" }}"
             data-type-post="{{ cond (eq site.Language.Lang "id") "Tulisan" "Post" }}"
-            data-type-tag="{{ cond (eq site.Language.Lang "id") "Tag" "Tag" }}"
             data-type-category="{{ cond (eq site.Language.Lang "id") "Kategori" "Category" }}"
             data-label-type="{{ cond (eq site.Language.Lang "id") "Tipe" "Type" }}"
             data-label-relations="{{ cond (eq site.Language.Lang "id") "Relasi" "Relations" }}"
@@ -51,14 +50,13 @@
             data-hover-state="{{ cond (eq site.Language.Lang "id") "Pratinjau" "Preview" }}"
             data-selected-state="{{ cond (eq site.Language.Lang "id") "Dipilih" "Selected" }}"
             data-reset-label="{{ cond (eq site.Language.Lang "id") "Reset fokus" "Reset focus" }}"
-            data-copy-post="{{ cond (eq site.Language.Lang "id") "Tulisan ini terhubung ke tag dan kategori yang membentuk konteksnya." "This post connects to the tags and categories that shape its context." }}"
-            data-copy-tag="{{ cond (eq site.Language.Lang "id") "Tag ini mengikat tulisan-tulisan yang tumbuh di tema serupa." "This tag ties together posts growing around a shared theme." }}"
+            data-copy-post="{{ cond (eq site.Language.Lang "id") "Tulisan ini terhubung ke kategori yang membentuk konteksnya." "This post connects to the categories that shape its context." }}"
             data-copy-category="{{ cond (eq site.Language.Lang "id") "Kategori ini menampung cabang tulisan yang lebih besar." "This category gathers a broader branch of related writing." }}"
         >
             <div class="graph-explorer__toolbar">
                 <div class="graph-explorer__framing">
                     <p class="graph-explorer__framing-title">{{ cond (eq site.Language.Lang "id") "Konstelasi eksperimental" "Experimental constellation" }}</p>
-                    <p class="graph-explorer__framing-copy">{{ cond (eq site.Language.Lang "id") "Ini adalah peta relasi eksperimental antara tulisan, tag, dan kategori. Ia dibuat sebagai ruang eksplorasi, bukan jalur navigasi utama. Jika kepadatannya terasa tidak nyaman, bagian ini boleh dilewati." "This is an experimental map of relationships between posts, tags, and categories. It is meant as an exploratory view, not the main navigation path. If the visual density feels uncomfortable, you can safely skip it." }}</p>
+                    <p class="graph-explorer__framing-copy">{{ cond (eq site.Language.Lang "id") "Ini adalah peta relasi eksperimental antara tulisan dan kategori. Ia dibuat sebagai ruang eksplorasi, bukan jalur navigasi utama. Jika kepadatannya terasa tidak nyaman, bagian ini boleh dilewati." "This is an experimental map of relationships between posts and categories. It is meant as an exploratory view, not the main navigation path. If the visual density feels uncomfortable, you can safely skip it." }}</p>
                 </div>
                 <div class="graph-explorer__meta">
                     <p class="graph-explorer__hint">{{ cond (eq site.Language.Lang "id") "Klik untuk fokus. Klik ganda tulisan untuk membuka. Seret untuk pan, gulir untuk zoom." "Click to focus. Double click a post to open. Drag to pan, scroll to zoom." }}</p>
@@ -79,7 +77,6 @@
                     </div>
                     <div class="graph-explorer__legend">
                         <span class="graph-legend__item graph-legend__item--post">{{ cond (eq site.Language.Lang "id") "Tulisan" "Posts" }}</span>
-                        <span class="graph-legend__item graph-legend__item--tag">{{ cond (eq site.Language.Lang "id") "Tag" "Tags" }}</span>
                         <span class="graph-legend__item graph-legend__item--category">{{ cond (eq site.Language.Lang "id") "Kategori" "Categories" }}</span>
                     </div>
                     <div class="graph-statusbar" data-graph-inspector>
@@ -100,7 +97,7 @@
             </div>
 
             <noscript>
-                <p class="graph-explorer__noscript">{{ cond (eq site.Language.Lang "id") "Graph ini membutuhkan JavaScript untuk dirender. Kamu masih bisa membuka taxonomy lewat halaman tags dan kategori." "This graph needs JavaScript to render. You can still browse the taxonomy through the tags and categories pages." }}</p>
+                <p class="graph-explorer__noscript">{{ cond (eq site.Language.Lang "id") "Graph ini membutuhkan JavaScript untuk dirender. Kamu masih bisa membuka halaman kategori." "This graph needs JavaScript to render. You can still browse the category pages." }}</p>
             </noscript>
         </div>
     </div>

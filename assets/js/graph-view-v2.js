@@ -37,7 +37,6 @@
     const resetLabel = root.dataset.resetLabel || "Reset focus";
     const typeLabels = {
         post: root.dataset.typePost || "Post",
-        tag: root.dataset.typeTag || "Tag",
         category: root.dataset.typeCategory || "Category"
     };
     const connectionLabel = root.dataset.labelRelated || "Connected";
@@ -48,24 +47,24 @@
     }
 
     const config = {
-        nodeRadius: { post: 5.6, tag: 8.3, category: 10.4 },
-        degreeBoost: { post: 0.22, tag: 0.3, category: 0.34 },
+        nodeRadius: { post: 5.6, category: 10.4 },
+        degreeBoost: { post: 0.22, category: 0.34 },
         maxRadiusBoost: 5.2,
         pickPadding: 12,
         worldPadding: 46,
         focusFade: 0.045,
         hoverFade: 0.045,
-        renderScale: { post: 0.84, tag: 0.95, category: 1.04 },
-        strokeWidth: { post: 0.9, tag: 1.2, category: 1.5 },
-        neighborOpacity: { post: 0.76, tag: 0.9, category: 0.98 },
+        renderScale: { post: 0.84, category: 1.04 },
+        strokeWidth: { post: 0.9, category: 1.5 },
+        neighborOpacity: { post: 0.76, category: 0.98 },
         view: { minScale: 0.15, maxScale: 6.0, fitPadding: 56 },
         force: {
             repulsionSame: 52,
             repulsionCross: 82,
             repulsionStrength: 15,
-            linkDistance: { tag: 96, category: 118 },
+            linkDistance: { category: 118 },
             linkStrength: 0.0032,
-            anchorPull: { post: 0.00105, tag: 0.00142, category: 0.00178 },
+            anchorPull: { post: 0.00105, category: 0.00178 },
             centerPull: 0.00052,
             damping: 0.9,
             alphaDecay: 0.985
@@ -76,8 +75,8 @@
             reduced: { iterations: 96, batchSize: 2, budgetMs: 2, alphaFloor: 0.24 }
         },
         labels: {
-            ambientDesktop: { max: 14, categories: 10, tags: 4, tagMinDegree: 4 },
-            ambientMobile: { max: 7, categories: 5, tags: 2, tagMinDegree: 5 },
+            ambientDesktop: { max: 14, categories: 10 },
+            ambientMobile: { max: 7, categories: 5 },
             neighborhoodDesktop: 10,
             neighborhoodMobile: 6
         }
@@ -156,12 +155,6 @@
         };
 
         state.palettes = {
-            tag: {
-                fill: read("--graph-tag-fill", "#94ad94"),
-                stroke: read("--graph-tag-stroke", "#708d70"),
-                label: read("--graph-tag-label", "#465a47"),
-                opacity: readNumber("--graph-tag-opacity", 0.82)
-            },
             category: {
                 fill: read("--graph-category-fill", "#a995a2"),
                 stroke: read("--graph-category-stroke", "#846d7c"),
@@ -215,7 +208,6 @@
 
     function anchorFor(kind) {
         if (kind === "category") return { x: 0, y: -60, spreadX: 180, spreadY: 120 };
-        if (kind === "tag") return { x: 0, y: -20, spreadX: 360, spreadY: 240 };
         return { x: 0, y: 80, spreadX: 520, spreadY: 380 };
     }
 
@@ -339,7 +331,7 @@
     function relatedNodesFor(node) {
         if (!node) return [];
 
-        const order = { category: 0, tag: 1, post: 2 };
+        const order = { category: 0, post: 1 };
         return Array.from(state.adjacency.get(node.id) || [])
             .map((id) => state.nodeMap.get(id))
             .filter(Boolean)
@@ -445,13 +437,8 @@
             .filter((node) => node.kind === "category")
             .sort(compareByDegreeThenLabel)
             .slice(0, policy.categories);
-        const tags = state.visibleNodes
-            .filter((node) => node.kind === "tag" && (state.degrees.get(node.id) || 0) >= policy.tagMinDegree)
-            .sort(compareByDegreeThenLabel)
-            .slice(0, policy.tags);
-
         state.ambientLabelIds = new Set(
-            [...categories, ...tags].slice(0, policy.max).map((node) => node.id)
+            categories.slice(0, policy.max).map((node) => node.id)
         );
     }
 
@@ -525,9 +512,7 @@
         const { deferSettling = false } = options;
         const filters = {
             all: (node) => true,
-            tags: (node) => node.kind === "tag",
-            categories: (node) => node.kind === "category",
-            "posts-tags": (node) => node.kind === "post" || node.kind === "tag"
+            categories: (node) => node.kind === "category"
         };
 
         const matcher = filters[state.activeFilter] || filters.all;
@@ -597,7 +582,7 @@
             const dx = target.x - source.x;
             const dy = target.y - source.y;
             const distance = Math.max(Math.sqrt(dx * dx + dy * dy), 1);
-            const desired = link.kind === "category" ? config.force.linkDistance.category : config.force.linkDistance.tag;
+            const desired = config.force.linkDistance.category;
             const spring = (distance - desired) * config.force.linkStrength * state.alpha;
             const fx = (dx / distance) * spring;
             const fy = (dy / distance) * spring;
@@ -897,7 +882,7 @@
                         ? 80 + Math.min(degree, 12)
                         : 60 + Math.min(degree, 12);
 
-        let fontSize = node.kind === "category" ? 12.6 : node.kind === "tag" ? 11.6 : 11;
+        let fontSize = node.kind === "category" ? 12.6 : 11;
         if (isMain) fontSize += 1.3;
         if (isLabeledNeighbor) fontSize += 0.35;
 
@@ -1275,7 +1260,7 @@
             const didDragNode = wasDraggingNode && state.pointerMoved;
             const modifierOpen = Boolean(releasedNode
                 && hasModifier(event)
-                && (releasedNode.kind === "tag" || releasedNode.kind === "category")
+                && releasedNode.kind === "category"
                 && releasedNode.url);
 
             if (state.pinchGesture) {
@@ -1377,7 +1362,7 @@
             const node = nearestNode(pointerPosition(event));
             debugLog("double click target", describeNode(node));
             if (!node) return;
-            if (node.kind === "post" || node.kind === "tag" || node.kind === "category") {
+            if (node.kind === "post" || node.kind === "category") {
                 openNode(node, { reason: "double-click" });
             }
         });
