@@ -21,7 +21,7 @@ Di sinilah bias kekuasaan bekerja. Angka tidak hanya menjadi alat ukur, tetapi j
 
 Esai ini tidak berangkat dari anggapan bahwa semua pertumbuhan ekonomi pasti buruk. Yang ingin aku bongkar adalah cara pertumbuhan diperlakukan sebagai tanda kemajuan yang hampir mutlak, sementara kerusakan ekologis yang menyertainya sering disingkirkan sebagai biaya luar, efek samping, atau sekadar eksternalitas. Dengan sistem hitung seperti ini, kerusakan bisa terlihat seperti pertumbuhan bukan karena realitasnya berubah, tapi karena metriknya terlalu sempit untuk melihat apa yang sedang hilang.
 
-Seperti yang sudah kubahas dalam [esai sebelumnya](./ekonomi-bukan-lawan-ekosistem/), ekonomi bukan sistem yang berdiri di luar ekosistem, ekonomi adalah sistem turunan yang bergantung pada stabilitas biosfer.
+Seperti yang sudah kubahas dalam [esai sebelumnya](./ekonomi%20bukan%20lawan%20ekosistem.id.md), ekonomi bukan sistem yang berdiri di luar ekosistem, ekonomi adalah sistem turunan yang bergantung pada stabilitas biosfer.
 
 {{< mus-divider >}}
 

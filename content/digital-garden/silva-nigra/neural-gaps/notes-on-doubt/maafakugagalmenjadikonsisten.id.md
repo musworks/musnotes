@@ -138,7 +138,7 @@ Aku lupa menanyakan: di “ruang” seperti apa identitas itu berdiri?
 
 Hipotesisku masih sama.
 
-[Identitas](../identitas/) lebih dekat dengan proses biologis dan kognitif yang terus bergerak, bukan label statis yang harus selalu konsisten.
+[Identitas](./identitas.id.md) lebih dekat dengan proses biologis dan kognitif yang terus bergerak, bukan label statis yang harus selalu konsisten.
 
 Jadi mungkin pertanyaannya bukan lagi:
 

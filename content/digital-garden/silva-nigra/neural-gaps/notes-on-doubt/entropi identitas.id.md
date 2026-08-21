@@ -34,13 +34,13 @@ Tapi orang itu rebel, dia menolak label itu dan kemunkinan jadi melebar. Ia memb
 
 Dari kacamata orang luar yang sering mereduksi identitas jadi label, perubahan ini mungkin terlihat tidak fokus, bahkan seperti keluar jalur. tapi seseorang itu tidak sedang menghancurkan identitasnya. Ia hanya sedang memperbesar $\Omega$, membiarkan dirinya menjelajah lebih banyak kemungkinan sebelum menetap pada bentuk tertentu. identitas awal itu munkin tidak pernah ada karena "anak pesantren" itu label yang hanya tampak stabil karena ruang kemungkinannya belum terbuka.
 
-Bagi otak primata kita kemunkinan yang terlalu luas tidak selalu terasa nyaman. Di tengah banyaknya versi diri yang mungkin, kita sering terdorong untuk menyederhanakan diri sendiri. Label menjadi semacam titik istirahat, sesuatu yang bisa dipegang ketika kompleksitas mulai terasa melelahkan. Ia bekerja seperti [noise](../noiseidentitas/) yang mengaburkan keragaman kemungkinan menjadi satu pola yang mudah dikenali. Dunia sosial pun bekerja dengan cara yang serupa: ia lebih mudah memahami sesuatu yang tetap, konsisten, dan dapat diprediksi.
+Bagi otak primata kita kemunkinan yang terlalu luas tidak selalu terasa nyaman. Di tengah banyaknya versi diri yang mungkin, kita sering terdorong untuk menyederhanakan diri sendiri. Label menjadi semacam titik istirahat, sesuatu yang bisa dipegang ketika kompleksitas mulai terasa melelahkan. Ia bekerja seperti [noise](./noiseidentitas.id.md) yang mengaburkan keragaman kemungkinan menjadi satu pola yang mudah dikenali. Dunia sosial pun bekerja dengan cara yang serupa: ia lebih mudah memahami sesuatu yang tetap, konsisten, dan dapat diprediksi.
 
 Ouh kalau ada pertanyaannya "siapa seseorang yang di jadikan contoh itu?", aku kasih tau, dia adalah yang menulis artikel ini di laptop 15 inci.
 
 {{< mus-divider >}}
 
-Aku pernah menyatakan bahwa [otak dan dunia saling berimplikasi.](../identitas/) Cara kita memandang diri tidak pernah sepenuhnya lahir dari dalam. Cara pandang itu terbentuk dari banyak informasi yang diterima dari lingkungan. Jika dunia di sekitar kita memiliki $\Omega$ yang tinggi, dengan banyak kemungkinan yang terus bergeser, apa yang terjadi ketika pandangan kita terhadap diri justru dibekukan pada kemungkinan yang sempit?
+Aku pernah menyatakan bahwa [otak dan dunia saling berimplikasi.](./identitas.id.md) Cara kita memandang diri tidak pernah sepenuhnya lahir dari dalam. Cara pandang itu terbentuk dari banyak informasi yang diterima dari lingkungan. Jika dunia di sekitar kita memiliki $\Omega$ yang tinggi, dengan banyak kemungkinan yang terus bergeser, apa yang terjadi ketika pandangan kita terhadap diri justru dibekukan pada kemungkinan yang sempit?
 
 Ketidaksinkronan inilah yang perlahan memicu krisis. Label memang terasa nyaman karena ia mereduksi kemungkinan dan menciptakan keteraturan lokal. Namun pada saat yang sama, ia membuat identitas menjadi kaku di tengah lingkungan yang terus berubah. Dunia bergerak dengan entropi tinggi, sementara kita mencoba bertahan dalam konfigurasi yang tetap.
 

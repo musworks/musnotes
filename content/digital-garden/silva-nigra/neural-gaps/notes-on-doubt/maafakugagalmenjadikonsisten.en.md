@@ -143,7 +143,7 @@ I forgot to ask: in what kind of "space" does identity stand?
 
 My hypothesis remains the same.
 
-[Identity](../identitas/) is closer to a biological and cognitive process that is constantly in motion, rather than a static label that must always remain consistent.
+[Identity](./identitas.en.md) is closer to a biological and cognitive process that is constantly in motion, rather than a static label that must always remain consistent.
 
 So perhaps the question is no longer:
 

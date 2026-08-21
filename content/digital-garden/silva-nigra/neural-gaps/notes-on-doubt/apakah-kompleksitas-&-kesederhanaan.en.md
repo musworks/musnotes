@@ -1,7 +1,7 @@
 ---
 title: "Is a More Complex Explanation More True?"
 date: 2026-08-20T00:00:00+07:00
-draft: true
+draft: false
 math: false
 type: "garden-note"
 summary: "On model complexity, the appeal of explanations that sound sophisticated, and why having more variables does not automatically make an explanation more true."
@@ -34,7 +34,7 @@ Meanwhile, Model B explains:
 
 Model B sounds much cooler. 😭
 
-To me, B is clearly the more complex explanation. But its complexity doesn't tell us whether the model is right or wrong.
+To me, B is clearly the more complex explanation. But its complexity doesn't tell us whether the model is true or not.
 
 Model B has something like an *aesthetic of explanation*. It sounds scientific because it contains many variables, many causal relationships, and many details. From there, I can easily make the following leap:
 
@@ -80,6 +80,8 @@ But now the question becomes:
 
 What if 17 of them have no replicable effect?
 
+What if some of them don't have a consistent definition?
+
 What if 5 of the factors are actually consequences of Y rather than independent causes?
 
 What if some of the variables merely make the model look more complete without improving its ability to explain or predict anything?
@@ -94,26 +96,4 @@ A model does not have to include everything that might influence a phenomenon, b
 
 But leaving variables out can also become a problem if those variables turn out to be important for explaining the phenomenon or cause the model's predictions to fail when the context changes.
 
-## What Gives Us Reason to Trust a Model?
-
-Model A can be very simple. But if the relationship between X and Y can actually be observed, tested, and used to produce predictions that correspond with reality, its simplicity does not make the model any less true.
-
-Conversely, Model B might contain dozens of variables and interactions that sound extremely convincing. But if most of those variables lack strong empirical grounding, cannot be tested, or do not make the model fit observations any better, that complexity gives us no additional reason to trust it.
-
-Perhaps a model becomes stronger when it can explain or predict something that actually occurs, when its assumptions can be tested, and when its results continue to agree with the available evidence.
-
-But even that does not mean the model itself is reality.
-
-A model is still an abstraction. It takes certain aspects of something much larger and leaves other aspects out so that a particular question can be answered.
-
-Because of this, perhaps the questions **“Which model is more complex?”** and **“Which model is more true?”** are actually two different questions.
-
-Complexity tells us something about the structure of a model. Truth, or at least how strongly we have reason to trust a model, depends more on its relationship with evidence and the reality it is trying to explain.
-
-And perhaps this is where I have been mistaken all along.
-
-I often treated the difficulty of understanding an explanation as a sign that the explanation was deeper. I also sometimes treated simplicity as a sign that something must be missing.
-
-But something simple might be the result of a long process of understanding a problem.
-
-Meanwhile, something complex might simply be a collection of assumptions that have never really been examined.
+### So what gives us a reason to trust a model? [coming soon]

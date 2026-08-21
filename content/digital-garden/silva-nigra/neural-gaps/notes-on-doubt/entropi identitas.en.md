@@ -34,13 +34,13 @@ But that person was a rebel. He rejected the label, and his possibilities began 
 
 From the perspective of an outsider who often reduces identity to a simple label, this change might look "unfocused" or even like they've lost their way. But that person isn't destroying his identity. He is simply enlarging $\Omega$, allowing himself to explore more possibilities before settling on a specific form. Perhaps that initial identity never truly existed; the "boarding school kid" was just a label that appeared stable only because the space of possibility hadn't been opened yet.
 
-For our primate brains, vast possibilities aren't always comfortable. In the midst of so many potential versions of ourselves, we feel an urge to simplify. Labels become a sort of resting point—something to hold onto when complexity starts to feel exhausting. It works like the [noise](../noiseidentitas/) that blurs the diversity of possibilities into a single, easily recognizable pattern. The social world works much the same way: it prefers to understand things that are fixed, consistent, and predictable.
+For our primate brains, vast possibilities aren't always comfortable. In the midst of so many potential versions of ourselves, we feel an urge to simplify. Labels become a sort of resting point—something to hold onto when complexity starts to feel exhausting. It works like the [noise](./noiseidentitas.en.md) that blurs the diversity of possibilities into a single, easily recognizable pattern. The social world works much the same way: it prefers to understand things that are fixed, consistent, and predictable.
 
 Oh, and if you’re wondering who the person in this example is? I’ll tell you: it’s the one typing this article on a 15-inch laptop.
 
 {{< mus-divider >}}
 
-I once stated that [the brain and the world are mutually implicated.](../identitas/) The way we view ourselves is never entirely born from within. That perspective is formed by the wealth of information we receive from our environment. If the world around us has a high $\Omega$, with possibilities constantly shifting, what happens when our view of ourselves is frozen into a narrow possibility?
+I once stated that [the brain and the world are mutually implicated.](./identitas.en.md) The way we view ourselves is never entirely born from within. That perspective is formed by the wealth of information we receive from our environment. If the world around us has a high $\Omega$, with possibilities constantly shifting, what happens when our view of ourselves is frozen into a narrow possibility?
 
 This desynchronization is what slowly triggers a crisis. Labels feel comfortable because they reduce possibility and create local order. But at the same time, they make an identity rigid in the face of a constantly changing environment. The world moves with high entropy, while we try to survive in a fixed configuration.
 

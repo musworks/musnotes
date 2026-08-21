@@ -21,7 +21,7 @@ This is where the bias of power works quietly. Numbers are not only tools of mea
 
 This essay does not begin from the assumption that all economic growth is inherently bad. What I want to examine is the way growth is treated almost as an absolute sign of progress, while the ecological damage that accompanies it is often pushed aside as an external cost, a side effect, or merely an externality. Under this kind of accounting system, destruction can appear as growth not because reality has changed, but because the metric is too narrow to see what is being lost.
 
-As I discussed in [the previous essay](./ekonomi-bukan-lawan-ekosistem/), the economy is not a system that stands outside the ecosystem. It is a derivative system that depends on the stability of the biosphere.
+As I discussed in [the previous essay](./ekonomi%20bukan%20lawan%20ekosistem.en.md), the economy is not a system that stands outside the ecosystem. It is a derivative system that depends on the stability of the biosphere.
 
 {{< mus-divider >}}
 

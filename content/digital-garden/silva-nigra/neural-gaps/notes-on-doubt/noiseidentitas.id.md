@@ -7,7 +7,7 @@ categories: ["Identity", "philosophy","social narratives" ]
 tags: ["identity","social narratives", "Human Brain", "perception"]
 ---
 
-Di artikel sebelumnya, aku menyatakan bahwa [identitas](../identitas/) adalah proses yang terus bergerak, yang menggembangkan asumsi kita terhadap diri sendiri. Namun, pertanyaan itu belum selesai: bagaimana jika identitas justru merupakan label yang dilekatkan oleh pihak luar? 
+Di artikel sebelumnya, aku menyatakan bahwa [identitas](./identitas.id.md) adalah proses yang terus bergerak, yang menggembangkan asumsi kita terhadap diri sendiri. Namun, pertanyaan itu belum selesai: bagaimana jika identitas justru merupakan label yang dilekatkan oleh pihak luar? 
 
 Untuk memahaminya, kita bisa melihat bagaimana identitas umumnya diverifikasi. Dalam kehidupan sehari-hari, identitas sering kali direduksi menjadi data seperti nama, tempat lahir, status,atau pekerjaan. Seolah-olah dengan data itu seseorang sudah bisa "dipahami."
 
