@@ -8,7 +8,7 @@ aliases:
 math: false
 type: "garden-note"
 summary: "Meroblastic cleavage adalah pembelahan parsial pada telur dengan yolk sangat besar, dan dapat berlangsung secara diskoidal atau superfisial tergantung arsitektur yolk dan letak sitoplasma aktif."
-categories: ["Biologi", "Embriologi"]
+categories: ["Biology", "Embryology"]
 tags: ["embryology", "meroblastic cleavage", "discoidal cleavage", "superficial cleavage", "blastodisc", "yolk"]
 ---
 

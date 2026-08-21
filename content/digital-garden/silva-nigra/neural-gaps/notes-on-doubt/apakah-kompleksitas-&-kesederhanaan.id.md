@@ -30,7 +30,7 @@ Model A menjelaskan:
 
 Sedangkan Model B menjelaskan:
 
-> “Kecenderungan X muncul karena 24 faktor psikologis yang disebabkan oleh 50 faktor sosial, terdiri dari 30 faktor ekonomi dan politik, 20 faktor budaya, serta beberapa parameter ekologis seperti iklim yang memengaruhi temperatur, biodiversitas yang berkaitan dengan noise dari serangga dan burung di lingkungan, polusi udara, polusi suara, dan polusi visual dari kegiatan manusia di sekitarnya.”
+>“Kecenderungan X muncul karena 24 faktor psikologis yang disebabkan oleh 50 faktor sosial, terdiri dari 30 faktor ekonomi dan politik, 20 faktor budaya yang dipengaruhi beberapa parameter ekologis seperti iklim yang memengaruhi temperatur, biodiversitas yang memengaruhi noise dari serangga dan burung di lingkungan, polusi udara, polusi suara, dan polusi visual dari kegiatan manusia di sekitarnya.”
 
 Model B terdengar jauh lebih keren. 😭
 

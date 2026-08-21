@@ -7,7 +7,7 @@ aliases:
 math: false
 type: "garden-note"
 summary: "Animal pole dan vegetal pole adalah dua kutub pada telur yang membantu menjelaskan distribusi yolk, lokasi pembelahan, dan pola awal perkembangan embrio."
-categories: ["Biologi", "Embriologi"]
+categories: ["Biology", "Embryology"]
 tags: ["animal pole", "vegetal pole", "yolk", "cleavage"]
 ---
 

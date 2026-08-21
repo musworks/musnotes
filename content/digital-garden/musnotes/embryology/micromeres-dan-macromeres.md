@@ -7,7 +7,7 @@ type: "garden-note"
 aliases:
   - /digital-garden/musnotes/micromeres-dan-macromeres/
 summary: "Micromeres dan macromeres adalah blastomere kecil dan besar yang muncul ketika cleavage menghasilkan sel anak dengan ukuran tidak sama, terutama pada unequal holoblastic cleavage."
-categories: ["Biologi", "Embriologi"]
+categories: ["Biology", "Embryology"]
 tags: ["cleavage", "animal pole", "vegetal pole"]
 ---
 

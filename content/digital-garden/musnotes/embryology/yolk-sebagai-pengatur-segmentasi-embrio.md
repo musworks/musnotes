@@ -8,7 +8,7 @@ aliases:
 math: false
 type: "garden-note"
 summary: "Yolk bukan hanya cadangan makanan embrio, tetapi juga faktor fisik yang menentukan ritme, lokasi, dan pola segmentasi."
-categories: ["Biologi", "Embriologi"]
+categories: ["Biology", "Embryology"]
 tags: ["embryology", "yolk", "cleavage", "embryonic-development"]
 ---
 

@@ -8,7 +8,7 @@ aliases:
 math: false
 type: "garden-note"
 summary: "Telur ayam mengalami discoidal meroblastic cleavage karena yolk (kuning telur) nya sangat besar, sehingga pembelahan hanya dapat terjadi pada blastodisc di kutub animal."
-categories: ["Biologi", "Embriologi"]
+categories: ["Biology", "Embryology"]
 tags: ["meroblastic cleavage", "discoidal cleavage", "blastodisc", "yolk"]
 ---
 

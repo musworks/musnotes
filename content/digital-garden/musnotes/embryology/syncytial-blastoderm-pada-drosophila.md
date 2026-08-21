@@ -5,7 +5,7 @@ draft: false
 math: false
 type: "garden-note"
 summary: "Syncytial blastoderm adalah tahap awal perkembangan Drosophila ketika banyak inti berada dalam satu sitoplasma bersama sebelum terbentuk batas sel individual."
-categories: ["Biologi", "Embriologi"]
+categories: ["Biology", "Embryology"]
 tags: ["superficial cleavage", "meroblastic cleavage", "centrolecithal"]
 ---
 

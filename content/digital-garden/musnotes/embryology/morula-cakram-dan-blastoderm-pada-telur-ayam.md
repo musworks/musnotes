@@ -8,7 +8,7 @@ aliases:
 math: false
 type: "garden-note"
 summary: "Pada telur ayam, cleavage hanya terjadi pada blastodisc sehingga menghasilkan massa blastomere berbentuk cakram yang kemudian berkembang menjadi blastoderm di atas massa yolk."
-categories: ["Biologi", "Embriologi"]
+categories: ["Biology", "Embryology"]
 tags: ["embryology","blastodisc", "blastoderm", "blastomere", "subgerminal cavity"]
 ---
 

@@ -30,7 +30,7 @@ Model A explains:
 
 Meanwhile, Model B explains:
 
-> “The tendency for X emerges from 24 psychological factors caused by 50 social factors, consisting of 30 economic and political factors, 20 cultural factors, as well as several ecological parameters such as climate affecting temperature, biodiversity associated with noise from insects and birds in the environment, air pollution, noise pollution, and visual pollution from surrounding human activity.”
+> “The tendency for X emerges from 24 psychological factors caused by 50 social factors, consisting of 30 economic and political factors, 20 cultural factors influenced by several ecological parameters such as climate affecting temperature, biodiversity affecting noise from insects and birds in the environment, air pollution, noise pollution, and visual pollution from surrounding human activity.”
 
 Model B sounds much cooler. 😭
 
