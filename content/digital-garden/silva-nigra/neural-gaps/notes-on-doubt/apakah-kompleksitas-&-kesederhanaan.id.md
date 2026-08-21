@@ -14,7 +14,7 @@ Sore ini aku tiba-tiba kepikiran tentang ada individu yang otomatis percaya sebu
 
 Kemudian aku bertanya-tanya: apa sebenarnya maksudnya sederhana? Apa itu kompleksitas? Apakah penjelasan yang lebih kompleks lebih benar?
 
-Aku juga tidak tahu apakah ada indikator kompleksitas yang seluruh populasi manusia akan sepakati. Tapi secara intuitif, aku merasa sebuah jawaban atau penjelasan menjadi lebih kompleks ketika melibatkan banyak variabel sekaligus interaksi di antara variabel-variabelnya, sampai kita membutuhkan lebih banyak ATP untuk memprosesnya. 
+Aku juga tidak tahu apakah ada indikator kompleksitas yang seluruh populasi manusia akan sepakati. Tapi secara intuitif, aku merasa sebuah jawaban atau penjelasan menjadi lebih kompleks ketika melibatkan banyak variabel sekaligus interaksi di antara variabel-variabelnya, sampai kita membutuhkan lebih banyak energi untuk memprosesnya. 
 
 Jika sederhana adalah kebalikan dari kompleks, maka model yang sederhana mungkin merupakan model yang membuang variabel yang dianggap tidak relevan untuk menjawab pertanyaan tertentu. Model seperti ini mungkin dapat dipahami secara intuitif oleh penanyanya.
 

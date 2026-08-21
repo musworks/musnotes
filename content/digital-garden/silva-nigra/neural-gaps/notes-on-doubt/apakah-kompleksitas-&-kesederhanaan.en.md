@@ -14,7 +14,7 @@ This afternoon, I suddenly started thinking about how some people automatically 
 
 Then I started wondering: what does *simple* actually mean? What is complexity? Is a more complex explanation more true?
 
-I also don't know whether there is any measure of complexity that the entire human population would agree on. But intuitively, I feel that an answer or explanation becomes more complex when it involves many variables and the interactions between them at once, to the point where we need to spend more ATP processing it.
+I also don't know whether there is any measure of complexity that the entire human population would agree on. But intuitively, I feel that an answer or explanation becomes more complex when it involves many variables and the interactions between them at once, to the point where we need to spend more cognitive resources processing it.
 
 If simplicity is the opposite of complexity, then a simple model might be a model that discards variables considered irrelevant to answering a particular question. Such a model might even be intuitively understandable to the person asking the question.
 
