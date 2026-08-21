@@ -1,7 +1,7 @@
 ---
 title: "Apakah Penjelasan yang Lebih Kompleks Lebih Benar?"
 date: 2026-08-20T00:00:00+07:00
-draft: false
+draft: true
 math: false
 type: "garden-note"
 summary: "Tentang kompleksitas model, daya tarik penjelasan yang terdengar sophisticated, dan mengapa banyaknya variabel tidak otomatis membuat sebuah penjelasan lebih benar."

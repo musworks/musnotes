@@ -1,7 +1,7 @@
 ---
 title: "Is a More Complex Explanation More True?"
 date: 2026-08-20T00:00:00+07:00
-draft: false
+draft: true
 math: false
 type: "garden-note"
 summary: "On model complexity, the appeal of explanations that sound sophisticated, and why having more variables does not automatically make an explanation more true."
