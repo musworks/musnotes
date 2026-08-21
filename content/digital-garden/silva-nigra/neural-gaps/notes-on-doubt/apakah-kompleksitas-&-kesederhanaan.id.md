@@ -96,5 +96,5 @@ Sebuah model tidak harus memasukkan segala sesuatu yang mungkin memengaruhi feno
 
 Tetapi mengabaikan variabel juga bisa menjadi masalah jika variabel tersebut ternyata penting untuk menjelaskan fenomena atau membuat prediksi model gagal ketika konteks berubah.
 
-### Lalu apa yang memberi kita alasan untuk mempercayai sebuah model? [coming soon]
+### Lalu [apa yang memberi kita alasan untuk mempercayai sebuah model?](./apa-yg-memberi-alasan-mempercayai-sebuah-model.id.md)
 

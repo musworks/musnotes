@@ -20,6 +20,8 @@ If simplicity is the opposite of complexity, then a simple model might be a mode
 
 But I still don't quite get it. So I tried a thought experiment.
 
+{{< mus-divider >}}
+
 ## Two Models
 
 Imagine there are two models. Model A and Model B are trying to answer the same question.
@@ -70,6 +72,8 @@ So, **“hard to understand” is not a reliable indicator of a model's complexi
 
 And yes, at this point I am judging my own explanation of Model B to be elegant. 😌
 
+{{< mus-divider >}}
+
 ## Are All Those Variables Necessary?
 
 Model B looks more complex.
@@ -96,4 +100,4 @@ A model does not have to include everything that might influence a phenomenon, b
 
 But leaving variables out can also become a problem if those variables turn out to be important for explaining the phenomenon or cause the model's predictions to fail when the context changes.
 
-### So what gives us a reason to trust a model? [coming soon]
+### So [what gives us a reason to trust a model](./apa-yg-memberi-alasan-mempercayai-sebuah-model.en.md)

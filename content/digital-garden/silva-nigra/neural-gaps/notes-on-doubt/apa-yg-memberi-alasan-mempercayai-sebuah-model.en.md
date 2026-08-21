@@ -10,7 +10,7 @@ featured: true
 themes: ["epistemology"]
 ---
 
-My previous note [ended](./apakah-kompleksitas-&-kesederhanaan.id.md) with a question: **what gives us reason to trust a model?**
+My previous note [ended](./apakah-kompleksitas-&-kesederhanaan.en.md) with a question: **what gives us reason to trust a model?**
 
 At first, I thought this question would lead me directly into a discussion about evidence, prediction, or scientific methods. But before I even got there, I stumbled over a word I had used in the Indonesian version. And that word was “benar.”
 
