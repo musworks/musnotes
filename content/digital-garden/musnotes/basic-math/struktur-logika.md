@@ -112,7 +112,7 @@ Di titik ini, proposisi mulai terlihat seperti arsitektur kecil: satu klaim bisa
 
 {{< mus-divider >}}
 
-## 📚 References & Context
+##  References & Context
 
 * Catatan ini merupakan lanjutan dari pembahasan tentang proposisi dan nilai kebenarannya.
 * Fokus utamanya adalah membedakan proposisi atomik dan proposisi molekuler berdasarkan struktur logisnya.

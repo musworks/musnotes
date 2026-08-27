@@ -191,10 +191,10 @@ Bedanya, pada **equal holoblastic cleavage**, ukuran blastomere relatif seragam.
 
 ## Shortcut Ingatan
 
-> 💡 **Equal = Same**  
+>  **Equal = Same**  
 > Yolk tersebar rata → pembelahan lebih “adil” → blastomeres relatif sama besar.
 
-> 💡 **Unequal = Different**  
+>  **Unequal = Different**  
 > Yolk menumpuk di bawah atau vegetal pole → pembelahan bawah melambat → sel bawah besar, sel atas kecil.
 
 {{< mus-divider >}}

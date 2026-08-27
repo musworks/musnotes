@@ -53,6 +53,6 @@ Karena itu, dua kalimat bisa berbeda secara sintaksis tetapi tetap menyampaikan 
 
 {{< mus-divider >}}
 
-### 📚 References & Context
+###  References & Context
 * These notes are based on various digital sources (Classical Logic (Stanford Encyclopedia of Philosophy) & Other open resources).
 * All sources were compiled and synthesised using **NotebookLM** as a tool for reading and organising ideas.

@@ -187,10 +187,10 @@ Pada segmentasi holoblastik, alur pembelahan dapat masuk ke seluruh bagian zigot
 
 ## Shortcut Ingatan
 
-> 💡 **Holo = Whole**  
+>  **Holo = Whole**  
 > Seluruhnya membelah karena yolk-nya relatif “ramah”.
 
-> 💡 **Mero = Merely**  
+>  **Mero = Merely**  
 > Hanya sebagian kecil yang mampu membelah karena terganjal yolk raksasa.
 
 {{< mus-divider >}}

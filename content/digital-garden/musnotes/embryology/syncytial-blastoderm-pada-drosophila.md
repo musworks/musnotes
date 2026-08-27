@@ -15,7 +15,7 @@ Yang terjadi lebih unik: **nucleus membelah berkali-kali**, tetapi sitoplasma be
 
 Akibatnya, terbentuk satu massa sitoplasma besar yang berisi banyak inti. Kondisi seperti ini disebut **syncytium**.
 
-> 🧠 Banyak inti, satu sitoplasma bersama. Seperti ruang kerja bersama, tapi isinya nucleus semua.
+> Banyak inti, satu sitoplasma bersama. Seperti ruang kerja bersama, tapi isinya nucleus semua.
 
 {{< mus-divider >}}
 
@@ -158,13 +158,13 @@ Jadi, jangan membayangkan syncytial blastoderm sebagai “tidak membelah”. Leb
 
 ## Shortcut Ingatan
 
-> 💡 **Syncytial = banyak inti dalam satu sitoplasma**
+>  **Syncytial = banyak inti dalam satu sitoplasma**
 > Belum ada batas sel individual yang lengkap.
 
-> 💡 **Drosophila = superficial cleavage**
+>  **Drosophila = superficial cleavage**
 > Pembelahan akhirnya tampak di permukaan.
 
-> 💡 **Cellularization = pemasangan sekat**
+>  **Cellularization = pemasangan sekat**
 > Dari banyak nucleus bersama menjadi sel-sel individual.
 
 {{< mus-divider >}}

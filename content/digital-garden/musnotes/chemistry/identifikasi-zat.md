@@ -132,7 +132,7 @@ Kimia dasar memang kadang seperti interogasi halus terhadap materi. Bedanya, zat
 
 {{< mus-divider >}}
 
-## 📚 References & Context
+##  References & Context
 
 * Catatan ini berasal dari catatan Obsidian lama tentang identifikasi zat.
 * Catatan ini dirapikan ulang untuk digital garden sebagai pengantar cara membedakan unsur, senyawa, dan campuran.

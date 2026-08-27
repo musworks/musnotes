@@ -211,7 +211,7 @@ Jadi, larutan tersebut memiliki konsentrasi **5% b/v**.
 
 {{< mus-divider >}}
 
-## 📚 References & Context
+## References & Context
 
 * Catatan ini berasal dari catatan Obsidian lama tentang solutions and their properties.
 * Catatan ini dirapikan ulang untuk digital garden sebagai pengantar kimia dasar tentang larutan, sifat larutan, dan konsentrasi.

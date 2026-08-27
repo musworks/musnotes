@@ -30,6 +30,6 @@ Pada awal perkembangannya, ekologi lebih banyak di pahami sebagai bagian dari _n
 
 {{< mus-divider >}}
 
-### 📚 References & Context
+### References & Context
 * These notes are based on various digital sources on basic ecology and the history of its concepts.
 * All sources were compiled and synthesised using **NotebookLM** as a tool for reading and organising ideas.*

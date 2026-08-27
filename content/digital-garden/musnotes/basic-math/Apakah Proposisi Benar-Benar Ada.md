@@ -81,7 +81,7 @@ Ia mungkin bukan benda di alam semesta fisik. Tetapi dalam ruang logika, dia ber
 
 {{< mus-divider >}}
 
-## 📚 References & Context
+##  References & Context
 
 * Catatan ini merupakan refleksi setelah pembahasan tentang proposisi, nilai kebenaran, dan struktur atomik-molekuler.
 * Fokus utamanya adalah status ontologis proposisi: apakah proposisi harus dianggap sebagai entitas abstrak, atau cukup dipahami sebagai alat analisis dalam logika dan filsafat bahasa.

@@ -79,7 +79,7 @@ Tanpa kemungkinan nilai kebenaran, sebuah ungkapan mungkin tetap bermakna, indah
 
 {{< mus-divider >}}
 
-## 📚 References & Context
+## References & Context
 
 * Catatan ini disusun sebagai lanjutan dari pembahasan tentang proposisi sebagai bentuk makna.
 * Fokus catatan ini adalah syarat nilai kebenaran sebagai ciri dasar proposisi dalam logika klasik.

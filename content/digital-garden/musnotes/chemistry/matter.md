@@ -25,7 +25,7 @@ Karena materi harus memiliki massa dan menempati ruang, tidak semua hal dalam pe
 
 Emosi, gagasan, kenangan, dan rasa ingin tahu tidak termasuk materi secara fisik. Mereka tidak memiliki massa atau volume seperti air, batu, atau udara.
 
-> 🦋 **Butterfly Devil’s Whisper:**
+>  **Butterfly Devil’s Whisper:**
 > “So… emotions don’t count as matter, huh? Too bad. I had massive feelings.”
 
 ## Sifat-Sifat Materi
@@ -79,7 +79,7 @@ Contohnya adalah massa, volume, panjang, dan energi. Jika jumlah air bertambah, 
 ## Tipe materi & campuran
 Materi di alam semesta dikelompokkan ke dalam zat murni (*pure substance*) atau dalam bentuk campuran (*mixtures*).
 
-### 🧪 Types of Matter (pure substances)
+###  Types of Matter (pure substances)
 
 <div class="table-wrapper">
   <table>
@@ -110,7 +110,7 @@ Materi di alam semesta dikelompokkan ke dalam zat murni (*pure substance*) atau 
   </table>
 </div>
 
-### 🔬 Types of Mixtures (Campuran)
+###  Types of Mixtures (Campuran)
 
 <div class="table-wrapper">
   <table>
@@ -147,7 +147,7 @@ Materi di alam semesta dikelompokkan ke dalam zat murni (*pure substance*) atau 
 
 {{< mus-divider >}}
 
-## 📚 References & Context
+##  References & Context
 
 * Catatan ini berasal dari catatan fisik kuliah semester 1.
 

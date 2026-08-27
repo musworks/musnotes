@@ -62,6 +62,6 @@ Melalui pengamatan pada jaringan tumbuhan dan hewan, dua ilmuwan Jerman ini meru
 
 {{< mus-divider >}}
 
-### 📚 References & Context
+### References & Context
 * These notes are based on various digital sources (Biology 2e OpenStax Textbook & Modul Pembelajaran 1: Sel).
 * All sources were compiled and synthesised using **NotebookLM** as a tool for reading and organising ideas.

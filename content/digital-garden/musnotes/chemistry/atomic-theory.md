@@ -249,7 +249,7 @@ Model atom modern juga digunakan dalam banyak bidang, seperti kimia, fisika nukl
 
 {{< mus-divider >}}
 
-## 📚 References & Context
+##  References & Context
 
 * Catatan ini berasal dari catatan fisik kuliah semester 1.
 * Catatan ini dirapikan ulang untuk digital garden sebagai pengantar tentang atomic theory.

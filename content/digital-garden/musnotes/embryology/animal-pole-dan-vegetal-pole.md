@@ -181,13 +181,13 @@ Sedikit membingungkan, tapi biologi memang kadang mewarisi istilah tua seperti l
 
 ## Shortcut Ingatan
 
-> 💡 **Animal pole = active pole**
+>  **Animal pole = active pole**
 > Lebih aktif membelah, biasanya lebih sedikit yolk.
 
-> 💡 **Vegetal pole = yolk-heavy pole**
+>  **Vegetal pole = yolk-heavy pole**
 > Lebih kaya yolk, pembelahan lebih lambat.
 
-> 💡 **Animal cepat, vegetal berat**
+>  **Animal cepat, vegetal berat**
 > Ini kunci untuk memahami unequal cleavage.
 
 {{< mus-divider >}}

@@ -110,7 +110,7 @@ Untuk percobaan kimia yang melibatkan alat, cairan, pemanasan, atau bahan tidak 
 
 {{< mus-divider >}}
 
-## 📚 References & Context
+##  References & Context
 
 * Catatan ini berasal dari catatan Obsidian lama tentang teknik pemisahan campuran.
 * Catatan ini dirapikan ulang untuk digital garden sebagai pengantar kimia dasar dalam kehidupan sehari-hari.

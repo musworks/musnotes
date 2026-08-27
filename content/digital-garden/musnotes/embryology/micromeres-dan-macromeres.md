@@ -94,7 +94,7 @@ o o o o o
 
 Secara sederhana:
 
-> 💡 Micromeres = sel kecil hasil cleavage yang lebih cepat.
+>  Micromeres = sel kecil hasil cleavage yang lebih cepat.
 
 {{< mus-divider >}}
 
@@ -116,7 +116,7 @@ O     O
 
 Secara sederhana:
 
-> 💡 Macromeres = sel besar hasil cleavage yang lebih lambat.
+>  Macromeres = sel besar hasil cleavage yang lebih lambat.
 
 {{< mus-divider >}}
 
@@ -237,7 +237,7 @@ macromeres di vegetal region
 
 Jadi, mesomeres sebaiknya dipahami sebagai istilah tambahan untuk memperjelas wilayah transisi, bukan pengganti dua istilah utama tersebut.
 
-> 🧠 **Fun fact: micromeres pada sea urchin**
+>  **Fun fact: micromeres pada sea urchin**
 >
 > Pada sea urchin, istilah **micromeres** punya konteks khusus. Sel-sel kecil di vegetal pole dapat menjadi sumber sinyal perkembangan penting dan keturunannya berkaitan dengan pembentukan primary mesenchyme cells.
 >
@@ -290,13 +290,13 @@ Dengan kata lain:
 
 ## Shortcut Ingatan
 
-> 💡 **Micro = kecil**
+>  **Micro = kecil**
 > Micromeres adalah blastomeres kecil.
 
-> 💡 **Macro = besar**
+>  **Macro = besar**
 > Macromeres adalah blastomeres besar.
 
-> 💡 **Animal cepat, vegetal berat**
+>  **Animal cepat, vegetal berat**
 > Animal pole cenderung menghasilkan sel kecil; vegetal pole yang kaya yolk cenderung menghasilkan sel besar.
 
 {{< mus-divider >}}

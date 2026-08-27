@@ -277,19 +277,19 @@ Jadi:
 
 ## Shortcut Ingatan
 
-> 💡 **Blastodisc = disc yang membelah**
+>  **Blastodisc = disc yang membelah**
 > Area sitoplasma aktif di atas yolk.
 
-> 💡 **Blastomeres = sel hasil cleavage**
+>  **Blastomeres = sel hasil cleavage**
 > Pada telur ayam, blastomeres tersusun sebagai massa berbentuk disc.
 
-> 💡 **Blastoderm = lapisan sel hasil cleavage**
+>  **Blastoderm = lapisan sel hasil cleavage**
 > Terbentuk di atas massa yolk.
 
-> 💡 **Area pellucida = tengah lebih jernih**
+>  **Area pellucida = tengah lebih jernih**
 > Berada di atas subgerminal cavity.
 
-> 💡 **Area opaca = pinggir lebih opak**
+> **Area opaca = pinggir lebih opak**
 > Masih lebih berasosiasi dengan yolk.
 
 {{< mus-divider >}}

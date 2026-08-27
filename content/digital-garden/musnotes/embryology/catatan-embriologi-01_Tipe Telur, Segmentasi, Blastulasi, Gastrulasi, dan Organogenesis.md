@@ -299,7 +299,7 @@ Pada mamalia, perkembangan embrio berlangsung melalui tahapan zigot, morula, bla
 
 {{< mus-divider >}}
 
-## 📚 References & Context
+## References & Context
 
 Konteks Akademik: Catatan digital ini disusun sebagai ringkasan komparatif untuk tugas Embriologi Hewan, dengan fokus pada hubungan antara distribusi *yolk*, tipe segmentasi, dan tahap-tahap perkembangan embrio.
 

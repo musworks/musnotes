@@ -187,13 +187,13 @@ Jadi:
 
 ## Shortcut Ingatan
 
-> 💡 **Ayam = yolk besar**  
+>  **Ayam = yolk besar**  
 > Yolk besar membuat pembelahan tidak bisa total.
 
-> 💡 **Meroblastic = sebagian**  
+>  **Meroblastic = sebagian**  
 > Hanya sebagian kecil telur yang membelah.
 
-> 💡 **Discoidal = disc**  
+>  **Discoidal = disc**  
 > Area pembelahan berbentuk cakram di atas yolk.
 
 {{< mus-divider >}}
