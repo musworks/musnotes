@@ -13,7 +13,7 @@ categories: ["Digital Works", "Reflection"]
 tags: ["muscrypt", "cipher", "writing", "digital expression", "interpretation"]
 ---
 
-Muscrypt tidak pernah diciptakan sebagai alat keamanan, apalagi eksperimen kriptografi akademik yang kaku. ruang ini lahir dari rasa penasaran yang sederhana tapi mengganggu: hubungan antara teks, makna, dan cara kita menafsirkannya.
+Muscrypt tidak pernah diciptakan sebagai alat keamanan, apalagi eksperimen kriptografi akademik yang kaku. ini dari rasa penasaran tentang hubungan antara teks, makna, dan cara kita menafsirkannya.
 
 Ini adalah eksperimen bentuk. Sebuah ruang tempat teks diberi kebebasan untuk mengunci dan membuka dirinya sendiri.
 
@@ -54,13 +54,13 @@ Keduanya dirancang untuk bersifat reversibel, tetapi membuka hasil dari arah yan
 
 Pada jalur pertama, teks biasa masuk melalui **Sembunyikan**, berubah menjadi **cipher A**, lalu dapat dibuka kembali melalui **Interpretasikan**. Pada jalur kedua, teks biasa masuk melalui **Interpretasikan**, berubah menjadi **cipher B**, lalu dapat dibuka kembali melalui **Sembunyikan**.
 
-Dengan kata lain, **Interpretasikan** bukan sekadar tombol sakelar untuk membuka sandi. Jika fungsi ini diterapkan pada teks biasa, ia justru menghasilkan bentuk terenkripsi dari arah yang berlawanan.
+Dengan kata lain, **Interpretasikan** bukan sekadar tombol sakelar untuk membuka sandi. Jika fungsi ini diterapkan pada teks biasa, justru menghasilkan bentuk terenkripsi dari arah yang berlawanan.
 
 {{< mus-divider >}}
 
 ## Enkripsi Berlapis
 
-Dari desain sistem dua arah tersebut, muncul sebuah fitur yang hadir secara organik: **enkripsi berlapis**. Karena hasil dari sebuah transformasi dapat langsung dimasukkan kembali sebagai input, tidak ada batasan teoritis terhadap jumlah lapisan simbolik yang dapat dibangun.
+Dari desain sistem dua arah tersebut, muncul sebuah fitur yang muncul secara organik: **enkripsi berlapis**. Karena hasil dari sebuah transformasi dapat langsung dimasukkan kembali sebagai input, tidak ada batasan teoritis terhadap jumlah lapisan simbolik yang dapat dibangun.
 
 {{< rawhtml >}}
 <div class="flow-container">
@@ -137,7 +137,7 @@ Kita hidup di era thumbnail yang menjerit, reels dan shorts yang bergulir tanpa 
 
 Tulisan kini sering muncul sebagai pendamping hero image dalam sebuah artikel, teks dalam carousel Instagram, caption yang baru dibaca setelah mata puas mencerna gambar, atau subtitle kecil di bagian bawah video.
 
-Hal ini memunculkan sebuah pertanyaan reflektif:
+Hal ini memunculkan sebuah pertanyaan:
 
 > Apakah tulisan masih mampu menjadi ruang interpretasi tanpa harus meminjam perhatian dari medium lain?
 
@@ -149,9 +149,9 @@ Hal ini memunculkan sebuah pertanyaan reflektif:
 
 Muscrypt adalah respons terhadap pertanyaan tersebut. Saat teks dimasukkan, Muscrypt tidak mengubahnya menjadi ilustrasi, tidak mengubahnya menjadi deretan emoji, audio, atau visualisasi warna-warni. dia tetap lahir kembali sebagai teks. Hanya bentuknya yang berubah, sementara mediumnya tetap murni.
 
-Menyembunyikan teks di ruang ini bukan berarti menghapus maknanya. Maknanya tetap berdiam di sana, utuh dan bernapas. cipher di Muscrypt hanya memperpanjang jalur menuju makna tersebut.
+Menyembunyikan teks di ruang ini bukan berarti menghapus maknanya. Maknanya tetap berdiam di sana. cipher di Muscrypt hanya memperpanjang jalur menuju makna tersebut.
 
-Kita sering terbiasa menganggap bahwa interpretasi adalah proses linier untuk membuka makna. Namun di sini, interpretasi juga dapat berarti mengubah. Tombol **Interpretasikan** memiliki identitas transformasinya sendiri. dia tidak sekadar menjadi kebalikan dari **Sembunyikan**, tetapi juga menjadi fungsi yang mampu menciptakan bentuk baru.
+Kita sering terbiasa menganggap bahwa interpretasi adalah proses linier untuk membuka makna. Namun di sini, interpretasi juga dapat berarti mengubah. Tombol **Interpretasikan** memiliki identitas transformasinya sendiri. dia menjadi fungsi yang mampu menciptakan bentuk baru.
 
 Dalam Muscrypt, sebuah kalimat dapat berubah bentuk berkali-kali, berlapis-lapis, tanpa pernah sekalipun meninggalkan medium asalnya. Ia tetap menjadi tulisan. Tetap menjadi bahasa. Tetap menjadi sekumpulan tanda yang dengan sabar menunggu pembacanya.
 
