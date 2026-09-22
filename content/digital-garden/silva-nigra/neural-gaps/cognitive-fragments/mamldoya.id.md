@@ -1,5 +1,5 @@
 ---
-title: "Mungkinkah Ada Makna 'Literal' di Dalam Otak yang Asosiatif?"
+title: "Mungkinkah Ada Makna \"Literal\" di Dalam Otak yang Asosiatif?"
 date: 2026-09-22T23:30:00+07:00
 draft: false
 math: false
