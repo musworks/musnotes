@@ -80,7 +80,7 @@ As a species commonly grown as an ornamental plant, *Cosmos bipinnatus* is often
     <div class="mus-glossary__head">
       <div class="mus-glossary__symbol">
         <span class="mus-glossary__label">Population</span>
-        <code>🌸</code>
+        <code>(o|o)</code>
       </div>
       <p class="mus-glossary__read">Color dominance</p>
     </div>

@@ -38,3 +38,9 @@ Klaim bahwa bahasa "tidak dapat dijelaskan berdasarkan pertimbangan logika" juga
 {{< mus-divider >}}
 
 Tulisan ini belum punya konklusi, setidaknya inilah titik ketidaktahuanku saat ini.
+
+{{< mus-divider >}}
+
+**Referensi:**
+
+-  Santoso, A., Setiawati, L., & Hasanudin, C. (2024). *Bahasa Indonesia*. Universitas Terbuka.

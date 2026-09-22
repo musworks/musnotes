@@ -40,3 +40,9 @@ The claim that language "cannot be explained based on logical considerations" al
 This piece doesn't have a conclusion yet; at the very least, this is the current point of my ignorance.
 
 ##### Note: This essay is a translation of my personal notes, originally written in Indonesian as a response to my university's linguistics module. Some nuances might be lost, but the genuine confusion remains!
+
+{{< mus-divider >}}
+
+**Referensi:**
+
+-  Santoso, A., Setiawati, L., & Hasanudin, C. (2024). *Bahasa Indonesia*. Universitas Terbuka.
