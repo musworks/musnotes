@@ -32,7 +32,7 @@ cover:
 
 >"Bagaimana kamu tahu? Kamu baru saja bertanya kepadaku."
 
->_"Aku tahu. Aku hanya ingin memastikan bahwa waktu yang ada di pikiranku sama dengan waktu yang ada di luar."*
+>_"Aku tahu. Aku hanya ingin memastikan bahwa waktu yang ada di pikiranku sama dengan waktu yang ada di luar."_
 
 >"Memangnya harus sama?"
 
