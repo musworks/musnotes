@@ -47,4 +47,4 @@ cover:
 
 {{< mus-divider >}}
 
-##### Note: Originally written in Indonesian. Translated into English primarily to keep the bilingual site toggle happy, while keeping the original pulse intact.
+##### Note: Originally written in Indonesian. Translated into English primarily to keep the bilingual site toggle happy, while preserving the original pulse.
