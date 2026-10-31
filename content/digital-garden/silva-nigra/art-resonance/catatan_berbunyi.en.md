@@ -2,7 +2,7 @@
 title: "From Sounding Notes to an Interconnected System"
 date: 2026-09-28T22:06:00+07:00
 type: garden-note
-draft: false
+draft: draft
 summary: "Notes on learning about shared state in Sonic Pi: from independent live_loops to loops that read and write state through set and get."
 categories: ["sonic-pi", "logic"]
 cover:
@@ -10,6 +10,7 @@ cover:
   hiddenInSingle: true
   hiddenInList: true
 ---
+
 {{< youtube i3IcCLFihS8>}}
 
 Spending hours in front of a screen playing with Sonic Pi is genuinely fun. On the other hand, as a biology student, I feel a little guilty when the time I spend experimenting with sound drastically cuts into my study time. To keep this hobby from leading to fatal administrative consequences (that is, failing my courses), I looked for a compromise.
