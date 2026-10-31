@@ -17,7 +17,7 @@ Fungsi `.color()` memungkinkan setiap pola nada memiliki identitas warna tersend
 ### Experiment
 
 ```javascript
-//@title warna example @bymus
+//@title warna example @by mus
 cpm(80/4)
 const eg = stack(
   note("c4").color("cyan"),
