@@ -38,9 +38,9 @@ html[data-mus-theme="herbarium-lavender"] {
     --secondary: var(--mus-muted);
     --tertiary: color-mix(in srgb, var(--mus-accent-wash) 42%, var(--mus-border) 58%);
     --content: var(--mus-text);
-    --code-block-bg: #F4EDF6;
+    --code-block-bg: #fffbfe;
     --code-bg: #FAF5FA;
-    --code-block-text: #4E3F50;
+    --code-block-text: #38313D;
     --border: color-mix(in srgb, var(--mus-border) 88%, var(--mus-accent) 12%);
 
     --surface-panel-border: color-mix(in srgb, var(--mus-border) 72%, var(--mus-border-strong) 28%);
@@ -63,7 +63,7 @@ html[data-mus-theme="herbarium-lavender"] {
     --mus-action: var(--mus-accent);
     --mus-card-bg: #FFFBFE;
     --mus-panel-bg: #FAF5FA;
-    --mus-code-bg: #F4EDF6;
+    --mus-code-bg: #F3EDF5;
     --mus-featured-card-bg: #F7F1F7;
     --mus-featured-border: var(--mus-border-strong);
     --mus-decorative: #A989AB;
@@ -943,6 +943,74 @@ html[data-mus-theme="herbarium-lavender"] .post-content .highlight pre code {
     border: 0;
     background: transparent !important;
     font-family: ui-monospace, SFMono-Regular, "Cascadia Code", Consolas, monospace;
+}
+
+html[data-mus-theme="herbarium-lavender"][data-theme="light"] .post-content .chroma {
+    color: #38313D;
+    background-color: transparent;
+}
+
+html[data-mus-theme="herbarium-lavender"][data-theme="light"] .post-content .chroma .c,
+html[data-mus-theme="herbarium-lavender"][data-theme="light"] .post-content .chroma .ch,
+html[data-mus-theme="herbarium-lavender"][data-theme="light"] .post-content .chroma .cm,
+html[data-mus-theme="herbarium-lavender"][data-theme="light"] .post-content .chroma .c1,
+html[data-mus-theme="herbarium-lavender"][data-theme="light"] .post-content .chroma .cs,
+html[data-mus-theme="herbarium-lavender"][data-theme="light"] .post-content .chroma .cp,
+html[data-mus-theme="herbarium-lavender"][data-theme="light"] .post-content .chroma .cpf {
+    color: #8C647E;
+}
+
+html[data-mus-theme="herbarium-lavender"][data-theme="light"] .post-content .chroma .k,
+html[data-mus-theme="herbarium-lavender"][data-theme="light"] .post-content .chroma .kc,
+html[data-mus-theme="herbarium-lavender"][data-theme="light"] .post-content .chroma .kd,
+html[data-mus-theme="herbarium-lavender"][data-theme="light"] .post-content .chroma .kn,
+html[data-mus-theme="herbarium-lavender"][data-theme="light"] .post-content .chroma .kp,
+html[data-mus-theme="herbarium-lavender"][data-theme="light"] .post-content .chroma .kr,
+html[data-mus-theme="herbarium-lavender"][data-theme="light"] .post-content .chroma .kt,
+html[data-mus-theme="herbarium-lavender"][data-theme="light"] .post-content .chroma .nc,
+html[data-mus-theme="herbarium-lavender"][data-theme="light"] .post-content .chroma .no,
+html[data-mus-theme="herbarium-lavender"][data-theme="light"] .post-content .chroma .nn,
+html[data-mus-theme="herbarium-lavender"][data-theme="light"] .post-content .chroma .nt {
+    color: #7953A6;
+}
+
+html[data-mus-theme="herbarium-lavender"][data-theme="light"] .post-content .chroma .s,
+html[data-mus-theme="herbarium-lavender"][data-theme="light"] .post-content .chroma .sa,
+html[data-mus-theme="herbarium-lavender"][data-theme="light"] .post-content .chroma .sb,
+html[data-mus-theme="herbarium-lavender"][data-theme="light"] .post-content .chroma .sc,
+html[data-mus-theme="herbarium-lavender"][data-theme="light"] .post-content .chroma .se,
+html[data-mus-theme="herbarium-lavender"][data-theme="light"] .post-content .chroma .si,
+html[data-mus-theme="herbarium-lavender"][data-theme="light"] .post-content .chroma .s1,
+html[data-mus-theme="herbarium-lavender"][data-theme="light"] .post-content .chroma .s2,
+html[data-mus-theme="herbarium-lavender"][data-theme="light"] .post-content .chroma .sr,
+html[data-mus-theme="herbarium-lavender"][data-theme="light"] .post-content .chroma .ss,
+html[data-mus-theme="herbarium-lavender"][data-theme="light"] .post-content .chroma .sx {
+    color: #A45D42;
+}
+
+html[data-mus-theme="herbarium-lavender"][data-theme="light"] .post-content .chroma .nf,
+html[data-mus-theme="herbarium-lavender"][data-theme="light"] .post-content .chroma .fm {
+    color: #526E48;
+}
+
+html[data-mus-theme="herbarium-lavender"][data-theme="light"] .post-content .chroma .na,
+html[data-mus-theme="herbarium-lavender"][data-theme="light"] .post-content .chroma .nb,
+html[data-mus-theme="herbarium-lavender"][data-theme="light"] .post-content .chroma .bp,
+html[data-mus-theme="herbarium-lavender"][data-theme="light"] .post-content .chroma .nl,
+html[data-mus-theme="herbarium-lavender"][data-theme="light"] .post-content .chroma .o,
+html[data-mus-theme="herbarium-lavender"][data-theme="light"] .post-content .chroma .ow,
+html[data-mus-theme="herbarium-lavender"][data-theme="light"] .post-content .chroma .py {
+    color: #386F86;
+}
+
+html[data-mus-theme="herbarium-lavender"][data-theme="light"] .post-content .chroma .m,
+html[data-mus-theme="herbarium-lavender"][data-theme="light"] .post-content .chroma .mb,
+html[data-mus-theme="herbarium-lavender"][data-theme="light"] .post-content .chroma .mf,
+html[data-mus-theme="herbarium-lavender"][data-theme="light"] .post-content .chroma .mh,
+html[data-mus-theme="herbarium-lavender"][data-theme="light"] .post-content .chroma .mi,
+html[data-mus-theme="herbarium-lavender"][data-theme="light"] .post-content .chroma .il,
+html[data-mus-theme="herbarium-lavender"][data-theme="light"] .post-content .chroma .mo {
+    color: #A14F72;
 }
 
 html[data-mus-theme="herbarium-lavender"] .post-content .table-wrapper,
