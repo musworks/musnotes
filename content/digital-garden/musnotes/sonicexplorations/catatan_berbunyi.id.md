@@ -2,7 +2,7 @@
 title: "Dari Catatan Berbunyi ke Sistem yang Saling Terhubung"
 date: 2026-09-28T22:06:00+07:00
 type: garden-note
-draft: false
+draft: true
 summary: "Catatan proses memahami shared state di Sonic Pi: dari live_loop yang berjalan sendiri-sendiri, ke loop yang saling membaca dan menulis state lewat set dan get."
 categories: ["sonic-pi", "logic"]
 cover:

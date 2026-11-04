@@ -10,7 +10,7 @@ cover:
   hiddenInList: true
 ---
 
-Eksplorasi fungsi `.color()` pada Strudel untuk memberikan warna berbeda pada setiap event nada dalam visualisasi Pianoroll.
+Eksplorasi fungsi `.color()` pada Strudel untuk memberikan warna berbeda pada setiap event nada dalam visualisasi.
 
 Fungsi `.color()` memungkinkan setiap pola nada memiliki identitas warna tersendiri. Dalam eksperimen ini, sepuluh nama warna dicoba untuk mengamati bagaimana masing-masing warna ditampilkan pada visualisasi.
 
@@ -42,7 +42,7 @@ eg.s("piano").slow(2)
 
 ### note
 
-Seluruh sepuluh warna berhasil dirender pada Pianoroll. Setiap event nada menampilkan warna sesuai dengan nilai yang diberikan melalui `.color()`.
+Setiap event nada menampilkan warna sesuai dengan nilai yang diberikan melalui `.color()`.
 
 Eksperimen ini menunjukkan bahwa pewarnaan dapat digunakan sebagai elemen visual untuk membedakan event atau lapisan pola dalam komposisi live coding.
 
