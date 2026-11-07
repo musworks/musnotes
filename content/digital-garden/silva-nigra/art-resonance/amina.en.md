@@ -2,7 +2,7 @@
 title: "Amina"
 date: 2026-11-04T00:00:00+07:00
 type: garden-fragment
-draft: false
+draft: true
 categories: ["sonic-pi", "live_coding"]
 cover:
   image: "/images/draft_cover/001home.png"
