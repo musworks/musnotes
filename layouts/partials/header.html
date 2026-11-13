@@ -159,7 +159,7 @@
                             </span>
                             {{- else }}
                             <a class="lang-link" href="{{- $target -}}"
-                                aria-label="{{ $translation.Language.LanguageName | default ($translation.Lang | title) }}">
+                                aria-label="{{ $translation.Language.Label | default ($translation.Lang | title) }}">
                                 {{- $translation.Lang | upper -}}
                             </a>
                             {{- end }}
@@ -283,7 +283,7 @@
                         </span>
                         {{- else }}
                         <a class="lang-link" href="{{- $target -}}"
-                            aria-label="{{ $translation.Language.LanguageName | default ($translation.Lang | title) }}">
+                            aria-label="{{ $translation.Language.Label | default ($translation.Lang | title) }}">
                             {{- $translation.Lang | upper -}}
                         </a>
                         {{- end }}

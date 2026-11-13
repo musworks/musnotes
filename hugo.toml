@@ -60,7 +60,11 @@ cleanDestinationDir = true
         name = "buymeacoffee"
         title = "Support Musnotes on Ko-fi"
         url = "https://ko-fi.com/musnotes"
+
     [[params.socialIcons]]
+        name = "youtube"
+        title = "YouTube"
+        url = "https://www.youtube.com/@musnotece"
 
 
     [params.assets]
@@ -72,8 +76,8 @@ cleanDestinationDir = true
 
 [languages]
     [languages.id]
-        languageName = "Bahasa Indonesia"
-        languageCode = "id-ID"
+        label = "Bahasa Indonesia"
+        locale = "id-ID"
         weight = 1
         title = "MuS"
 
@@ -150,8 +154,8 @@ cleanDestinationDir = true
             weight = 60
 
     [languages.en]
-        languageName = "English"
-        languageCode = "en-US"
+        label = "English"
+        locale = "en-US"
         weight = 2
         title = "MuS"
 
@@ -163,7 +167,7 @@ cleanDestinationDir = true
                 eyebrow = "PERSONAL BLOG · DIGITAL GARDEN · DIGITAL WORKS STUDIO"
                 title = "More often confused than knowing."
                 subheadline = "Biology student, digital gardener, and maker of web things."
-                intro = " archive for non-linear notes, reflective essays, unfinished thoughts, and small digital experiments."
+                intro = "An archive for non-linear notes, reflective essays, unfinished thoughts, and small digital experiments."
 
                 [languages.en.params.homepage.primaryButton]
                     name = "Enter the Garden"
