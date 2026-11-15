@@ -5,7 +5,7 @@ draft: false
 math: false
 type: garden-fragment
 summary: "Sebuah dialog di kafe tentang kesepian, dualisme pikiran, dan jaringan neuron yang iseng."
-categories: ["Prosa", "silva-nigra"]
+categories: ["Prose", "silva-nigra"]
 tags: ["dialogue", "consciousness", "philosophy", "loneliness"]
 cover:
   image: "/images/dialog-di-sela-neuron.png"

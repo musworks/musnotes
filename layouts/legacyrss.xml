@@ -1,0 +1,19 @@
+{{- $migration := index hugo.Data.taxonomy.migrations .Params.migration -}}
+{{- $language := index $migration .Lang -}}
+{{- $destination := $language.destination -}}
+{{- $destinationPage := .Site.GetPage $destination -}}
+{{- $self := .RelPermalink | absURL -}}
+{{- $destinationURL := $destination | absURL -}}
+{{- $title := printf "Musnotes — %s" $migration.new | htmlEscape -}}
+{{- $description := printf "Legacy compatibility feed for the %s category archive." $migration.new | htmlEscape -}}
+{{- $items := slice -}}
+{{- with $destinationPage -}}
+  {{- range first 20 .Pages -}}
+    {{- $itemTitle := .LinkTitle | default .Title | htmlEscape -}}
+    {{- $itemURL := .Permalink | htmlEscape -}}
+    {{- $itemDate := .Date.Format "2006-01-02T15:04:05Z07:00" -}}
+    {{- $items = $items | append (printf "<item><title>%s</title><link>%s</link><guid>%s</guid><pubDate>%s</pubDate></item>" $itemTitle $itemURL $itemURL $itemDate) -}}
+  {{- end -}}
+{{- end -}}
+{{- $xml := printf "<?xml version=\"1.0\" encoding=\"UTF-8\"?><rss version=\"2.0\" xmlns:atom=\"http://www.w3.org/2005/Atom\"><channel><title>%s</title><link>%s</link><description>%s</description><atom:link href=\"%s\" rel=\"self\" type=\"application/rss+xml\"/>%s</channel></rss>" $title $destinationURL $description $self (delimit $items "") -}}
+{{- $xml | safeHTML -}}

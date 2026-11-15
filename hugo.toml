@@ -18,6 +18,16 @@ cleanDestinationDir = true
     tag = "tags"
     category = "categories"
 
+[mediaTypes."application/rss+xml"]
+    suffixes = ["xml"]
+
+[outputFormats.legacyRSS]
+    mediaType = "application/rss+xml"
+    baseName = "index"
+    isPlainText = true
+    notAlternative = true
+    permalinkable = true
+
 [params]
     env = "production"
     author = "mus"

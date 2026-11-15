@@ -1,0 +1,50 @@
+live-coding:
+  old: live_coding
+  new: live-coding
+  id:
+    destination: /categories/live-coding/
+    html: /categories/live_coding/
+    rss: /categories/live_coding/index.xml
+    pagination:
+      - old: /categories/live_coding/page/1/
+        destination: /categories/live-coding/page/1/
+
+ekologi:
+  old: ekologi
+  new: ecology
+  id:
+    destination: /categories/ecology/
+    html: /categories/ekologi/
+    rss: /categories/ekologi/index.xml
+    pagination:
+      - old: /categories/ekologi/page/1/
+        destination: /categories/ecology/page/1/
+
+ekonomi:
+  old: ekonomi
+  new: economy
+  id:
+    destination: /categories/economy/
+    html: /categories/ekonomi/
+    rss: /categories/ekonomi/index.xml
+    pagination:
+      - old: /categories/ekonomi/page/1/
+        destination: /categories/economy/page/1/
+
+prosa:
+  old: Prosa
+  new: Prose
+  id:
+    destination: /categories/prose/
+    html: /categories/prosa/
+    rss: /categories/prosa/index.xml
+    pagination:
+      - old: /categories/prosa/page/1/
+        destination: /categories/prose/page/1/
+  en:
+    destination: /en/categories/prose/
+    html: /en/categories/prosa/
+    rss: /en/categories/prosa/index.xml
+    pagination:
+      - old: /en/categories/prosa/page/1/
+        destination: /en/categories/prose/page/1/

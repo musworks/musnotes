@@ -3,7 +3,7 @@ title: "Little Pattern"
 date: 2026-11-07T00:00:00+07:00
 type: garden-fragment
 draft: false
-categories: ["strudel", "live_coding"]
+categories: ["strudel", "live-coding"]
 cover:
   image: "/images/draft_cover/001home.png"
   hiddenInSingle: true

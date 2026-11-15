@@ -5,7 +5,7 @@ draft: false
 math: false
 type: "garden-note"
 summary: "Esai tentang bagaimana kerusakan ekologis bisa terlihat sebagai pertumbuhan ketika sistem pengukuran ekonomi hanya menghitung transaksi, tetapi gagal melihat kehilangan biologis yang menyertainya."
-categories: ["neural-gaps", "ekologi", "ekonomi"]
+categories: ["neural-gaps", "ecology", "economy"]
 tags: ["ecology", "economy", "biosphere", "natural capital", "planetary boundaries"]
 featured: true
 themes: ["ecology"]

@@ -3,7 +3,7 @@ title: "Strudel: Visualiasi Warna"
 date: 2026-10-31T00:00:00+07:00
 type: garden-note
 draft: false
-categories: ["strudel", "live_coding"]
+categories: ["strudel", "live-coding"]
 cover:
   image: "/images/profesor-tua.png"
   hiddenInSingle: true

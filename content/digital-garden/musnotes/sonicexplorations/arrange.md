@@ -3,7 +3,7 @@ title: "Strudel: Arranging Musical Time with `arrange()`"
 date: 2026-11-04T00:00:00+07:00
 type: garden-note
 draft: false
-categories: ["strudel", "live_coding"]
+categories: ["strudel", "live-coding"]
 math: true
 cover:
   image: "/images/draft_cover/001home.png"

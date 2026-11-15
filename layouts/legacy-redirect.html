@@ -1,0 +1,31 @@
+{{- $migration := index hugo.Data.taxonomy.migrations .Params.migration -}}
+{{- $language := index $migration .Lang -}}
+{{- $destination := $language.destination -}}
+{{- if .Params.pagination -}}
+  {{- $destination = (index $language.pagination 0).destination -}}
+{{- end -}}
+<!doctype html>
+<html lang="{{ .Language.Locale }}">
+<head>
+  <meta charset="utf-8">
+  <title>{{ i18n "page_not_found" | default "Page moved" }}</title>
+  <link rel="canonical" href="{{ $destination | absURL }}">
+  <meta name="redirect-destination" content="{{ $destination }}">
+  <meta http-equiv="refresh" content="0; url={{ $destination }}">
+  <script>
+    (function () {
+      const meta = document.querySelector('meta[name="redirect-destination"]');
+      const target = new URL(meta.content, window.location.origin);
+      target.search = window.location.search;
+      target.hash = window.location.hash;
+      window.location.replace(target.href);
+    }());
+  </script>
+</head>
+<body>
+  <main>
+    <p>This page has moved to a new category archive.</p>
+    <p><a href="{{ $destination }}">Continue to the canonical category page</a>.</p>
+  </main>
+</body>
+</html>
