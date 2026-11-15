@@ -2,7 +2,7 @@
 title: "From Sounding Notes to an Interconnected System"
 date: 2026-09-28T22:06:00+07:00
 type: garden-note
-draft: draft
+draft: true
 summary: "Notes on learning about shared state in Sonic Pi: from independent live_loops to loops that read and write state through set and get."
 categories: ["sonic-pi", "logic"]
 cover:
