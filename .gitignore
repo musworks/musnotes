@@ -16,4 +16,6 @@ hugo-server.audit.out.log
 .codex-hugo-build/
 .tmp-*
 tmp*/
-docs/
+docs/*
+!docs/content-architecture.md
+!docs/graph-explorer-walkthrough.md
