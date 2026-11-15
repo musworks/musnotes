@@ -6,7 +6,7 @@ draft: false
 math: false
 type: "garden-note"
 summary: "Catatan dan refleksi dari pemaparan Prof. Iwan Pranoto mengenai perbedaan berpikir dan bernalar, serta pentingnya menumbuhkan scientific temper."
-categories: ["Philosophy", "Education", "Cognitive"]
+categories: ["philosophy", "education", "cognitive"]
 tags: ["scientific temper", "video notes", "malaka"]
 ---
 

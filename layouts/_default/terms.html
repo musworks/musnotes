@@ -64,7 +64,7 @@
         {{- range $terms }}
         {{- $name := .Name -}}
         {{- $count := .Count -}}
-        {{- $displayName := replaceRE "[-_]+" " " $name | title -}}
+        {{- $displayName := partial "_funcs/get-category-label.html" $name -}}
         {{- with site.GetPage (printf "/%s/%s" $.Type $name) }}
         <li class="classification-index__item">
           <a class="classification-index__link" href="{{ .RelPermalink }}">
@@ -82,7 +82,7 @@
       {{- $name := .Name -}}
       {{- $count := .Count -}}
       {{- $noteLabel := cond (eq $count 1) $noteSingular $notePlural -}}
-      {{- $displayName := replaceRE "[-_]+" " " $name | title -}}
+      {{- $displayName := partial "_funcs/get-category-label.html" $name -}}
       {{- with site.GetPage (printf "/%s/%s" $.Type $name) }}
       <article class="classification-card" role="listitem">
         <div class="classification-card__body">

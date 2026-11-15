@@ -7,7 +7,7 @@ aliases:
 math: false
 type: "garden-note"
 summary: "Kesimpulan fundamental dari Schleiden dan Schwann bahwa sel adalah unit struktural terkecil makhluk hidup."
-categories: ["Biology", "Cell Biology"]
+categories: ["biology", "Cell biology"]
 tags: ["theory", "Schleiden", "Schwann", "classical theory"]
 ---
 

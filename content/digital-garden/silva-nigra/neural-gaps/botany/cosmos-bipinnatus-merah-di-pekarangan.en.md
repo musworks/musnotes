@@ -5,7 +5,7 @@ draft: false
 math: false
 type: "garden-note"
 summary: "An observation note about one dark red Cosmos bipinnatus individual that appeared among pink and white flowers in my yard."
-categories: ["Biology", "Botany"]
+categories: ["biology", "botany"]
 tags: ["asteraceae", "observation"]
 ---
 

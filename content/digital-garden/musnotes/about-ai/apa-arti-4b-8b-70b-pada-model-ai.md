@@ -7,7 +7,7 @@ aliases:
 math: false
 type: "garden-note"
 summary: "Catatan singkat tentang arti angka 4B, 8B, dan 70B pada model LLM, serta hubungannya dengan parameter, kebutuhan hardware, dan quantization."
-categories: ["Artificial Intelligence"]
+categories: ["artificial-intelligence"]
 tags: ["ai", "llm", "local llm"]
 ---
 

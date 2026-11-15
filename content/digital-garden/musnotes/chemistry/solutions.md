@@ -7,7 +7,7 @@ aliases:
 math: true
 type: "garden-note"
 summary: "Larutan adalah campuran homogen antara solute dan solvent, dengan sifat penting seperti kemampuan menghantarkan listrik, sifat koligatif, dan berbagai cara menyatakan konsentrasi."
-categories: ["Chemistry"]
+categories: ["chemistry"]
 tags: ["solution", "solute", "solvent", "concentration", "colligative-properties"]
 ---
 

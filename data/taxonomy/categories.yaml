@@ -1,0 +1,62 @@
+normalization:
+  Artificial Intelligence: artificial-intelligence
+  Biology: biology
+  Botany: botany
+  Cell Biology: cell-biology
+  Certainty: certainty
+  Chemistry: chemistry
+  Cognitive: cognitive
+  Digital Works: digital-works
+  Ecology: ecology
+  Education: education
+  Embryology: embryology
+  Genetics: genetics
+  Identity: identity
+  Linguistics: linguistics
+  Logic: logic
+  Mathematics: mathematics
+  Neural Gaps: neural-gaps
+  Philosophy: philosophy
+  Physics: physics
+  Projects: projects
+  Prose: prose
+  Reference: reference
+  Reflection: reflection
+  Silva Nigra: silva-nigra
+  social narratives: social-narratives
+
+labels:
+  artificial-intelligence: Artificial Intelligence
+  biology: Biology
+  botany: Botany
+  cell-biology: Cell Biology
+  certainty: Certainty
+  chemistry: Chemistry
+  cognitive: Cognitive
+  communication: Communication
+  confused: Confused
+  digital-works: Digital Works
+  ecology: Ecology
+  economy: Economy
+  education: Education
+  ekologi: Ekologi
+  ekonomi: Ekonomi
+  embryology: Embryology
+  epistemology: Epistemology
+  genetics: Genetics
+  identity: Identity
+  linguistics: Linguistics
+  live_coding: Live Coding
+  logic: Logic
+  mathematics: Mathematics
+  neural-gaps: Neural Gaps
+  philosophy: Philosophy
+  prosa: Prosa
+  prose: Prose
+  reference: Reference
+  reflection: Reflection
+  science: Science
+  silva-nigra: Silva Nigra
+  social-narratives: Social Narratives
+  sonic-pi: Sonic Pi
+  strudel: Strudel

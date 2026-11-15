@@ -11,7 +11,7 @@
             {{- $categoryNodes = $categoryNodes | append (dict
                 "id" (printf "category:%s" (md5 $term.RelPermalink))
                 "kind" "category"
-                "label" ($term.LinkTitle | default $term.Title)
+                "label" (partial "_funcs/get-category-label.html" ($term.Name | default $term.Title))
                 "url" $term.RelPermalink
             ) -}}
         {{- end -}}
@@ -39,7 +39,7 @@
                     {{- $categoryNodes = $categoryNodes | append (dict
                         "id" (printf "category:%s" $slug)
                         "kind" "category"
-                        "label" $label
+                        "label" (partial "_funcs/get-category-label.html" $label)
                         "url" ((printf "/categories/%s/" $slug) | relLangURL)
                     ) -}}
                 {{- end -}}

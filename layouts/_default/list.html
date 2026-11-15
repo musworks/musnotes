@@ -22,7 +22,11 @@
 <header class="page-header">
   {{- partial "breadcrumbs.html" . }}
   <h1>
+    {{- if and (eq .Kind "term") (eq .Type "categories") -}}
+    {{ partial "_funcs/get-category-label.html" .Title }}
+    {{- else -}}
     {{ .Title }}
+    {{- end -}}
     {{- if and (or (eq .Kind `term`) (eq .Kind `section`)) (.Param "ShowRssButtonInSectionTermList") }}
     {{- with .OutputFormats.Get "rss" }}
     <a href="{{ .RelPermalink }}" title="RSS" aria-label="RSS">

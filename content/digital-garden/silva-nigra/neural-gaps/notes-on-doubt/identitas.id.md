@@ -4,7 +4,7 @@ title: "Identitas: Organisme yang Hidup di Balik Gray Matter"
 date: 2026-04-21T01:00:00+07:00
 draft: false
 type: "garden-note"
-categories: ["Identity", "philosophy","social narratives" ]
+categories: ["identity", "philosophy","social-narratives" ]
 tags: ["identity","social narratives", "Human Brain", "perception"]
 ---
 

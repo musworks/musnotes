@@ -5,7 +5,7 @@ draft: true
 math: false
 type: "garden-note"
 summary: "Catatan kecil tentang bagaimana Project Spore lahir dari keinginan sederhana untuk membuat sesuatu bersama tim LLM."
-categories: ["Projects"]
+categories: ["projects"]
 tags: ["project-spore", "hugo", "digital-garden", "web-development"]
 ---
 

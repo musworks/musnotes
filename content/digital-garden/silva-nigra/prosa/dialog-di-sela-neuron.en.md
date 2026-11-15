@@ -5,7 +5,7 @@ draft: false
 math: false
 type: garden-fragment
 summary: "A cafe dialogue about loneliness, the dualism of the mind, and a network of mischievous neurons."
-categories: ["Prosa", "Silva Nigra"]
+categories: ["Prosa", "silva-nigra"]
 tags: ["dialogue", "consciousness", "philosophy", "loneliness"]
 cover:
   image: "/images/dialog-di-sela-neuron.png"

@@ -7,7 +7,7 @@ aliases:
 math: false
 type: "garden-note"
 summary: "Banyak teknik pemisahan campuran dalam kimia bisa ditemukan dalam aktivitas sehari-hari, seperti menyeduh kopi, menjemur pakaian, mencuci beras, dan menggunakan magnet."
-categories: ["Chemistry"]
+categories: ["chemistry"]
 tags: ["mixtures", "separation-techniques", "filtration", "evaporation", "chemistry-basics"]
 ---
 

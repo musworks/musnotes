@@ -5,7 +5,7 @@ draft: false
 math: true
 type: "garden-note"
 summary: "Kalau aku adalah cermin, dan cermin adalah kamu, maka kita adalah satu. Kedengarannya romantis. Tapi secara logika… ini terasa horor"
-categories: ["Identity","Certainty"]
+categories: ["identity","certainty"]
 tags: ["identity","logic","perception"]
 cover:
   image: "/images/maaf-aku-gagal-konsisten.png"

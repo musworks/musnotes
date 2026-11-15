@@ -5,7 +5,7 @@ draft: false
 math: false
 type: "garden-note"
 summary: "Catatan observasi tentang satu individu Cosmos bipinnatus merah tua yang muncul di antara bunga pink dan putih di pekarangan rumah."
-categories: ["Biology", "Botany"]
+categories: ["biology", "botany"]
 tags: ["asteraceae", "observation"]
 ---
 

@@ -5,7 +5,7 @@ draft: false
 math: false
 type: "garden-fragment"
 summary: "ada sebuah tempat yang sangat sempit, padahal tidak ada tanda-tanda batas wilayah yang jelas."
-categories: ["Prose", "Silva Nigra"]
+categories: ["prose", "silva-nigra"]
 tags: ["dialogue", "consciousness", "imagination", "story"]
 cover:
   image: "/images/dialog-di-sela-neuron.png"

@@ -8,7 +8,7 @@ aliases:
 math: false
 type: "garden-note"
 summary: "Ringkasan komparatif embriologi dasar mengenai klasifikasi tipe telur berdasarkan yolk, mekanisme segmentasi meroblastik dan holoblastik, hingga tahapan organogenesis."
-categories: ["Biology", "Embryology"]
+categories: ["biology", "embryology"]
 tags: ["cleavage", "blastulation", "gastrulation", "organogenesis"]
 ---
 

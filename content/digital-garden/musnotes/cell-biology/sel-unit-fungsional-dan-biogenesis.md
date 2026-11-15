@@ -7,7 +7,7 @@ aliases:
 math: false
 type: "garden-note"
 summary: "Max Schultze menetapkan sel sebagai unit fungsional, sementara Rudolf Virchow memperkenalkan prinsip Biogenesis."
-categories: ["Biology", "Cell Biology"]
+categories: ["biology", "Cell biology"]
 tags: ["Virchow", "Schultze", "biogenesis", "protoplasm"]
 ---
 

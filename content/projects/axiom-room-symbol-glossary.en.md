@@ -5,7 +5,7 @@ draft: false
 math: false
 type: "garden-note"
 summary: "A concise glossary for reading symbols, inference rules, and basic terms in Axiom Room."
-categories: ["Logic", "Digital Works"]
+categories: ["logic", "digital-works"]
 tags: ["axiom room", "logic", "symbol glossary"]
 ---
 

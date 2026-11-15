@@ -5,7 +5,7 @@ draft: false
 math: false
 type: "garden-fragment"
 summary: "there is a very confined place, even though there are no clear boundary markers."
-categories: ["Prose", "Silva Nigra"]
+categories: ["prose", "silva-nigra"]
 tags: ["dialogue", "consciousness", "imagination", "story"]
 cover:
   image: "/images/dialog-di-sela-neuron.png"

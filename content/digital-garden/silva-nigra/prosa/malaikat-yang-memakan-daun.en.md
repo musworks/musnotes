@@ -5,7 +5,7 @@ draft: false
 math: false
 type: "garden-fragment"
 summary: "a tale about the Butterfly Devil"
-categories: ["Prose", "Silva Nigra"]
+categories: ["prose", "silva-nigra"]
 tags: ["consciousness", "imagination", "story"]
 cover:
     image: "/images/caity-dan-greta.png"

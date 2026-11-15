@@ -4,7 +4,7 @@ date: 2026-09-14T15:00:00+07:00
 draft: false
 math: false
 type: "garden-fragment"
-categories: ["Linguistics", "logic", "communication"]
+categories: ["linguistics", "logic", "communication"]
 ---
 
 I just realized I don't truly understand what language is.

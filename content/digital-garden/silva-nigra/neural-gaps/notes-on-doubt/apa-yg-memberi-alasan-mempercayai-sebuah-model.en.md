@@ -5,7 +5,7 @@ draft: false
 math: false
 type: "garden-note"
 summary: "A continuation of my question about model complexity, leading me to think about the word “true”, empirical evidence, and how our reasons for trusting a claim may depend on the kind of claim being made."
-categories: ["Neural Gaps", "epistemology", "science"]
+categories: ["neural-gaps", "epistemology", "science"]
 featured: true
 themes: ["epistemology"]
 ---

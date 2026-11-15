@@ -7,7 +7,7 @@ aliases:
 math: false
 type: "garden-note"
 summary: "Atomic theory menjelaskan atom sebagai unit dasar penyusun materi, mulai dari sejarah model atom hingga struktur dan aplikasinya dalam sains modern."
-categories: ["Chemistry", "Physics"]
+categories: ["chemistry", "physics"]
 tags: ["atomic-theory", "atom", "atomic-structure", "chemistry", "quantum-model"]
 ---
 

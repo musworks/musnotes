@@ -8,7 +8,7 @@ aliases:
 math: false
 type: "garden-note"
 summary: "Memahami seberapa luas jangkauan ekologi, mulai dari level genetik hingga biosfer, serta peran sentral manusia di dalamnya."
-categories: ["Biology", "Ecology"]
+categories: ["biology", "ecology"]
 tags: ["scope", "biosphere", "human-environment", "ecology"]
 ---
 

@@ -7,7 +7,7 @@ aliases:
 math: false
 type: "garden-note"
 summary: "Penemuan kromosom dan gen mengukuhkan peran sel sebagai pembawa materi hereditas dari satu generasi ke generasi berikutnya."
-categories: ["Biology", "Genetics"]
+categories: ["biology", "genetics"]
 tags: ["heredity", "chromosome", "DNA", "modern theory"]
 ---
 

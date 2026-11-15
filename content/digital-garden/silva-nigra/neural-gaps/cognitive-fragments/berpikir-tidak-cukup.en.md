@@ -5,7 +5,7 @@ draft: false
 math: false
 type: "garden-note"
 summary: "Notes and reflections on Prof. Iwan Pranoto's explanation of the difference between thinking and reasoning, and the importance of cultivating scientific temper."
-categories: ["Philosophy", "Education", "Cognitive"]
+categories: ["philosophy", "education", "cognitive"]
 tags: ["scientific temper", "video notes", "malaka"]
 ----
 

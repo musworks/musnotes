@@ -5,7 +5,7 @@ draft: false
 math: false
 type: "garden-fragment"
 summary: "A letter to a great white shark, written on my birthday in 2025."
-categories: ["Prose", "Silva Nigra"]
+categories: ["prose", "silva-nigra"]
 tags: ["dialogue", "consciousness", "imagination", "story"]
 cover:
   image: "/images/caity-dan-greta.png"

@@ -1,0 +1,5 @@
+{{- $taxonomy := hugo.Data.taxonomy.categories | default dict -}}
+{{- $labels := index $taxonomy "labels" | default dict -}}
+{{- $value := printf "%v" . -}}
+{{- $label := index $labels $value -}}
+{{- return ($label | default (replaceRE "[-_]+" " " $value | title)) -}}

@@ -7,7 +7,7 @@ aliases:
 math: true
 type: "garden-note"
 summary: "Materi adalah segala sesuatu yang menempati ruang dan memiliki massa, bisa dipahami melalui sifat fisika, sifat kimia, zat murni, dan campuran."
-categories: ["Chemistry"]
+categories: ["chemistry"]
 tags: ["matter", "chemistry", "physical-properties", "chemical-properties", "mixtures"]
 ---
 

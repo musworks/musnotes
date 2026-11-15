@@ -5,7 +5,7 @@ draft: false
 math: false
 type: "garden-fragment"
 summary: "What time is it now?"
-categories: ["Prose", "Silva Nigra"]
+categories: ["prose", "silva-nigra"]
 cover:
   image: "/images/dialog-di-sela-neuron.png"
   hiddenInSingle: true

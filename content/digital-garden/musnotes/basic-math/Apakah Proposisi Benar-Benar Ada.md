@@ -7,7 +7,7 @@ aliases:
 math: false
 type: "garden-note"
 summary: "Konsep proposisi membantu analisis logika, tetapi status keberadaannya sebagai entitas abstrak masih menjadi bahan perdebatan filosofis."
-categories: ["Philosophy", "Logic"]
+categories: ["philosophy", "logic"]
 tags: ["proposition", "abstract-objects", "philosophy-of-language", "logic", "ontology"]
 ---
 

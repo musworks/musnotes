@@ -5,7 +5,7 @@ draft: false
 math: false
 type: "garden-note"
 summary: "Sebuah web app timer fokus yang mengubah sesi belajar menjadi arsip kecil berisi spesies, fakta biologi, dan kutipan reflektif."
-categories: ["Projects"]
+categories: ["projects"]
 tags: ["quiet-hours", "focus-timer", "web-app", "biology", "javascript"]
 ---
 

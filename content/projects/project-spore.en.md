@@ -5,7 +5,7 @@ draft: true
 math: false
 type: "garden-note"
 summary: "A small reflection on how Project Spore was born from a simple desire to create something alongside an LLM team."
-categories: ["Projects"]
+categories: ["projects"]
 tags: ["project-spore", "hugo", "digital-garden", "web-development"]
 ---
 

@@ -5,7 +5,7 @@ draft: false
 math: false
 type: "garden-note"
 summary: "Esai tentang ilusi bahwa ekonomi bisa dipisahkan dari ekosistem, padahal seluruh aktivitas ekonomi berdiri di atas fondasi biologis dan ekologis."
-categories: ["Neural Gaps","ecology", "economy"]
+categories: ["neural-gaps","ecology", "economy"]
 tags: ["ecology", "economy", "biosphere", "natural capital", "planetary boundaries"]
 featured: true
 themes: ["ecology"]

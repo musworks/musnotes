@@ -5,7 +5,7 @@ draft: false
 math: false
 type: "garden-note"
 summary: "Catatan tentang pertemuan dua orientasi waktu, konflik entropi lokal, dan kemungkinan waktu sebagai bentuk siklik."
-categories: ["Philosophy", "Physics"]
+categories: ["philosophy", "physics"]
 tags: ["time", "entropy", "causality", "cosmology", "closed-timelike-curves", "conformal-cyclic-cosmology"]
 cover:
 image: "/images/profesor-tua.png"

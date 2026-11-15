@@ -7,7 +7,7 @@ aliases:
 math: true
 type: "garden-note"
 summary: "Catatan dasar mengenai simbol-simbol matematika, mulai dari operasi dasar, perbandingan, hingga proporsi desimal."
-categories: ["Mathematics", "Reference"]
+categories: ["mathematics", "reference"]
 tags: ["math symbols", "notation", "basic math"]
 ---
 

@@ -7,7 +7,7 @@ aliases:
 math: false
 type: "garden-note"
 summary: "Proposisi bisa dipahami sebagai bentuk makna yang diekspresikan oleh kalimat deklaratif, bukan sebagai kalimat itu sendiri."
-categories: ["Philosophy", "Logic"]
+categories: ["philosophy", "logic"]
 tags: ["proposition", "logic", "language", "logical-form", "philosophy-of-language"]
 ---
 

@@ -5,7 +5,7 @@ draft: false
 math: false
 summary: "Sekarang jam berapa?"
 type: "garden-fragment"
-categories: ["Prose", "Silva Nigra"]
+categories: ["prose", "silva-nigra"]
 cover:
   image: "/images/dialog-di-sela-neuron.png"
   hiddenInSingle: true

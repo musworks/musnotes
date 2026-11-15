@@ -5,7 +5,7 @@ draft: false
 math: false
 type: "garden-fragment"
 summary: "Fragmen yang aku temukan di arsip Obsidian lama dan kutulis ulang."
-categories: ["Prosa", "Silva Nigra"]
+categories: ["Prosa", "silva-nigra"]
 tags: ["dialogue", "consciousness", "imagination", "story"]
 cover:
   image: "/images/caity-dan-greta.png"

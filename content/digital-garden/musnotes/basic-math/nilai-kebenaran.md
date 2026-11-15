@@ -7,7 +7,7 @@ aliases:
 math: false
 type: "garden-note"
 summary: "Sebuah proposisi harus bisa dievaluasi sebagai benar atau salah, sehingga tidak semua bentuk kalimat bisa disebut proposisi."
-categories: ["Philosophy", "Logic"]
+categories: ["philosophy", "logic"]
 tags: ["proposition", "truth-value", "logic", "statement", "philosophy-of-language"]
 ---
 

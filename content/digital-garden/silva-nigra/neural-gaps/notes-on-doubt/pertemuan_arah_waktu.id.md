@@ -5,7 +5,7 @@ draft: false
 math: true
 type: "garden-note"
 summary: "Catatan tentang batas model linear dalam memahami pertemuan dua arah waktu yang berlawanan."
-categories: ["Philosophy", "Physics"]
+categories: ["philosophy", "physics"]
 tags: ["time", "entropy", "philosophy", "memory", "identity","perception"]
 cover:
   image: "/images/profesor-tua.png"

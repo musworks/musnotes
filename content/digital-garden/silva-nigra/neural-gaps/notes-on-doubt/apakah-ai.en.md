@@ -5,7 +5,7 @@ date: 2026-05-31T00:00:00+07:00
 draft: false
 math: false
 type: "garden-fragment"
-categories: ["Neural Gaps", "Artificial Intelligence", "Philosophy"]
+categories: ["neural-gaps", "artificial-intelligence", "philosophy"]
 tags: ["ai-generated", "creativity", "art", "human-identity", "technology", "neural-gaps"]
 ---
 

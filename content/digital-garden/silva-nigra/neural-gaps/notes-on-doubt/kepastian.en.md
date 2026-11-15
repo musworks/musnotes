@@ -3,7 +3,7 @@ title: "Discussing Certainty Without Certainty"
 date: 2026-04-19
 draft: false
 type: "garden-note"
-categories: ["Identity", "confused", "Certainty"]
+categories: ["identity", "confused", "certainty"]
 tags: ["confused", "question","perception"]
 ---
 

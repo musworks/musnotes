@@ -8,7 +8,7 @@ aliases:
 math: false
 type: "garden-note"
 summary: "Holoblastic cleavage membelah seluruh zigot, tetapi ukuran blastomere yang dihasilkan dapat seragam atau tidak seragam tergantung distribusi yolk."
-categories: ["Biology", "Embryology"]
+categories: ["biology", "embryology"]
 tags: ["embryology", "holoblastic", "equal cleavage", "unequal cleavage", "blastomere", "yolk"]
 ---
 

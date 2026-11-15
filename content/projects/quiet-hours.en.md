@@ -5,7 +5,7 @@ draft: false
 math: false
 type: "garden-note"
 summary: "A focus timer web app that transforms study sessions into a small archive filled with species, biological facts, and reflective quotes."
-categories: ["Projects"]
+categories: ["projects"]
 tags: ["quiet-hours", "focus-timer", "web-app", "biology", "javascript"]
 ---
 

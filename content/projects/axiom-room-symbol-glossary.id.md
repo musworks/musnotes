@@ -5,7 +5,7 @@ draft: false
 math: false
 type: "garden-note"
 summary: "Glosarium ringkas untuk membaca simbol, aturan inferensi, dan istilah dasar di Axiom Room."
-categories: ["Logic"]
+categories: ["logic"]
 tags: ["axiom room", "logic", "symbol glossary"]
 ---
 

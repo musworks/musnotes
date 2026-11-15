@@ -5,7 +5,7 @@ draft: false
 math: false
 type: "garden-note"
 summary: "A note on the meeting of two temporal orientations, local entropy conflict, and the possibility of time as a cyclic form."
-categories: ["Philosophy", "Physics"]
+categories: ["philosophy", "physics"]
 tags: ["time", "entropy", "causality", "cosmology", "closed-timelike-curves", "conformal-cyclic-cosmology"]
 cover:
   image: "/images/profesor-tua.png"

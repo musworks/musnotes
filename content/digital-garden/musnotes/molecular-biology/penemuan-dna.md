@@ -7,7 +7,7 @@ aliases:
 math: false
 type: "garden-note"
 summary: "Catatan tentang sejarah penemuan DNA, eksperimen penting yang membuktikan DNA sebagai materi genetik, serta struktur dasar DNA sebagai heliks ganda."
-categories: ["Biology"]
+categories: ["biology"]
 tags: ["dna"]
 ---
 

@@ -5,7 +5,7 @@ draft: false
 math: false
 type: "garden-note"
 summary: "Tentang kompleksitas model, daya tarik penjelasan yang terdengar sophisticated, dan mengapa banyaknya variabel tidak otomatis membuat sebuah penjelasan lebih benar."
-categories: ["Neural Gaps", "epistemology", "science"]
+categories: ["neural-gaps", "epistemology", "science"]
 featured: true
 themes: ["epistemology"]
 ---

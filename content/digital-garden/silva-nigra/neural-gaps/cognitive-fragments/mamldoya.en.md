@@ -4,7 +4,7 @@ date: 2026-09-22T23:30:00+07:00
 draft: false
 math: false
 type: "garden-fragment"
-categories: ["Linguistics"]
+categories: ["linguistics"]
 ---
 
 In my university's e-learning forum, I am the incarnation of the model

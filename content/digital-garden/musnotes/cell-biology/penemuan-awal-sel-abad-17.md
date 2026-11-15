@@ -7,7 +7,7 @@ aliases:
 math: false
 type: "garden-note"
 summary: "Awal penemuan sel oleh Robert Hooke dan Antonie van Leeuwenhoek menggunakan mikroskop sederhana."
-categories: ["Biology", "Cell Biology"]
+categories: ["biology", "Cell biology"]
 tags: ["history", "Robert Hooke", "Leeuwenhoek", "microscope"]
 ---
 

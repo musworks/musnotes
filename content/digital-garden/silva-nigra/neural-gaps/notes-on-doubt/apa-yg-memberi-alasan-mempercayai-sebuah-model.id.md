@@ -5,7 +5,7 @@ draft: false
 math: false
 type: "garden-note"
 summary: "Sebuah kelanjutan dari pertanyaan tentang kompleksitas model, yang membawaku pada kegelisahan tentang kata “benar”, empirical evidence, dan bagaimana alasan untuk mempercayai suatu klaim mungkin bergantung pada jenis klaim itu sendiri."
-categories: ["Neural Gaps", "epistemology", "science"]
+categories: ["neural-gaps", "epistemology", "science"]
 featured: true
 themes: ["epistemology"]
 ---

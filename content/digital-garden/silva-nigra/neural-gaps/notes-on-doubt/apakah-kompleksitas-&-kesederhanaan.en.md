@@ -5,7 +5,7 @@ draft: false
 math: false
 type: "garden-note"
 summary: "On model complexity, the appeal of explanations that sound sophisticated, and why having more variables does not automatically make an explanation more true."
-categories: ["Neural Gaps", "epistemology", "science"]
+categories: ["neural-gaps", "epistemology", "science"]
 featured: true
 themes: ["epistemology"]
 ---

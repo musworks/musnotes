@@ -5,7 +5,7 @@ draft: false
 math: true
 type: "garden-note"
 summary: "Notes on the limits of the linear model in understanding the intersection of two opposing arrows of time."
-categories: ["Philosophy", "Physics"]
+categories: ["philosophy", "physics"]
 tags: ["time", "entropy", "philosophy", "memory", "identity", "perception"]
 cover:
   image: "/images/profesor-tua.png"

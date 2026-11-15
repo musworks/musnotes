@@ -7,7 +7,7 @@ aliases:
 math: false
 type: "garden-note"
 summary: "Proposisi memiliki tingkatan struktur: bentuk atomik yang sederhana dan bentuk molekuler yang terbentuk melalui operator logika."
-categories: ["Philosophy", "Logic"]
+categories: ["philosophy", "logic"]
 tags: ["proposition", "atomic", "molecular", "logic", "logical-structure"]
 ---
 

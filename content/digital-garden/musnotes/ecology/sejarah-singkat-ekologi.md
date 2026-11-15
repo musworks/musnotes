@@ -8,7 +8,7 @@ aliases:
 math: false
 type: "garden-note"
 summary: "Bagaimana ekologi bermula dari Ernst Haeckel hingga bertransformasi menjadi ilmu yang kuantitatif dan interdisipliner."
-categories: ["Biology", "Ecology"]
+categories: ["biology", "ecology"]
 tags: ["history", "Ernst Haeckel", "ecology"]
 ---
 

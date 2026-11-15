@@ -9,7 +9,7 @@ cover:
   hiddenInList: true
   hiddenInSingle: true
 summary: "Muscrypt as an experiment in text transformation, symbolic cipher, and reflection on how writing survives within visual culture."
-categories: ["Digital Works", "Reflection"]
+categories: ["digital-works", "reflection"]
 tags: ["muscrypt", "cipher", "writing", "digital expression", "interpretation"]
 ---
 

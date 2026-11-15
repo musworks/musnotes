@@ -5,7 +5,7 @@ draft: false
 math: true
 summary: "If I am a mirror, and the mirror is you, then we are one. It sounds romantic. But logically… it is horrific."
 type: "garden-note"
-categories: ["Identity","Certainty"]
+categories: ["identity","certainty"]
 tags: ["identity","logic","perception"]
 cover:
   image: "/images/maaf-aku-gagal-konsisten.png"
