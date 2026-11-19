@@ -17,7 +17,7 @@ Aku memilih untuk tidak ikut berdiskusi. Apakah itu karena aku sombong? Mungkin 
 
 Ketika mencoba menelusuri asal kata, aku menemukan sesuatu seperti ini: 
 
-> Secara etimologis, 'ekonomi' berakar dari 'oikos", yang berarti rumah, dan 'nomos', yang berkaitan dengan aturan atau pengelolaan. Di sisi lain, 'ekologi' menggabungkan 'oikos' dengan 'logos', yaitu ilmu atau kajian.
+> Secara etimologis, ’ekonomi’ berakar dari ’oikos’, yang berarti rumah, dan ’nomos’, yang berkaitan dengan aturan atau pengelolaan. Di sisi lain, ’ekologi’ menggabungkan ’oikos’ dengan ’logos’, yaitu ilmu atau kajian.
 
 Tentu saja etimologi bukan bukti bahwa ekonomi bukan lawan ekosistem. aku cuma mencoba membuat pembuka yang menarik.
 
@@ -43,7 +43,7 @@ Dengan kata lain, krisis ekologis bukan sekadar masalah lingkungan. krisis ekolo
 
 {{< mus-divider >}}
 
-### Kecenderungan Absurd
+## Kecenderungan Absurd
 
 Meskipun siklus ekologis menyediakan fondasi material yang menopang kehidupan, sistem ekonomi modern justru cenderung beroperasi dengan mengabaikan batas-batas ekologis tersebut. Aktivitas ekonomi bisa mendorong alih fungsi hutan, menggerus keanekaragaman hayati, dan menghasilkan berbagai bentuk pencemaran, mulai dari pencemaran tanah, air, dan udara hingga polusi suara, cahaya, termal, radioaktif, dan elektromagnetik. Tekanan-tekanan ini dapat mengganggu fungsi ekosistem dan, dalam kasus tertentu, turut berkontribusi terhadap perubahan iklim.
 
@@ -72,7 +72,6 @@ _Bersambung ke Bagian 2: [Ketika Kerusakan Menjadi Pertumbuhan](./pertumbuhan.id
 {{< mus-divider >}}
 
 ### references
-### Referensi
 
 - **Stockholm Resilience Centre.** *Planetary Boundaries*. Kerangka kerja ilmiah yang mendefinisikan batas-batas aman operasi manusia di Bumi. https://www.stockholmresilience.org/research/planetary-boundaries.html)
 - **Etymologos.** *Etymology of "Economy"*. https://www.etymologos.com/word/economy
