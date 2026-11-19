@@ -11,7 +11,7 @@ featured: true
 themes: ["ecology"]
 ---
 
-Who Has the Authority to Turn Growth Figures into Absolute Values? As Though |Growth| = Growth
+# Who Has the Authority to Turn Growth Figures into Absolute Values? As Though |Growth| = Growth
 
 Let us begin with a question that rarely receives much attention in economics classrooms or development meetings: who exactly grants modern economic systems the authority to treat growth figures as though they possess absolute moral value?
 
@@ -21,7 +21,7 @@ Numbers do not merely serve as instruments of measurement; they also serve as in
 
 My argument does not begin with the assumption that all economic growth must necessarily be harmful. What I want to question is the way growth is treated as an almost absolute sign of progress, while the ecological damage that accompanies it is often dismissed as a side effect, or merely an externality. Under this accounting system, destruction can appear as growth because the metrics are too narrow to recognise what is being lost.
 
-As I discussed in my "previous essay" (./ekonomi%20bukan%20lawan%20ekosistem.en.md), the economy is not a system that exists outside the ecosystem. It is a derivative system that depends on the stability of the biosphere.
+As I discussed in my [previous essay](./ekonomi%20bukan%20lawan%20ekosistem.en.md), the economy is not a system that exists outside the ecosystem. It is a derivative system that depends on the stability of the biosphere.
 
 {{< mus-divider >}}
 
