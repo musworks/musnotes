@@ -11,7 +11,7 @@ featured: true
 themes: ["ecology"]
 ---
 
-### Siapa yang Berhak Membuat Angka Pertumbuhan Sebagai Nilai Mutlak? Seperti ini |Pertumbuhan| = Pertumbuhan
+# Siapa yang Berhak Membuat Angka Pertumbuhan Sebagai Nilai Mutlak? Seperti ini |Pertumbuhan| = Pertumbuhan
 
 Mari kita mulai dengan sebuah pertanyaan yang mungkin jarang diberi ruang di kelas ekonomi atau ruang rapat pembangunan: siapa sebenarnya yang memberi otoritas kepada sistem ekonomi modern untuk memperlakukan angka pertumbuhan seolah-olah memiliki nilai moral mutlak?
 
@@ -25,7 +25,7 @@ Seperti yang sudah kubahas dalam [esai sebelumnya](./ekonomi%20bukan%20lawan%20e
 
 {{< mus-divider >}}
 
-### Yang Dihitung Menjadi Nyata
+## Yang Dihitung Menjadi Nyata
 
 Dalam sistem akuntansi modern, realitas sering mengalami distorsi yang akut.
 
@@ -41,7 +41,7 @@ Kita telah menukar realitas biologis yang menghidupi kita dengan sistem nilai ya
 
 {{< mus-divider >}}
 
-### Pertumbuhan Relatif yang Dipaksa Menjadi Absolut
+##  Pertumbuhan Relatif yang Dipaksa Menjadi Absolut
 
 Pertumbuhan PDB pada dasarnya adalah indikator relatif.
 
@@ -55,7 +55,7 @@ Memperlakukan pertumbuhan relatif sebagai nilai absolut di dalam planet yang ter
 
 {{< mus-divider >}}
 
-### Sepertinya Hutan Tidak Bernilai Sama Sekali
+## Sepertinya Hutan Tidak Bernilai Sama Sekali
 
 Ironi dari sistem ini terlihat jelas ketika kita mengamati sebidang hutan.
 
@@ -95,7 +95,7 @@ Grafik ekonomi bisa mencatatnya sebagai prestasi. Hutan baru dianggap berguna ju
 
 {{< mus-divider >}}
 
-### Tidak Semua yang Tumbuh Hidup
+## Tidak Semua yang Tumbuh Hidup
 
 Pada akhirnya, kita harus membersihkan lensa kacamata kita untuk melihat realitas dengan lebih jujur.
 
