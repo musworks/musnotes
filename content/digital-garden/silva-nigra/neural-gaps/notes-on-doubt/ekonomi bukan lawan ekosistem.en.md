@@ -4,101 +4,76 @@ date: 2026-05-24
 draft: false
 math: false
 type: "garden-note"
-summary: "An essay on the illusion that the economy can be decoupled from the ecosystem, exploring how all human financial activities rest upon biological and ecological foundations."
-categories: ["neural-gaps", "ecology", "economy"]
-tags: ["ecology", "economy", "biosphere", "natural capital", "planetary boundaries"]
+summary: " exploring how all human financial activities rest upon ecological foundations."
+categories: ["ecology", "economy"]
+tags: ["ecology", "economy"]
 featured: true
 themes: ["ecology"]
 ---
 
-### The Great Illusion
+What I often encounter on the internet when people discuss the environment is a tendency towards binary thinking about economic growth and environmental preservation, as though humanity must choose one or the other.
 
-What I frequently encounter on the internet when people discuss the environment is a rather binary mindset: economic growth is pitted against ecological preservation, as if humanity were forced to choose one over the other.
+I choose not to join the discussion. Is it because I am arrogant? Perhaps.
 
-I choose not to take part in this debate. Do you think that is because I am arrogant? Perhaps. But there is a more fundamental reason: the narrative that frames the economy and the ecosystem as two equal, opposing camps feels conceptually invalid.
+When I tried tracing the origins of the words, I came across something like this:
 
-When attempting to deconstruct the words themselves, I stumbled upon a rather amusing paradox.
+> Etymologically, `economy` originates from `oikos`, meaning household, and `nomos`, relating to rules or management. On the other hand, `ecology` combines `oikos` with `logos`, meaning the study or understanding of something.
 
-Etymologically, *economy* traces back to *oikos*, meaning home, and *nomos*, which relates to management or rules. On the other hand, *ecology* combines *oikos* with *logos*, meaning knowledge or study. From this, a subtle irony emerges: how could humanity presume itself capable of drafting the "rules of the house" if it fails to understand the "knowledge of the house" itself?
-
-Of course, etymology is not scientific proof. It is merely an entry point. Yet this entry point reveals something compelling: from its very beginning, the economy was never truly meant to exist outside its ecological home. Modern humans may have trapped themselves in the illusion that the economy is an independent system driven solely by numbers, market laws, and technology. In reality, all of it is nothing more than a fragile bubble inside a much larger chamber called the biosphere.
+Of course, etymology is not proof that the economy is not the opposite of the ecosystem. I was merely trying to come up with an interesting opening.
 
 {{< mus-divider >}}
 
-### The Material Basis of the Economy
+## The Ecosystem as a Material Foundation
 
-Food, clean water, soil, and a stable climate are the material foundations of the economy. Imagine a scenario where humanity finds itself in a relatively affluent financial state by current standards, yet the ecological system has lost its stability. Clean water becomes scarce. Soil and water are contaminated with substances hazardous to many organisms. The climate shifts with increasing volatility.
+Imagine a situation in which people are relatively well-off financially, but the water, air, and soil are contaminated with substances capable of poisoning and killing numerous organisms, including humans. Food and clean water become difficult to obtain, while the climate grows increasingly extreme.
 
-At that point, money loses most of its magic.
+Could such financial prosperity possibly last?
 
-Money can buy commodities only as long as those commodities exist. Money can dictate distribution only as long as there is something left to distribute. But money does not have the biological capacity for photosynthesis. It cannot manufacture calories. No factory, no matter how advanced, can replicate or replace the planetary scale of the natural hydrological cycle that sustains human civilization.
+Well, perhaps it could, but money would lose its magic.
 
-This reality demonstrates that the economy, at its core, is merely a set of rules for a game. If the playground itself is destroyed, the rules naturally cease to function.
+Money can buy goods as long as those goods exist. Money can organise distribution as long as there is still something to distribute. Money cannot be eaten either. Or can it? I imagine it tastes rather salty.
 
-Every economic commodity, from the cup of coffee beside me at this cafe, to sheets of stock certificates, to the 15-inch laptop I am currently using to write this, is fundamentally a transformed form of planetary matter and energy. The economy is not sorcery that summons reality out of a vacuum. It merely organizes, displaces, processes, prices, and then labels things as "value."
+Whatever money tastes like, the economy is fundamentally a system of social rules that governs how humans interact, distribute resources, and engage in exchange.
 
-Consider fertile soil. It is not merely "land property" or a real estate commodity; it is the result of long, intricate labor performed by organisms, microorganisms, decomposers, minerals, water, air, and deep time. When these biological processes are disrupted on a systemic scale, the global food supply chain does not simply encounter a technical glitch. It suffers a rupture at its material foundation.
+These rules do not emerge in a vacuum. They are formed and operate under certain conditions, including the ecological conditions that make life and human activities possible.
 
-In other words, an ecological crisis is never just an environmental issue. An ecological crisis is an economic catastrophe that has not yet been fully recognized by the vocabulary of conventional economics.
+Fertile soil is produced through the prolonged work of organisms, microorganisms, decomposers, minerals, water, air, and time. When these processes are disrupted on a significant scale, food supply chains do not merely experience technical disruptions; their very material foundations are also compromised.
 
-{{< mus-divider >}}
-
-### Burning the Capital, Ignoring the Interest
-
-In the financial realm, if someone holds capital in a bank, the sane policy is to live from the interest generated, not to liquidate the principal until nothing remains. Earth possesses its own version of this account, known as natural capital: forests, topsoil, water, biodiversity, a relatively stable climate, and the ecological processes that support life.
-
-A stable ecological cycle is the natural "interest" that humanity enjoys, often free of charge. Yet the modern economic engine frequently operates in reverse: it clears forests, contaminates soil, erodes biodiversity, and destabilizes the climate system, all in pursuit of short-term returns.
-
-This is not holistic growth. It is systemic bankruptcy being temporarily postponed.
-
-This absurd inclination is also mirrored in the way modern humans idolize data. Countless corporations today describe data as the new oil, the ultimate fuel for growth. But they overlook a data center that is older, larger, and far more fundamental than any server farm ever built by human hands: nature itself.
-
-The forest archives information within its intricate web of roots, soil, fungi, insects, birds, mammals, microbes, local humidity, and microclimatic patterns. The ocean stores information in its currents, plankton populations, salinity, temperature, and complex trophic relationships. The soil preserves a biological record that can never be replicated on a spreadsheet.
-
-When this biological data center is compromised, the damage does not immediately flash red on a quarterly corporate report. Instead, it materializes quietly in humbler, more brutal places: on dinner plates, water bills, food prices, bodily health, and our collective capacity to survive.
+In other words, an ecological crisis is not merely an environmental problem. It is an economic problem.
 
 {{< mus-divider >}}
 
-### The Economy Does Not Exist Beyond the Biosphere
+## The Absurd Tendency
 
-Frameworks like *natural capital* and *planetary boundaries* have already shown that the economy cannot be decoupled from the ecological conditions that anchor it. Nature is not a static backdrop for human ambition. It is the life-support system that makes human ambition possible in the first place.
+Although ecological cycles provide the material foundation that sustains life, modern economic systems tend to operate while disregarding these ecological limits. Economic activities can drive forest conversion, erode biodiversity, and generate various forms of pollution, ranging from soil, water, and air pollution to noise, light, thermal, radioactive, and electromagnetic pollution. These pressures can disrupt ecosystem functions and, in certain cases, also contribute to climate change.
 
-Thus, the ultimate question is not whether humanity must choose between the economy and the ecosystem.
+This absurd tendency is also reflected in the way modern humans talk about data. Many corporations today describe data as the primary fuel for growth. Yet there is a data centre older, larger, and more fundamental than all human servers: nature itself.
 
-The far more precise question is this: what kind of economy can still call itself "rational" if it actively destroys the ecological prerequisites of its own survival?
+Forests store and organise information through networks of interactions between plant roots, fungi, microorganisms, insects, birds, mammals, soil, and local climatic conditions. The oceans possess ecological information networks shaped by currents, plankton, salinity, temperature, and complex trophic relationships. Meanwhile, soil preserves biological and ecological history through organisms, organic matter, and the processes taking place within it.
 
-Science does not negotiate with political rhetoric, climate diplomacy, or currency exchange rates. The laws of biology and physics remain indifferent, continuing to operate even as humans busy themselves giving elegant names to their own destructive behaviors.
+All these relationships form a system that cannot be replicated through spreadsheets alone.
 
-If the biosphere loses its stability, human economic calculus will not become more sophisticated. It will simply become irrelevant.
-
-If that ecological dystopia finally arrives, the most tragic part will not be that humanity failed to predict it. The signs were already there. The tragedy will be that humans managed to name their destruction "rationality" while standing inside the very system they were dismantling.
+When these biological data centres are disrupted on a large scale, the resulting losses do not always appear immediately in quarterly reports. Their consequences gradually become apparent on dinner plates, in water bills, food prices, human health, and society's ability to survive.
 
 {{< mus-divider >}}
 
-Ultimately, the economy is not the antagonist of the ecosystem. The economy is its derivative. It is not a freestanding mansion, but a minor household arrangement within a much grander home. And no household management can ever be deemed successful when the house itself is being burned down from its foundations.
+### The Economy Does Not Exist Outside the Biosphere
 
-_To be continued in Part 2: [When Destruction Poses as Growth](./pertumbuhan.en.md)_
+Ecosystems do not negotiate with political rhetoric, climate diplomacy, or currency exchange rates. Their cycles continue to operate, even while humans remain busy giving elegant names to their own actions.
+
+If the biosphere loses its stability, human economic calculus will not become more sophisticated; it will only become increasingly irrelevant.
+
+When an ecological dystopian scenario finally arrives and I am still fortunate enough to be breathing, perhaps my decomposing body will soon be found beside a still-glowing laptop screen. That screen will display fragments of conversations about how humans love to regard life as something sacred, while confidently and persistently poisoning their own host.
 
 {{< mus-divider >}}
 
-### References
+> The economy is not the opposite of the ecosystem. It is a derivative of it. A small system of governance within a much larger home. And no household management can be considered successful if the house itself is being burnt down from its foundations.
 
-- **World Bank – Natural Capital**  
-  The World Bank defines natural capital as the stock of natural assets, including forests, water, soil, minerals, and ecosystems, that provide vital services and benefits to the economy and human well-being. This framework supports the argument that economic systems are inseparable from their ecological foundations.  
-  https://www.worldbank.org/ext/en/topic/environment/natural-capital
+_Continued in Part 2: [When Destruction Becomes Growth](./pertumbuhan.en.md)_
 
-- **Stockholm Resilience Centre – Planetary Boundaries**  
-  The planetary boundaries framework defines the ecological limits within which humanity can safely operate to maintain Earth-system stability. Transgressing these boundaries increases the risk of large-scale and potentially irreversible environmental change.  
-  https://www.stockholmresilience.org/research/planetary-boundaries.html
+{{< mus-divider >}}
 
-- **IPBES – Global Assessment Report on Biodiversity and Ecosystem Services (2019)**  
-  The IPBES report highlights the unprecedented global decline of biodiversity and ecosystem services, detailing how the degradation of nature directly threatens human material survival and economic security.  
-  https://www.ipbes.net/global-assessment
+### references
 
-- **The Dasgupta Review – The Economics of Biodiversity (2021)**  
-  This review emphasizes that the human economy is deeply embedded within nature, rather than external to it. It also criticizes conventional economic models for failing to account for the true value of ecosystems and biodiversity. 
-  https://www.gov.uk/government/publications/final-report-the-economics-of-biodiversity-the-dasgupta-review
-
-- **World Bank – The Changing Wealth of Nations**  
-  This report monitors global wealth accumulation, arguing that a nation's true wealth must include natural capital alongside produced and human capital. It reinforces the analogy of preserving planetary capital rather than liquidating it.  
-  https://openknowledge.worldbank.org/entities/publication/2ad40228-16c5-4484-969a-ac604539e067
+- **Stockholm Resilience Centre.** *Planetary Boundaries*. A scientific framework defining the safe operating limits for humanity on Earth. https://www.stockholmresilience.org/research/planetary-boundaries.html)
+- **Etymologos.** *Etymology of "Economy"*. https://www.etymologos.com/word/economy

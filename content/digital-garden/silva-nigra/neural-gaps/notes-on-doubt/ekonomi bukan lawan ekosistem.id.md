@@ -17,7 +17,7 @@ Aku memilih untuk tidak ikut berdiskusi. Apakah itu karena aku sombong? Mungkin 
 
 Ketika mencoba menelusuri asal kata, aku menemukan sesuatu seperti ini: 
 
-> Secara etimologis, ’ekonomi’ berakar dari ’oikos’, yang berarti rumah, dan ’nomos’, yang berkaitan dengan aturan atau pengelolaan. Di sisi lain, ’ekologi’ menggabungkan ’oikos’ dengan ’logos’, yaitu ilmu atau kajian.
+> Secara etimologis, `ekonomi` berakar dari `oikos`, yang berarti rumah, dan `nomos`, yang berkaitan dengan aturan atau pengelolaan. Di sisi lain, `ekologi` menggabungkan `oikos` dengan `logos`, yaitu ilmu atau kajian.
 
 Tentu saja etimologi bukan bukti bahwa ekonomi bukan lawan ekosistem. aku cuma mencoba membuat pembuka yang menarik.
 
@@ -59,7 +59,7 @@ Ketika pusat data biologis ini terganggu dalam skala besar, kerugiannya tidak se
 ### Ekonomi Tidak Berdiri di Luar Biosfer
 
 Ekosistem tidak bernegosiasi dengan retorika politik, diplomasi iklim, atau nilai tukar mata uang. Siklusnya tetap bekerja, bahkan ketika manusia sedang sibuk memberi nama yang elegan pada tindakannya sendiri.
-‎Jika biosfer kehilangan stabilitasnya, kalkulus ekonomi manusia tidak akan menjadi semakin canggih; ia hanya akan menjadi semakin tidak relevan.
+Jika biosfer kehilangan stabilitasnya, kalkulus ekonomi manusia tidak akan menjadi semakin canggih; ia hanya akan menjadi semakin tidak relevan.
 
 Ketika skenario distopia ekologis benar-benar tiba dan aku masih sempat bernapas, mungkin dalam waktu singkat jasadku akan ditemukan membusuk dengan layar laptop yang masih menyala. Layar itu akan menampilkan potongan percakapan tentang bagaimana manusia gemar menganggap kehidupan sebagai sesuatu yang sakral, sembari terus-menerus meracuni inangnya sendiri dengan penuh percaya diri.
 
@@ -73,5 +73,5 @@ _Bersambung ke Bagian 2: [Ketika Kerusakan Menjadi Pertumbuhan](./pertumbuhan.id
 
 ### references
 
-- **Stockholm Resilience Centre.** *Planetary Boundaries*. Kerangka kerja ilmiah yang mendefinisikan batas-batas aman operasi manusia di Bumi. https://www.stockholmresilience.org/research/planetary-boundaries.html)
+- **Stockholm Resilience Centre.** *Planetary Boundaries*. Kerangka kerja ilmiah yang mendefinisikan batas-batas aman operasi manusia di Bumi. https://www.stockholmresilience.org/research/planetary-boundaries.html
 - **Etymologos.** *Etymology of "Economy"*. https://www.etymologos.com/word/economy
