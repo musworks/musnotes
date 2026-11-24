@@ -1,6 +1,6 @@
 ---
 title: "Caity: Black Screen, Failed POST, and Suspected RAM Failure"
-date: 2026-11-24T19:20:00+07:00
+date: 2026-11-24T00:00:00+07:00
 draft: false
 math: false
 type: "garden-note"
