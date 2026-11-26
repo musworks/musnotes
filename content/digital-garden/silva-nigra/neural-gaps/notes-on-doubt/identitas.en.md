@@ -15,7 +15,7 @@ I also skipped classes a lot just to hang out in the library, wearing earphones 
 
 {{< mus-divider >}}
 
-The search for an answer eventually led me away from social narratives toward a more biological understanding. The turning point didn't come from a philosophy or social science discussion, but from an MIT lecture video I clicked on out of pure curiosity, titled "Introduction to the Human Brain".
+The search for an answer eventually led me away from social narratives toward a more biological understanding. The turning point didn't come from a philosophy or social science discussion, but from an MIT lecture video I clicked on out of pure curiosity, titled [*Introduction to the Human Brain*](https://www.youtube.com/watch?v=ba-HMvDn_vU). 
 
 While the instructor was dissecting the wonders behind the human skull, a student asked a question—if I remember correctly, it was about identity. I don't recall the exact details of the question or how Prof. Kanwisher answered, but a premise stuck in my mind ever since: the only place identity truly exists is in our brain.
 

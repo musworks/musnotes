@@ -78,12 +78,9 @@ Jika x sama dengan y dan y sama dengan z, maka x sama dengan z.
 
 Kalau aku adalah cermin, dan cermin adalah kamu, maka kita adalah satu.
 
-Kedengarannya romantis.  
-Tapi secara logika… ini mulai terasa horor.
-
 {{< mus-divider >}}
 
-Ada juga prinsip substitusi identitas (indiscernibility of identicals):
+Ada juga prinsip substitusi identitas (*indiscernibility of identicals*):
 
 > ∀x ∀y (x = y → (φ(x) ↔ φ(y)))
 
@@ -154,6 +151,4 @@ Pada akhirnya, yang berubah-ubah mungkin bukan tipenya, melainkan konfigurasi ke
 
 Dan mungkin itu bukan inkonsistensi.
 
-Mungkin itu justru dinamika.
-
-Sebuah tanda sederhana bahwa aku dan kamu bukan bukan kumpulan label statis tapi kumpulan sel yang terus membelah diri.
+Mungkin itu sebuah tanda sederhana bahwa aku dan kamu bukan bukan kumpulan label statis tapi kumpulan sel yang terus membelah diri.

@@ -25,7 +25,7 @@ This is where the difference lies. In science, identity is the result of observa
 
 This thought reminds me of a verse from a book by Sapardi Djoko Damono and Rintik Sedu:
 
->"siapa gerangan yang sudi mendengarkan kita bernyanyi, kecuali nyanyian itu sendiri"
+>"siapa gerangan yang sudi mendengarkan kita menyanyi? kecuali nyanyian itu sendiri?"
 > — Sapardi Djoko Damono & Rintik Sedu, *Masih Ingatkah Kau Jalan Pulang*
 >(Who would deign to listen to us sing, except for the song itself?)
 

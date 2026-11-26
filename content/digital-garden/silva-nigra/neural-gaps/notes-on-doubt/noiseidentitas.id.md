@@ -25,18 +25,16 @@ Di sinilah letak perbedaannya. Dalam sains, identitas adalah hasil pengamatan. m
 
 pemikiran ini mengingatkanku pada sebuah bait dalam buku Sapardi Djoko Damono dan Rintik Sedu:
 
-> "siapa gerangan yang sudi mendengarkan kita bernyanyi, kecuali nyanyian itu sendiri"
+> "siapa gerangan yang sudi mendengarkan kita menyanyi? kecuali nyanyian itu sendiri?"
 > - Sapardi Djoko Damono & Rintik Sedu, *Masih Ingatkah Kau Jalan Pulang*
 
 Tentu, bait ini dapat dimaknai dengan banyak cara. Namun bagiku, "nyanyian" itu mewakili pengalaman mental: emosi, memori, makna dan asumsi-asumsi yang hanya bisa dipahami sepenuhnya oleh individu itu sendiri.
 
-Bernyanyi adalah upaya mengekspresikan pengalaman itu ke luar diri dan mendengarkan adalah upaya orang lain memahami nyanyian itu. 
+menyanyi adalah upaya mengekspresikan pengalaman itu ke luar diri dan mendengarkan adalah upaya orang lain memahami nyanyian itu. 
 
 berdasarkan interpretasiku tidak ada yang bisa benar benar memahami pengalaman mental seseorang kecuali pengalaman itu sendiri.
 
-Karena ketika seseorang menerima ekspresi kita, yang ia pahami bukan pengalaman kita yang sebenarnya, melainkan interpretasinya sendiri terhadap pengalaman itu, sebuah model mental yang dibangunnya berdasarkan persepsinya sendiri.
-
-Jika begitu, maka pemahaman antarindividu bukanlah perpindahan makna, melainkan konstruksi makna.
+Karena ketika seseorang menerima ekspresi kita, yang ia pahami adalah interpretasinya sendiri terhadap pengalaman itu, sebuah model mental yang dibangunnya berdasarkan persepsinya sendiri.
 
 Tapi masih ada ruang untuk pertanyaan:
 Bisakah seseorang sungguh-sungguh memahami kita,
@@ -54,7 +52,7 @@ jika kita sendiri adalah tanda yang tak pernah selesai menafsirkan dirinya, baga
 
 {{< mus-divider >}}
 
-Mungkin identitas memang tak pernah dimaksudkan untuk dipahami sepenuhnya. Ia seperti *musik sunyi*, dengan frekuensi yang paling sempurna beresonansi hanya di telinga kita sendiri. Orang lain mungkin hanya menangkapnya sebagai bunyi yang terdistorsi, yang kemudian mereka beri nama dengan label-label tertentu.
+Mungkin identitas memang tak pernah dimaksudkan untuk dipahami sepenuhnya. Ia seperti *silent music*, dengan frekuensi yang paling sempurna beresonansi hanya di telinga kita sendiri. Orang lain mungkin hanya menangkapnya sebagai bunyi yang terdistorsi, yang kemudian mereka beri nama dengan label-label tertentu.
 
 Label-label itu tetap menjadi "noise" bagi pengalaman subjektif kita. Namun, seperti gangguan sinyal pada umumnya, sebagian noise itu mungkin justru kita serap, kita tafsir ulang, lalu perlahan menjadi bagian dari komposisi yang kita dengar sebagai "aku."
 

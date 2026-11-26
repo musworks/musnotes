@@ -16,9 +16,9 @@ aku juga sering bolos dan diam di perpustakaan, mengenakan *earphone* yang memut
 
 {{< mus-divider >}}
 
-Pencarian jawaban ini kemudian membawaku keluar dari sekadar narasi sosial menuju pemahaman yang lebih biologis. 
+Pencarian jawaban ini kemudian membawaku keluar dari sekadar narasi sosial menuju pemahaman yang lebih biological. 
 
-Titik terangnya muncul bukan dari diskusi filsafat atau ilmu sosial, tapi dari sebuah video kuliah MIT, yang aku klik karena penasaran, berjudul *Introduction to the Human Brain*. 
+Titik terangnya muncul bukan dari diskusi filsafat atau ilmu sosial, tapi dari sebuah video kuliah MIT, yang aku klik karena penasaran, berjudul [*Introduction to the Human Brain*](https://www.youtube.com/watch?v=ba-HMvDn_vU). 
 
 Di sela sela instruktur membedah keajaiban di balik batok kepala manusia, ada salah satu mahasiswa yang bertanya, kalau tidak salah ingat pertanyaannya berkaitan dengan identitas, aku tidak ingat detail bagaimana mahasiswa itu bertanya dan Prof. Kanwisher (si instruktur) menjawabnya tapi premis itu sudah ada di pikiranku sejak menonton kuliah itu, bahwa satu satunya tempat identitas adalah otak kita.
 
@@ -30,9 +30,9 @@ misalnya seseorang yang setiap hari terpapar informasi bahwa jazz standar itu mu
 
 {{< mus-divider >}}
 
-Tapi karena otak kita sebenarnya sangat fleksibel, Identitas bukan sesuatu yang statis, melainkan sistem yang berkembang seperti ilmu pengetahuan: model baru menggantikan sebagian struktur lama tanpa meniadakan fondasinya. Seperti teori ilmiah yang tumbuh dari kesalahan dan pembaruan, identitas manusia juga menyimpan versi lamanya sebagai bagian dari kontinuitas eksistensial.
+Tapi karena otak kita sebenarnya sangat fleksibel, identitas sepertinya adalah sistem yang berkembang seperti ilmu pengetahuan: model baru menggantikan sebagian struktur lama tanpa meniadakan fondasinya. Seperti teori ilmiah yang tumbuh dari kesalahan dan pembaruan, identitas manusia juga menyimpan versi lamanya sebagai bagian dari kontinuitas eksistensial.
 
-Jika seperti itu, menjadi diri sendiri bukan berarti membekukan makna "aku," melainkan terus menegosiasikannya seiring perubahan informasi, pengalaman, dan lingkungan. Identitas adalah organisme yang hidup di dalam otak, selalu berubah karena neuroplastisitas, tetapi tetap mempertahankan benang merah yang menghubungkan setiap informasi untuk membangun narasi diri yang konsisten meskipun tidak ada keharusan untuk konsisten.
+Jika seperti itu, menjadi diri sendiri berarti terus menegosiasikan identitas seiring perubahan informasi, pengalaman, dan lingkungan. Identitas adalah organisme yang hidup di dalam otak, selalu berubah karena neuroplastisitas, tetapi tetap mempertahankan benang merah yang menghubungkan setiap informasi untuk membangun narasi diri yang konsisten meskipun tidak ada keharusan untuk konsisten.
 
 {{< mus-divider >}}
 
